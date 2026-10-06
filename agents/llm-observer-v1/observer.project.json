@@ -1,12 +1,8 @@
 {
   "schema_version": "observer-project-v1",
   "protocol": "jsonl-v4",
-  "image": "node:22-slim",
+  "image": "herh27/gosim-llm-observer-pytorch@sha256:194597cdb41f3d766054b8f9fe7787534cb4f5cf95e212869d9f88a96e0a322c",
   "build": [
-    [
-      "node",
-      "runtime/setup.cjs"
-    ],
     [
       "npm",
       "ci",
@@ -26,9 +22,6 @@
   "environment": {
     "NPM_CONFIG_CACHE": "/workspace/.npm-cache",
     "NPM_CONFIG_UPDATE_NOTIFIER": "false",
-    "PYTHONDONTWRITEBYTECODE": "1",
-    "OMP_NUM_THREADS": "1",
-    "OPENBLAS_NUM_THREADS": "1",
-    "MKL_NUM_THREADS": "1"
+    "PYTHONDONTWRITEBYTECODE": "1"
   }
 }

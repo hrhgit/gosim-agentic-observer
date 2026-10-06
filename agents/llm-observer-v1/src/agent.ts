@@ -4,10 +4,12 @@
  * A language model reads the handover notes that arrive in `observation_request.reason` (handover/reader.ts)
  * and its reading becomes facts (facts/store.ts) that change what this loop does: instrument-fault reports,
  * closed sectors and stops, ridge heights, thin versus thick cloud. Pointing, fibre assignment and exposure
- * length stay with the deterministic planner; the two trained models run in a persistent local worker.
+ * length stay with the deterministic planner. Optional trained sidecars run only when their local
+ * Python runtime is already present; the submitted project must still work without them.
  */
 import { once } from "node:events";
-import { appendFileSync } from "node:fs";
+import { appendFileSync, existsSync } from "node:fs";
+import * as path from "node:path";
 import { StringDecoder } from "node:string_decoder";
 import { DEG, format_utc, parse_utc } from "./core/astro";
 import { asciiJson, mod, Payload } from "./core/compat";
@@ -85,6 +87,14 @@ export function load_knobs(): Knobs {
   }
   return knobs;
 }
+/**
+ * The competition image starts with no Python model environment.  Keeping this check here prevents
+ * an optional local model from turning a valid JSON-Lines agent into a failed initialization.
+ */
+export function selectedModelRuntimeAvailable(): boolean {
+  const python = process.env.BASE_MODEL_PYTHON || path.join(__dirname, "..", ".runtime", "venv", "bin", "python");
+  return existsSync(python);
+}
 export class Agent {
   knobs: Knobs;
   sv: Survey;
@@ -148,12 +158,21 @@ export class Agent {
     this.sv = new Survey(payload, this.knobs);
     this.planner = new Planner(this.sv);
     this.models = new BaselineModels();
-    const enabled = [...SELECTED_MODEL_IDS].filter(id => id === "conditions-reliability"
-      ? process.env.BASE_CONDITIONS_MODELS !== "off" : process.env.BASE_FAULT_MODEL !== "off");
     if (process.env.BASE_CONDITIONS_MODELS && !["off", "reliability", "conditions-reliability"].includes(process.env.BASE_CONDITIONS_MODELS))
       throw new Error("BASE_CONDITIONS_MODELS must be reliability or off; GRU/MLP are legacy comparison models.");
     if (process.env.BASE_FAULT_GUARD && !["off", "rule"].includes(process.env.BASE_FAULT_GUARD))
       throw new Error("BASE_FAULT_GUARD must be rule or off.");
+    const modelRuntime = process.env.BASE_MODEL_RUNTIME ?? "auto";
+    if (!["auto", "on", "off"].includes(modelRuntime))
+      throw new Error("BASE_MODEL_RUNTIME must be auto, on, or off.");
+    const runtimeAvailable = selectedModelRuntimeAvailable();
+    if (modelRuntime === "on" && !runtimeAvailable)
+      throw new Error("BASE_MODEL_RUNTIME=on requires BASE_MODEL_PYTHON or .runtime/venv/bin/python.");
+    const useSelectedModels = modelRuntime !== "off" && runtimeAvailable;
+    const enabled = useSelectedModels ? [...SELECTED_MODEL_IDS].filter(id => id === "conditions-reliability"
+      ? process.env.BASE_CONDITIONS_MODELS !== "off" : process.env.BASE_FAULT_MODEL !== "off") : [];
+    if (!useSelectedModels)
+      log(`selected models: off (BASE_MODEL_RUNTIME=${modelRuntime}; no local model runtime)`);
     this.faultGuard = process.env.BASE_FAULT_GUARD === "rule";
     this.modelSession = new SelectedModelsSession(payload, this.models, enabled);
     const sv = this.sv;

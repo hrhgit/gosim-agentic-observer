@@ -1,0 +1,25 @@
+FROM node@sha256:43ac6c60b8f89723f746e8a92ce91abd5017e627ce1ddfe4238355d3a30b772c
+
+# This file builds the public, Linux x86_64 image used only to provide the
+# frozen local-model runtime. The participant ZIP still contains all agent
+# source and weights. Pin the base and verify the bootstrap archive so a new
+# image can be independently reproduced and reviewed.
+ARG UV_VERSION=0.8.22
+ARG UV_SHA256=741ff1f5742c5a4a25d2f829e8395355e43f7a5ae2ebc6368e9ae2df0efb69cf
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates curl \
+ && rm -rf /var/lib/apt/lists/* \
+ && curl -fsSL -o /tmp/uv.tar.gz "https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz" \
+ && echo "${UV_SHA256}  /tmp/uv.tar.gz" | sha256sum -c - \
+ && tar -xzf /tmp/uv.tar.gz --strip-components=1 -C /usr/local/bin \
+ && rm /tmp/uv.tar.gz \
+ && uv --version
+
+RUN uv python install --install-dir /opt/python 3.12.11 \
+ && uv venv --python /opt/python/cpython-3.12.11-linux-x86_64-gnu/bin/python /opt/venv \
+ && uv pip install --python /opt/venv/bin/python --index https://download.pytorch.org/whl/cpu torch==2.8.0+cpu \
+ && uv pip install --python /opt/venv/bin/python numpy==2.2.6 scipy==1.15.3 \
+ && /opt/venv/bin/python -B -c "import torch,numpy,scipy; print('model runtime',torch.__version__,numpy.__version__,scipy.__version__)"
+
+ENV BASE_MODEL_PYTHON=/opt/venv/bin/python

@@ -96,6 +96,7 @@ function main(argv: string[]): void {
     "NOTICE.md",
     "SOURCE_MANIFEST.json",
     "MODELS.md",
+    "IMAGE.md",
   ])
     if (existsSync(path.join(ROOT, name))) files.push(name);
   const entries: [string, Buffer][] = files.map((rel) => [

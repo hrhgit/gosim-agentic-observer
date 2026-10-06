@@ -59,7 +59,7 @@ src/facts/store.ts        事实表：时段、山脊、故障线索、来源、
 src/llm/client.ts         OpenAI 兼容客户端：多服务顺序切换、思考模式、并发上限、本地缓存
 src/sim/clock.ts          仅本地评测用（SIM_WALL=1 才启用）：按平台实测规律记真实时间的虚拟时钟
 src/core/*                规划器与状态估计（来自基线；conditions.ts 增加了对事实的使用）
-src/models/*, runtime/    两个已训练模型的调用（与基线相同，见 MODELS.md）
+src/models/*, runtime/    可选的本地已训练模型调用（见 MODELS.md；线上包不依赖它）
 ```
 
 字符级的解码不交给大模型：245 条真实记录里的 238 行摩斯、51 行凯撒、73 处唱名全部由 `text.ts` 解出，以 `〔…解码: …〕` 附在原文后面再给大模型读。
@@ -114,7 +114,7 @@ npm start                                   # 协议入口
 npm run pack                                # artifacts/llm-observer-v1.zip
 ```
 
-两个已训练模型的运行环境与基线相同：比赛 Linux 上由 `runtime/setup.cjs` 在构建阶段安装，本机设置 `BASE_MODEL_PYTHON`。
+两个已训练模型会在线上运行。提交清单固定引用一个公开、不可变的 Node 22 + Python 3.12 + PyTorch CPU 镜像；PyTorch 放在镜像的只读层，而不是在比赛构建步骤安装，从而避开平台对新写入文件的 256 MiB 限制。镜像来源、摘要和重建方式见 `IMAGE.md` 与 `container/Dockerfile.pytorch`。若本机已有 Python 环境，可设置 `BASE_MODEL_PYTHON`；`BASE_MODEL_RUNTIME=on` 强制启用，`off` 强制关闭，默认 `auto` 只在该环境存在时启用。
 
 ## 本地评测
 

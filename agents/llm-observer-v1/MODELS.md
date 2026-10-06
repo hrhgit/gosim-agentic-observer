@@ -7,9 +7,9 @@
 | 观测条件与可信度 | `conditions-reliability` | `artifacts/observing_conditions-reliability/selected`，10 月 5 日 **11:44** 冻结；`gru64/fresh_hybrid_12/endpoint_raw`；版本 `conditions-reliability-v2-9138b8ec1431a1e2` |
 | 仪器故障申报 | `instrument-fault-report` | `artifacts/instrument_faults-report-model`；已训练的 415 输入、300 棵树模型；免费阈值 0.5、付费阈值 0.9 |
 
-之前接入的信息提炼版 GRU/MLP 仅保留为本地历史对照，默认调用及提交包均使用上表的两个模型。没有重新训练。观测模型的原始权重、标准化、历史反馈修正、范围和概率调整以及有效比例 0/1 端点预测全部保留。故障模型按原树节点导出，不需要在运行时安装训练工具。
+之前接入的信息提炼版 GRU/MLP 仅保留为本地历史对照。上表两个模型的权重、标准化、历史反馈修正、范围和概率调整以及有效比例 0/1 端点预测均保留；故障模型按原树节点导出，不需要训练工具。
 
-两个模型共享一个常驻 Python 进程，TypeScript 顺序发送请求，权重只加载一次。智能体的搜索、状态管理和比赛入口仍使用 Node.js 22；Python 3.12、CPU 版 PyTorch、NumPy、SciPy 在比赛构建阶段安装到 `.runtime/`。没有新增模型调用超时、输入长度上限或失败时的假预测。加载及推理错误会明确记录。
+两个模型共享一个常驻 Python 进程，TypeScript 顺序发送请求，权重只加载一次。2026-10-06 的首次公开测试曾在构建时安装 PyTorch CPU 包，被平台的单文件 256 MiB 限制中断；现在提交清单固定引用一个预装 Node 22、Python 3.12 和 PyTorch CPU 的公开镜像。大于该上限的 `libtorch_cpu.so` 位于镜像只读层，不会在比赛构建或运行时写入；线上会自动找到镜像提供的 `BASE_MODEL_PYTHON` 并启用两个模型。镜像来源、摘要和重建步骤见 `IMAGE.md`。交接记录的大模型读取、规则规划和 JSON 行输入输出仍不依赖它们。`BASE_MODEL_RUNTIME=on` 缺少 Python 时会明确失败，`off` 强制关闭，默认 `auto` 自动判断。没有用假的预测替代未启用的模型。
 
 ## 基线如何调用
 
@@ -21,21 +21,19 @@
 
 `report_score` 是考虑申报收益与代价的评分，**不是经过可信度调整的故障概率**。没有观测时返回 `null`，历史不足时明确说明；不会拿 0 或某个固定概率冒充推理结果。观测模型的完整可信度核查仍为 `false`，故障模型尚无独立最终核查；这些状态随输出保留。
 
-可用 `BASE_CONDITIONS_MODELS=off` 或 `BASE_FAULT_MODEL=off` 分别关闭两个模型。`BASE_FAULT_GUARD` 取 `off`（默认，模型独立申报）或 `rule`。观测模型也接受 `BASE_CONDITIONS_MODELS=reliability`。`BASE_MODELS_LOG=full` 输出完整观测预测；默认只记录调用概况和故障评分。
+可用 `BASE_MODEL_RUNTIME=auto|on|off` 选择是否使用本地模型环境；`on` 缺少 Python 时会明确报错。模型可用时，`BASE_CONDITIONS_MODELS=off` 或 `BASE_FAULT_MODEL=off` 可分别关闭它们。`BASE_FAULT_GUARD` 取 `off`（默认，模型独立申报）或 `rule`。观测模型也接受 `BASE_CONDITIONS_MODELS=reliability`。`BASE_MODELS_LOG=full` 输出完整观测预测；默认只记录调用概况和故障评分。
 
 ## 构建和直接调用
 
-比赛 Linux x86_64 使用 Node.js 22：
+提交包在比赛 Linux x86_64 使用清单固定的 Node 22 + PyTorch 镜像；构建步骤只安装 TypeScript 编译依赖：
 
 ```sh
-npm run models:setup
 npm ci --include=dev
 npm run build
-npm run models:predict -- --input models/example-reliability-request.json
 npm start
 ```
 
-在本机开发可复用已有 Python 3.12 环境：
+本机如需复查两个可选模型，可安装或复用 Python 3.12 环境：
 
 ```sh
 export BASE_MODEL_PYTHON=/absolute/path/to/python
@@ -44,7 +42,7 @@ npm run build
 npm run models:predict -- --input models/example-reliability-request.json
 ```
 
-本仓库可使用 `research/observing_conditions/.venv/bin/python`。不要把本机 Python 路径写入提交清单。比赛构建自动安装 Python 3.12.11、PyTorch 2.8.0 CPU、NumPy 2.2.6、SciPy 1.15.3，运行时不需要联网，根目录和项目目录均可只读。
+本仓库可使用 `research/observing_conditions/.venv/bin/python`。不要把本机 Python 路径写入提交清单。`npm run models:setup` 仍仅供本机建立 Python 3.12.11、PyTorch 2.8.0 CPU、NumPy 2.2.6、SciPy 1.15.3 环境；它不属于比赛构建。
 
 ### 观测条件
 
@@ -110,7 +108,7 @@ const result = await registry.predict("anotherTask", "new-network-v1", { values:
 - 正式 A–D 公开输入与已有自行生成场景，16 组、13,824 个候选，其中 13,042 个可观测；核对 278,150 个数值及其他输出字段，和原 Python 可信度优化版的差为 **0**。包含没有历史、部分历史、八次历史、较早历史及下一晚预测。
 - 仪器模型 991 条、415 输入的预测与原已训练模型的差为 **0**，覆盖缺失输入的树分支。
 - 完整 TypeScript 基线四张卡共 72 次决策、67 次观测预测，均调用故障接口；包含自行生成的低响应反馈、错误申报、冷却及数据撤销。申报后旧评分清空，三次新观测计数重新开始。
-- Linux x86_64：2 核、2 GB、128 进程、只读根目录及运行目录、256 MB 临时目录、运行时禁用网络。冷启动安装约 36.4 秒，npm 安装和编译约 2.0 秒；四张卡共 72 次决策、67 次观测预测、72 次故障接口调用，62 次完成实际评分，无调用错误。
+- 先前 Linux x86_64 的本地转译环境跑过 2 核、2 GB、128 进程和只读根目录的模型调用；它不等同于官方构建。2026-10-06 官方公开测试证实 PyTorch 安装会触及单文件 256 MB 限制，故线上提交默认不启用这两个可选模型。
 - Linux 与本机的观测质量/档位/受阻概率差小于 1e-6；有效比例下边界最大差约 0.000112，中位数最大差约 0.00000775。这些差异涉及运行库及不同 CPU 的浮点计算，原数值均保留；明细见 `linux-summary.json`。Linux 用的是 Mac 上的 x86 转译环境，不能当作正式服务器测速。
 
 本地复查可执行现有 `tools/verify_models.py --node /absolute/path/to/node22`；`benchmark:models` 测量当前可信度优化版。旧 GRU/MLP 的数值脚本和测速入口标为 `legacy`，其历史结果不代表本次版本。
