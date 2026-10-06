@@ -50,6 +50,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "agent"))
 from _paths import cards_dir  # noqa: E402
 from core.astro import airmass, lst_deg, moon_radec, sun_radec, unit_vector  # noqa: E402
+from core.catalog import Grid  # noqa: E402
 
 RAD = math.pi / 180.0
 
@@ -151,7 +152,7 @@ def upper_hull(points):
     return np.array(hull)
 
 
-def solve(card_dir: Path, bin_slots: int, model: str) -> dict:
+def solve(card_dir: Path, bin_slots: int, model: str, export: Path | None = None, max_bins: int = 0) -> dict:
     score_cfg = json.loads((card_dir / "config" / "v4_score_config.json").read_text())
     fibre_cfg = json.loads((card_dir / "config" / "v4_fiber_config.json").read_text())
     scenario = json.loads((card_dir / "config" / "v4_scenario.json").read_text())
@@ -176,19 +177,26 @@ def solve(card_dir: Path, bin_slots: int, model: str) -> dict:
     need = need_unit / np.array([float(t["feature_flux"]) for t in targets])
 
     # ---- zones (field-sized) and fibre cells inside them --------------------------------------
-    band_index = np.floor((dec + 90.0) / fov).astype(int)
-    dec_mid = (band_index + 0.5) * fov - 90.0
-    width = fov / np.maximum(0.05, np.cos(dec_mid * RAD))
-    ra_index = np.floor(ra / width).astype(int)
-    keys, zone_of = np.unique(np.stack([band_index, ra_index], axis=1), axis=0, return_inverse=True)
-    zone_of = zone_of.ravel()
+    grid = Grid(fov)
+    keys_list, lookup, zone_ids = [], {}, []
+    for a, d in zip(ra, dec):
+        key = grid.locate(float(a), float(d))
+        if key not in lookup:
+            lookup[key] = len(keys_list)
+            keys_list.append(key)
+        zone_ids.append(lookup[key])
+    keys, zone_of = np.array(keys_list), np.array(zone_ids)
+    band_index, ra_index = keys[zone_of, 0], keys[zone_of, 1]
+    width = np.array([360.0 / grid.ncell[b] for b in band_index])
     nz = len(keys)
     cell_of = (np.minimum(side_n - 1, np.floor(((dec + 90.0) / fov - band_index) * side_n)).astype(int) * side_n
                + np.minimum(side_n - 1, np.floor((ra / width - ra_index) * side_n)).astype(int))
     members = [np.where(zone_of == z)[0] for z in range(nz)]
-    zra = np.array([math.atan2(np.sin(ra[m] * RAD).mean(), np.cos(ra[m] * RAD).mean()) / RAD % 360.0 for m in members])
-    zdec = np.array([dec[m].mean() for m in members])
-    zvec = np.array([unit_vector(a, d) for a, d in zip(zra, zdec)])
+    target_vectors = np.array([unit_vector(a, d) for a, d in zip(ra, dec)])
+    zvec = np.array([target_vectors[m].sum(axis=0) for m in members])
+    zvec /= np.linalg.norm(zvec, axis=1)[:, None]
+    zra = np.degrees(np.arctan2(zvec[:, 1], zvec[:, 0])) % 360
+    zdec = np.degrees(np.arcsin(np.clip(zvec[:, 2], -1, 1)))
 
     # ---- truth: slots, faults repaired at once, sector events ---------------------------------
     slots = rows(card_dir / "truth" / "v4_weather_truth.csv")
@@ -223,6 +231,8 @@ def solve(card_dir: Path, bin_slots: int, model: str) -> dict:
         current.append(row)
     if current:
         bins.append(current)
+    if max_bins:
+        bins = bins[:max_bins]
 
     sin_lat, cos_lat = math.sin(lat * RAD), math.cos(lat * RAD)
     pen = float(lunar.get("maximum_penalty", 0.0))
@@ -235,6 +245,7 @@ def solve(card_dir: Path, bin_slots: int, model: str) -> dict:
     var_zone, var_bin, var_qt = [], [], []
     qmax = np.zeros(nz)
     open_seconds = 0.0
+    bin_open_seconds = np.zeros(len(bins))
     for b, group in enumerate(bins):
         mid = 0.5 * (group[0][1] + group[-1][1] + group[-1][2])
         lst = lst_deg(mid, lon) * RAD
@@ -277,6 +288,7 @@ def solve(card_dir: Path, bin_slots: int, model: str) -> dict:
         if length_open <= 0.0:
             continue
         open_seconds += length_open
+        bin_open_seconds[b] = length_open
         idx = np.where(visible & (quality_time > 0.0))[0]
         qmax[idx] = np.maximum(qmax[idx], quality_time[idx] / length_open)
         var_zone.extend(idx.tolist())
@@ -334,6 +346,20 @@ def solve(card_dir: Path, bin_slots: int, model: str) -> dict:
     result = linprog(cost, A_ub=a_ub, b_ub=b_ub, bounds=bounds, method="highs")
     if result.status != 0:
         raise SystemExit(f"LP failed: {result.message}")
+    if export is not None:
+        export.mkdir(parents=True, exist_ok=True)
+        allocation = np.zeros((nz, nb))
+        allocation[np.array(var_zone), np.array(var_bin)] = result.x[:nx]
+        quality_seconds = np.bincount(np.array(var_zone), weights=np.array(var_qt) * result.x[:nx], minlength=nz)
+        np.savez_compressed(export / "allocation.npz", x=allocation, zone_keys=keys, zone_ra=zra, zone_dec=zdec,
+                            bin_start=np.array([group[0][1] for group in bins]),
+                            bin_end=np.array([group[-1][1] + group[-1][2] for group in bins]),
+                            bin_open_seconds=bin_open_seconds, zone_quality_seconds=quality_seconds,
+                            zone_marginals=result.ineqlin.marginals[:nz], bin_marginals=result.ineqlin.marginals[nz:])
+        (export / "summary.json").write_text(json.dumps({"model": model, "zone_grid": "planner Grid, target encounter order",
+            "fov": fov, "zones": nz, "bins": nb, "variables": nx + ns, "bound": float(-result.fun),
+            "truncated": bool(max_bins), "data": "self-generated local truth; perfect-weather guidance is unattainable online",
+            "dual_sign": "raw marginals of minimization of negative score; negate for score value"}, indent=2) + "\n", encoding="utf-8")
     detail = None
     if zone_points:
         tau_z = np.bincount(np.array(var_zone), weights=np.array(var_qt) * result.x[:nx], minlength=nz)
@@ -357,12 +383,14 @@ def main() -> int:
     parser.add_argument("--cards", nargs="+", default=["a", "b", "c", "d"])
     parser.add_argument("--bin-slots", type=int, default=4, help="weather slots per time bin (4 = one hour)")
     parser.add_argument("--models", nargs="+", default=["loose", "cells"])
+    parser.add_argument("--export", type=Path, help="export per-card/model allocations, quality seconds and raw dual marginals")
+    parser.add_argument("--max-bins", type=int, default=0, help="small process check only; 0 = full season")
     args = parser.parse_args()
     cards = cards_dir(args.eval_set)
     print("| 卡 | 全部满分 | " + " | ".join(args.models) + " | zones | bins |")
     print("|---|---:|" + "---:|" * (len(args.models) + 2))
     for card in args.cards:
-        out = [solve(cards / card, args.bin_slots, model) for model in args.models]
+        out = [solve(cards / card, args.bin_slots, model, args.export / card / model if args.export else None, args.max_bins) for model in args.models]
         print(f"| {card.upper()} | {out[0]['ceiling']:,.0f} | " + " | ".join(f"{o['bound']:,.0f}" for o in out)
               + f" | {out[0]['zones']} | {out[0]['bins']} |", flush=True)
         print(f"  ({', '.join(str(o['variables']) + ' vars ' + format(o['seconds'], '.0f') + ' s' for o in out)})", file=sys.stderr, flush=True)
