@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ t('vision.pageTitle') }} · {{ t('nav.brief') }}{% endblock %}
+{% block content %}
+<div class="wrap page-head">
+  <a href="/" class="label accent">← {{ t('vision.backToHome') }}</a>
+  <h1 class="mt-4">{{ t('vision.pageTitle') }}</h1>
+  <p class="lede" style="max-width:44rem;font-weight:500;color:rgba(255,255,255,.8)">{{ t('vision.pageSubtitle') }}</p>
+  <p class="mt-3 text3 rule-t" style="padding-top:1.25rem;max-width:48rem;line-height:1.7">{{ t('vision.intro') }}</p>
+</div>
+{% for s in t('vision.sections') %}
+<section class="section" id="s{{ loop.index }}"><div class="wrap"><div class="grid grid-2b">
+  <div class="reveal sticky"><span class="label">{{ s.kicker }}</span><h2 class="section-title sm mt-3">{{ s.title }}</h2></div>
+  <div class="reveal d1">
+    <div class="text2" style="line-height:1.8;font-size:1rem">{% for p in s.paragraphs %}<p class="mb-3">{{ p }}</p>{% endfor %}</div>
+    {% if s.highlight %}<div class="paper mt-4" style="padding:1.5rem 2rem"><p style="font-weight:600;font-size:1.15rem;line-height:1.5;letter-spacing:-.01em">{{ s.highlight }}</p></div>{% endif %}
+    {% if s.duties %}<div class="cards cards-3 mt-4">{% for d in s.duties %}<article class="card"><span class="num">{{ d.n }}</span><h3 class="mt-2">{{ d.title }}</h3><p>{{ d.desc }}</p></article>{% endfor %}</div>{% endif %}
+    {% if s.loop %}<h3 class="label accent mt-4">{{ s.loopTitle }}</h3><div class="loop mt-3">{% for st in s.loop %}<div><span class="label accent">{{ st.stage }}</span><ul>{% for it in st['items'] %}<li>{{ it }}</li>{% endfor %}</ul></div>{% if not loop.last %}<span>→</span>{% endif %}{% endfor %}</div>{% endif %}
+    {% if s.formula %}<pre class="code mt-4">{{ s.formula }}</pre>{% endif %}
+    {% if s.actionCode %}<pre class="code mt-4">{{ s.actionCode }}</pre>{% endif %}
+    {% if s.rounds %}<div class="rows mt-4">{% for r in s.rounds %}<article class="row-n"><span class="num">{{ r.number }}</span><div><p class="label">{{ r.dates }} · {{ r.format }}</p><h3 class="mt-2">{{ r.name }}</h3><dl class="kv mt-3"><dt>{{ t('schedule.challengeLabel') }}</dt><dd>{{ r.challenge }}</dd><dt>{{ t('schedule.participantsLabel') }}</dt><dd>{{ r.participants }}</dd></dl></div></article>{% endfor %}</div>{% endif %}
+  </div>
+</div></div></section>
+{% endfor %}
+<section class="section"><div class="wrap"><div class="grid grid-2b">
+  <div class="reveal sticky"><span class="label">{{ t('glossary.kicker') }}</span><h2 class="section-title sm mt-3">{{ t('glossary.title') }}</h2><p class="lede mt-3">{{ t('glossary.intro') }}</p></div>
+  <div class="reveal d1"><dl class="dl dl-2">{% for g in t('glossary.terms') %}<div><dt>{{ g.term }}</dt><dd>{{ g.desc }}</dd></div>{% endfor %}</dl>
+    <h3 class="mt-6" style="font-size:1.2rem">{{ t('glossary.stateTitle') }}</h3>
+    <dl class="mt-3" style="border-top:1px solid var(--line2)">{% for s in t('glossary.state') %}<div style="display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line2)"><dt class="mono accent small">{{ s.field }}</dt><dd class="text2 small" style="margin:0">{{ s.desc }}</dd></div>{% endfor %}</dl>
+  </div>
+</div></div></section>
+<section class="section tight"><div class="wrap flex between"><a class="btn" href="/rules">{{ t('nav.rules') }} →</a><a class="btn" href="/docs">{{ t('nav.docs') }} →</a>{% if not user and registration_open %}<a class="btn primary" href="/register">{{ t('hero.cta_register') }} →</a>{% endif %}</div></section>
+{% endblock %}

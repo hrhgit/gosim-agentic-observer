@@ -1,0 +1,18 @@
+{
+  "a": {
+    "rebuilt_files_byte_identical": 23,
+    "new_initialize_parameters_match": true
+  },
+  "b": {
+    "rebuilt_files_byte_identical": 23,
+    "new_initialize_parameters_match": true
+  },
+  "c": {
+    "rebuilt_files_byte_identical": 23,
+    "new_initialize_parameters_match": true
+  },
+  "d": {
+    "rebuilt_files_byte_identical": 25,
+    "new_initialize_parameters_match": true
+  }
+}

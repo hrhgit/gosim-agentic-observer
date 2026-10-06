@@ -1,0 +1,64 @@
+{
+  "classification": "self-generated local evaluation data; not official hidden competition data",
+  "design_evidence": {
+    "assumed": [
+      "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+      "Reference numeric weather model/durations and seeded event placement",
+      "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+      "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+      "D offset scale is synthetic; agent estimates are not ground truth",
+      "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+    ],
+    "confirmed": [
+      "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+      "D state_resync window_max_fraction 0.15",
+      "published event families and global/compass scopes"
+    ],
+    "fault_count_lower_bound": 1,
+    "not_copied": [
+      "official event timestamps",
+      "official request target IDs",
+      "official data-loss fractions"
+    ],
+    "public_episode_counts": {
+      "cold_snap": 4,
+      "earthquake": 2,
+      "rain": 35,
+      "rocket_launch": 4
+    },
+    "variant": "lighter"
+  },
+  "formal_card": "C",
+  "generated": {
+    "event_counts": {
+      "cold_wave": 4,
+      "earthquake": 2,
+      "instrument_fault": 1,
+      "rainy": 35,
+      "rocket_launch": 4
+    },
+    "night_count": 121,
+    "observation_request_count": 6,
+    "request_settings": "generator/observation_request_settings.json",
+    "weather_config": "generator/weather_config.json"
+  },
+  "profile": {
+    "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+    "hard_mode": false,
+    "seed": 8105103,
+    "title_zh": "频繁降雨与小容量排程"
+  },
+  "schema_version": "self-generated-formal-local-card-v1",
+  "source_public_inputs": {
+    "directory": "cards/c",
+    "sha256": {
+      "config/v4_fiber_config.json": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+      "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+      "public/footprint.csv": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+      "public/targets.csv": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+      "public/taskcard.en.md": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+      "public/taskcard.zh.md": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+      "public/v4_night_calendar.csv": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8"
+    }
+  }
+}

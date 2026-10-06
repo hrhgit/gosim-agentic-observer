@@ -1,0 +1,1263 @@
+{
+  "meta": {
+    "title": "Agent Observer · GOSIM Hackathon",
+    "description": "A GOSIM hackathon for intelligent survey operations: build an agent observer that reads the sky state and chooses the next observation every 900 seconds.",
+    "wordmark_note": "AGENT HACKATHON"
+  },
+  "nav": {
+    "brief": "Event brief",
+    "rules": "Rules",
+    "docs": "Docs",
+    "resources": "Resources",
+    "leaderboard": "Leaderboard",
+    "faq": "FAQ",
+    "dashboard": "Dashboard",
+    "login": "Log in",
+    "register": "Register",
+    "logout": "Log out",
+    "admin": "Admin",
+    "announcements": "Announcements",
+    "submit": "Submit",
+    "team": "Team",
+    "submissions": "Submissions",
+    "profile": "Profile",
+    "menu": "Menu",
+    "registration_closed": "Registration closed"
+  },
+  "hero": {
+    "eyebrow": "GOSIM Hackathon · Intelligent Survey Operations",
+    "system": "Agent Observer",
+    "subtitle": "巡天智能体",
+    "lede": "Build a future agent observer for survey nights: read the sky state, reason like a leading observer, and choose the next observation every 900 seconds.",
+    "pipeline": [
+      {
+        "label": "Online Training",
+        "date": "Oct 1–4"
+      },
+      {
+        "label": "Online Competition",
+        "date": "Oct 5–7"
+      },
+      {
+        "label": "Awards Day",
+        "date": "Oct 17"
+      }
+    ],
+    "location": [
+      "Online training Oct 1–4 · Online competition Oct 5–7",
+      "October 17 · Awards at GOSIM Shenzhen"
+    ],
+    "cta": "Mission card coming soon",
+    "cta_register": "Register now",
+    "cta_dashboard": "Open dashboard",
+    "cta_brief": "Mission brief",
+    "metrics": [
+      {
+        "value": "$5,500",
+        "label": "prize pool"
+      },
+      {
+        "value": "Oct 1–17",
+        "label": "2026 · online + Shenzhen"
+      },
+      {
+        "value": "900 s",
+        "label": "per decision"
+      },
+      {
+        "value": "Open",
+        "label": "worldwide · solo or team"
+      }
+    ],
+    "side_note": "Human judgment / machine speed / one shared sky"
+  },
+  "home": {
+    "vision": {
+      "kicker": "01 / Vision",
+      "title": "Hand the night sky to an agent",
+      "lede": "The night sky is too vast and too precious to leave to chance.",
+      "paragraphs": [
+        "Every night a survey telescope faces thousands of observable tiles. Weather changes, target visibility changes, and science priorities change. Every decision a human observer makes shapes the quality of the final cosmic sample.",
+        "We are building an open benchmark: an agent reads the state of the night sky, reasons like a seasoned observer, and decides the next observation every 900 seconds. Every participant receives the same survey plan, weather replay, inserted requests, simulator, and scoring rule — the only variable is strategy."
+      ],
+      "link": "Read the full event brief",
+      "stats": [
+        {
+          "value": "900s",
+          "label": "per decision slot"
+        },
+        {
+          "value": "1",
+          "label": "unified mission card"
+        },
+        {
+          "value": "∞",
+          "label": "possible strategies"
+        }
+      ]
+    },
+    "mission": {
+      "kicker": "02 / Mission",
+      "title": "Design an agentic observer",
+      "lede": "Your agent takes over the core decisions of a human lead observer.",
+      "cards": [
+        {
+          "title": "Read the night sky",
+          "desc": "Weather, forecast, tile progress, and legal candidates are packed into one compact state dictionary."
+        },
+        {
+          "title": "Decide every 900 seconds",
+          "desc": "At the end of each slot, choose a tile to observe or wait for a better moment."
+        },
+        {
+          "title": "One transparent score",
+          "desc": "Science yield, footprint uniformity, time efficiency, and rule compliance are all fixed and public."
+        }
+      ],
+      "closing": "No astronomy background required. Just an agent that reads state, weighs trade-offs, and makes decisions."
+    },
+    "participate": {
+      "kicker": "03 / How to participate",
+      "title": "Three steps to compete",
+      "lede": "From training to awards, the path is clear.",
+      "steps": [
+        {
+          "n": "01",
+          "title": "Register & team up",
+          "desc": "Sign up online and create or join a team. Solo developers are welcome too."
+        },
+        {
+          "n": "02",
+          "title": "Build your agent",
+          "desc": "Download the starter kit, run the baseline agent locally with the same protocol and scorer the platform uses, then iterate on the public development scenarios."
+        },
+        {
+          "n": "03",
+          "title": "Submit for evaluation",
+          "desc": "Upload a decisions.csv, or upload your agent and let the platform run it against hidden weather. Every team is scored by the same frozen scorer."
+        }
+      ],
+      "timeline": [
+        {
+          "label": "Oct 1–4",
+          "desc": "Online training"
+        },
+        {
+          "label": "Oct 5–7",
+          "desc": "Online competition"
+        },
+        {
+          "label": "Oct 17",
+          "desc": "Awards at GOSIM Shenzhen"
+        }
+      ],
+      "cta": "Register now"
+    },
+    "prizes": {
+      "kicker": "04 / Awards",
+      "title": "$5,500 in prizes",
+      "lede": "Three award tiers recognize the strongest observing agents.",
+      "tiers": [
+        {
+          "place": "First Prize",
+          "amount": "$2,000",
+          "count": "1 winner"
+        },
+        {
+          "place": "Second Prize",
+          "amount": "$1,000",
+          "count": "2 winners"
+        },
+        {
+          "place": "Third Prize",
+          "amount": "$500",
+          "count": "3 winners"
+        }
+      ]
+    },
+    "leaderboard": {
+      "kicker": "05 / Leaderboard",
+      "title": "Live standings",
+      "lede": "The board updates as soon as a submission is scored. Practice standings are informational; the online competition board decides the awards."
+    },
+    "evaluation": {
+      "kicker": "05 / Evaluation",
+      "title": "One frozen scorer, one public formula",
+      "lede": "The stage-one score rewards weighted effective targets observed under good conditions and charges every wasted second. The formula, the constants and the scorer source are published.",
+      "formula": "score = Σ action_score − idle_penalty × total_waste_seconds\naction_score = Σ_segments H(alt − 30°) · A · (dt / t_nominal) · target_value · priority_factor · (1 + B)\nA = transparency / (seeing · sky_brightness · airmass)",
+      "criteria": [
+        {
+          "term": "Science yield",
+          "desc": "Weighted target counts (LRG, ELG, QSO, BGS) scaled by observing quality A at each exposure segment."
+        },
+        {
+          "term": "Program match",
+          "desc": "A bonus when the decision program matches the DARK / BRIGHT / BACKUP band implied by the conditions."
+        },
+        {
+          "term": "Time efficiency",
+          "desc": "Idle observable time, invalid actions and exposures taken below the altitude limit or with the dome closed are penalised per second."
+        },
+        {
+          "term": "Rule compliance",
+          "desc": "A tile scores once. Exposures cannot cross a night boundary. Program and tile must match."
+        },
+        {
+          "term": "Coverage, reported",
+          "desc": "Completion and footprint uniformity are shown on the board and can enter the score in later stages."
+        },
+        {
+          "term": "Generalisation",
+          "desc": "The competition weather replay is hidden. Agents run on the platform and see only the current slot plus a four-slot forecast."
+        }
+      ],
+      "link": "Read the full rules"
+    },
+    "submission": {
+      "kicker": "06 / Submission",
+      "title": "Two ways to enter a run",
+      "items": [
+        {
+          "title": "Results file",
+          "desc": "Run your agent locally on a public scenario and upload decisions.csv (columns decision_id, slot_id, action, tile_id, program, reason). Scored within seconds."
+        },
+        {
+          "title": "Agent package",
+          "desc": "Upload agent.py or a zip. The platform runs it in a sandbox against hidden weather through the observer-v1 step protocol, then scores the generated decisions."
+        },
+        {
+          "title": "Limits",
+          "desc": "Python 3.12 standard library only for platform runs, no network, 20 s per decision, 10 minutes per scenario, 10 submissions per team per day in the online competition."
+        }
+      ],
+      "link": "Submission docs"
+    },
+    "credibility": {
+      "kicker": "07 / Organizers",
+      "title": "Who runs the event",
+      "items": [
+        {
+          "role": "Organizer",
+          "name": "GOSIM Foundation",
+          "desc": "Global Open-Source Innovation Meetup. Awards Day is held at GOSIM Shenzhen on October 17, 2026."
+        },
+        {
+          "role": "Evaluation",
+          "name": "CosmosBench",
+          "desc": "This platform. Open scorer, fixed scenarios, sandboxed agent runs, live board."
+        },
+        {
+          "role": "Science setting",
+          "name": "DESI-style survey",
+          "desc": "Site latitude 31.96°, 900-second slots, DARK / BRIGHT / BACKUP programs, LRG / ELG / QSO / BGS target classes."
+        }
+      ]
+    },
+    "stats_labels": {
+      "teams": "registered teams",
+      "submissions": "scored runs"
+    },
+    "announcements": {
+      "kicker": "Announcements",
+      "all": "All announcements"
+    }
+  },
+  "vision": {
+    "pageTitle": "Agent Observer",
+    "pageSubtitle": "A GOSIM Hackathon for Intelligent Survey Operations",
+    "intro": "This participant briefing explains why survey operations need agent observers, what a human leading observer does, how the challenge works across three planning horizons, what you submit, how scoring works, the astronomy you need, and the event schedule.",
+    "backToHome": "Back to home",
+    "sections": [
+      {
+        "kicker": "01 / Why",
+        "title": "The observing plan shapes the science sample",
+        "paragraphs": [
+          "A survey telescope maps large areas of sky systematically. It does not spend a whole night on a single object; it visits thousands of tiles across many nights, building up statistically powerful samples of galaxies, quasars, and stars.",
+          "Cosmology runs on samples like these: large, uniform, well calibrated. Wide surveys reveal the large-scale structure of the universe, constrain its expansion history, underpin dark energy measurements, and tie galaxy evolution to cosmic time. Spectroscopic surveys add a third dimension — redshift. Position on the sky plus redshift gives you a three-dimensional map of cosmic structure. DESI is one concrete, public example: spectra for large samples of galaxies and quasars, used to map the expanding universe and study dark energy.",
+          "But survey operations are hard. Weather changes what a 900-second exposure is worth through seeing, transparency, and sky brightness. Target visibility shifts with airmass and position on the sky. Observing programs prefer different conditions: DARK, BRIGHT, and BACKUP. The footprint has to be covered broadly and evenly for the science to hold up. High-priority tiles, nearly finished tiles, and under-covered regions all compete for the same block of time. One bad tactical choice spends real observing time and changes every plan that follows.",
+          "Modern AI systems open a path: an assistant that reads state, calls computational tools, reasons under physical constraints, proposes a plan, monitors quality, and explains every choice. The long-term goal is an observing agent that can genuinely take part in real survey operations. This hackathon narrows that long-term vision into one focused benchmark."
+        ],
+        "highlight": "You build the observer’s logic. We provide the mission definition, tile table, observing constraints, weather scenarios, simulator, and evaluation protocol."
+      },
+      {
+        "kicker": "02 / The Observer",
+        "title": "What a human lead observer actually does",
+        "paragraphs": [
+          "A seasoned lead observer makes a full set of decisions every 900-second slot: understand the science goal and decide tonight’s tactical priority; read seeing, transparency, sky brightness, and the short-term forecast; judge whether tonight suits DARK, BRIGHT, or BACKUP observing; keep the tiles that are visible now, legal, and worth the time; trade off science yield, priority, airmass, footprint balance, and wasted time; finish a tile when completing it beats over-exposure; replan around weather systems, forest-fire smoke, scheduled rocket launches, and changing efficiency; use fast validation signals to calibrate later decisions; and explain why this action was chosen in this slot.",
+          "These duties are what the observing agent is taking over. We do not expect an agent to outperform a human immediately. We expect it to be evaluated objectively against a fixed interface, fixed data, and fixed scoring — so it can become a viable component of real survey operations."
+        ],
+        "duties": [
+          {
+            "n": "01",
+            "title": "Night strategy",
+            "desc": "Understand the science goal and decide tonight’s tactical priority."
+          },
+          {
+            "n": "02",
+            "title": "Reading the weather",
+            "desc": "Seeing, transparency, sky brightness, and the short-term forecast."
+          },
+          {
+            "n": "03",
+            "title": "Program selection",
+            "desc": "Judge whether tonight suits DARK, BRIGHT, or BACKUP observing."
+          },
+          {
+            "n": "04",
+            "title": "Candidate filtering",
+            "desc": "Keep the tiles that are visible now, legal, and worth the time."
+          },
+          {
+            "n": "05",
+            "title": "Tile ranking",
+            "desc": "Trade off science yield, priority, airmass, footprint balance, and wasted time."
+          },
+          {
+            "n": "06",
+            "title": "Completion management",
+            "desc": "Finish a tile when the value of completing it beats the cost of over-exposure."
+          },
+          {
+            "n": "07",
+            "title": "Replanning",
+            "desc": "React to forecast disruptions, inserted requests, and changing observing efficiency."
+          },
+          {
+            "n": "08",
+            "title": "Quality monitoring",
+            "desc": "Use fast validation signals to calibrate later decisions."
+          },
+          {
+            "n": "09",
+            "title": "Logging the reason",
+            "desc": "Explain why the observer chose this action in this slot."
+          }
+        ]
+      },
+      {
+        "kicker": "03 / Challenge Format",
+        "title": "The Survey Mission Card and the challenge loop",
+        "paragraphs": [
+          "Every challenge instance starts from a Survey Mission Card. It states the science goal, footprint area, time budget, telescope site, available observing programs, target classes, observing constraints, and scoring rules. The mission card and public development data — tile catalogue, example weather scenarios, initial state, and visual reports — will be released before the hackathon begins.",
+          "Every participant faces the same evaluation scenario: the overall survey plan, per-night seeing and weather replay, ad-hoc observing requests, predictable mid-term disruptions, simulator, and scoring rule are fixed. The agent receives the current state and returns the next observing action every 900 seconds."
+        ],
+        "loopTitle": "The challenge loop",
+        "loop": [
+          {
+            "stage": "Fixed inputs",
+            "items": [
+              "Science goal",
+              "Footprint tiles",
+              "Weather replay"
+            ]
+          },
+          {
+            "stage": "Agent state",
+            "items": [
+              "Weather + forecast",
+              "Survey progress",
+              "Available tiles"
+            ]
+          },
+          {
+            "stage": "Reasoning",
+            "items": [
+              "Rank",
+              "Explain",
+              "Decide"
+            ]
+          },
+          {
+            "stage": "Action",
+            "items": [
+              "Observe",
+              "or wait"
+            ]
+          },
+          {
+            "stage": "Metrics",
+            "items": [
+              "Science yield",
+              "Uniformity + waste",
+              "Violations"
+            ]
+          }
+        ]
+      },
+      {
+        "kicker": "04 / Planning Horizons",
+        "title": "Plan across the survey, the week, and the next 900 seconds",
+        "paragraphs": [
+          "Long term — the organizers provide the overall survey plan in the mission card, while the agent manages that plan in flight. Final scoring includes survey completeness and completion quality.",
+          "Middle term — the agent builds a flexible month, week, and day plan from progress and forecast conditions, absorbing weather systems, forest-fire smoke, scheduled launches, and newly inserted observing requests. This layer may be enabled as mission cards evolve.",
+          "Short term — every 900-second slot, the agent makes an immediate tactical choice using the middle-term plan and real-time seeing and transparency. This is the focus of the scored benchmark."
+        ]
+      },
+      {
+        "kicker": "05 / Participant Job",
+        "title": "Build a reproducibly runnable observer project",
+        "paragraphs": [
+          "Programming language is not restricted. Your project must implement the observer interface defined by the Survey Mission Card: the simulator repeatedly provides the current situation, and the agent returns the next action, such as observe or wait, with a free-form reason. Examples on this site illustrate the concept; the mission card is the authoritative interface contract.",
+          "Run your agent against the challenge scenario to generate the observation results required by the competition platform.",
+          "Read the mission card, study the public development scenarios and visual reports, prototype against the observer interface, evaluate on development scenarios, inspect the observed-universe maps, then submit only the observation results generated by your agent."
+        ],
+        "actionCode": "return {\n    \"action\": \"observe\",\n    \"tile_id\": 100123,\n    \"plan\": \"DARK\",\n    \"reason\": \"good weather and highest useful gain\",\n}"
+      },
+      {
+        "kicker": "06 / Scoring",
+        "title": "Scientific, reproducible, inspectable evaluation",
+        "paragraphs": [
+          "The score rewards weighted effective targets and penalizes uneven footprint coverage, wasted time, rule violations, and unfinished high-priority tiles. A good agent trades immediate yield against completion, uniformity, weather risk, and operational discipline.",
+          "Evaluation follows open-science principles: fixed data and fixed scoring let every submitted observation result be evaluated consistently; readable result artifacts make outcomes inspectable; separate development and final-evaluation weather compare generalization instead of tuning to a known scenario.",
+          "Visualization turns completed tile fractions into an observed-target map — a 3D spatial sample and a 2D butterfly plot of sky position plus simulated redshift, in the style DESI uses — so different strategies produce visibly different maps.",
+          "The same observer interface can support future mission cards for real survey-log replay, z > 5 quasar planning, LBG planning, and target-of-opportunity inserts; the community can propose new fixed datasets for follow-up tracks."
+        ],
+        "formula": "score = science_score\n  - uniformity_penalty\n  - wasted_time_penalty\n  - violation_penalty\n  - incomplete_priority_penalty"
+      },
+      {
+        "kicker": "07 / Glossary",
+        "title": "A little astronomy is enough",
+        "paragraphs": [
+          "You do not need an astronomy background to read the state dictionary and reason about it. A Tile is a patch of sky observed in one pointing; the Footprint is the full survey area; Targets are the object counts inside each tile. High-priority tiles carry extra scientific weight, nearly complete tiles are one exposure from completion, and under-covered regions are lagging behind the rest of the footprint.",
+          "Seeing describes atmospheric blur — lower is better. Transparency describes how clear the atmosphere is — higher is better. Sky brightness is background glow; darker is better for faint targets. Airmass measures how much atmosphere the light crosses and changes with sky position — lower is better. DARK, BRIGHT, and BACKUP are programs matched to dark, bright, and poor conditions. donefrac is tile completion: 0 means just started, 1 means finished.",
+          "The state dictionary contains weather (current seeing, transparency, sky brightness, program, observability, and speed), forecast (this slot plus the next four), progress (tiles completed, mean completion, footprint balance, wasted time, and violations), and available_tiles (the legal options right now, with expected gain, expected waste, target counts, priority, and airmass)."
+        ],
+        "actionCode": "return {\n    \"action\": \"observe\",\n    \"tile_id\": 100123,\n    \"plan\": \"DARK\",\n    \"reason\": \"good weather and highest useful gain\",\n}"
+      },
+      {
+        "kicker": "08 / Timeline",
+        "title": "Three stages from training to awards",
+        "paragraphs": [
+          "The event has three stages: online training from October 1–4, online competition from October 5–7, and Awards Day at GOSIM Shenzhen on October 17.",
+          "Training introduces CosmosBench, the shared simulator, mission cards, and the observer interface. During the online competition, registered teams submit the observation results generated by their agents; CosmosBench powers evaluation and live standings."
+        ],
+        "rounds": [
+          {
+            "number": "01",
+            "name": "Online Training",
+            "dates": "Oct 1–4",
+            "format": "Online",
+            "challenge": "Learn CosmosBench, the shared simulator, mission cards, and the observer interface, then prepare with public development scenarios.",
+            "participants": "Open worldwide to individuals and teams."
+          },
+          {
+            "number": "02",
+            "name": "Online Competition",
+            "dates": "Oct 5–7",
+            "format": "Online",
+            "challenge": "Run the survey task and submit agent-generated observation results. Evaluation and live standings are powered by CosmosBench.",
+            "participants": "All registered teams."
+          },
+          {
+            "number": "03",
+            "name": "Awards Day",
+            "dates": "Oct 17",
+            "format": "GOSIM Shenzhen",
+            "challenge": "Final results are announced and prizes are presented.",
+            "participants": "Winning teams and invited participants."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "kicker": "01 / Why",
+    "title": "The observing plan is what shapes the final science sample",
+    "p1": "A survey telescope maps large areas of sky systematically. It does not spend a whole night on a single object; it visits thousands of tiles across many nights, building up statistically powerful samples of galaxies, quasars, and stars.",
+    "p2": "Cosmology runs on samples like these: large, uniform, well calibrated. Wide surveys reveal the large-scale structure of the universe, constrain its expansion history, underpin dark energy measurements, and tie galaxy evolution to cosmic time. Spectroscopic surveys add a third dimension — redshift. Position on the sky plus redshift gives you a three-dimensional map of cosmic structure.",
+    "p3": "DESI is one concrete, public example of exactly this: spectra for large samples of galaxies and quasars, used to map the expanding universe and study dark energy.",
+    "hardTitle": "Why survey operations are hard",
+    "hardItems": [
+      {
+        "term": "Weather",
+        "desc": "Changes what a 900-second exposure is worth, through seeing, transparency, and sky brightness."
+      },
+      {
+        "term": "Target visibility",
+        "desc": "Shifts through the night with airmass and position on the sky."
+      },
+      {
+        "term": "Observing programs",
+        "desc": "Each prefers different conditions: DARK, BRIGHT, and BACKUP."
+      },
+      {
+        "term": "The footprint",
+        "desc": "Has to be covered broadly and evenly for the science analysis to hold up."
+      }
+    ],
+    "hardClosing": "High-priority tiles, nearly finished tiles, and under-covered regions all compete for the same block of time. One bad tactical choice spends real observing time and changes every plan that follows. Night operations demand decisions that are both effective and explainable.",
+    "whyNowTitle": "Why an observing agent, and why now",
+    "whyNow": "The long-term goal is an observing agent that can genuinely take part in real survey operations. A human lead observer translates science goals, weather, instrument state, tile completion, and candidate fields into a tactical decision, right now. Modern AI systems open a path: an assistant that reads state, calls computational tools, reasons under physical constraints, proposes a plan, monitors quality, and explains every choice.",
+    "whyNowClosing": "This hackathon narrows that long-term vision into one focused benchmark.",
+    "split": [
+      {
+        "side": "You build",
+        "desc": "The observer’s logic — the system that decides."
+      },
+      {
+        "side": "We provide",
+        "desc": "The mission definition, tile table, observing constraints, weather scenarios, simulator, and evaluation protocol."
+      }
+    ]
+  },
+  "observer": {
+    "kicker": "02 / The Observer",
+    "title": "What a human lead observer actually does",
+    "intro": "These nine jobs are what the observing agent is taking over.",
+    "duties": [
+      {
+        "n": "01",
+        "title": "Night strategy",
+        "desc": "Understand the science goal and decide tonight’s tactical priority."
+      },
+      {
+        "n": "02",
+        "title": "Reading the weather",
+        "desc": "Seeing, transparency, sky brightness, and the short-term forecast."
+      },
+      {
+        "n": "03",
+        "title": "Program selection",
+        "desc": "Judge whether tonight suits DARK, BRIGHT, or BACKUP observing."
+      },
+      {
+        "n": "04",
+        "title": "Candidate filtering",
+        "desc": "Keep the tiles that are visible now, legal, and worth the time."
+      },
+      {
+        "n": "05",
+        "title": "Tile ranking",
+        "desc": "Trade off science yield, priority, airmass, footprint balance, and wasted time."
+      },
+      {
+        "n": "06",
+        "title": "Completion management",
+        "desc": "Finish a tile when the value of completing it beats the cost of over-exposure."
+      },
+      {
+        "n": "07",
+        "title": "Replanning",
+        "desc": "React to forecast disruptions, inserted requests, and changing observing efficiency."
+      },
+      {
+        "n": "08",
+        "title": "Quality monitoring",
+        "desc": "Use fast validation signals to calibrate later decisions."
+      },
+      {
+        "n": "09",
+        "title": "Logging the reason",
+        "desc": "Explain why the observer chose this action in this slot."
+      }
+    ]
+  },
+  "challenge": {
+    "kicker": "03 / Format",
+    "title": "The Survey Mission Card",
+    "intro": "Every challenge instance starts from a Survey Mission Card. It defines the science goal, footprint area, time budget, telescope site, observing programs, target classes, constraints, scoring rules, and authoritative interface contract. The mission card and public development data will be released before the hackathon begins.",
+    "cards": [
+      {
+        "title": "Mission definition",
+        "desc": "Which sky to cover, which targets matter, how much time you have."
+      },
+      {
+        "title": "Telescope / site",
+        "desc": "Latitude, visibility limits, slot length, airmass constraints."
+      },
+      {
+        "title": "Public dev data",
+        "desc": "Tile catalogue, example weather scenarios, initial state, and visual reports."
+      },
+      {
+        "title": "Final eval data",
+        "desc": "Organizer-supplied weather replay, run in the same simulator."
+      },
+      {
+        "title": "Your deliverable",
+        "desc": "The observation results generated by your agent, submitted through the competition platform."
+      },
+      {
+        "title": "One evaluation",
+        "desc": "Every agent faces the same survey plan, weather replay, inserted requests, disruptions, simulator, and scoring rule."
+      }
+    ],
+    "loopTitle": "The challenge loop",
+    "loop": [
+      {
+        "stage": "Fixed inputs",
+        "items": [
+          "Science goal",
+          "Footprint tiles",
+          "Weather replay"
+        ]
+      },
+      {
+        "stage": "Agent state",
+        "items": [
+          "Weather + forecast",
+          "Survey progress",
+          "Available tiles"
+        ]
+      },
+      {
+        "stage": "Reasoning",
+        "items": [
+          "Rank",
+          "Explain",
+          "Decide"
+        ]
+      },
+      {
+        "stage": "Action",
+        "items": [
+          "Observe",
+          "or wait"
+        ]
+      },
+      {
+        "stage": "Metrics",
+        "items": [
+          "Science yield",
+          "Uniformity + waste",
+          "Violations"
+        ]
+      }
+    ],
+    "loopNote": "The only variable is agent strategy. The overall survey plan, weather replay, ad-hoc requests, predictable disruptions, simulator, and scoring rule are fixed for every participant."
+  },
+  "build": {
+    "kicker": "04 / Participant Job",
+    "title": "What participants do",
+    "intro": "Build and run an agent in any programming language using the observer interface defined by the Survey Mission Card. Submit only the observation results generated by the agent.",
+    "io": [
+      {
+        "term": "Input",
+        "desc": "A small state dictionary: weather, forecast, survey progress, and the legal candidate tiles."
+      },
+      {
+        "term": "Output",
+        "desc": "One observing plan for the next 900-second slot, such as observe a tile_id under DARK or wait. The reason text is free form."
+      },
+      {
+        "term": "Scoring",
+        "desc": "Effective targets, tiles completed, evenness of footprint coverage, time efficiency, and action legality."
+      },
+      {
+        "term": "Deliverable",
+        "desc": "Only the observation results generated by the agent, submitted in the format required by the competition platform."
+      }
+    ],
+    "starterTitle": "Illustrative example only",
+    "starterIntro": "This minimal utility rule illustrates one possible design; it does not constrain implementation language, architecture, or strategy. Follow the Survey Mission Card for the official interface.",
+    "starterCode": "tiles = state[\"available_tiles\"]\nif len(tiles) == 0:\n    return {\"action\": \"wait\"}\n\nbest = max(tiles, key=lambda t: t[\"expected_weighted_gain\"])\nreturn {\"action\": \"observe\", \"tile_id\": best[\"tile_id\"], \"plan\": \"DARK\",\n        \"reason\": \"highest useful gain\"}",
+    "starterClosing": "Weather, completion, airmass, footprint balance, and waste are useful strategy factors. How to weigh them and how to structure the agent are left to each participant.",
+    "archTitle": "Illustrative architectures",
+    "architectures": [
+      {
+        "name": "Utility agent",
+        "desc": "Score every candidate tile, take the highest."
+      },
+      {
+        "name": "Weather-aware planner",
+        "desc": "Use the forecast to decide whether to spend or save a high-value tile."
+      },
+      {
+        "name": "Completion manager",
+        "desc": "Spot tiles near donefrac = 1 and manage over-exposure waste."
+      },
+      {
+        "name": "Footprint balancer",
+        "desc": "Up-weight regions that are behind on coverage."
+      },
+      {
+        "name": "Risk-controlled agent",
+        "desc": "Filter out high-waste, high-airmass, or low-value options before ranking."
+      },
+      {
+        "name": "Lead / support pair",
+        "desc": "One module proposes the plan, another checks constraints and explains the risk."
+      },
+      {
+        "name": "LLM planner + rule checker",
+        "desc": "Language reasoning for strategy, deterministic code for legality."
+      }
+    ],
+    "archCode": "AgentObserver\n  -> WeatherInterpreter\n  -> ProgramSelector\n  -> CandidateFilter\n  -> TileRanker\n  -> FootprintBalancer\n  -> CompletionManager\n  -> SupportObserver / RiskChecker\n  -> ReasonLogger",
+    "scenariosTitle": "Situations you will meet",
+    "scenariosIntro": "A strong agent handles a handful of recurring situations.",
+    "scenarios": [
+      {
+        "when": "Excellent dark night",
+        "then": "Spend the slot on high expected gain, high priority, faint-target programs."
+      },
+      {
+        "when": "Marginal but usable weather",
+        "then": "Prefer robust tiles, completion opportunities, and low-waste options."
+      },
+      {
+        "when": "Forecast improving",
+        "then": "Compare current speed against future speed before spending a high-value tile."
+      },
+      {
+        "when": "Footprint unbalanced",
+        "then": "Give under-covered regions a bonus."
+      },
+      {
+        "when": "Tile near completion",
+        "then": "Finish it when the completion bonus beats the waste cost."
+      },
+      {
+        "when": "High airmass",
+        "then": "Discount the utility of tiles that are harder to observe well."
+      }
+    ]
+  },
+  "scoring": {
+    "kicker": "05 / Scoring",
+    "title": "How the score works",
+    "intro": "The score rewards weighted effective targets and penalizes uneven footprint coverage, wasted time, rule violations, and unfinished high-priority tiles. A good agent trades immediate yield against completion, uniformity, weather risk, and operational discipline.",
+    "formula": "score = science_score\n      - uniformity_penalty\n      - wasted_time_penalty\n      - violation_penalty\n      - incomplete_priority_penalty",
+    "principlesTitle": "Open-science design principles",
+    "principles": [
+      {
+        "term": "Consistent benchmark",
+        "desc": "Fixed data and scoring evaluate every submitted observation result under the same standard."
+      },
+      {
+        "term": "Inspectable results",
+        "desc": "Readable observation-result artifacts make each team’s outcome reviewable."
+      },
+      {
+        "term": "Scientific but light evaluation",
+        "desc": "Target yield, tile completion, weather response, footprint balance, and waste."
+      },
+      {
+        "term": "Clearly bounded scoring",
+        "desc": "Short-term planning is primary; middle-term planning may be enabled as mission cards evolve."
+      },
+      {
+        "term": "Dev and eval weather separated",
+        "desc": "Separate scenarios compare generalization instead of tuning to known weather."
+      }
+    ],
+    "principlesClosing": "Future mission cards can add real survey-log replay, z > 5 quasar planning, LBG planning, and target-of-opportunity inserts. The community can propose new fixed datasets for follow-up tracks.",
+    "vizTitle": "Seeing the result",
+    "viz": [
+      "The test data includes a deterministic table of simulated target coordinates. Each tile’s target count is bound to fixed simulated coordinates through the random seed, the tile_id, and the target class.",
+      "After a run, the simulator converts completed tile fractions into an observed-target map — how many simulated galaxies and quasars the agent actually reached.",
+      "A 3D view keeps the observed simulated universe as a spatial sample; a 2D butterfly plot folds sky position and simulated redshift together, in the style DESI uses.",
+      "Different observing strategies produce visibly different maps of cosmic structure. The visualization helps a team explain its strategy, its footprint balance, and what it missed."
+    ],
+    "vizNote": "The map is the benchmark’s visualization layer. The scored loop is still the planning task itself."
+  },
+  "glossary": {
+    "kicker": "06 / Glossary",
+    "title": "A little astronomy is enough",
+    "intro": "You do not need an astronomy background to read the state dictionary and reason about it. This much will do.",
+    "terms": [
+      {
+        "term": "Tile",
+        "desc": "A small patch of sky the telescope can observe in one pointing."
+      },
+      {
+        "term": "Footprint",
+        "desc": "The whole sky area the survey intends to cover."
+      },
+      {
+        "term": "Targets",
+        "desc": "In this planning benchmark, the object counts inside each tile."
+      },
+      {
+        "term": "Seeing",
+        "desc": "How blurred the image is. Lower is better."
+      },
+      {
+        "term": "Transparency",
+        "desc": "How clear the atmosphere is. Higher is better."
+      },
+      {
+        "term": "Sky brightness",
+        "desc": "Background noise. For faint targets, darker is usually better."
+      },
+      {
+        "term": "Airmass",
+        "desc": "How much atmosphere the light passes through. Lower is better."
+      },
+      {
+        "term": "DARK / BRIGHT / BACKUP",
+        "desc": "Observing programs matched to dark, bright, and poor sky conditions."
+      },
+      {
+        "term": "Priority and coverage",
+        "desc": "High-priority, nearly complete, and under-covered tiles compete for each observing slot."
+      },
+      {
+        "term": "donefrac",
+        "desc": "Tile completion: 0 means just started, 1 means finished."
+      }
+    ],
+    "stateTitle": "What is in the state",
+    "state": [
+      {
+        "field": "weather",
+        "desc": "Current seeing, transparency, sky brightness, program, observability, and speed."
+      },
+      {
+        "field": "forecast",
+        "desc": "This slot plus the next four, which is what makes replanning possible."
+      },
+      {
+        "field": "progress",
+        "desc": "Tiles completed, mean completion, footprint balance, wasted time, and violations."
+      },
+      {
+        "field": "available_tiles",
+        "desc": "The legal options right now, with expected gain, expected waste, target counts, priority, and airmass."
+      }
+    ],
+    "actionCode": "return {\n    \"action\": \"observe\",\n    \"tile_id\": 100123,\n    \"plan\": \"DARK\",\n    \"reason\": \"good weather and highest useful gain\",\n}"
+  },
+  "schedule": {
+    "kicker": "07 / Timeline",
+    "title": "Schedule",
+    "intro": "Online training runs October 1–4, the CosmosBench-powered online competition runs October 5–7, and Awards Day is October 17.",
+    "challengeLabel": "Survey task",
+    "participantsLabel": "Who participates",
+    "rounds": [
+      {
+        "number": "01",
+        "name": "Online Training",
+        "dates": "Oct 1–4",
+        "format": "Online",
+        "challenge": "Learn CosmosBench, the shared simulator, mission cards, and the observer interface, then prepare with public development scenarios.",
+        "participants": "Open worldwide to individuals and teams."
+      },
+      {
+        "number": "02",
+        "name": "Online Competition",
+        "dates": "Oct 5–7",
+        "format": "Online",
+        "challenge": "Complete the survey task and submit agent-generated observation results. Evaluation and live standings are powered by CosmosBench.",
+        "participants": "All registered teams."
+      },
+      {
+        "number": "03",
+        "name": "Awards Day",
+        "dates": "Oct 17",
+        "format": "GOSIM Shenzhen",
+        "challenge": "Final results are announced and prizes are presented.",
+        "participants": "Winning teams and invited participants."
+      }
+    ]
+  },
+  "leaderboard": {
+    "kicker": "Leaderboard",
+    "title": "Standings",
+    "intro": "One mission card, weather replay, simulator, and scoring function. Evaluation and live standings are powered by CosmosBench.",
+    "refresh": "Refresh",
+    "full": "Full board",
+    "updated": "Updated",
+    "loading": "Loading CosmosBench…",
+    "empty": "No scored submission yet in this phase.",
+    "unavailable": "The CosmosBench leaderboard is temporarily unavailable. Please try again shortly.",
+    "team": "Team / Agent",
+    "score": "Score",
+    "science": "Science",
+    "completion": "Completion",
+    "uniformity": "Uniformity",
+    "submissions": "Result submissions",
+    "phase": "Phase",
+    "scenarios": "Scenarios",
+    "rank": "#",
+    "kind": "Type",
+    "best_run": "Best run",
+    "hidden": "Standings for this phase are hidden until the organizers publish them.",
+    "frozen": "This board is frozen. New submissions are still scored but the board is not updated.",
+    "published": "Final results published.",
+    "live": "Live",
+    "tie": "Ties keep the earlier submission ahead. A team's best scored submission counts.",
+    "mean_note": "With several scenarios in a phase, the score is the mean over scenarios.",
+    "download_csv": "Download CSV",
+    "json": "JSON",
+    "n_entries": "{n} teams",
+    "status": {
+      "open": "open",
+      "upcoming": "upcoming",
+      "closed": "closed",
+      "disabled": "disabled"
+    }
+  },
+  "cta": {
+    "title": "Hand the next move of the night sky to the agent you wrote",
+    "tagline": "Same survey plan, weather replay, inserted requests, simulator, and scoring rule. The only variable is strategy.",
+    "location": "Online development and CosmosBench evaluation · October 17 at GOSIM Shenzhen",
+    "button": "Register now",
+    "tag": "2026 / GOSIM / AGENT OBSERVER"
+  },
+  "footer": {
+    "copyright": "2026 GOSIM · Agent Observer",
+    "mainSite": "GOSIM",
+    "lockup": "OPEN / OBSERVER",
+    "links": {
+      "rules": "Rules",
+      "docs": "Docs",
+      "api": "API",
+      "status": "Status",
+      "code": "Code of conduct",
+      "contact": "Contact"
+    },
+    "contact_email": "hackathon@gosim.org"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "download": "Download",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "none": "None",
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "updated": "Updated",
+    "created": "Created",
+    "actions": "Actions",
+    "status": "Status",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "optional": "optional",
+    "required": "required",
+    "public": "public",
+    "hidden": "hidden",
+    "copy": "Copy",
+    "copied": "Copied",
+    "view": "View",
+    "error_title": "Something went wrong",
+    "not_found": "Page not found",
+    "forbidden": "You do not have access to this page",
+    "home": "Home",
+    "utc": "UTC",
+    "seconds": "s",
+    "close": "Close"
+  },
+  "status": {
+    "queued": "Queued",
+    "running": "Running",
+    "scored": "Scored",
+    "invalid": "Invalid",
+    "failed": "Failed",
+    "cancelled": "Cancelled"
+  },
+  "kind": {
+    "results": "Results file",
+    "agent": "Agent run"
+  },
+  "auth": {
+    "register_title": "Register",
+    "register_lede": "Create an account, then create or join a team. One account per person.",
+    "login_title": "Log in",
+    "login_lede": "Use the email and password you registered with.",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password (8+ characters)",
+    "password2": "Repeat password",
+    "github": "GitHub username",
+    "affiliation": "Affiliation",
+    "looking_for_team": "I am looking for a team",
+    "agree": "I have read the rules and the code of conduct.",
+    "submit_register": "Create account",
+    "submit_login": "Log in",
+    "have_account": "Already registered?",
+    "no_account": "No account yet?",
+    "forgot": "Forgot password?",
+    "forgot_title": "Reset password",
+    "forgot_lede": "Enter your email. If it is registered, a reset link is sent.",
+    "send_reset": "Send reset link",
+    "reset_title": "Choose a new password",
+    "reset_submit": "Set password",
+    "forgot_sent_title": "Check your inbox",
+    "forgot_sent": "If that email is registered, a reset link has been sent. It is valid for two hours.",
+    "forgot_no_email": "Email delivery is not configured on this deployment. Contact the organizers to reset your password.",
+    "reset_invalid_title": "Link expired",
+    "reset_invalid": "This reset link is invalid or has expired. Request a new one.",
+    "verify_ok_title": "Email verified",
+    "verify_ok": "Your email address is verified.",
+    "verify_failed_title": "Verification failed",
+    "verify_failed": "This verification link is invalid or has expired.",
+    "closed_notice": "Registration is currently closed.",
+    "errors": {
+      "registration_closed": "Registration is closed.",
+      "rate_limited": "Too many attempts. Try again in a few minutes.",
+      "name_required": "Name is required.",
+      "email_invalid": "Enter a valid email address.",
+      "password_too_short": "Password must be at least 8 characters.",
+      "password_too_long": "Password is too long.",
+      "password_mismatch": "Passwords do not match.",
+      "agree_required": "You must accept the rules.",
+      "email_taken": "This email is already registered.",
+      "bad_credentials": "Email or password is incorrect.",
+      "banned": "This account is suspended."
+    }
+  },
+  "mail": {
+    "verify_subject": "Verify your Agent Observer account",
+    "verify_body": "Open this link to verify your email:\n{url}\n",
+    "reset_subject": "Reset your Agent Observer password",
+    "reset_body": "Open this link to choose a new password (valid 2 hours):\n{url}\n"
+  },
+  "dash": {
+    "title": "Dashboard",
+    "welcome": "Signed in as {name}",
+    "no_team_title": "You are not on a team yet",
+    "no_team": "Create a team (solo is fine) or join one with an invite code before submitting.",
+    "team": "Team",
+    "members": "Members",
+    "recent": "Recent submissions",
+    "all_submissions": "All submissions",
+    "new_submission": "New submission",
+    "phases": "Phases",
+    "quota": "today",
+    "best": "Best",
+    "quick": {
+      "kit": "Download starter kit",
+      "docs": "Read the docs",
+      "board": "Leaderboard"
+    },
+    "verify_notice": "Your email is not verified yet. Check your inbox."
+  },
+  "profile": {
+    "title": "Profile",
+    "role": "Role",
+    "save": "Save profile",
+    "password_title": "Change password",
+    "current": "Current password",
+    "new": "New password",
+    "new2": "Repeat new password",
+    "change": "Change password",
+    "token_title": "API token",
+    "token_lede": "Use this token with sac_submit.py or the JSON API. Rotating it invalidates the old one.",
+    "rotate": "Rotate token",
+    "language": "Interface language"
+  },
+  "team": {
+    "title": "Team",
+    "create_title": "Create a team",
+    "join_title": "Join with an invite code",
+    "name": "Team name",
+    "max_size": "Max size (1–8)",
+    "project_idea": "Approach (optional)",
+    "github_repo": "Repository (optional)",
+    "invite_code": "Invite code",
+    "create": "Create team",
+    "join": "Join team",
+    "leader": "Leader",
+    "invite_lede": "Share this code with teammates. Anyone with the code can join until the team is full or locked.",
+    "regenerate": "Regenerate code",
+    "locked": "Locked (no new members)",
+    "kick": "Remove",
+    "transfer": "Make leader",
+    "leave": "Leave team",
+    "disband": "Disband team",
+    "disband_confirm": "Disband the team? This cannot be undone.",
+    "open_teams": "Teams looking for members",
+    "no_open_teams": "No open teams right now.",
+    "ask_code": "Ask the leader for the invite code.",
+    "solo_hint": "Competing alone? Create a team of size 1.",
+    "errors": {
+      "already_in_team": "You are already on a team.",
+      "name_length": "Team name must be 2–60 characters.",
+      "name_taken": "That team name is taken.",
+      "bad_code": "Unknown invite code.",
+      "locked": "This team is locked.",
+      "full": "This team is full.",
+      "leader_must_transfer": "Transfer leadership before leaving.",
+      "has_submissions": "A team with submissions cannot be disbanded."
+    }
+  },
+  "submit": {
+    "title": "New submission",
+    "phase": "Phase",
+    "kind": "Submission type",
+    "scenario": "Scenario",
+    "file": "File",
+    "file_results": "decisions.csv",
+    "file_agent": "agent.py or agent.zip (entry file agent.py at the root)",
+    "title_field": "Label (optional)",
+    "notes": "Notes (optional, private to your team)",
+    "button": "Upload and queue",
+    "quota_left": "{n} left today",
+    "phase_closed": "closed",
+    "phase_upcoming": "opens {date}",
+    "help_results": "Score a decisions.csv you produced locally against the selected public scenario.",
+    "help_agent": "The platform runs your agent on every scenario of the phase (hidden weather included) and averages the scores.",
+    "errors": {
+      "need_team": "Create or join a team first.",
+      "bad_phase": "Unknown phase.",
+      "phase_closed": "This phase is not open for submissions.",
+      "bad_kind": "Unknown submission type.",
+      "results_not_allowed": "This phase does not accept results files.",
+      "agents_not_allowed": "This phase does not accept agent packages.",
+      "bad_scenario": "Choose a scenario of this phase.",
+      "scenario_hidden": "This scenario's weather is hidden; submit an agent instead.",
+      "daily_limit": "Daily limit of {n} submissions reached for this phase.",
+      "file_required": "Choose a file.",
+      "results_csv": "Results must be a .csv file.",
+      "agent_file": "Agent must be a .py or .zip file.",
+      "too_large": "File exceeds {mb} MB.",
+      "invalid_file": "File rejected",
+      "cannot_cancel": "Only queued submissions can be cancelled."
+    }
+  },
+  "subs": {
+    "title": "Submissions",
+    "id": "ID",
+    "when": "Submitted",
+    "phase": "Phase",
+    "kind": "Type",
+    "score": "Score",
+    "science": "Science",
+    "completion": "Completion",
+    "uniformity": "Uniformity",
+    "by": "By",
+    "empty": "No submissions yet.",
+    "detail_title": "Submission #{id}",
+    "file": "File",
+    "sha": "SHA-256",
+    "error": "Error",
+    "evaluations": "Evaluations",
+    "scenario": "Scenario",
+    "runtime": "Runtime",
+    "steps": "Steps",
+    "report": "Report JSON",
+    "decisions": "decisions.csv",
+    "log": "Agent log",
+    "cancel": "Cancel",
+    "waiting": "Waiting for the worker… this page refreshes automatically.",
+    "waste": "Waste",
+    "idle": "idle",
+    "invalid": "invalid actions",
+    "unproductive": "unproductive exposure",
+    "actions_title": "Action timeline",
+    "region_title": "Region completion",
+    "tiles_done": "tiles completed",
+    "stderr": "stderr (last lines)",
+    "warnings": "Warnings",
+    "penalty": "waste penalty",
+    "invalid_count": "invalid",
+    "show_all": "Show all actions"
+  },
+  "flash": {
+    "profile_saved": "Profile saved.",
+    "password_changed": "Password changed.",
+    "token_rotated": "API token rotated.",
+    "team_created": "Team created.",
+    "team_joined": "Joined {name}.",
+    "team_saved": "Team updated.",
+    "team_left": "You left the team.",
+    "team_disbanded": "Team disbanded.",
+    "submission_queued": "Submission queued for evaluation.",
+    "submission_cancelled": "Submission cancelled."
+  },
+  "resources": {
+    "kicker": "Resources",
+    "title": "Starter kit and data",
+    "lede": "Everything needed to run and score an agent locally. The platform uses these exact files.",
+    "kit": "Starter kit (zip)",
+    "kit_desc": "agent.py baseline, local_runner.py, protocol.py, scorer.py, score_config.json, example scenario, generator, SKILL.md, sac_submit.py.",
+    "scorer": "scorer.py",
+    "scorer_desc": "The frozen stage-one scorer. Standard library only, Python 3.9+.",
+    "protocol": "protocol.py",
+    "protocol_desc": "The observer-v1 state builder shared by the platform and local_runner.py.",
+    "skill": "SKILL.md",
+    "skill_desc": "One-file instructions an AI coding agent can follow to build, test and submit.",
+    "scenarios": "Scenarios",
+    "weather": "weather.csv",
+    "tiles": "tiles.csv",
+    "config": "score_config.json",
+    "hidden": "hidden (platform runs only)",
+    "nights": "nights",
+    "slots": "slots",
+    "tiles_n": "tiles",
+    "seed": "seed",
+    "cli": "Command line"
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Questions before you register",
+    "items": [
+      {
+        "q": "Do I need an astronomy background?",
+        "a": "No. The state your agent receives is a small JSON document: current weather, a four-slot forecast, progress, and the candidate tiles with altitude, airmass, quality, expected gain and target counts. The glossary in the brief covers the few terms that appear."
+      },
+      {
+        "q": "Can I compete alone?",
+        "a": "Yes. Create a team with a size of 1. Teams may have up to 8 members."
+      },
+      {
+        "q": "Which languages can I use?",
+        "a": "Locally, any language: run your agent yourself and upload decisions.csv. For platform runs on hidden weather, the entry point is a Python 3.12 script using the standard library only, with no network access."
+      },
+      {
+        "q": "Can I use an LLM or a commercial API?",
+        "a": "For local runs on public scenarios, yes. Platform runs have no network access, so an LLM cannot be called during a hidden-weather run; use it to design the strategy, not at decision time."
+      },
+      {
+        "q": "How many submissions can I make?",
+        "a": "Practice: 50 per team per day. Online competition: 10 per team per day. A team's best scored submission counts."
+      },
+      {
+        "q": "Is the leaderboard score the final result?",
+        "a": "The online competition board (October 5–7) determines the ranking. Organizers verify the top entries for rule compliance before awards are confirmed on October 17."
+      },
+      {
+        "q": "Do I have to attend in Shenzhen?",
+        "a": "No. The competition is online. Winning teams are invited to Awards Day at GOSIM Shenzhen on October 17; remote acceptance is possible."
+      },
+      {
+        "q": "Is the platform free?",
+        "a": "Yes. Registration, data, the starter kit and platform runs are free."
+      },
+      {
+        "q": "Must I open-source my agent?",
+        "a": "Not required. Organizers may ask top teams for their agent package to reproduce the result before awards are confirmed."
+      },
+      {
+        "q": "What happens if my agent crashes or times out?",
+        "a": "The submission is marked failed with the agent's stderr tail; it does not count on the board and does not consume your best score. Fix and resubmit within the daily limit."
+      },
+      {
+        "q": "Are prizes taxed?",
+        "a": "Prize amounts are gross. Payment details are confirmed with winning teams after Awards Day."
+      }
+    ]
+  },
+  "rules_page": {
+    "kicker": "Rules",
+    "title": "Competition rules and scoring",
+    "version": "Rules version 1.0 · 2026-09-09",
+    "phases_title": "Phase configuration (live)",
+    "daily": "submissions/day",
+    "board": "board"
+  },
+  "docs_page": {
+    "kicker": "Docs",
+    "title": "Participant documentation",
+    "toc": "Contents"
+  },
+  "ann": {
+    "kicker": "Announcements",
+    "title": "Announcements",
+    "empty": "No announcements yet.",
+    "pinned": "Pinned"
+  },
+  "admin": {
+    "title": "Admin"
+  },
+  "construction": {
+    "title": "Site Under Construction",
+    "desc": "This site is still being completed. The mission card and registration details are forthcoming; the schedule shown on the site is the current confirmed schedule.",
+    "ok": "Got it"
+  }
+}

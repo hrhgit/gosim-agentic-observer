@@ -1,0 +1,975 @@
+{
+  "meta": {
+    "title": "Hackathon Agentic Observer · GOSIM",
+    "brand": "Hackathon Agentic Observer",
+    "description": "Hackathon GOSIM de relevé du ciel : écrivez un agent d'observation pour un observatoire — il voit l'état public du ciel mais jamais la vraie météo, et décide toutes les 15 minutes quelle zone photographier.",
+    "pages": {
+      "start": {
+        "title": "Démarrer en 3 étapes",
+        "description": "Lisez la documentation, construisez votre agent et soumettez — trois étapes pour un premier score."
+      },
+      "about": {
+        "title": "À propos",
+        "description": "L'organisateur, le mécène et le comité scientifique du hackathon Agentic Observer."
+      }
+    },
+    "wordmark_note": "Agentic Observer"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "download": "Télécharger",
+    "back": "Retour",
+    "yes": "Oui",
+    "no": "Non",
+    "none": "Aucun",
+    "loading": "Chargement…",
+    "refresh": "Actualiser",
+    "updated": "Mis à jour",
+    "created": "Créé",
+    "actions": "Actions",
+    "status": "Statut",
+    "name": "Nom",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "optional": "facultatif",
+    "required": "obligatoire",
+    "public": "public",
+    "hidden": "masqué",
+    "copy": "Copier",
+    "copied": "Copié",
+    "view": "Voir",
+    "error_title": "Une erreur est survenue",
+    "not_found": "Page introuvable",
+    "forbidden": "Accès refusé",
+    "home": "Accueil",
+    "utc": "UTC",
+    "seconds": "s",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "all": "Tout",
+    "confirm": "Confirmer",
+    "saved": "Enregistré.",
+    "deleted": "Supprimé.",
+    "upload": "Téléverser",
+    "uploading": "Téléversement…",
+    "working": "Traitement…",
+    "submit": "Soumettre",
+    "team": "Équipe",
+    "user": "Utilisateur",
+    "date": "Date",
+    "level": "Niveau",
+    "id": "ID",
+    "signed_in_as": "Connecté en tant que",
+    "no_data": "Rien pour l'instant.",
+    "by": "par",
+    "or": "ou"
+  },
+  "nav": {
+    "start": "Premiers pas",
+    "brief": "Présentation complète",
+    "rules": "Règlement",
+    "cards": "Cartes de mission",
+    "docs": "Documentation",
+    "resources": "Ressources",
+    "leaderboard": "Classement",
+    "faq": "FAQ",
+    "dashboard": "Tableau de bord",
+    "login": "Connexion",
+    "register": "Inscription",
+    "logout": "Déconnexion",
+    "admin": "Admin",
+    "announcements": "Annonces",
+    "submit": "Participer",
+    "team": "Équipe",
+    "submissions": "Historique de participation",
+    "profile": "Profil",
+    "menu": "Menu",
+    "registration_closed": "Inscriptions closes",
+    "reset": "Réinitialiser le mot de passe",
+    "teammates": "Trouver des coéquipiers",
+    "more": "Plus",
+    "series": {
+      "label": "Série des hackathons de Shenzhen",
+      "pick": "Choisir un événement",
+      "current": "Actuel",
+      "items": [
+        {
+          "n": "01",
+          "name": "Hackathon Agentic Observer",
+          "sub": "Shenzhen 2026 · Agentic Observer",
+          "href": "",
+          "current": true
+        },
+        {
+          "n": "02",
+          "name": "Hackathon Agentic App",
+          "sub": "Shenzhen 2026 · Agentic App",
+          "href": "https://create.gosim.org/agenticapp26/",
+          "current": false
+        },
+        {
+          "n": "03",
+          "name": "Hackathon Agentic Software Factory",
+          "sub": "Shenzhen 2026 · OAIC",
+          "href": "https://create.gosim.org/factory26/",
+          "current": false
+        }
+      ]
+    },
+    "register_float": "S'inscrire",
+    "about": "À propos"
+  },
+  "phase_clock": {
+    "now": "En cours",
+    "next": "Phase suivante",
+    "no_open": "Aucune phase ouverte",
+    "fallback_next": "Compétition en ligne",
+    "ends": "Fin de {name}",
+    "in": "dans {d} j {h} h",
+    "days": "j",
+    "hours": "h",
+    "minutes": "min",
+    "seconds": "s",
+    "countdown_aria": "Compte à rebours avant la phase suivante",
+    "none_scheduled": "Aucune phase à venir pour l'instant",
+    "starts_on": "début le {date} (heure de Pékin)",
+    "left_days": "dans {n} jours",
+    "left_day": "dans 1 jour",
+    "left_hours": "dans {n} h",
+    "left_soon": "commence bientôt",
+    "next_line": "Phase suivante : {name} · {day} · {left}"
+  },
+  "cta": {
+    "title": "La prochaine observation, c'est vous et votre agent qui la décidez",
+    "tagline": "Même plan de relevé, même rejeu météo, mêmes requêtes, même simulateur, même barème. La seule variable, c'est la stratégie.",
+    "location": "Développement en ligne, évaluation unifiée · 17 octobre, GOSIM Shenzhen",
+    "button": "S'inscrire",
+    "tag": "2026 / GOSIM / AGENTIC OBSERVER"
+  },
+  "footer": {
+    "copyright": "2026 GOSIM · Hackathon Agentic Observer",
+    "mainSite": "GOSIM",
+    "lockup": "OPEN / OBSERVER",
+    "links": {
+      "rules": "Règlement",
+      "docs": "Docs",
+      "api": "API",
+      "status": "Statut",
+      "code": "Code de conduite",
+      "contact": "Contact"
+    },
+    "contact_email": "hackathon@gosim.org",
+    "ticker": {
+      "cadence": "une décision toutes les 15 minutes",
+      "when": "Nuit du {date} · {start}–{end} UT",
+      "code_hint": "N = numéro de nuit · S = numéro de créneau",
+      "dome_open": "Coupole ouverte · observation",
+      "dome_closed": "Coupole fermée · météo défavorable",
+      "budget_label": "900 s au total · partagés pour toute la partie",
+      "fact_hint": "Cliquez pour voir ce qui se passe en 900 secondes"
+    }
+  },
+  "tiers": {
+    "astro_label": "Niveau astronomie",
+    "ai_label": "Niveau IA",
+    "astro": [
+      "Débutant du ciel",
+      "Amateur d'astronomie",
+      "Expérience données ou observation",
+      "Niveau recherche"
+    ],
+    "astro_hints": [
+      "Pas encore de pratique de l'astronomie ; envie d'apprendre ici",
+      "Connaît les constellations, a utilisé une carte du ciel ou participé à des soirées d'observation",
+      "A traité des données astronomiques, fait de l'astrophotographie ou manipulé un télescope",
+      "Travaille dans la recherche en astronomie ou sur des relevés du ciel"
+    ],
+    "ai": [
+      "Débutant en IA",
+      "Sait appeler un LLM",
+      "A déjà construit un agent",
+      "Professionnel du domaine"
+    ],
+    "ai_hints": [
+      "N'a pas encore écrit de code appelant une IA",
+      "A utilisé des API de LLM, connaît les bases du prompt",
+      "A construit des agents ou des workflows, ou entraîné des modèles",
+      "Travaille ou fait de la recherche en IA"
+    ]
+  },
+  "auth": {
+    "register_title": "Inscription",
+    "register_lede": "Créez un compte, puis créez ou rejoignez une équipe. Un compte par personne.",
+    "login_title": "Connexion",
+    "login_lede": "Utilisez l'e-mail et le mot de passe de votre inscription.",
+    "name": "Nom",
+    "nickname": "Pseudo",
+    "nickname_hint": "40 caractères maximum. Affiché sur le mur des participants et les pages d’équipe. Laissez vide pour utiliser votre nom.",
+    "email": "E-mail",
+    "password": "Mot de passe (8 caractères minimum)",
+    "password2": "Confirmez le mot de passe",
+    "github": "Nom d'utilisateur GitHub",
+    "affiliation": "Organisation",
+    "agree": "J'ai lu le règlement et le code de conduite.",
+    "submit_register": "Créer le compte",
+    "submit_login": "Se connecter",
+    "have_account": "Déjà un compte ?",
+    "no_account": "Pas encore de compte ?",
+    "forgot": "Mot de passe oublié ?",
+    "forgot_title": "Réinitialiser le mot de passe",
+    "forgot_lede": "Saisissez votre e-mail ; s'il est enregistré, un lien de réinitialisation sera envoyé.",
+    "send_reset": "Envoyer le lien",
+    "reset_title": "Nouveau mot de passe",
+    "reset_submit": "Définir le mot de passe",
+    "forgot_sent_title": "Vérifiez votre boîte mail",
+    "forgot_sent": "Si cette adresse est enregistrée, le lien de réinitialisation a été envoyé. Il est valable deux heures.",
+    "closed_notice": "Les inscriptions sont actuellement fermées.",
+    "errors": {
+      "registration_closed": "Les inscriptions sont closes.",
+      "rate_limited": "Trop de tentatives. Réessayez dans quelques minutes.",
+      "name_required": "Veuillez indiquer votre nom.",
+      "nickname_too_long": "Le pseudo ne doit pas dépasser 40 caractères.",
+      "email_invalid": "Veuillez saisir une adresse e-mail valide.",
+      "password_too_short": "Le mot de passe doit faire au moins 8 caractères.",
+      "password_too_long": "Le mot de passe est trop long.",
+      "password_mismatch": "Les deux mots de passe ne correspondent pas.",
+      "agree_required": "L'accord au règlement est requis.",
+      "email_taken": "Cet e-mail est déjà enregistré.",
+      "bad_credentials": "E-mail ou mot de passe incorrect.",
+      "banned": "Ce compte a été désactivé.",
+      "contact_required": "Laissez un moyen de contact (WeChat ou e-mail) : il sert à la formation des équipes et aux communications officielles."
+    },
+    "register_done": "Compte créé. Ouvrez l'e-mail de confirmation puis connectez-vous.",
+    "register_done_session": "Compte créé.",
+    "login_done": "Connecté.",
+    "logout_done": "Déconnecté.",
+    "back_to_login": "Retour à la connexion",
+    "tab_register": "Créer un compte",
+    "tab_login": "Connexion",
+    "steps": [
+      "Créez votre compte (sans confirmation par e-mail)",
+      "Créez une équipe ou rejoignez-en une avec un code d'invitation",
+      "Soumettez un projet complet pour l'évaluation"
+    ],
+    "about_you": "Profil de participant",
+    "about_you_note": "Les niveaux figurent sur votre carte de participant et aident des profils complémentaires à se trouver pour former une équipe.",
+    "city": "Ville",
+    "contact": "Contact",
+    "contact_ph": "WeChat ou e-mail — pour la formation des équipes et les communications ; visible des seuls participants connectés",
+    "heard_from": "Comment avez-vous connu le hackathon",
+    "blurb": "Une phrase de présentation",
+    "blurb_ph": "Affichée sur le mur des participants. Par exemple : à l'aise en développement d'agents, cherche des coéquipiers en astronomie",
+    "show_on_wall": "Afficher ma carte sur le mur des participants (désactivable à tout moment)",
+    "role_options": {
+      "student": "Étudiant",
+      "engineer": "Ingénieur",
+      "researcher": "Chercheur",
+      "product": "Produit / design",
+      "other": "Autre"
+    },
+    "heard_options": {
+      "friend": "Ami ou collègue",
+      "community": "Communauté",
+      "gosim": "Canaux officiels GOSIM",
+      "social": "Réseaux sociaux",
+      "other": "Autre"
+    },
+    "step1_label": "Étape 1 / 2 · Création du compte",
+    "step2_label": "Étape 2 / 2 · Votre carte de participant",
+    "next_step": "Suivant",
+    "prev_step": "Précédent",
+    "seeking_label": "Recherche d'équipe",
+    "seeking_astro": "Je cherche des coéquipiers au profil astronomie",
+    "seeking_ai": "Je cherche des coéquipiers au profil agents / IA",
+    "seeking_none": "Je ne cherche pas de coéquipiers",
+    "seeking_count": "Nombre de coéquipiers souhaité"
+  },
+  "hero": {
+    "eyebrow": "Hackathon GOSIM · Relevé du ciel intelligent",
+    "system": "Hackathon Agentic Observer",
+    "titleLines": [
+      "Hackathon",
+      "Agentic Observer"
+    ],
+    "subtitle": "Relevé du ciel intelligent",
+    "lede": "Écrivez un agent qui pilote un télescope de relevé pendant la nuit : il lit l'état du ciel, décide comme un observateur principal et choisit la prochaine observation toutes les 15 minutes simulées.",
+    "pipeline": [
+      {
+        "label": "Formation en ligne",
+        "date": "2–3 oct.",
+        "note": "Séances avec des astronomes internationaux et des experts des agents"
+      },
+      {
+        "label": "Compétition en ligne",
+        "date": "5–7 oct.",
+        "note": "Modèle KIMI · 5 500 $ de prix"
+      },
+      {
+        "label": "Remise des prix",
+        "date": "17 oct.",
+        "note": "Équipes 1er et 2e prix invitées à GOSIM Shenzhen"
+      }
+    ],
+    "cta_register": "S'inscrire",
+    "cta_dashboard": "Ouvrir le tableau de bord",
+    "cta_brief": "Présentation complète",
+    "metrics": [
+      {
+        "value": "$5,500",
+        "label": "de prix"
+      },
+      {
+        "value": "2–17 oct.",
+        "label": "2026 · en ligne + Shenzhen"
+      },
+      {
+        "value": "Ouvert à tous",
+        "label": "monde entier · solo ou équipe"
+      }
+    ],
+    "side_note": "Site 31,96° N / une décision toutes les 15 minutes / 900 s de CPU par carte",
+    "console": {
+      "title": "Rejeu de l’exemple officiel",
+      "replay_note": "Terrain d'entraînement public · {nights} nuits · {actions} décisions",
+      "paused": "En pause",
+      "pause": "Pause",
+      "resume": "Reprendre",
+      "aria": "Carte du ciel rejouée : les tuiles obligatoires et optionnelles s'allument au fil des poses",
+      "weather": "Seeing · Transparence · Ciel · Instrument",
+      "dome_closed": "Coupole fermée",
+      "score": "Score",
+      "tiles": "Tuiles",
+      "legend_meridian": "Au zénith",
+      "legend_required": "Obligatoire",
+      "legend_flexible": "Optionnelle",
+      "legend_completed": "Terminée",
+      "legend_interrupted": "Interrompue",
+      "tour_title": "Guide de la carte du ciel",
+      "tour_next": "Suivant",
+      "tour_done": "Regarder",
+      "tour_skip": "Passer",
+      "tour": {
+        "axes": "L'axe horizontal est l'ascension droite — la « longitude » du ciel — recadrée sur la portion où se trouvent les cibles de ce catalogue. L'axe vertical est la déclinaison, sa « latitude ».",
+        "tiles": "Chaque marque est une tuile à photographier : ◇ doit être terminée (REQUIRED), □ est optionnelle (FLEXIBLE). Un anneau signifie qu'elle est assez haute pour être photographiée maintenant ; pleine, elle est déjà faite.",
+        "meridian": "La ligne bleue en pointillés est la direction que vise le télescope à cet instant ; elle dérive vers la droite avec la rotation de la Terre. Au passage à la nuit suivante, elle saute d'un coup : toute une journée a été passée.",
+        "hud": "La ligne du bas donne le créneau en cours, la météo du moment et la progression. Les quatre valeurs météo sont le seeing, la transparence, la luminosité du ciel et l'efficacité de l'instrument — survolez-les pour une explication. Le score grimpe à mesure que les tuiles s'allument : c'est le nombre que les participants cherchent à maximiser."
+      },
+      "weather_help": "Seeing : flou des étoiles, plus petit = plus net (secondes d'arc). Transparence : clarté de l'atmosphère, plus grand = mieux. Ciel : luminosité propre du ciel nocturne. Instrument : rendement de l'équipement à cet instant.",
+      "seek": "Faites glisser la position du rejeu",
+      "lst": "Direction visée par le télescope · heure du ciel {lst}"
+    },
+    "pipeline_intro": "Jalons",
+    "cta_start": "Démarrer en 3 étapes"
+  },
+  "home": {
+    "vision": {
+      "kicker": "01 / Vision",
+      "title": "Un banc d'essai ouvert pour les relevés du ciel intelligents",
+      "lede": "Il y a bien plus de tuiles que de temps d'observation : chaque pointage doit être choisi.",
+      "paragraphs": [
+        "Chaque nuit, un télescope de relevé fait face à des milliers de tuiles observables. La météo change, la visibilité des cibles change, les priorités scientifiques changent. Chaque décision de l'observateur humain pèse sur la qualité de l'échantillon cosmique final.",
+        "Nous construisons un banc d'essai ouvert : un agent lit l'état du ciel nocturne, raisonne comme un observateur expérimenté et décide la prochaine observation à chaque créneau de 900 secondes. Tous les participants reçoivent le même plan de relevé, le même rejeu météo, les mêmes requêtes, le même simulateur et le même barème ; les équipes ne diffèrent que par leur stratégie."
+      ],
+      "link": "Lire la présentation complète"
+    },
+    "mission": {
+      "kicker": "02 / Mission",
+      "title": "Où le télescope doit-il regarder ensuite",
+      "lede": "Votre agent reprend les décisions clés de l'observateur principal humain.",
+      "cards": [
+        {
+          "title": "Lire l'état",
+          "desc": "Météo, prévisions, avancement du relevé et tuiles actuellement licites, réunis dans un dictionnaire d'état compact."
+        },
+        {
+          "title": "Peser les compromis",
+          "desc": "Consacrer le bon ciel aux cibles faibles, ou finir la tuile à une pose de son achèvement ? La prévision s'améliore plus tard — un créneau d'attente en vaut-il la peine ?"
+        },
+        {
+          "title": "Trancher",
+          "desc": "Observer une tuile, ou attendre. Une action par créneau, avec sa raison."
+        }
+      ],
+      "closing": "Aucun bagage en astronomie n'est requis. Deux formations en ligne, les 2 et 3 octobre (horaires annoncés plus tard), présentent la tâche d'astronomie et la compétition avec des agents ; vous pouvez aussi répéter le déroulement de la compétition avec un projet complet sur le entraînement.",
+      "cardKicker": "Comment arrive le sujet",
+      "cardTitle": "Une carte de mission de relevé",
+      "cardLede": "Chaque manche commence par une carte de mission. Tout ce qui vous engage y est écrit :",
+      "cardItems": [
+        {
+          "term": "Objectif scientifique",
+          "desc": "La question à laquelle ce relevé cherche à répondre."
+        },
+        {
+          "term": "Zone de relevé",
+          "desc": "Quelle étendue de ciel couvrir, découpée en combien de tuiles."
+        },
+        {
+          "term": "Budget-temps",
+          "desc": "Le nombre total de créneaux de 900 secondes à dépenser."
+        },
+        {
+          "term": "Site du télescope",
+          "desc": "Latitude, limites de visibilité, durée des créneaux, contrainte de masse d'air."
+        },
+        {
+          "term": "Programmes disponibles",
+          "desc": "Lesquels de DARK, BRIGHT et BACKUP la manche ouvre."
+        },
+        {
+          "term": "Classes de cibles",
+          "desc": "Quels objets comptent dans le rendement, et leur poids respectif."
+        },
+        {
+          "term": "Contraintes d'observation",
+          "desc": "Ce qui est interdit, et le coût du franchissement."
+        },
+        {
+          "term": "Barème",
+          "desc": "Comment le score se calcule et quelles pénalités s'appliquent."
+        }
+      ],
+      "cardNote": "Les formats d'entrée-sortie officiels et le contrat d'interface sont définis par la carte de mission. Les scénarios publics de développement sont sur la page Ressources."
+    },
+    "participate": {
+      "kicker": "03 / Participer",
+      "title": "Trois étapes pour concourir",
+      "lede": "Inscription, équipes, soumissions et scores : tout se passe sur ce site.",
+      "steps": [
+        {
+          "n": "01",
+          "title": "S'inscrire et former une équipe",
+          "desc": "Inscrivez-vous en ligne, créez ou rejoignez une équipe. Concourir seul est aussi possible."
+        },
+        {
+          "n": "02",
+          "title": "Construire votre agent",
+          "desc": "Construisez votre agent à partir de la documentation et itérez sur les scénarios publics de développement."
+        },
+        {
+          "n": "03",
+          "title": "Soumettre pour évaluation",
+          "desc": "À l'entraînement, soumettez un projet complet (classement séparé). La compétition accepte uniquement un projet complet (dépôt public ou ZIP privé). Chaque équipe est notée par le même évaluateur figé."
+        }
+      ],
+      "timeline": [
+        {
+          "label": "2–3 oct.",
+          "desc": "Formation en ligne"
+        },
+        {
+          "label": "5–7 oct.",
+          "desc": "Compétition en ligne"
+        },
+        {
+          "label": "17 oct.",
+          "desc": "Prix à GOSIM Shenzhen"
+        }
+      ],
+      "cta": "S'inscrire"
+    },
+    "prizes": {
+      "kicker": "04 / Prix",
+      "title": "5 500 $ de prix",
+      "lede": "Attribués sur le classement final : le score de la version finale de chaque équipe sur le scénario final caché.",
+      "tiers": [
+        {
+          "place": "Premier prix",
+          "amount": "$2,000",
+          "count": "1 équipe"
+        },
+        {
+          "place": "Deuxième prix",
+          "amount": "$1,000",
+          "count": "2 équipes"
+        },
+        {
+          "place": "Troisième prix",
+          "amount": "$500",
+          "count": "3 équipes"
+        }
+      ]
+    },
+    "leaderboard": {
+      "kicker": "Classement",
+      "title": "Classement en direct",
+      "lede": "Le classement se met à jour dès qu'une soumission est notée. Le tableau d'entraînement est indicatif ; celui de la compétition en ligne décide des prix.",
+      "signal_live": "Classement en direct",
+      "signal_waiting": "En attente du signal",
+      "feed": "Données d'évaluation en direct"
+    },
+    "evaluation": {
+      "kicker": "05 / Évaluation",
+      "title": "Règles de notation",
+      "lede": "Chaque carte est notée par le scoreur publié ; ses paramètres de notation arrivent en entier dans le message initialize. Voici l'essentiel ; la section 5 du règlement donne les règles et les formules complètes."
+    },
+    "submission": {
+      "kicker": "06 / Soumettre",
+      "title": "Modes de soumission",
+      "items": [
+        {
+          "title": "Projets",
+          "desc": "L'entraînement accepte un projet complet (40 par équipe et par jour, classement séparé). La compétition accepte uniquement des projets complets : un dépôt public ou un ZIP privé, évalué tour par tour dans le cloud."
+        },
+        {
+          "title": "Limites",
+          "desc": "Tout langage est accepté ; les appels à un modèle sont facultatifs. ZIP de projet : 50 Mo maximum. Compétition : 40 évaluations par équipe et par jour, chacune sur les cartes A–D, avec un budget de 900 s de temps CPU normalisé et une limite de 30 minutes en temps réel par carte."
+        }
+      ],
+      "link": "Documentation des soumissions"
+    },
+    "credibility": {
+      "kicker": "07 / Organisation",
+      "title": "Qui organise",
+      "items": [
+        {
+          "role": "Organisateur",
+          "name": "GOSIM Foundation",
+          "desc": "Rencontre mondiale de l'innovation open source. Remise des prix le 17 octobre 2026 à GOSIM Shenzhen."
+        },
+        {
+          "role": "Mécène de tokens",
+          "name": "KIMI",
+          "desc": "Merci au LLM open source KIMI pour la dotation en tokens."
+        }
+      ],
+      "committee": {
+        "kicker": "Comité scientifique",
+        "intro": "Sept scientifiques d'instituts d'astronomie et de physique composent le comité scientifique du relevé et valident sujets, scénarios et barème.",
+        "members": [
+          {
+            "photo": "zhongxu-zhai",
+            "name": "Zhongxu Zhai",
+            "title": "Professeur associé",
+            "org": "Département d'astronomie, Université Jiao-tong de Shanghai"
+          },
+          {
+            "photo": "wei-wang",
+            "name": "Wei Wang",
+            "title": "Professeur",
+            "org": "Département de physique, Université Jiao-tong de Shanghai"
+          },
+          {
+            "photo": "dezi-liu",
+            "name": "Dezi Liu",
+            "title": "Chercheur associé",
+            "org": "Institut d'astronomie du Sud-Ouest, Université du Yunnan"
+          },
+          {
+            "photo": "xiangkun-liu",
+            "name": "Xiangkun Liu",
+            "title": "Professeur",
+            "org": "Institut d'astronomie du Sud-Ouest, Université du Yunnan"
+          },
+          {
+            "photo": "huanyuan-shan",
+            "name": "Huanyuan Shan",
+            "title": "Chercheur",
+            "org": "Observatoire astronomique de Shanghai, Académie chinoise des sciences"
+          },
+          {
+            "photo": "ting-tan",
+            "name": "Ting Tan",
+            "title": "Chercheur postdoctoral",
+            "org": "Université Paris-Saclay"
+          },
+          {
+            "photo": "yifei-luo",
+            "name": "Yifei Luo",
+            "title": "Chercheur postdoctoral",
+            "org": "Laboratoire national Lawrence-Berkeley"
+          }
+        ]
+      },
+      "octos": {
+        "kicker": "Support technique agents",
+        "title": "Soutenu par l'équipe de l'OS open source pour agents Octos",
+        "desc": "L'équipe technique d'Octos assure le support agents de l'événement.",
+        "cta": "GitHub d'Octos",
+        "logoAlt": "Logo Octos"
+      }
+    },
+    "stats_labels": {
+      "teams": "équipes inscrites",
+      "teams_on_board": "équipes classées",
+      "submissions": "soumissions notées"
+    },
+    "announcements": {
+      "kicker": "Annonces",
+      "all": "Toutes les annonces"
+    },
+    "participants": {
+      "kicker": "Mur des participants · LIVE",
+      "title": "Participants inscrits",
+      "lede": "Chaque participant inscrit apparaît ici : niveau astronomie, niveau IA et recherche d'équipe.",
+      "stat_total": "participants inscrits",
+      "stat_teams": "équipes",
+      "stat_looking": "cherchent des coéquipiers",
+      "looking": "Cherche des coéquipiers",
+      "in_team": "Équipe · {team}",
+      "empty_title": "Aucune carte pour l'instant",
+      "empty_desc": "Cochez l'affichage de votre carte à l'inscription et vous apparaîtrez ici.",
+      "cta_board": "Chercher des coéquipiers",
+      "cta_wall_register": "S'inscrire",
+      "cta_wall_profile": "Gérer ma carte",
+      "looking_astro": "Cherche {n} coéquipier(s) profil astronomie",
+      "looking_ai": "Cherche {n} coéquipier(s) profil agents"
+    },
+    "quest": {
+      "kicker": "Parcours de participation",
+      "note": "Entièrement en ligne · participation solo possible"
+    },
+    "film": {
+      "kicker": "Film de l'événement",
+      "play": "Lire"
+    },
+    "demo": {
+      "kicker": "Exemple officiel",
+      "title": "Exemple officiel : replay de l'agent de référence sur un scénario d'entraînement public",
+      "facts": "Scénario {scenario} · graine {seed} · {nights} nuits · {rounds} décisions · score final {score}",
+      "note": "Sortie réelle du scoreur et du moteur de replay de la plateforme pour un agent de référence. Lecture à 8× ; faites glisser le ciel pour changer de vue."
+    },
+    "credits": {
+      "aria": "Organisateur, mécène et comité scientifique",
+      "committee_names": "{names} et {more} autres",
+      "name_sep": ", ",
+      "all": "Tout voir"
+    }
+  },
+  "teammates": {
+    "kicker": "Mur des participants",
+    "title": "Trouver des coéquipiers",
+    "lede": "Les participants aux profils astronomie, IA et ingénierie peuvent trouver ici des coéquipiers aux compétences complémentaires. Avec le tri par complémentarité, les candidats qui complètent vos compétences passent en premier.",
+    "self_title": "Ma carte",
+    "self_on": "Affichée",
+    "self_off": "Non affichée",
+    "self_blurb": "Une phrase de présentation",
+    "self_blurb_ph": "Par exemple : à l'aise en développement d'agents, cherche des coéquipiers en astronomie",
+    "self_save": "Enregistrer la carte",
+    "saved_on": "Enregistré. Votre carte est affichée sur le mur.",
+    "saved_off": "Enregistré. Votre carte a été retirée du mur.",
+    "login_hint": "Connectez-vous pour afficher votre carte, activer le tri par complémentarité et voir les contacts.",
+    "filter_astro": "Niveau astronomie",
+    "filter_ai": "Niveau IA",
+    "filter_any": "Indifférent",
+    "filter_looking": "Seulement ceux qui cherchent des coéquipiers",
+    "filter_comp": "Complémentarité d'abord",
+    "comp_chip": "Complémentaire de vous",
+    "no_team": "Sans équipe",
+    "reveal": "Voir le contact",
+    "no_contact": "Pas de contact renseigné. Essayez son GitHub, ou passez par le code d'invitation d'équipe.",
+    "login_to_contact": "Connectez-vous pour voir le contact",
+    "empty_title": "Aucun participant ne correspond encore",
+    "empty_desc": "Élargissez les filtres, ou affichez d'abord votre propre carte."
+  },
+  "leaderboard": {
+    "kicker": "Classement",
+    "title": "Classement",
+    "intro": "",
+    "refresh": "Actualiser",
+    "full": "Classement complet",
+    "updated": "Mis à jour",
+    "loading": "Chargement du classement…",
+    "empty": "Aucune soumission notée dans cette phase pour l'instant.",
+    "unavailable": "Le classement est momentanément indisponible. Réessayez plus tard.",
+    "team": "Équipe / agent",
+    "score": "Total",
+    "science": "Production scientifique",
+    "completion": "Achèvement",
+    "uniformity": "Uniformité",
+    "submissions": "Soumissions",
+    "phase": "Phase",
+    "scenarios": "Scénarios évalués",
+    "rank": "#",
+    "kind": "Type",
+    "best_run": "Meilleure soumission",
+    "hidden": "Le classement de cette phase reste masqué jusqu'à publication par l'organisateur.",
+    "frozen": "Classement gelé. Les nouvelles soumissions sont notées mais le tableau ne bouge plus.",
+    "published": "Résultats finaux publiés.",
+    "live": "Mise à jour en direct",
+    "tie": "À égalité, la soumission la plus ancienne passe devant.",
+    "mean_note": "Score de compétition = moyenne de tous les scénarios d'un même lot terminé. Chaque équipe garde son meilleur lot complet ; chaque colonne est moyennée de la même façon.",
+    "download_csv": "Télécharger le CSV",
+    "json": "JSON",
+    "n_entries": "{n} équipes",
+    "status": {
+      "open": "En cours",
+      "upcoming": "À venir",
+      "closed": "Terminée",
+      "disabled": "Désactivée"
+    },
+    "no_phases": "Aucune phase configurée.",
+    "me": "Votre équipe",
+    "chart": {
+      "title": "Composition des scores · top 10",
+      "penalty": "Pénalités",
+      "your_team": "Votre équipe",
+      "your_position": "Votre position",
+      "teams_on_board": "équipes classées",
+      "scored_runs": "soumissions notées",
+      "last_update": "dernière mise à jour",
+      "tooltip": "Total {score} · base {base} · bonus {bonus} · requêtes {requests} · couverture {coverage} · pénalités −{penalty} · {tiles} tuiles · {missing} obligatoires manquantes",
+      "legend_base": "Science de base",
+      "legend_bonus": "Bonus de programme",
+      "legend_request": "Récompense de requêtes",
+      "tiles": "Tuiles",
+      "req_missing": "REQ manquantes"
+    },
+    "base_science": "Science de base",
+    "bonus": "Bonus",
+    "requests": "Requêtes",
+    "coverage": "Couverture",
+    "penalties": "Pénalités",
+    "tiles": "Tuiles",
+    "required_missing": "REQ manquantes",
+    "nights": "{n} nuits",
+    "per_scenario_note": "Le classement d'entraînement est établi scénario par scénario : chaque tableau compare le meilleur score de chaque équipe sur ce scénario.",
+    "detail": {
+      "board_scenario": "Classement : {scenario}",
+      "board_mean": "Classement : moyenne des scénarios de chaque évaluation",
+      "close": "Fermer",
+      "evenness": "Uniformité de couverture",
+      "scored_at": "Noté le",
+      "github": "Chef d'équipe sur GitHub @{handle}",
+      "view_submission": "Ouvrir cette soumission"
+    },
+    "calibrated_score": "Score ajusté",
+    "raw_score": "Score brut",
+    "calibration_note": "Le classement utilise les scores ajustés à la difficulté. Le détail présente les valeurs brutes."
+  },
+  "browser_notice": {
+    "title": "Ouvrez ce site dans Chrome",
+    "body": "Safari continue d'afficher une ancienne version de ce site et en affiche mal certaines parties. Copiez l'adresse et ouvrez-la dans Chrome.",
+    "copy": "Copier l'adresse",
+    "stay": "Continuer avec Safari"
+  },
+  "errors": {
+    "already_in_team": "Vous faites déjà partie d'une équipe.",
+    "bad_code": "Ce code d'invitation n'est pas bon.",
+    "full": "Cette équipe est complète.",
+    "locked": "Cette équipe est verrouillée et n'accepte plus de membres.",
+    "name_length": "Le nom d'équipe doit faire 2 à 60 caractères.",
+    "name_taken": "Ce nom d'équipe est déjà pris.",
+    "bad_size": "La taille de l'équipe doit être entre 1 et 3, et pas inférieure au nombre actuel de membres.",
+    "leader_only": "Seul le chef d'équipe peut faire cela.",
+    "leader_must_transfer": "Vous êtes chef d'équipe : confiez ce rôle à quelqu'un d'autre avant de partir.",
+    "has_submissions": "Cette équipe a déjà des soumissions : elle ne peut pas être dissoute ni vidée.",
+    "not_in_team": "Vous ne faites partie d'aucune équipe.",
+    "not_member": "Cette personne ne fait pas partie de votre équipe.",
+    "cannot_remove_leader": "Le chef d'équipe ne peut pas être retiré de l'équipe.",
+    "need_team": "Créez ou rejoignez d'abord une équipe.",
+    "bad_phase": "Cette phase n'existe pas.",
+    "phase_closed": "Cette phase n'accepte pas de soumissions en ce moment.",
+    "results_not_allowed": "Cette phase n'accepte pas de fichiers de résultats.",
+    "agents_not_allowed": "Seuls les fichiers de résultats (decisions.csv) sont acceptés désormais ; les paquets d'agent ne le sont plus.",
+    "bad_scenario": "Choisissez un scénario de cette phase.",
+    "bad_storage_path": "Le fichier n'a pas été envoyé au bon endroit. Rechargez la page et soumettez à nouveau.",
+    "daily_limit": "Les soumissions du jour sont épuisées.",
+    "cannot_cancel": "Seules les soumissions encore en file d'attente peuvent être annulées.",
+    "no_codes_left": "Plus aucun code de ce fournisseur.",
+    "already_assigned": "Cette équipe a déjà un code de ce fournisseur.",
+    "cannot_change_self": "Vous ne pouvez pas faire cela sur votre propre compte.",
+    "unknown_action": "Cette action n'est pas prise en charge.",
+    "unknown_scenario": "Ce scénario n'existe pas.",
+    "job_already_pending": "Une tâche est déjà en cours pour ce scénario.",
+    "banned": "Ce compte est suspendu."
+  },
+  "team": {
+    "entry_hint": "Créez une équipe ou rejoignez-en une avec un code. Connectez-vous d’abord si nécessaire.",
+    "manage_hint": "Vous faites déjà partie d’une équipe. Invitez des coéquipiers ici ; une seule équipe par personne.",
+    "invite_people": "Inviter des coéquipiers",
+    "invite_link": "Lien d’invitation",
+    "copy_link": "Copier le lien",
+    "copy_fallback": "Échec de la copie. Sélectionnez le code ou le lien et copiez-le manuellement.",
+    "errors": {
+      "recipient_unavailable": "Cette personne ne peut pas recevoir cette invitation.",
+      "team_unavailable": "Cette équipe n’est plus disponible.",
+      "invitation_not_found": "Cette demande ne vous est pas adressée.",
+      "invitation_finished": "Cette demande a déjà été traitée."
+    },
+    "solo": "Participer en solo (1 clic)",
+    "solo_lede": "En solo ? Créez en un clic une équipe d’une personne à votre nom. Vous pourrez ensuite augmenter la taille et inviter des coéquipiers.",
+    "solo_done": "Équipe solo « {name} » créée. Vous pouvez commencer.",
+    "directory": {
+      "title": "Équipes",
+      "lede": "Choisissez une équipe pour envoyer une demande. Vous la rejoignez dès que son capitaine accepte.",
+      "search": "Rechercher une équipe",
+      "show_all": "Tout afficher ({n})",
+      "recruiting": "{n} recrutent",
+      "empty": "Aucune équipe ne correspond",
+      "create_own": "Créer votre équipe",
+      "go_solo": "Participer en solo",
+      "more": "Afficher {n} de plus",
+      "request": "Demander à rejoindre",
+      "requested": "Demande envoyée · voir le suivi",
+      "sign_in": "Se connecter pour demander",
+      "yours": "Votre équipe",
+      "paused": "Recrutement fermé",
+      "full": "Complète",
+      "in_team": "Déjà dans une équipe"
+    }
+  },
+  "submit": {
+    "title": "Participer",
+    "model_api": {
+      "title": "API de modèle (facultatif)",
+      "intro": "Aucun crédit de modèle n'est fourni. Les appels de modèle ne sont pas obligatoires, mais les prix exigent des techniques d'agent (pilotées par un LLM) dans au moins deux étapes. Choisissez comment la plateforme traite votre clé :",
+      "choice": "Traitement de votre clé de modèle",
+      "tradeoff": "Enregistrée (par défaut) : clé chiffrée, supprimée automatiquement après la vérification des résultats. Non enregistrée : gardez cette page ouverte pendant les évaluations.",
+      "stored": "Enregistrer chiffrée sur le serveur (par défaut)",
+      "stored_help": "La clé est stockée chiffrée sur le serveur ; vous pouvez donc fermer cette page pendant l'évaluation. Elle est supprimée automatiquement après la publication et la vérification des résultats de la finale cachée.",
+      "relay": "Ne pas enregistrer (relais de page)",
+      "relay_help": "La clé reste uniquement dans cette page et n'est jamais stockée sur le serveur. Gardez cette page ouverte jusqu'à la fin de chaque évaluation ; les appels de modèle échouent lorsqu'elle est fermée. Si votre équipe est vérifiée parmi les premières, vous devrez aussi ouvrir cette page au moment convenu avec les organisateurs.",
+      "relay_deletes": "Ce choix supprime la clé enregistrée.",
+      "usage": "Votre projet continue d'utiliser OPENAI_BASE_URL et OPENAI_API_KEY fournis pour chaque exécution ; les appels vont à votre point d'accès et à votre modèle.",
+      "limits": "Chaque exécution permet jusqu'à {calls} appels de modèle, au plus {concurrency} à la fois. Les jetons ne sont pas plafonnés (ils sont payés par la clé de votre équipe).",
+      "limits_tokens": "Chaque exécution permet jusqu'à {calls} appels de modèle et {tokens} jetons, au plus {concurrency} appels à la fois.",
+      "saved_title": "API de modèle enregistrée",
+      "key_ending": "Clé se terminant par {hint}",
+      "key_hidden": "Clé masquée",
+      "saved_at": "Enregistrée le {time}",
+      "none": "Aucune clé enregistrée pour l'instant.",
+      "endpoint": "Point d'accès de l'API",
+      "endpoint_hint": "Toute adresse https:// publique convient (API compatible OpenAI, port par défaut). Les adresses IP et les adresses internes sont refusées. Les suggestions sont des fournisseurs courants.",
+      "endpoint_refused": "Cette adresse d'API est refusée. Utilisez une adresse https:// publique sur le port par défaut, dont le nom se résout, et non une adresse IP ou interne.",
+      "model": "Modèle par défaut",
+      "key": "Clé d'API",
+      "save": "Enregistrer la clé chiffrée",
+      "replace": "Remplacer la clé",
+      "delete": "Supprimer la clé enregistrée",
+      "cancel": "Annuler",
+      "saved_notice": "Clé enregistrée chiffrée.",
+      "deleted_notice": "Clé enregistrée supprimée.",
+      "stored_selected": "Les clés seront enregistrées chiffrées sur le serveur.",
+      "relay_selected": "Les clés ne seront pas enregistrées. Gardez cette page ouverte pendant les évaluations.",
+      "keep_open": "Gardez cette page ouverte jusqu'à la fin de chaque évaluation, y compris l'adaptation automatique. La fermer efface la clé ; pour vous reconnecter, saisissez-la de nouveau.",
+      "relay_running": "Une évaluation est en cours : connectez votre clé ici et gardez cette page ouverte jusqu'à la fin.",
+      "connect": "Connecter (clé non enregistrée)",
+      "disconnect": "Se déconnecter et effacer la clé",
+      "connected": "Connecté pour cette session de page.",
+      "working": "Appel de votre API…",
+      "call_failed": "L'appel du modèle a échoué. Vérifiez votre API et votre quota.",
+      "invalid": "Vérifiez le point d'accès, le modèle et la clé."
+    }
+  },
+  "dash": {
+    "quest": {
+      "title": "Premiers pas",
+      "progress": "{done}/{total} terminées",
+      "done_step": "terminé",
+      "next_action": "Étape suivante : {action}",
+      "done_title": "Tout est prêt",
+      "done_text": "Continuez à améliorer votre agent et à soumettre pour grimper au classement.",
+      "done_board": "Voir le classement",
+      "practice": {
+        "team": {
+          "title": "Former une équipe (ou jouer en solo)",
+          "hint": "Jusqu’à 3 personnes par équipe ; en solo, vous formez une équipe d’une personne.",
+          "action": "Former une équipe"
+        },
+        "prepare": {
+          "title": "Lire la documentation",
+          "hint": "Suivez la documentation pour coder votre agent.",
+          "action": "Ouvrir la documentation"
+        },
+        "submit": {
+          "title": "Première soumission",
+          "hint": "Soumettez un projet sur la page Participer ; la plateforme la note automatiquement.",
+          "action": "Soumettre"
+        },
+        "review": {
+          "title": "Voir le rejeu et le score",
+          "hint": "Voyez ce que chaque décision a observé, puis améliorez votre stratégie.",
+          "action": "Voir le rejeu et le score"
+        }
+      },
+      "competition": {
+        "team": {
+          "title": "Former une équipe",
+          "hint": "Jusqu’à 3 personnes par équipe ; vous pouvez aussi concourir seul.",
+          "action": "Former une équipe"
+        },
+        "prepare": {
+          "title": "Préparer votre projet (documentation)",
+          "hint": "Appuyez-vous sur le projet d’exemple complet et la documentation de l’interface pour coder votre agent dans le langage de votre choix.",
+          "action": "Ouvrir la documentation"
+        },
+        "submit": {
+          "title": "Soumettre le projet et lancer une évaluation",
+          "hint": "Téléversez un dépôt ou un ZIP sur Participer, confirmez la version, puis lancez l’évaluation.",
+          "action": "Aller à Participer"
+        },
+        "review": {
+          "title": "Voir le score et le rejeu",
+          "hint": "Une fois l’évaluation terminée, examinez le détail du score et le rejeu pour savoir quoi améliorer.",
+          "action": "Voir le score et le rejeu"
+        }
+      }
+    }
+  },
+  "eggs": {
+    "mid_autumn": {
+      "title": "Joyeuse fête de la Mi-Automne !",
+      "close": "Fermer"
+    }
+  },
+  "resources": {
+    "session_data": "Les données du concours sont fournies à chaque tour pendant l’évaluation. Les fichiers sources des scénarios ne sont pas téléchargeables."
+  },
+  "start_page": {
+    "title": "Démarrer en 3 étapes"
+  },
+  "start3": {
+    "practice": {
+      "subtitle": "Aucune connaissance en astronomie requise. Pour une première participation, suivez simplement ces trois étapes dans l’ordre.",
+      "s1_title": "Étape 1 · Lire la documentation",
+      "s1_desc": "Il décrit la tâche, l’interface de l’agent et la notation.",
+      "s1_cta": "Ouvrir la documentation",
+      "s2_title": "Étape 2 · Construire votre agent",
+      "s2_lead": "Construisez votre agent selon le protocole de la documentation.",
+      "s2_desc": "Améliorez la logique de décision pour augmenter le score.",
+      "s2_link": "Lire la description de la tâche",
+      "s2_examples_link": "Voir les projets exemples",
+      "s3_title": "Étape 3 · Soumettre un projet complet",
+      "s3_intro": "Connectez-vous et ouvrez Participer :",
+      "s3_points": [
+        "Projet complet : envoyez votre code, la plateforme l’exécute et le note dans le cloud. 8 par équipe et par jour."
+      ],
+      "s3_cta": "Aller à Participer",
+      "help_prefix": "Des questions ? Voir la",
+      "help_faq": "FAQ",
+      "help_or": "ou le",
+      "help_rules": "Règlement",
+      "help_suffix": "."
+    },
+    "competition": {
+      "subtitle": "Aucune connaissance en astronomie requise. Suivez ces trois étapes dans l’ordre pour participer.",
+      "s1_title": "Étape 1 · Lire la documentation",
+      "s1_desc": "Il décrit la tâche, l’interface de l’agent et la notation.",
+      "s1_cta": "Ouvrir la documentation",
+      "s2_title": "Étape 2 · Construire votre agent",
+      "s2_lead": "Construisez votre agent selon le protocole de la documentation.",
+      "s2_desc": "Améliorez la logique de décision, puis passez à l’étape 3.",
+      "s2_link": "Lire la description de la tâche",
+      "s2_examples_link": "Voir les projets exemples",
+      "s3_title": "Étape 3 · Soumettre un projet complet",
+      "s3_intro": "Connectez-vous et ouvrez Participer : envoyez votre code → confirmez la version → lancez une évaluation.",
+      "s3_points": [
+        "4 évaluations par équipe et par jour ; chacune exécute votre agent sur les cartes de tâche A–D, 900 s par carte, et le classement affiche la moyenne sur A–D.",
+        "Choisissez votre version finale avant la fin.",
+        "Le classement final repose uniquement sur le score de cette version sur les cartes cachées E–H (3 évaluations par carte, moyennées, puis moyenne sur E–H)."
+      ],
+      "s3_cta": "Aller à Participer",
+      "help_prefix": "Des questions ? Voir la",
+      "help_faq": "FAQ",
+      "help_or": "ou le",
+      "help_rules": "Règlement",
+      "help_suffix": "."
+    }
+  },
+  "about_page": {
+    "kicker": "Organisation · Mécène · Comité"
+  }
+}

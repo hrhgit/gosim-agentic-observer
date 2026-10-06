@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ t('rules_page.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<div class="wrap page-head"><span class="kicker">{{ t('rules_page.kicker') }}</span><h1 class="mt-4">{{ t('rules_page.title') }}</h1><p class="label mt-3">{{ t('rules_page.version') }}</p></div>
+<section class="section tight"><div class="wrap">
+  <h2 class="label accent mb-2">{{ t('rules_page.phases_title') }}</h2>
+  <div class="table-wrap"><table class="table"><thead><tr><th>{{ t('leaderboard.phase') }}</th><th>{{ t('common.status') }}</th><th>UTC</th><th>{{ t('kind.results') }}</th><th>{{ t('kind.agent') }}</th><th class="r">{{ t('rules_page.daily') }}</th><th>{{ t('rules_page.board') }}</th></tr></thead><tbody>
+  {% for p in phases_all %}<tr><td>{{ pick(p.name_en, p.name_zh) }}</td><td><span class="pill {{ p.status }}">{{ t('leaderboard.status.' + p.status) }}</span></td><td class="m xs">{{ p.starts_at.strftime('%Y-%m-%d %H:%M') if p.starts_at else '—' }} → {{ p.ends_at.strftime('%Y-%m-%d %H:%M') if p.ends_at else '—' }}</td><td>{{ t('common.yes') if p.allow_results else t('common.no') }}</td><td>{{ t('common.yes') if p.allow_agents else t('common.no') }}</td><td class="r m">{{ p.daily_limit }}</td><td class="m xs">{{ p.leaderboard_mode }}</td></tr>{% endfor %}
+  </tbody></table></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="grid" style="grid-template-columns:1fr">
+  <article class="prose">{{ doc | safe }}</article>
+</div></div></section>
+{% endblock %}

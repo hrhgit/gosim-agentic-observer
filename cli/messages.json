@@ -1,0 +1,430 @@
+{
+ "no_token": {
+  "en": "No API token. Create one on the website (Profile -> Personal API tokens), then export SURVEY26_TOKEN or run `survey26 login --token-stdin`.",
+  "zh": "没有 API 令牌。请在网站「个人资料 → 个人 API 令牌」中创建，然后设置 SURVEY26_TOKEN 环境变量或运行 `survey26 login --token-stdin`。"
+ },
+ "invalid_token": {
+  "en": "This API token is not valid (mistyped, revoked, or deleted). Create a new one on your profile page.",
+  "zh": "API 令牌无效（输入错误、已撤销或已删除）。请在个人资料页重新创建。"
+ },
+ "cli_tokens_disabled": {
+  "en": "API tokens are not available right now.",
+  "zh": "API 令牌功能暂未开放。"
+ },
+ "account_banned": {
+  "en": "This account is suspended.",
+  "zh": "该账号已被停用。"
+ },
+ "account_unavailable": {
+  "en": "This account is suspended.",
+  "zh": "该账号已被停用。"
+ },
+ "rate_limited": {
+  "en": "Too many requests. Wait a minute and try again.",
+  "zh": "请求过于频繁，请稍等一分钟再试。"
+ },
+ "network_error": {
+  "en": "Could not reach the server. Check your connection and try again.",
+  "zh": "无法连接服务器，请检查网络后重试。"
+ },
+ "gateway_unavailable": {
+  "en": "The server is temporarily unavailable. Try again shortly.",
+  "zh": "服务器暂时不可用，请稍后再试。"
+ },
+ "session_unavailable": {
+  "en": "The server is temporarily unavailable. Try again shortly.",
+  "zh": "服务器暂时不可用，请稍后再试。"
+ },
+ "action_not_available": {
+  "en": "This action is not available with an API token.",
+  "zh": "该操作不能通过 API 令牌使用。"
+ },
+ "confirmation_required": {
+  "en": "This action needs confirmation: run it again with --yes.",
+  "zh": "该操作需要确认：请加上 --yes 重新运行。"
+ },
+ "wait_timeout": {
+  "en": "Still not finished when the wait timed out. Run the wait command again later.",
+  "zh": "等待超时，任务仍未结束。请稍后再次运行等待命令。"
+ },
+ "ambiguous_id": {
+  "en": "This ID prefix matches more than one item. Use more characters.",
+  "zh": "该 ID 前缀匹配到多个对象，请多输入几位。"
+ },
+ "no_open_phase": {
+  "en": "No evaluation phase is open.",
+  "zh": "当前没有开放的评测赛程。"
+ },
+ "revision_not_reviewable": {
+  "en": "This version is not ready for confirmation (it must be ready for review).",
+  "zh": "该版本尚不能确认（需处于“等待确认”状态）。"
+ },
+ "no_team_version": {
+  "en": "No final version yet. Confirm a version and evaluate it, or choose one.",
+  "zh": "还没有最终版本。请先确认并评测一个版本，或在下方选择。"
+ },
+ "file_not_found": {
+  "en": "File not found.",
+  "zh": "找不到文件。"
+ },
+ "download_failed": {
+  "en": "The download failed. Try again.",
+  "zh": "下载失败，请重试。"
+ },
+ "invalid_api_response": {
+  "en": "Unexpected answer from the server.",
+  "zh": "服务器返回了无法识别的内容。"
+ },
+ "team_required": {
+  "en": "Join or create a team first.",
+  "zh": "请先加入或创建队伍。"
+ },
+ "stale_approval": {
+  "en": "The version changed. Reopen the review before confirming.",
+  "zh": "版本已变化，请重新打开并检查。"
+ },
+ "batch_already_active": {
+  "en": "Your team already has an active evaluation.",
+  "zh": "本队已有正在进行的评测。"
+ },
+ "preparation_limit": {
+  "en": "Your team already has three projects being prepared.",
+  "zh": "本队已有三个项目正在准备，请等待完成。"
+ },
+ "preparation_daily_limit": {
+  "en": "Your team has used today’s project preparations (the daily number follows the evaluation quota; see survey26 quota). The count resets at 00:00 UTC (08:00 Beijing time).",
+  "zh": "本队今天的项目准备次数已用完（每天的次数与评测次数相同，可用 survey26 quota 查看），每天北京时间 8 点（UTC 0 点）重置。"
+ },
+ "daily_limit": {
+  "en": "The daily evaluation limit has been reached.",
+  "zh": "今天的评测次数已用完。"
+ },
+ "repeat_daily_limit": {
+  "en": "Evaluate 3 times and average needs 3 of today’s evaluations.",
+  "zh": "「评测 3 次取平均」需要今天剩余至少 3 次评测。"
+ },
+ "revision_already_evaluated": {
+  "en": "This version has already been evaluated. Pass --yes to evaluate it again (uses one more of today’s evaluations).",
+  "zh": "这个版本已经评测过。再评测一次会再占用今天 1 次评测，请加上 --yes。"
+ },
+ "revision_withdrawn": {
+  "en": "This version was withdrawn.",
+  "zh": "这个版本已撤回。"
+ },
+ "revision_not_withdrawable": {
+  "en": "Only versions that are not being prepared and were never evaluated can be withdrawn.",
+  "zh": "只能撤回未在准备中、也从未评测过的版本。"
+ },
+ "revision_not_found": {
+  "en": "No such version of your team.",
+  "zh": "找不到本队的这个版本。"
+ },
+ "revision_not_ready": {
+  "en": "This version is not ready yet.",
+  "zh": "这个版本还没有准备好。"
+ },
+ "revision_not_approved": {
+  "en": "Only a confirmed version can be chosen.",
+  "zh": "只能选择已确认的版本。"
+ },
+ "wrong_file_type": {
+  "en": "Choose a file with the required extension.",
+  "zh": "请选择要求的文件类型。"
+ },
+ "file_too_large": {
+  "en": "The file is empty or exceeds the size limit.",
+  "zh": "文件为空或超过大小限制。"
+ },
+ "invalid_repository_url": {
+  "en": "Enter a public GitHub link: https://github.com/owner/repository, optionally with /tree/<branch>/<folder> or /commit/<sha>.",
+  "zh": "请输入公开 GitHub 仓库链接：https://github.com/owner/repository，可带 /tree/分支/子目录 或 /commit/提交号。"
+ },
+ "repository_not_found": {
+  "en": "This GitHub repository was not found. Check the owner and name, and that it is public.",
+  "zh": "找不到这个 GitHub 仓库，请检查用户名、仓库名，并确认仓库是公开的。"
+ },
+ "source_ref_not_found": {
+  "en": "This branch, tag or commit does not exist in the repository.",
+  "zh": "仓库里没有这个分支、标签或 commit。"
+ },
+ "source_subdir_not_found": {
+  "en": "This folder does not exist at that branch or commit (folder names are case-sensitive).",
+  "zh": "在这个分支或 commit 中找不到该子目录（区分大小写）。"
+ },
+ "source_options_conflict": {
+  "en": "The branch or folder in the link differs from --branch/--subdir. Keep only one of them.",
+  "zh": "链接里的分支或子目录与 --branch/--subdir 不一致，请只保留一处。"
+ },
+ "invalid_source_ref": {
+  "en": "The branch, tag or commit name is not valid.",
+  "zh": "分支、标签或 commit 名称格式不正确。"
+ },
+ "invalid_source_subdir": {
+  "en": "Enter the folder as a relative path such as agent or apps/agent.",
+  "zh": "子目录请填写相对路径，例如 agent 或 apps/agent。"
+ },
+ "source_options_unavailable": {
+  "en": "Branch and folder choices are temporarily unavailable. Submit the plain repository link, or upload a ZIP.",
+  "zh": "暂时不支持指定分支或子目录，请提交仓库主页链接，或上传 ZIP。"
+ },
+ "invalid_source_archive": {
+  "en": "This folder contains links or files that cannot be packaged. Upload the project as a ZIP instead.",
+  "zh": "该目录包含符号链接或无法打包的文件，请改为上传 ZIP。"
+ },
+ "private_source_requires_zip": {
+  "en": "This repository is private. Make it public, or upload the project as a ZIP.",
+  "zh": "这个仓库是私有的。请把它设为公开，或改为上传 ZIP。"
+ },
+ "source_too_large": {
+  "en": "The repository archive is larger than 100 MB. Upload a smaller ZIP of the project instead.",
+  "zh": "仓库压缩包超过 100 MB，请改为上传精简后的项目 ZIP。"
+ },
+ "source_snapshot_unavailable": {
+  "en": "Could not save a copy of this repository version right now. Please try again in a minute.",
+  "zh": "暂时无法保存该仓库版本的副本，请稍后再试。"
+ },
+ "invalid_team_variable": {
+  "en": "Invalid name or value: use upper-case letters, digits and underscores, not a reserved name; the value must not be empty and at most 8 KB.",
+  "zh": "变量名或值不符合要求：变量名使用大写字母、数字和下划线，不能使用平台保留的名称；值不能为空且不超过 8 KB。"
+ },
+ "no_model_not_available": {
+  "en": "\"Without a model\" (--no-model) is only for project evaluations in the online competition and practice, not the hidden final.",
+  "zh": "「本次不提供模型」（--no-model）只能用于线上赛和练习的项目评测，不能用于隐藏卡决赛。"
+ },
+ "team_variable_not_found": {
+  "en": "No team variable with this name. See survey26 env show.",
+  "zh": "没有这个名称的队伍变量，可用 survey26 env show 查看。"
+ },
+ "team_variable_limit": {
+  "en": "The variable limit has been reached; delete a variable you no longer use first.",
+  "zh": "变量数量已达上限，请先删除不再使用的变量。"
+ },
+ "invalid_egress_route": {
+  "en": "Choose an egress route: direct, cn or overseas.",
+  "zh": "请选择出网线路：direct（直连）、cn（回国代理）或 overseas（海外代理）。"
+ },
+ "egress_route_unavailable": {
+  "en": "Egress routes are not offered right now; evaluations connect directly.",
+  "zh": "出网线路暂未开放，评测直接连接。"
+ },
+ "invalid_team_domains": {
+  "en": "Invalid domain: enter the name only (e.g. api.kimi.com), without https://, a port or a path, and not an IP address or internal name; at most 10.",
+  "zh": "域名格式不正确：只填写域名本身（例如 api.kimi.com），不含 https://、端口或路径，不能是 IP 地址或内网名称；最多 10 个。"
+ },
+ "team_domain_not_public": {
+  "en": "This domain does not resolve right now, or resolves to a non-public address, so it cannot be added.",
+  "zh": "这个域名目前无法解析，或解析到了非公网地址，不能添加。"
+ },
+ "final_version_locked": {
+  "en": "The online phase has ended; the final version can no longer change.",
+  "zh": "线上赛已结束，最终版本不能再修改。"
+ },
+ "upload_limit": {
+  "en": "Too many uploads are still pending for your team. Wait a few minutes for them to clear, then try again.",
+  "zh": "本队有太多上传正在等待处理，请等几分钟后再试一次。"
+ },
+ "upload_failed": {
+  "en": "The file upload failed, possibly due to the network. Please try again.",
+  "zh": "文件上传失败，可能是网络问题，请重试。"
+ },
+ "upload_not_found": {
+  "en": "The upload session expired or could not be found. Upload the file again.",
+  "zh": "上传会话已过期或找不到，请重新上传。"
+ },
+ "upload_not_finished": {
+  "en": "The file has not finished uploading yet. Wait a moment and try again.",
+  "zh": "文件还没有上传完成，请稍等再试一次。"
+ },
+ "zip_has_no_code": {
+  "en": "No code files were found in the ZIP. Make sure you zipped the folder that contains your program, or start from an official example (the examples include observer.project.json).",
+  "zh": "压缩包里没有找到代码文件。请确认打包的是包含程序的文件夹，或参考官方示例，示例自带 observer.project.json。"
+ },
+ "portal_unavailable": {
+  "en": "Could not reach the server. Check your connection and try again.",
+  "zh": "无法连接服务器，请检查网络后重试。"
+ },
+ "phase_closed": {
+  "en": "This phase is not taking evaluations right now.",
+  "zh": "这个赛程现在不接受评测。"
+ },
+ "projects_not_enabled": {
+  "en": "Project evaluation is not open for the current competition.",
+  "zh": "当前比赛尚未开放项目评测。"
+ },
+ "result_not_ready": {
+  "en": "This card has no result yet.",
+  "zh": "这张卡还没有结果。"
+ },
+ "project_not_ready": {
+  "en": "This project version cannot be downloaded yet.",
+  "zh": "该项目版本暂时无法下载。"
+ },
+ "run_not_found": {
+  "en": "No such run of your team.",
+  "zh": "找不到本队的这次运行。"
+ },
+ "already_in_team": {
+  "en": "You are already on a team.",
+  "zh": "你已经在一个队伍里了。"
+ },
+ "bad_code": {
+  "en": "That invite code is not right.",
+  "zh": "邀请码不对。"
+ },
+ "full": {
+  "en": "This team is full.",
+  "zh": "这个队伍已经满员。"
+ },
+ "locked": {
+  "en": "This team is locked and not taking new members.",
+  "zh": "这个队伍已锁定，不再接受新成员。"
+ },
+ "name_length": {
+  "en": "Team names need 2–60 characters.",
+  "zh": "队伍名需要 2–60 个字符。"
+ },
+ "name_taken": {
+  "en": "That team name is taken.",
+  "zh": "这个队伍名已经有人用了。"
+ },
+ "bad_size": {
+  "en": "Team size must be between 1 and 3, and not below the current member count.",
+  "zh": "队伍人数上限要在 1 到 3 之间，且不少于现有人数。"
+ },
+ "leader_only": {
+  "en": "Only the team leader can do this.",
+  "zh": "只有队长能做这项操作。"
+ },
+ "leader_must_transfer": {
+  "en": "You are the leader: hand leadership to someone else before leaving.",
+  "zh": "你是队长，退出前请先把队长转给别人。"
+ },
+ "has_submissions": {
+  "en": "This team already has submissions, so it cannot be disbanded or emptied.",
+  "zh": "这个队伍已经有提交记录，不能解散或清空。"
+ },
+ "not_in_team": {
+  "en": "You are not on a team.",
+  "zh": "你现在不在任何队伍里。"
+ },
+ "not_member": {
+  "en": "That person is not on your team.",
+  "zh": "这个人不是你们队的成员。"
+ },
+ "cannot_remove_leader": {
+  "en": "The leader cannot be removed from the team.",
+  "zh": "不能把队长移出队伍。"
+ },
+ "need_team": {
+  "en": "Create or join a team first.",
+  "zh": "请先创建或加入队伍。"
+ },
+ "team_limit_reached": {
+  "en": "All team places are taken and registration is closed, so no new team can be created. You can still join an existing team with an invite code.",
+  "zh": "参赛队伍已满，报名已关闭，不能再创建新队伍。你仍可以用邀请码加入已有队伍。"
+ },
+ "recipient_unavailable": {
+  "en": "This person cannot currently receive a team invitation.",
+  "zh": "对方目前无法接收组队邀请。"
+ },
+ "team_unavailable": {
+  "en": "This team is no longer available.",
+  "zh": "这个队伍目前不可加入。"
+ },
+ "invitation_not_found": {
+  "en": "This request is not addressed to you.",
+  "zh": "你不是这条请求的接收方。"
+ },
+ "invitation_finished": {
+  "en": "This request has already been handled.",
+  "zh": "这条请求已经处理完毕。"
+ },
+ "banned": {
+  "en": "This account is suspended.",
+  "zh": "这个账号已被停用。"
+ },
+ "no_codes_left": {
+  "en": "No codes left from this provider.",
+  "zh": "这家的兑换码已经领完了。"
+ },
+ "already_assigned": {
+  "en": "This team already has a code from this provider.",
+  "zh": "这个队伍已经有这家的兑换码了。"
+ },
+ "captain_only": {
+  "en": "Only the team captain can claim the Kimi Coding Plan code.",
+  "zh": "只有队长可以领取 Kimi Coding Plan 兑换码。"
+ },
+ "not_eligible": {
+  "en": "Your team needs one successful score in the practice round first.",
+  "zh": "你的队伍还需在练习赛获得一次成功评分。"
+ },
+ "nickname_too_long": {
+  "en": "Nickname must be 40 characters or fewer.",
+  "zh": "昵称最多 40 个字。"
+ },
+ "name_required": {
+  "en": "Name is required.",
+  "zh": "请填写姓名。"
+ },
+ "avatar_bad_type": {
+  "en": "Please choose a PNG, JPG or WEBP image.",
+  "zh": "请选择 PNG、JPG 或 WEBP 图片。"
+ },
+ "avatar_too_large": {
+  "en": "That image is larger than 2 MB.",
+  "zh": "图片超过 2 MB。"
+ },
+ "avatar_invalid_image": {
+  "en": "This file is not a readable image.",
+  "zh": "无法读取这张图片。"
+ },
+ "invalid_field": {
+  "en": "A field is missing or invalid.",
+  "zh": "有字段缺失或不符合要求。"
+ },
+ "invalid_uid": {
+  "en": "A UID is the 9-digit number shown at the bottom right of the website (e.g. 100000123).",
+  "zh": "UID 是网站右下角显示的 9 位数字（例如 100000123）。"
+ },
+ "uid_self": {
+  "en": "That is your own UID.",
+  "zh": "这是你自己的 UID。"
+ },
+ "uid_unavailable": {
+  "en": "No one can be reached with this UID. Check the number.",
+  "zh": "无法通过这个 UID 找到可添加的人，请检查号码。"
+ },
+ "uid_not_found": {
+  "en": "No participant has this UID. Check the number.",
+  "zh": "没有参赛者使用这个 UID，请检查号码。"
+ },
+ "uid_daily_limit": {
+  "en": "You have used today's 20 actions by UID. Try again tomorrow.",
+  "zh": "今天通过 UID 添加或邀请的 20 次机会已用完，请明天再试。"
+ },
+ "blocked_by_you": {
+  "en": "You have blocked this person. Unblock them first.",
+  "zh": "你已屏蔽此人，请先解除屏蔽。"
+ },
+ "recipient_in_team": {
+  "en": "This person is already on a team.",
+  "zh": "对方已经在一个队伍里了。"
+ },
+ "request_not_found": {
+  "en": "This friend request is not addressed to you.",
+  "zh": "你不是这条好友请求的接收方。"
+ },
+ "request_finished": {
+  "en": "This friend request has already been handled.",
+  "zh": "这条好友请求已经处理完毕。"
+ },
+ "not_friends": {
+  "en": "You are not friends with this person.",
+  "zh": "你们还不是好友。"
+ },
+ "user_not_found": {
+  "en": "No such person.",
+  "zh": "找不到这个人。"
+ }
+}

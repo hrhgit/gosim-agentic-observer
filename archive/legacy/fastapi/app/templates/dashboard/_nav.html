@@ -1,0 +1,7 @@
+<div class="admin-nav">
+  <a href="/dashboard" class="{{ 'active' if path == '/dashboard' else '' }}">{{ t('dash.title') }}</a>
+  <a href="/team" class="{{ 'active' if path.startswith('/team') else '' }}">{{ t('nav.team') }}</a>
+  <a href="/submit" class="{{ 'active' if path == '/submit' else '' }}">{{ t('nav.submit') }}</a>
+  <a href="/submissions" class="{{ 'active' if path.startswith('/submissions') else '' }}">{{ t('nav.submissions') }}</a>
+  <a href="/profile" class="{{ 'active' if path == '/profile' else '' }}">{{ t('nav.profile') }}</a>
+</div>

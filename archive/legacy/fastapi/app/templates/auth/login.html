@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ t('auth.login_title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section"><div class="wrap"><div class="grid grid-2">
+  <div><span class="kicker">{{ t('nav.login') }}</span><h1 class="section-title mt-4">{{ t('auth.login_title') }}</h1><p class="lede mt-3">{{ t('auth.login_lede') }}</p></div>
+  <div class="form-card">
+    {% if errors %}<div class="errors"><ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+    <form method="post" action="/login">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="next" value="{{ next or '/dashboard' }}">
+      <label class="field"><span>{{ t('auth.email') }}</span><input type="email" name="email" required value="{{ email or '' }}" autofocus></label>
+      <label class="field"><span>{{ t('common.password') }}</span><input type="password" name="password" required autocomplete="current-password"></label>
+      <button class="btn primary" type="submit">{{ t('auth.submit_login') }} →</button>
+    </form>
+    <p class="mt-4 small text3"><a class="accent-l" href="/forgot">{{ t('auth.forgot') }}</a>{% if registration_open %} · {{ t('auth.no_account') }} <a class="accent-l" href="/register">{{ t('nav.register') }}</a>{% endif %}</p>
+  </div>
+</div></div></section>
+{% endblock %}

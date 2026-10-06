@@ -1,0 +1,211 @@
+# Isolated Linux VM for the self-hosted evaluation fallback runner (Lima, macOS host).
+#
+#   limactl create --name observer-fallback ops/fallback-runner/observer-fallback.yaml
+#   limactl start observer-fallback
+#
+# The VM is the isolation boundary between participant code and the organizer's
+# Mac. "plain" mode means: no host directory mounts, no port forwarding, no guest
+# agent, no SSH agent forwarding. Nothing from the host (browser profile, GitHub
+# login, keychain, ~/.ssh) is visible inside. The only secret ever placed in the
+# VM is the runner's own registration (see install-runner.sh).
+#
+# Optional: --set '.param.HostProxyPort="1082"' lets root (apt, dockerd) and the
+# runner account, but never a participant container, use an HTTP proxy that
+# listens on the Mac's loopback (needed where GitHub/Docker Hub are not
+# directly reachable). --set '.param.AptMirror="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports"'
+# replaces the Ubuntu package origin for the VM's architecture (packages stay
+# signature-checked; apt then connects directly). --set '.param.Resolvers="223.5.5.5 119.29.29.29"'
+# makes the VM and its containers use these public DNS servers instead of
+# Lima's resolver on the Mac, which may answer with a local proxy's fake IPs.
+#
+# Isolation layers: participant code runs in the trusted job runner's Docker
+# sandbox under gVisor (runsc, the default runtime), inside this VM, whose
+# egress guard keeps containers and non-root code away from the Mac. Lima's
+# user-mode network maps 192.168.5.2 to the Mac's loopback, so the guard does
+# not stop code that becomes root in the VM; see
+# ops/self-hosted-fallback-runner.md for the host-side boundary.
+images:
+# Pinned by digest. Where the origin is slow, download the same file from a
+# mirror, check it against the official SHA256SUMS and override with
+# --set '.images=[{"location":"/path/to.img","arch":"aarch64","digest":"sha256:..."}]'.
+- location: "https://cloud-images.ubuntu.com/releases/noble/release-20260926/ubuntu-24.04-server-cloudimg-arm64.img"
+  arch: "aarch64"
+  digest: "sha256:1d6bffe64b848468ac97f821d369a4846d983de1800ccf6b5ec8853e85cefc55"
+- location: "https://cloud-images.ubuntu.com/releases/noble/release-20260926/ubuntu-24.04-server-cloudimg-amd64.img"
+  arch: "x86_64"
+  digest: "sha256:6a81c37564db9b1ee84e141922625e1d7c5b389b99bb3c572e0243607d5bb4d2"
+param:
+  HostProxyPort: ""
+  AptMirror: ""
+  Resolvers: ""
+propagateProxyEnv: false
+vmType: vz
+plain: true
+cpus: 4
+memory: 6GiB
+disk: 40GiB
+mounts: []
+ssh:
+  # Fixed so the host firewall can allow exactly this loopback port.
+  localPort: 60022
+  loadDotSSHPubKeys: false
+  forwardAgent: false
+  forwardX11: false
+upgradePackages: false
+provision:
+- mode: system
+  script: |
+    #!/bin/bash
+    set -eux -o pipefail
+    export DEBIAN_FRONTEND=noninteractive
+    gateway="$(ip -4 route show default | awk '{print $3; exit}')"
+    resolvers="${PARAM_Resolvers:-}"
+    if [ -n "$resolvers" ]; then
+      install -d /etc/systemd/resolved.conf.d
+      printf '[Resolve]\nDNS=%s\nDomains=~.\n' "$resolvers" > /etc/systemd/resolved.conf.d/90-observer.conf
+      systemctl restart systemd-resolved
+    fi
+    resolvers="${resolvers:-$gateway}"
+    proxy_port="${PARAM_HostProxyPort:-}"
+    proxy=""
+    if [ -n "$proxy_port" ]; then
+      proxy="http://192.168.5.2:$proxy_port"
+      printf 'Acquire::http::Proxy "%s";\nAcquire::https::Proxy "%s";\n' "$proxy" "$proxy" > /etc/apt/apt.conf.d/90observer-proxy
+    fi
+    if [ -n "${PARAM_AptMirror:-}" ]; then
+      sed -i -E "s#^URIs: .*#URIs: ${PARAM_AptMirror}#" /etc/apt/sources.list.d/ubuntu.sources
+      # Ubuntu packages come from the mirror directly; gVisor's repository still needs the proxy.
+      rm -f /etc/apt/apt.conf.d/90observer-proxy
+      [ -z "$proxy" ] || printf 'Acquire::https::Proxy::storage.googleapis.com "%s";\n' "$proxy" \
+        > /etc/apt/apt.conf.d/90observer-proxy
+    fi
+    id runner >/dev/null 2>&1 || useradd --create-home --shell /bin/bash runner
+    # The cloud image's vim pulls in the system libpython3.12 (3.12.3), which the
+    # tool-cache Python of actions/setup-python would load instead of its own.
+    if dpkg -s libpython3.12t64 >/dev/null 2>&1; then
+      DEBIAN_FRONTEND=noninteractive apt-get purge -y libpython3.12t64
+    fi
+    if ! command -v runsc >/dev/null; then
+      apt-get update
+      apt-get install -y docker.io iptables jq curl git gnupg
+      # gVisor: participant containers get a user-space kernel, so a kernel
+      # exploit from a container does not reach the VM kernel.
+      https_proxy="$proxy" curl -fsSL https://gvisor.dev/archive.key | gpg --dearmor --yes -o /usr/share/keyrings/gvisor-archive-keyring.gpg
+      echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/gvisor-archive-keyring.gpg] https://storage.googleapis.com/gvisor/releases release main" \
+        > /etc/apt/sources.list.d/gvisor.list
+      apt-get update
+      apt-get install -y runsc
+    fi
+    usermod -aG docker runner
+    if [ -n "$proxy" ]; then
+      install -d /etc/systemd/system/docker.service.d
+      printf '[Service]\nEnvironment=HTTP_PROXY=%s HTTPS_PROXY=%s NO_PROXY=localhost,127.0.0.1\n' "$proxy" "$proxy" \
+        > /etc/systemd/system/docker.service.d/proxy.conf
+    fi
+    # Containers use the same resolvers as the VM.
+    dns_json="$(printf '%s\n' $resolvers | jq -R . | jq -cs .)"
+    cat > /etc/docker/daemon.json <<JSON
+    {"dns": $dns_json, "default-runtime": "runsc",
+     "runtimes": {"runsc": {"path": "/usr/bin/runsc"}}}
+    JSON
+    sysctl -w net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1
+    printf 'net.ipv6.conf.all.disable_ipv6=1\nnet.ipv6.conf.default.disable_ipv6=1\n' > /etc/sysctl.d/90-observer.conf
+
+    # Egress guard: the VM and every container may reach the public internet
+    # (GitHub, the job API, package and image registries) but never the Mac
+    # (192.168.5.2 is the host's loopback, e.g. its browser debugging port),
+    # the local network, proxy fake-IP ranges or link-local metadata. DNS
+    # (port 53 only) goes to the configured resolvers. Containers cannot
+    # open connections to the VM itself. Each chain is built aside and swapped
+    # in, so the rules never disappear while being refreshed.
+    install -d /opt/observer
+    printf '%s' "$proxy_port" > /opt/observer/host-proxy-port
+    printf '%s\n' $resolvers > /opt/observer/resolvers
+    cat > /opt/observer/egress-guard.sh <<'GUARD'
+    #!/bin/bash
+    set -euo pipefail
+    uplink="$(ip -4 route show default | awk '{print $5; exit}')"
+    proxy_port="$(cat /opt/observer/host-proxy-port 2>/dev/null || true)"
+    resolvers="$(cat /opt/observer/resolvers)"
+    runner_uid="$(id -u runner)"
+    test -n "$uplink"
+    test -n "$resolvers"
+    iptables -N DOCKER-USER 2>/dev/null || true
+    swap() { # chain parent
+      local old="OBSERVER-$1" new="OBSERVER-$1-NEW"
+      iptables -I "$2" 1 -j "$new"
+      while iptables -D "$2" -j "$old" 2>/dev/null; do :; done
+      iptables -F "$old" 2>/dev/null && iptables -X "$old"
+      iptables -E "$new" "$old"
+    }
+    for chain in OUTPUT DOCKER-USER; do
+      new="OBSERVER-$chain-NEW"
+      iptables -F "$new" 2>/dev/null && iptables -X "$new"
+      iptables -N "$new"
+      # Replies to connections the Mac opened (limactl shell) are allowed; new ones are not.
+      iptables -A "$new" -m conntrack --ctstate ESTABLISHED,RELATED -j RETURN
+      for dns in $resolvers; do
+        for proto in udp tcp; do
+          iptables -A "$new" -o "$uplink" -d "$dns" -p "$proto" --dport 53 -j RETURN
+        done
+      done
+      if [ "$chain" = OUTPUT ]; then
+        iptables -A "$new" -o "$uplink" -p udp --sport 68 --dport 67 -j RETURN
+        if [ -n "$proxy_port" ]; then
+          # Only root, apt's download account and the runner account; container
+          # traffic is forwarded, never OUTPUT.
+          for uid in 0 "$(id -u _apt)" "$runner_uid"; do
+            iptables -A "$new" -o "$uplink" -d 192.168.5.2 -p tcp --dport "$proxy_port" \
+              -m owner --uid-owner "$uid" -j RETURN
+          done
+        fi
+      fi
+      for net in 192.168.0.0/16 10.0.0.0/8 172.16.0.0/12 100.64.0.0/10 169.254.0.0/16 198.18.0.0/15 224.0.0.0/4; do
+        iptables -A "$new" -o "$uplink" -d "$net" -j REJECT
+      done
+      swap "$chain" "$chain"
+    done
+    iptables -F OBSERVER-INPUT-NEW 2>/dev/null && iptables -X OBSERVER-INPUT-NEW
+    iptables -N OBSERVER-INPUT-NEW
+    for bridge in docker0 br-+; do
+      iptables -A OBSERVER-INPUT-NEW -i "$bridge" -m conntrack --ctstate NEW -j REJECT
+    done
+    swap INPUT INPUT
+    GUARD
+    chmod 0755 /opt/observer/egress-guard.sh
+    cat > /etc/systemd/system/observer-egress-guard.service <<'UNIT'
+    [Unit]
+    Description=Block VM and container access to the host and local networks
+    After=docker.service network-online.target
+    Requires=docker.service
+    PartOf=docker.service
+    [Service]
+    Type=oneshot
+    RemainAfterExit=yes
+    ExecStart=/opt/observer/egress-guard.sh
+    [Install]
+    WantedBy=multi-user.target docker.service
+    UNIT
+
+    # Runs before and after every job: nothing a participant built survives.
+    # It removes every container, so a VM hosts exactly one runner. Images
+    # pulled from a registry by digest are content-addressed and kept (pulling
+    # them again through the Mac's proxy can exceed the jobs' pull timeout);
+    # every image without a registry digest, i.e. anything built here, is removed.
+    cat > /opt/observer/job-cleanup.sh <<'CLEAN'
+    #!/bin/bash
+    set -u
+    docker ps -aq | xargs -r docker rm -f >/dev/null 2>&1
+    docker images --digests --format '{{.ID}} {{.Digest}}' | awk '$2 == "<none>" {print $1}' |
+      sort -u | xargs -r docker rmi -f >/dev/null 2>&1
+    docker image prune -f >/dev/null 2>&1
+    docker builder prune -af >/dev/null 2>&1
+    docker volume prune -af >/dev/null 2>&1
+    docker network prune -f >/dev/null 2>&1
+    find /tmp /var/tmp -mindepth 1 -maxdepth 1 -user "$(id -u)" -exec rm -rf {} + 2>/dev/null
+    exit 0
+    CLEAN
+    chmod 0755 /opt/observer/job-cleanup.sh
+    systemctl daemon-reload
+    systemctl enable docker observer-egress-guard
+    systemctl restart docker observer-egress-guard

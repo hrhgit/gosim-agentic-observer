@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section"><div class="wrap"><div class="grid grid-2">
+  <div><span class="kicker">{{ t('auth.forgot_title') }}</span><h1 class="section-title mt-4">{{ t('auth.forgot_title') }}</h1><p class="lede mt-3">{{ t('auth.forgot_lede') }}</p></div>
+  <div class="form-card"><form method="post" action="/forgot"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label class="field"><span>{{ t('auth.email') }}</span><input type="email" name="email" required></label>
+    <button class="btn primary" type="submit">{{ t('auth.send_reset') }} →</button></form></div>
+</div></div></section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{
+  "fields": {
+    "best_scores": [
+      {
+        "best_score": "float",
+        "target_id": "target_id"
+      }
+    ],
+    "invalidated_window": {
+      "action_count_at_trigger": "N, observe actions executed so far (wait actions excluded)",
+      "action_index_end_exclusive": "floor(window_end_fraction * N), exclusive",
+      "action_index_start": "floor(window_start_fraction * N), 0-based over observe actions, inclusive",
+      "window_end_fraction": "j from the truth row",
+      "window_max_fraction": "x from the truth row",
+      "window_start_fraction": "i from the truth row"
+    },
+    "issued_at_utc": "UTC timestamp of the trigger slot",
+    "observed_target_ids": [
+      "target_id",
+      "..."
+    ],
+    "record_type": "the string \"state_resync\"",
+    "trigger_event_id": "event_id of the data_loss row in v4_stress_events.csv"
+  },
+  "notes": [
+    "No numeric weather quantities are involved; this contract concerns action history only.",
+    "The bulletin stream carries no separate data_loss notice: this message is the notice."
+  ],
+  "record_type": "state_resync",
+  "schema_version": "v4-state-resync-v1",
+  "semantics": "Sent by the runner when a data_loss stress event triggers. The message itself is the notification; no separate bulletin is issued. Observe actions in the window are invalidated without refunding their time (wait actions are not part of the window's numbering space); the original action records are kept organizer-side; best scores are recomputed by replay with the window removed."
+}

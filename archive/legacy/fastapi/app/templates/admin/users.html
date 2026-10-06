@@ -1,0 +1,8 @@
+{% extends "admin/_layout.html" %}
+{% set heading = 'Users' %}
+{% block admin %}
+<form method="get" class="actions-inline mb-3"><input type="text" name="q" value="{{ q }}" placeholder="email or name" style="width:16rem"><button class="btn sm" type="submit">Search</button><a class="btn sm" href="/admin/export/users.csv">export csv</a></form>
+<div class="table-wrap"><table class="table"><thead><tr><th>id</th><th>email</th><th>name</th><th>team</th><th>flags</th><th>joined</th><th>actions</th></tr></thead><tbody>
+{% for u in rows %}<tr><td class="m">{{ u.id }}</td><td class="small">{{ u.email }}</td><td>{{ u.name }}<div class="xs text3">{{ u.affiliation }} {{ u.github }}</div></td><td>{{ u.team.name if u.team else '—' }}</td><td>{% if u.is_admin %}<span class="pill accent">admin</span>{% endif %} {% if u.is_verified %}<span class="pill ok">verified</span>{% endif %} {% if u.is_banned %}<span class="pill failed">banned</span>{% endif %}</td><td class="m xs">{{ u.created_at.strftime('%m-%d') }}</td>
+  <td><form method="post" action="/admin/users/{{ u.id }}/action" class="actions-inline"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="copy-btn" name="action" value="toggle_admin">admin</button><button class="copy-btn" name="action" value="toggle_ban">ban</button><button class="copy-btn" name="action" value="verify">verify</button><button class="copy-btn" name="action" value="reset_password">reset pw</button><button class="copy-btn" name="action" value="remove_from_team">unteam</button></form></td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

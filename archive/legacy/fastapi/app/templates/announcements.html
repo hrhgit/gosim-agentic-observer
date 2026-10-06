@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ t('ann.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<div class="wrap page-head"><span class="kicker">{{ t('ann.kicker') }}</span><h1 class="mt-4">{{ t('ann.title') }}</h1></div>
+<section class="section"><div class="wrap-narrow">
+  {% if not rows %}<p class="text2">{{ t('ann.empty') }}</p>{% endif %}
+  {% for a in rows %}<article class="rule-t" style="padding:1.75rem 0"><div class="flex between"><span class="label">{{ a.created_at.strftime('%Y-%m-%d %H:%M') }} UTC {% if a.is_pinned %}· <span class="accent-l">{{ t('ann.pinned') }}</span>{% endif %}</span><span class="pill {{ a.level }}">{{ a.level }}</span></div><h2 class="mt-2" style="font-size:1.35rem">{{ pick(a.title_en, a.title_zh) }}</h2><div class="text2 mt-2" style="white-space:pre-line;line-height:1.7">{{ pick(a.body_en, a.body_zh) }}</div></article>{% endfor %}
+</div></section>
+{% endblock %}

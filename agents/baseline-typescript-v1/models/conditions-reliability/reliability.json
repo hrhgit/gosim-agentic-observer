@@ -1,0 +1,872 @@
+{
+  "version": "conditions-reliability-v2",
+  "scheme": "history_horizon_sides",
+  "method": "fresh_hybrid_12",
+  "banks": {
+    "global": {
+      "offsets": {
+        "quality": [
+          -0.1124001070857048,
+          0.07800555229187012
+        ],
+        "usable": [
+          -0.039094600826501846,
+          0.0031558871269226074
+        ]
+      },
+      "blocked_temperature": 1.501950853068418,
+      "band_temperature": 1.4721716781747944,
+      "evidence": {
+        "rows": 22983,
+        "scenes": 12,
+        "decision_groups": 2892,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          12
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "15m": {
+      "offsets": {
+        "quality": [
+          -0.11457644402980804,
+          0.03989678621292114
+        ],
+        "usable": [
+          -0.1822798252105713,
+          0.0020314455032348633
+        ]
+      },
+      "blocked_temperature": 1.6308048381281337,
+      "band_temperature": 1.5489704316965,
+      "evidence": {
+        "rows": 5877,
+        "scenes": 12,
+        "decision_groups": 739,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          12
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "30m": {
+      "offsets": {
+        "quality": [
+          -0.08480453491210938,
+          0.06742191314697266
+        ],
+        "usable": [
+          -0.03066130541265011,
+          0.0018598437309265137
+        ]
+      },
+      "blocked_temperature": 1.5998992017096367,
+      "band_temperature": 1.4994002842254663,
+      "evidence": {
+        "rows": 5719,
+        "scenes": 12,
+        "decision_groups": 720,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          12
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "60m": {
+      "offsets": {
+        "quality": [
+          -0.10305988788604736,
+          0.08650839328765869
+        ],
+        "usable": [
+          -0.06107400730252266,
+          0.001971304416656494
+        ]
+      },
+      "blocked_temperature": 1.593295966623922,
+      "band_temperature": 1.524480948411264,
+      "evidence": {
+        "rows": 5374,
+        "scenes": 12,
+        "decision_groups": 676,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          12
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "next_night": {
+      "offsets": {
+        "quality": [
+          -0.12782716751098633,
+          0.1115720272064209
+        ],
+        "usable": [
+          -0.0016709106275811791,
+          0.007153809070587158
+        ]
+      },
+      "blocked_temperature": 1.1879656920549775,
+      "band_temperature": 1.3296502119435532,
+      "evidence": {
+        "rows": 6013,
+        "scenes": 12,
+        "decision_groups": 757,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          12
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "15m/never": {
+      "offsets": {
+        "quality": [
+          -0.16041326522827148,
+          0.2496941089630127
+        ],
+        "usable": [
+          0.008156657218933105,
+          5.799531936645508e-05
+        ]
+      },
+      "blocked_temperature": 1.6308048381281337,
+      "band_temperature": 1.1263853628004883,
+      "evidence": {
+        "rows": 186,
+        "scenes": 12,
+        "decision_groups": 12,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 2,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          1,
+          0
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": false,
+        "band": false
+      },
+      "probability_parent_used": {
+        "blocked": true,
+        "band": true
+      },
+      "band_bias": [
+        -1.2920135961207724,
+        2.4150863883166203,
+        -1.1230727921958479
+      ],
+      "band_fit": "temperature and centered bias; regularized toward parent",
+      "band_penalty": 0.001,
+      "band_optimizer_success": true,
+      "band_parent_prior": true
+    },
+    "15m/stale": {
+      "offsets": {
+        "quality": [
+          -0.16511183977127075,
+          0.15000712871551514
+        ],
+        "usable": [
+          -0.005316602997481823,
+          0.002587735652923584
+        ]
+      },
+      "blocked_temperature": 1.566601891891562,
+      "band_temperature": 1.854837079419719,
+      "evidence": {
+        "rows": 1719,
+        "scenes": 12,
+        "decision_groups": 215,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 11,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          10
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "15m/partial": {
+      "offsets": {
+        "quality": [
+          -0.03682684898376465,
+          0.03989678621292114
+        ],
+        "usable": [
+          -0.00021515523258130997,
+          0.0022240877151489258
+        ]
+      },
+      "blocked_temperature": 1.3673929146227561,
+      "band_temperature": 1.3398861833326665,
+      "evidence": {
+        "rows": 3921,
+        "scenes": 12,
+        "decision_groups": 491,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          11,
+          11
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "15m/eight": {
+      "offsets": {
+        "quality": [
+          -0.1368963122367859,
+          0.017271995544433594
+        ],
+        "usable": [
+          -0.21979695558547974,
+          0.0019570589065551758
+        ]
+      },
+      "blocked_temperature": 1.6706656762452943,
+      "band_temperature": 1.5787032498219409,
+      "evidence": {
+        "rows": 3740,
+        "scenes": 12,
+        "decision_groups": 470,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          12
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "30m/never": {
+      "offsets": {
+        "quality": [
+          -0.18801796436309814,
+          0.2085738182067871
+        ],
+        "usable": [
+          0.008857369422912598,
+          8.90493392944336e-05
+        ]
+      },
+      "blocked_temperature": 1.5998992017096367,
+      "band_temperature": 1.3668655420779803,
+      "evidence": {
+        "rows": 192,
+        "scenes": 12,
+        "decision_groups": 12,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 1,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          2,
+          0
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": false,
+        "band": false
+      },
+      "probability_parent_used": {
+        "blocked": true,
+        "band": true
+      },
+      "band_bias": [
+        -0.804224976170893,
+        2.285530604673949,
+        -1.4813056285030561
+      ],
+      "band_fit": "temperature and centered bias; regularized toward parent",
+      "band_penalty": 0.001,
+      "band_optimizer_success": true,
+      "band_parent_prior": true
+    },
+    "30m/stale": {
+      "offsets": {
+        "quality": [
+          -0.14408278465270996,
+          0.14328229427337646
+        ],
+        "usable": [
+          -0.013781502842903137,
+          0.003136873245239258
+        ]
+      },
+      "blocked_temperature": 1.6508696957858433,
+      "band_temperature": 1.784664488365471,
+      "evidence": {
+        "rows": 1717,
+        "scenes": 12,
+        "decision_groups": 215,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 10,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          10
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "30m/partial": {
+      "offsets": {
+        "quality": [
+          -0.02092885971069336,
+          0.04925262928009033
+        ],
+        "usable": [
+          0.0033928751945495605,
+          0.002354443073272705
+        ]
+      },
+      "blocked_temperature": 1.3808508890580244,
+      "band_temperature": 1.3662322706814907,
+      "evidence": {
+        "rows": 3910,
+        "scenes": 12,
+        "decision_groups": 490,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 10,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          11
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "30m/eight": {
+      "offsets": {
+        "quality": [
+          -0.10978412628173828,
+          0.04293251037597656
+        ],
+        "usable": [
+          -0.09586888551712036,
+          0.0017200708389282227
+        ]
+      },
+      "blocked_temperature": 1.6950372627883123,
+      "band_temperature": 1.5199039435979393,
+      "evidence": {
+        "rows": 3580,
+        "scenes": 12,
+        "decision_groups": 451,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          11
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "60m/never": {
+      "offsets": {
+        "quality": [
+          -0.19287443161010742,
+          0.22909307479858398
+        ],
+        "usable": [
+          -0.00019211485050618649,
+          7.027387619018555e-05
+        ]
+      },
+      "blocked_temperature": 1.6111910869209243,
+      "band_temperature": 1.5097198649660282,
+      "evidence": {
+        "rows": 192,
+        "scenes": 12,
+        "decision_groups": 12,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 6,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          2,
+          0
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": false
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": true
+      },
+      "band_bias": [
+        -0.5812643076323526,
+        2.234749537333644,
+        -1.6534852297012916
+      ],
+      "band_fit": "temperature and centered bias; regularized toward parent",
+      "band_penalty": 0.001,
+      "band_optimizer_success": true,
+      "band_parent_prior": true
+    },
+    "60m/stale": {
+      "offsets": {
+        "quality": [
+          -0.16198348999023438,
+          0.19120198488235474
+        ],
+        "usable": [
+          -0.03957289457321167,
+          0.002962946891784668
+        ]
+      },
+      "blocked_temperature": 1.6143067040529637,
+      "band_temperature": 1.7297165329717992,
+      "evidence": {
+        "rows": 1707,
+        "scenes": 12,
+        "decision_groups": 214,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 11,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          8
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "60m/partial": {
+      "offsets": {
+        "quality": [
+          -0.15155161917209625,
+          0.04832810163497925
+        ],
+        "usable": [
+          -0.23178929090499878,
+          0.002660512924194336
+        ]
+      },
+      "blocked_temperature": 1.7081646606160503,
+      "band_temperature": 1.5815801843060062,
+      "evidence": {
+        "rows": 3876,
+        "scenes": 12,
+        "decision_groups": 484,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          11
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "60m/eight": {
+      "offsets": {
+        "quality": [
+          -0.06109726428985596,
+          0.0838775634765625
+        ],
+        "usable": [
+          -0.0025836825370788574,
+          0.0017653703689575195
+        ]
+      },
+      "blocked_temperature": 1.589895839901123,
+      "band_temperature": 1.5324433576571375,
+      "evidence": {
+        "rows": 3246,
+        "scenes": 12,
+        "decision_groups": 409,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          10
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "next_night/never": {
+      "offsets": {
+        "quality": [
+          -0.03247249126434326,
+          0.3489159345626831
+        ],
+        "usable": [
+          0.014771819114685059,
+          0.0006368160247802734
+        ]
+      },
+      "blocked_temperature": 1.1879656920549775,
+      "band_temperature": 3.89263938049486,
+      "evidence": {
+        "rows": 190,
+        "scenes": 12,
+        "decision_groups": 12,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 2,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          2,
+          0
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": false,
+        "band": false
+      },
+      "probability_parent_used": {
+        "blocked": true,
+        "band": true
+      },
+      "band_bias": [
+        1.458524244749008,
+        0.9085443074660485,
+        -2.3670685522150565
+      ],
+      "band_fit": "temperature and centered bias; regularized toward parent",
+      "band_penalty": 0.001,
+      "band_optimizer_success": true,
+      "band_parent_prior": true
+    },
+    "next_night/stale": {
+      "offsets": {
+        "quality": [
+          -0.13845455646514893,
+          0.17801952362060547
+        ],
+        "usable": [
+          -0.23060402274131775,
+          0.010834455490112305
+        ]
+      },
+      "blocked_temperature": 1.4689550497052708,
+      "band_temperature": 1.4620063379811052,
+      "evidence": {
+        "rows": 1710,
+        "scenes": 12,
+        "decision_groups": 214,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          11,
+          9
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "next_night/partial": {
+      "offsets": {
+        "quality": [
+          -0.10107332468032837,
+          0.0548100471496582
+        ],
+        "usable": [
+          -0.0004956634365953505,
+          0.01224452257156372
+        ]
+      },
+      "blocked_temperature": 1.0685756165784506,
+      "band_temperature": 1.1731410577838917,
+      "evidence": {
+        "rows": 3895,
+        "scenes": 12,
+        "decision_groups": 488,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          11,
+          10
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "next_night/eight": {
+      "offsets": {
+        "quality": [
+          -0.13246864080429077,
+          0.13052034378051758
+        ],
+        "usable": [
+          -0.0005308519466780126,
+          0.005668818950653076
+        ]
+      },
+      "blocked_temperature": 1.1844885891858772,
+      "band_temperature": 1.3513145313574604,
+      "evidence": {
+        "rows": 3893,
+        "scenes": 12,
+        "decision_groups": 490,
+        "limited_scene_evidence": true,
+        "blocked_positive_scenes": 12,
+        "blocked_negative_scenes": 12,
+        "band_class_scenes": [
+          12,
+          12,
+          11
+        ]
+      },
+      "probability_fit_supported": {
+        "blocked": true,
+        "band": true
+      },
+      "probability_parent_used": {
+        "blocked": false,
+        "band": false
+      },
+      "band_bias": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "unsupported_groups": {},
+  "min_fitting_scenes": 8,
+  "public_group_fields": [
+    "horizon",
+    "fresh_history_count",
+    "all_history_count"
+  ],
+  "coverage_target": 0.9,
+  "limitation": "Empirical whole-scene evidence only. Rare bands and night-opening states need separate checks; no per-candidate confidence guarantee or guarantee for changed weather."
+}

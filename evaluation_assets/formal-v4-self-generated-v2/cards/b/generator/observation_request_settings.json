@@ -1,0 +1,11 @@
+{
+  "completion_factor_threshold": 0.5,
+  "completion_reward": 100.0,
+  "count": 6,
+  "include_required_targets": false,
+  "minimum_completion_fraction": 0.8,
+  "minimum_feature_flux": 0.1111111111111111,
+  "reason": "time-critical follow-up",
+  "targets_per_request": 10,
+  "window_nights": 3
+}

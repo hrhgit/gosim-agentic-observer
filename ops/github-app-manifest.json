@@ -1,0 +1,19 @@
+{
+  "name": "Agentic Observer 2026 Evaluator",
+  "url": "https://create.gosim.org/survey26/platform/",
+  "description": "Creates competition project repositories and dispatches isolated Agentic Observer evaluations.",
+  "public": true,
+  "hook_attributes": {
+    "url": "https://create.gosim.org/survey26/platform/",
+    "active": false
+  },
+  "default_permissions": {
+    "administration": "write",
+    "actions": "write",
+    "contents": "write",
+    "metadata": "read",
+    "workflows": "write"
+  },
+  "default_events": [],
+  "request_oauth_on_install": false
+}

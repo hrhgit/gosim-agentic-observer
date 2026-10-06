@@ -1,0 +1,34 @@
+init: 50000 targets, 2500 required, 5100 zones, 364 season cells, 183 nights, 25 fibres pitch 0.2530 deg, price0 0.00386/s, cpu 0.15s
+2027-06-07T19:51:50Z obs=243 total=4470.12026 req_left=1737 rho=1.103 W=1.161 e=0.95 price=0.01112 avgT=906 k=14.0 own=14.2ms eng=11.5ms floor=60 miss=0/4101 gain/pred=0.994 capped=0/243 cpu_left=664.101 wall_left=1790.827
+2027-06-13T00:04:17Z obs=488 total=7065.408009 req_left=1464 rho=1.115 W=1.174 e=0.95 price=0.00599 avgT=1202 k=14.0 own=12.6ms eng=15.0ms floor=60 miss=0/7207 gain/pred=0.998 capped=11/488 cpu_left=660.577 wall_left=1784.126
+2027-06-18T20:25:34Z obs=717 total=9402.135401 req_left=1264 rho=1.236 W=1.301 e=0.95 price=0.00817 avgT=824 k=14.0 own=11.8ms eng=15.8ms floor=60 miss=0/9959 gain/pred=1.004 capped=39/717 cpu_left=657.393 wall_left=1777.188
+2027-06-24T20:12:00Z obs=961 total=11594.45695 req_left=1116 rho=1.050 W=1.105 e=0.95 price=0.00710 avgT=741 k=14.0 own=10.5ms eng=18.0ms floor=60 miss=0/12960 gain/pred=1.008 capped=84/961 cpu_left=653.629 wall_left=1768.692
+2027-06-30T21:02:00Z obs=1197 total=13752.829663 req_left=1005 rho=1.811 W=1.811 e=1.00 price=0.00877 avgT=715 k=14.0 own=13.4ms eng=18.5ms floor=60 miss=0/15918 gain/pred=1.009 capped=137/1197 cpu_left=649.768 wall_left=1759.919
+2027-07-04T22:55:38Z obs=1443 total=16396.699946 req_left=889 rho=1.721 W=1.811 e=0.95 price=0.01175 avgT=541 k=2.0 own=5.5ms eng=25.8ms floor=648 miss=0/19148 gain/pred=1.007 capped=216/1443 cpu_left=645.957 wall_left=1748.937
+2027-07-10T18:00:00Z obs=1686 total=18907.844731 req_left=855 rho=0.291 W=0.789 e=0.37 price=0.00308 avgT=1563 k=14.0 own=20.6ms eng=42.5ms floor=60 miss=0/22537 gain/pred=1.006 capped=309/1687 cpu_left=898.004 wall_left=1735.767
+2027-07-18T20:36:30Z obs=1917 total=20533.283047 req_left=821 rho=0.843 W=1.288 e=0.65 price=0.00333 avgT=1466 k=14.0 own=13.4ms eng=34.3ms floor=60 miss=0/25203 gain/pred=1.006 capped=368/1918 cpu_left=893.734 wall_left=1723.508
+2027-07-24T20:56:30Z obs=2161 total=22212.508575 req_left=757 rho=0.739 W=1.730 e=0.43 price=0.00435 avgT=1159 k=14.0 own=13.6ms eng=32.7ms floor=60 miss=0/27732 gain/pred=1.006 capped=450/2162 cpu_left=889.552 wall_left=1711.432
+report: e=0.690 W=0.940 rho=0.648 low_count=2 at 2027-07-27T18:15:42Z
+report at 2027-07-27T18:15:42Z: correct=True delta=100.0 free_left=2
+2027-07-31T21:36:30Z obs=2403 total=23881.027855 req_left=701 rho=1.022 W=1.075 e=0.95 price=0.00511 avgT=970 k=14.0 own=12.0ms eng=33.3ms floor=60 miss=0/30053 gain/pred=1.006 capped=546/2404 cpu_left=885.923 wall_left=1699.54
+2027-08-06T22:18:00Z obs=2633 total=25540.242715 req_left=638 rho=1.066 W=1.122 e=0.95 price=0.00467 avgT=927 k=14.0 own=10.0ms eng=33.9ms floor=60 miss=0/32321 gain/pred=1.006 capped=647/2634 cpu_left=882.848 wall_left=1687.929
+2027-08-13T19:46:00Z obs=2876 total=27092.929259 req_left=581 rho=1.333 W=1.403 e=0.95 price=0.00507 avgT=1013 k=14.0 own=12.3ms eng=43.0ms floor=60 miss=0/34551 gain/pred=1.006 capped=751/2877 cpu_left=927.028 wall_left=1674.712
+report: e=0.606 W=0.988 rho=0.599 low_count=2 at 2027-08-15T20:48:48Z
+report at 2027-08-15T20:48:48Z: correct=True delta=100.0 free_left=2
+2027-08-19T22:57:00Z obs=3091 total=28437.844844 req_left=527 rho=0.909 W=0.957 e=0.95 price=0.00313 avgT=1004 k=14.0 own=12.5ms eng=43.6ms floor=60 miss=0/36528 gain/pred=1.006 capped=870/3092 cpu_left=923.784 wall_left=1660.25
+2027-08-28T22:20:30Z obs=3322 total=29795.135228 req_left=464 rho=0.786 W=0.885 e=0.89 price=0.00334 avgT=1290 k=14.0 own=13.0ms eng=48.7ms floor=60 miss=0/38583 gain/pred=1.006 capped=995/3323 cpu_left=920.392 wall_left=1644.6
+2027-09-07T20:15:30Z obs=3556 total=31045.502665 req_left=409 rho=0.827 W=0.870 e=0.95 price=0.00297 avgT=1609 k=14.0 own=12.1ms eng=47.7ms floor=60 miss=0/40616 gain/pred=1.004 capped=1129/3557 cpu_left=917.29 wall_left=1629.185
+2027-09-16T01:02:30Z obs=3798 total=32614.571983 req_left=321 rho=1.281 W=1.348 e=0.95 price=0.00452 avgT=1145 k=14.0 own=17.1ms eng=45.0ms floor=60 miss=0/42905 gain/pred=1.005 capped=1265/3799 cpu_left=856.757 wall_left=1614.108
+2027-09-24T22:30:00Z obs=4028 total=34396.353284 req_left=229 rho=1.370 W=0.698 e=1.00 price=0.00470 avgT=1080 k=14.0 own=13.8ms eng=53.0ms floor=60 miss=0/45381 gain/pred=1.004 capped=1389/4028 cpu_left=853.356 wall_left=1597.439
+report: e=0.592 W=1.090 rho=0.645 low_count=11 at 2027-10-02T18:15:00Z
+report at 2027-10-02T18:15:00Z: correct=False delta=0.0 free_left=1
+2027-10-02T23:14:30Z obs=4256 total=35999.025058 req_left=154 rho=0.611 W=0.944 e=0.65 price=0.00318 avgT=1068 k=14.0 own=12.2ms eng=63.6ms floor=60 miss=0/47693 gain/pred=1.003 capped=1511/4257 cpu_left=850.198 wall_left=1578.71
+report: e=0.476 W=0.985 rho=0.469 low_count=4 at 2027-10-16T21:34:18Z
+report at 2027-10-16T21:34:18Z: correct=True delta=100.0 free_left=2
+2027-10-17T02:22:49Z obs=4483 total=37239.043509 req_left=104 rho=0.796 W=0.838 e=0.95 price=0.00212 avgT=1933 k=14.0 own=16.0ms eng=66.8ms floor=60 miss=0/49772 gain/pred=1.003 capped=1612/4484 cpu_left=847.023 wall_left=1558.251
+2027-10-27T22:24:30Z obs=4722 total=38601.073809 req_left=39 rho=0.821 W=0.865 e=0.95 price=0.00249 avgT=1385 k=14.0 own=10.6ms eng=68.1ms floor=60 miss=0/52032 gain/pred=1.002 capped=1709/4723 cpu_left=900.152 wall_left=1537.676
+2027-11-09T22:29:30Z obs=4926 total=39900.891244 req_left=0 rho=0.756 W=0.795 e=0.95 price=0.00306 avgT=1462 k=14.0 own=15.0ms eng=64.5ms floor=60 miss=0/54084 gain/pred=1.001 capped=1788/4927 cpu_left=896.869 wall_left=1515.846
+2027-11-22T21:16:30Z obs=5163 total=41745.841113 req_left=0 rho=1.183 W=1.245 e=0.95 price=0.00562 avgT=716 k=14.0 own=11.3ms eng=77.5ms floor=60 miss=0/57250 gain/pred=1.001 capped=1872/5164 cpu_left=892.978 wall_left=1494.769
+2027-11-29T20:58:30Z obs=5406 total=43114.372292 req_left=0 rho=1.219 W=1.283 e=0.95 price=0.00470 avgT=743 k=14.0 own=11.2ms eng=69.9ms floor=60 miss=0/59714 gain/pred=1.001 capped=1948/5407 cpu_left=889.427 wall_left=1475.88
+report at 2027-12-01T01:38:00Z: correct=False delta=0.0 free_left=1
+finish: {"decisions": 8377, "grace_seconds": 30.0, "last_decision_sequence": 5797, "observe_actions": 5452, "schema_version": "v4-finish-v1", "termination_reason": "survey_complete"}

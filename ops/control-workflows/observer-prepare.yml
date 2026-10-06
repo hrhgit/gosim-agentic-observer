@@ -1,0 +1,48 @@
+name: Observer prepare
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Platform job identifier
+        type: string
+        required: true
+      job_nonce:
+        description: One-time dispatch capability
+        type: string
+        required: true
+      runner:
+        description: Runner pool; self-hosted is the organizer's isolated fallback only
+        type: choice
+        options: [github-hosted, self-hosted]
+        default: github-hosted
+        required: false
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: observer-prepare-${{ inputs.job_id }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    if: ${{ (github.ref == 'refs/heads/main' || github.ref == format('refs/tags/observer-runtime-{0}', github.sha)) && github.event_name == 'workflow_dispatch' }}
+    runs-on: ${{ inputs.runner == 'self-hosted' && fromJSON('["self-hosted","linux","observer-fallback"]') || 'ubuntu-24.04' }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Run the trusted prepare entrypoint
+        env:
+          OBSERVER_JOB_URL: ${{ vars.OBSERVER_JOB_URL }}
+          OBSERVER_JOB_ID: ${{ inputs.job_id }}
+          OBSERVER_JOB_NONCE: ${{ inputs.job_nonce }}
+        run: python -m project_platform.job_runner prepare
+

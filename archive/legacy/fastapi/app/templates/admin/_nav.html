@@ -1,0 +1,4 @@
+<div class="admin-nav">
+  {% for href, label in [('/admin','Overview'),('/admin/phases','Phases'),('/admin/scenarios','Scenarios'),('/admin/submissions','Submissions'),('/admin/teams','Teams'),('/admin/users','Users'),('/admin/announcements','Announcements'),('/admin/jobs','Jobs'),('/admin/settings','Settings')] %}
+  <a href="{{ href }}" class="{{ 'active' if (path == href) or (href != '/admin' and path.startswith(href)) else '' }}">{{ label }}</a>{% endfor %}
+</div>

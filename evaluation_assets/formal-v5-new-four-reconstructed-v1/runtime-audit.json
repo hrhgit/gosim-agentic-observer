@@ -1,0 +1,30 @@
+{
+  "a": {
+    "termination": "survey_complete",
+    "source_public_records_received_exactly": 3846,
+    "capture_records": 2940,
+    "log_bytes": 195530,
+    "scope": "wait-only end-to-end protocol; not a strategy score baseline"
+  },
+  "b": {
+    "termination": "survey_complete",
+    "source_public_records_received_exactly": 6835,
+    "capture_records": 4380,
+    "log_bytes": 303918,
+    "scope": "wait-only end-to-end protocol; not a strategy score baseline"
+  },
+  "c": {
+    "termination": "survey_complete",
+    "source_public_records_received_exactly": 4821,
+    "capture_records": 2893,
+    "log_bytes": 241662,
+    "scope": "wait-only end-to-end protocol; not a strategy score baseline"
+  },
+  "d": {
+    "termination": "survey_complete",
+    "source_public_records_received_exactly": 11684,
+    "capture_records": 8743,
+    "log_bytes": 545234,
+    "scope": "wait-only end-to-end protocol; not a strategy score baseline"
+  }
+}

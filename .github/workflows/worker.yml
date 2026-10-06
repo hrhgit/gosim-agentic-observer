@@ -1,0 +1,57 @@
+name: Evaluation worker
+
+# Website forks must explicitly opt in before running a production evaluator.
+# The existing production worker remains upstream until a coordinated handover.
+# Successful runs may schedule a successor; failures never start a retry loop.
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: evaluation-worker
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: write
+
+env:
+  WORKER_RUN_SECONDS: "19800"   # 5 h 30 min, under the 6 h job limit
+
+jobs:
+  evaluate:
+    if: ${{ vars.EVALUATION_WORKER_ENABLED == 'true' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate worker configuration
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: bash scripts/worker-preflight.sh
+      - name: Poll the queue and evaluate submissions
+        id: evaluate
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SAC_WORKER_ID: gha-${{ github.run_id }}
+          SAC_WORKER_KINDS: agent,results
+          SAC_POLL_SECONDS: "5"
+          # challenge v3: the wall clock comes from each scenario (global_wallclock_seconds); these cap the rest
+          SAC_AGENT_INIT_TIMEOUT_SECONDS: "30"
+          SAC_INSTALL_TIMEOUT_SECONDS: "900"
+          SAC_AGENT_CPU_SECONDS: "7200"
+          SAC_AGENT_MEMORY_MB: "2048"
+          SAC_AGENT_NETWORK: "all"
+          SAC_DATA_DIR: ${{ runner.temp }}/sac
+        run: python -m worker.main run --max-seconds "$WORKER_RUN_SECONDS"
+      - name: Dispatch the next worker run
+        if: ${{ success() && steps.evaluate.outcome == 'success' && vars.EVALUATION_WORKER_ENABLED == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run worker.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"

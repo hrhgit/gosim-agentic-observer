@@ -1,0 +1,18 @@
+{"record_type": "forecast", "issued_at_utc": "2026-12-02T05:00:00Z", "coverage_start_utc": "2026-12-02T05:00:00Z", "coverage_end_utc": "2026-12-09T05:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2026-12-09T05:15:00Z", "coverage_start_utc": "2026-12-09T05:15:00Z", "coverage_end_utc": "2026-12-16T05:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2026-12-16T05:15:00Z", "coverage_start_utc": "2026-12-16T05:15:00Z", "coverage_end_utc": "2026-12-23T05:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2026-12-23T05:15:00Z", "coverage_start_utc": "2026-12-23T05:15:00Z", "coverage_end_utc": "2026-12-30T05:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2026-12-30T05:15:00Z", "coverage_start_utc": "2026-12-30T05:15:00Z", "coverage_end_utc": "2027-01-06T05:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-01-06T05:30:00Z", "coverage_start_utc": "2027-01-06T05:30:00Z", "coverage_end_utc": "2027-01-13T05:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-01-13T05:30:00Z", "coverage_start_utc": "2027-01-13T05:30:00Z", "coverage_end_utc": "2027-01-20T05:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-01-20T05:30:00Z", "coverage_start_utc": "2027-01-20T05:30:00Z", "coverage_end_utc": "2027-01-27T05:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-01-27T05:30:00Z", "coverage_start_utc": "2027-01-27T05:30:00Z", "coverage_end_utc": "2027-02-03T05:30:00Z", "notices": [{"event_kind": "storm", "direction": "ALL", "nights": ["2027-01-26", "2027-01-27"]}, {"event_kind": "cold_snap", "direction": "ALL", "nights": ["2027-01-28", "2027-01-29", "2027-01-30"]}, {"event_kind": "rain", "direction": "ALL", "nights": ["2027-01-29", "2027-01-30"]}]}
+{"record_type": "forecast", "issued_at_utc": "2027-02-03T05:45:00Z", "coverage_start_utc": "2027-02-03T05:45:00Z", "coverage_end_utc": "2027-02-10T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-02-10T05:45:00Z", "coverage_start_utc": "2027-02-10T05:45:00Z", "coverage_end_utc": "2027-02-17T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-02-17T05:45:00Z", "coverage_start_utc": "2027-02-17T05:45:00Z", "coverage_end_utc": "2027-02-24T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-02-24T05:45:00Z", "coverage_start_utc": "2027-02-24T05:45:00Z", "coverage_end_utc": "2027-03-03T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-03-03T05:45:00Z", "coverage_start_utc": "2027-03-03T05:45:00Z", "coverage_end_utc": "2027-03-10T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-03-10T05:45:00Z", "coverage_start_utc": "2027-03-10T05:45:00Z", "coverage_end_utc": "2027-03-17T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-03-17T05:45:00Z", "coverage_start_utc": "2027-03-17T05:45:00Z", "coverage_end_utc": "2027-03-24T05:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-03-24T06:00:00Z", "coverage_start_utc": "2027-03-24T06:00:00Z", "coverage_end_utc": "2027-03-31T06:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-03-31T06:00:00Z", "coverage_start_utc": "2027-03-31T06:00:00Z", "coverage_end_utc": "2027-04-07T06:00:00Z", "notices": []}

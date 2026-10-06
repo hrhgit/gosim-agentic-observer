@@ -1,0 +1,10 @@
+{% extends "admin/_layout.html" %}
+{% set heading = 'Settings' %}
+{% block admin %}
+<form method="post" action="/admin/settings" class="panel"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+  <label class="check"><input type="checkbox" name="registration_open" {% if registration_open %}checked{% endif %}> registration open</label>
+  <button class="btn primary sm" type="submit">Save</button></form>
+<div class="panel mt-4"><div class="hd"><h2>Runtime (from environment)</h2></div><dl class="kv">
+  <dt>base_url</dt><dd class="m">{{ settings.base_url }}</dd><dt>sandbox_mode</dt><dd class="m">{{ settings.sandbox_mode }}</dd><dt>agent timeouts</dt><dd class="m">{{ settings.agent_timeout_seconds }}s total · {{ settings.agent_step_timeout_seconds }}s/step · {{ settings.agent_memory_mb }} MB</dd>
+  <dt>worker</dt><dd class="m">inline={{ settings.inline_worker }} concurrency={{ settings.worker_concurrency }}</dd><dt>email</dt><dd class="m">{{ 'enabled' if settings.email_enabled else 'disabled' }}</dd><dt>admin emails</dt><dd class="m">{{ settings.admin_emails or '—' }}</dd></dl></div>
+{% endblock %}

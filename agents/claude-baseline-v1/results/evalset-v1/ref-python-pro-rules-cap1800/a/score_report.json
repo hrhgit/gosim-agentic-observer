@@ -1,0 +1,155 @@
+{
+  "by_class": {
+    "BGS": 3143.573964,
+    "ELG": 9462.586998,
+    "LRG": 4766.25394,
+    "QSO": 4680.553342,
+    "Star": 762.873253
+  },
+  "components": {
+    "observation_request_reward": 300.0,
+    "report_settlement": 0.0,
+    "required_penalty": -150.0,
+    "sum_best_scores": 22815.841497,
+    "uniformity_penalty": -7.23084
+  },
+  "counts": {
+    "decisions": 5954,
+    "invalidated_observations": 0,
+    "observation_requests_completed": 3,
+    "observation_requests_issued": 3,
+    "observations": 40079,
+    "observe_actions": 3907,
+    "required_missing": 3,
+    "targets_observed": 27622
+  },
+  "invalidations": [],
+  "observation_requests": [
+    {
+      "completed": true,
+      "completed_count": 6,
+      "completed_target_ids": [
+        "V4T002090",
+        "V4T021275",
+        "V4T008039",
+        "V4T001287",
+        "V4T004446",
+        "V4T012546"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2026-10-05T09:00:00Z",
+      "issued_at_utc": "2026-10-03T00:00:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0001",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T002090",
+        "V4T012491",
+        "V4T021275",
+        "V4T008039",
+        "V4T001287",
+        "V4T004446",
+        "V4T027699",
+        "V4T012546"
+      ]
+    },
+    {
+      "completed": true,
+      "completed_count": 7,
+      "completed_target_ids": [
+        "V4T025166",
+        "V4T018394",
+        "V4T003034",
+        "V4T020894",
+        "V4T026936",
+        "V4T021634",
+        "V4T024825"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2026-12-03T08:15:00Z",
+      "issued_at_utc": "2026-12-01T00:45:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0002",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T025166",
+        "V4T018394",
+        "V4T003034",
+        "V4T027183",
+        "V4T020894",
+        "V4T026936",
+        "V4T021634",
+        "V4T024825"
+      ]
+    },
+    {
+      "completed": true,
+      "completed_count": 6,
+      "completed_target_ids": [
+        "V4T005641",
+        "V4T004595",
+        "V4T026866",
+        "V4T003031",
+        "V4T026183",
+        "V4T029113"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2027-01-31T08:45:00Z",
+      "issued_at_utc": "2027-01-29T01:00:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0003",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T008619",
+        "V4T005641",
+        "V4T004595",
+        "V4T026866",
+        "V4T003031",
+        "V4T026183",
+        "V4T029113",
+        "V4T022409"
+      ]
+    }
+  ],
+  "scenario": "formal-a-self-generated-local-v1",
+  "schema_version": "v4-score-report-v1",
+  "sha256": {
+    "decisions": "56ab9c6185eee56883bd6cf9483dca01872d4b7885d512925a2932bcd7e0f659",
+    "messages": "8cf6c5714b3cad2a83454e9e59081b1925f33b0903aac183c307f43dc89f4d8f",
+    "observations": "9e2cf9eff744e6b0e40a2072aa18e3d1aab3e81801be2f589de12bc7397268b5",
+    "scenario": "baadc2375c5fbfcd88660ad893c6b31c24d99cc4d12c3da9727a062e05b4bea0"
+  },
+  "termination": {
+    "detail": "",
+    "reason": "survey_complete"
+  },
+  "total": 22958.610657,
+  "uniformity_bands": {
+    "ra_0_10": 0.709441,
+    "ra_100_110": 0.850467,
+    "ra_10_20": 0.714286,
+    "ra_110_120": 0.849057,
+    "ra_120_130": 0.878223,
+    "ra_130_140": 0.914628,
+    "ra_140_150": 0.917621,
+    "ra_150_160": 0.913625,
+    "ra_160_170": 0.906133,
+    "ra_20_30": 0.7856,
+    "ra_300_310": 0.599057,
+    "ra_30_40": 0.841567,
+    "ra_310_320": 0.469794,
+    "ra_320_330": 0.488056,
+    "ra_330_340": 0.509363,
+    "ra_340_350": 0.551128,
+    "ra_350_360": 0.66253,
+    "ra_40_50": 0.877858,
+    "ra_50_60": 0.858244,
+    "ra_60_70": 0.881081,
+    "ra_70_80": 0.897508,
+    "ra_80_90": 0.880115,
+    "ra_90_100": 0.895447
+  }
+}

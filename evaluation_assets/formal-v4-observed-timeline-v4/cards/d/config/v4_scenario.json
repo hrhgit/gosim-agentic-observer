@@ -1,0 +1,38 @@
+{
+  "fiber_config": "v4_fiber_config.json",
+  "limits": {
+    "global_wallclock_seconds": 900
+  },
+  "minimum_altitude_deg": 30.0,
+  "name": "formal-d-observed-timeline-assumed-conditions-v4",
+  "products": {
+    "bulletins_jsonl": "../public/v4_bulletins.jsonl",
+    "earthquake_effects_csv": "../truth/v4_earthquake_effects.csv",
+    "events_csv": "../truth/v4_events.csv",
+    "footprint_csv": "../public/footprint.csv",
+    "forecasts_jsonl": "../public/v4_forecasts.jsonl",
+    "night_calendar_csv": "../public/v4_night_calendar.csv",
+    "observation_requests_jsonl": "../truth/v4_observation_requests.jsonl",
+    "slots_csv": "../truth/v4_slots.csv",
+    "targets_csv": "../public/targets.csv",
+    "weather_truth_csv": "../truth/v4_weather_truth.csv"
+  },
+  "schema_version": "v4-scenario-v1",
+  "score_config": "v4_score_config.json",
+  "site": {
+    "latitude_deg": -45.0,
+    "longitude_deg": -135.0,
+    "name": "Nemo Observatory, South Pacific (fictional)",
+    "sun_altitude_limit_deg": -18.0,
+    "utc_offset_hours": -9.0
+  },
+  "stress": {
+    "enabled": true,
+    "stress_events_csv": "../truth/v4_stress_events.csv"
+  },
+  "task_card": {
+    "card_id": "D-RECONSTRUCTED-ASSUMED",
+    "phase": "local-observed-timeline",
+    "scenario_slug": "formal-d-observed-timeline-assumed-conditions-v4"
+  }
+}

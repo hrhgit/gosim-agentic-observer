@@ -1,0 +1,6 @@
+event_id,event_type,actual_start_utc,actual_end_utc,scope_type,azimuth_start_deg,azimuth_end_deg,min_altitude_deg,max_altitude_deg,magnitude,severity,force_close,zero_score,seeing_multiplier,transparency_multiplier,sky_quality_multiplier,instrument_efficiency_multiplier
+V4EV0003,tornado,2027-01-27T15:15:00Z,2027-01-28T06:15:00Z,ALL,,,,,,0.819476,true,false,1.819476,0.303446,0.385393,1.000000
+V4EV0002,cold_wave,2027-01-29T10:15:00Z,2027-01-31T13:15:00Z,ALL,,,,,,0.945511,false,false,1.047276,0.962180,0.981090,1.000000
+V4EV0001,rainy,2027-01-30T10:45:00Z,2027-01-31T05:45:00Z,ALL,,,,,,0.926614,true,false,1.741292,0.305039,0.397701,1.000000
+V4EV0004,earthquake,2027-01-31T12:00:00Z,2027-01-31T12:15:00Z,ALL,,,,,6.208,1.000000,false,false,1.000000,1.000000,1.000000,1.000000
+V4EV0005,instrument_fault,2027-02-02T11:15:00Z,2027-04-01T15:00:00Z,ALL,,,,,,1.000000,false,false,1.000000,1.000000,1.000000,0.522138

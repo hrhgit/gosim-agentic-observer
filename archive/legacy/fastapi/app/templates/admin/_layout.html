@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Admin · {{ heading }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap">
+  <span class="kicker">Admin</span><h1 class="section-title sm mt-3">{{ heading }}</h1>
+  <div class="mt-4">{% include "admin/_nav.html" %}</div>
+  {% block admin %}{% endblock %}
+</div></section>
+{% endblock %}

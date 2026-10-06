@@ -1,0 +1,176 @@
+{
+  "by_class": {
+    "BGS": 3640.319045,
+    "ELG": 11695.065665,
+    "LRG": 6375.994592,
+    "QSO": 5804.364735,
+    "Star": 772.707717
+  },
+  "components": {
+    "observation_request_reward": 400.0,
+    "report_settlement": 100.0,
+    "required_penalty": -0.0,
+    "sum_best_scores": 28288.451755,
+    "uniformity_penalty": -0.096561
+  },
+  "counts": {
+    "decisions": 6125,
+    "invalidated_observations": 0,
+    "observation_requests_completed": 4,
+    "observation_requests_issued": 4,
+    "observations": 36721,
+    "observe_actions": 4348,
+    "required_missing": 0,
+    "targets_observed": 29217
+  },
+  "invalidations": [],
+  "observation_requests": [
+    {
+      "completed": true,
+      "completed_count": 6,
+      "completed_target_ids": [
+        "V4T018390",
+        "V4T022158",
+        "V4T010801",
+        "V4T025397",
+        "V4T028495",
+        "V4T018617"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2026-12-05T15:15:00Z",
+      "issued_at_utc": "2026-12-03T05:00:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0001",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T018390",
+        "V4T012689",
+        "V4T022158",
+        "V4T010801",
+        "V4T025397",
+        "V4T028495",
+        "V4T017652",
+        "V4T018617"
+      ]
+    },
+    {
+      "completed": true,
+      "completed_count": 6,
+      "completed_target_ids": [
+        "V4T004410",
+        "V4T013804",
+        "V4T013213",
+        "V4T029599",
+        "V4T001180",
+        "V4T015642"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2027-01-13T15:30:00Z",
+      "issued_at_utc": "2027-01-11T05:30:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0002",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T004410",
+        "V4T013804",
+        "V4T029284",
+        "V4T004193",
+        "V4T013213",
+        "V4T029599",
+        "V4T001180",
+        "V4T015642"
+      ]
+    },
+    {
+      "completed": true,
+      "completed_count": 6,
+      "completed_target_ids": [
+        "V4T021208",
+        "V4T012899",
+        "V4T028905",
+        "V4T026280",
+        "V4T001036",
+        "V4T025934"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2027-02-20T15:30:00Z",
+      "issued_at_utc": "2027-02-18T05:45:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0003",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T021208",
+        "V4T012899",
+        "V4T015567",
+        "V4T028905",
+        "V4T026280",
+        "V4T001036",
+        "V4T025934",
+        "V4T013292"
+      ]
+    },
+    {
+      "completed": true,
+      "completed_count": 6,
+      "completed_target_ids": [
+        "V4T008106",
+        "V4T022392",
+        "V4T021690",
+        "V4T026335",
+        "V4T004367",
+        "V4T026134"
+      ],
+      "completion_factor_threshold": 0.5,
+      "completion_reward": 100.0,
+      "deadline_utc": "2027-03-31T15:00:00Z",
+      "issued_at_utc": "2027-03-29T06:00:00Z",
+      "minimum_completed": 6,
+      "request_id": "V4RQ0004",
+      "reward": 100.0,
+      "target_ids": [
+        "V4T008106",
+        "V4T022392",
+        "V4T016259",
+        "V4T021690",
+        "V4T026335",
+        "V4T004367",
+        "V4T026134",
+        "V4T027406"
+      ]
+    }
+  ],
+  "scenario": "formal-c-self-generated-local-v1",
+  "schema_version": "v4-score-report-v1",
+  "sha256": {
+    "decisions": "7ed00b4b3e4f52eb3cae2f51883af68553edec49fa85267553312009dff61926",
+    "messages": "a5ce595c2d3e0d073afe1bf9f9336017433b1c4e580e8e2801d69f404273c8d1",
+    "observations": "3e00e83e0f9866c0d2be7e68410c192eaa19720a2ea1fdcc52ea80bf4aaf9ef5",
+    "scenario": "08f7141c95b4cede7603a942f3bf42262c2d7e81ca451e28c3e7d1198a9bd5e0"
+  },
+  "termination": {
+    "detail": "",
+    "reason": "survey_complete"
+  },
+  "total": 28788.355194,
+  "uniformity_bands": {
+    "ra_100_110": 0.897451,
+    "ra_110_120": 0.90804,
+    "ra_120_130": 0.92161,
+    "ra_130_140": 0.90658,
+    "ra_140_150": 0.927996,
+    "ra_150_160": 0.928378,
+    "ra_160_170": 0.940995,
+    "ra_170_180": 0.941079,
+    "ra_180_190": 0.945568,
+    "ra_190_200": 0.959781,
+    "ra_200_210": 0.967359,
+    "ra_50_60": 0.912121,
+    "ra_60_70": 0.924058,
+    "ra_70_80": 0.931329,
+    "ra_80_90": 0.904963,
+    "ra_90_100": 0.89899
+  }
+}

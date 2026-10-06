@@ -1,0 +1,31 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.secrets/
+.env
+.env.*
+!.env.example
+data/
+artifacts/
+run_output/
+reviews/
+test-results/
+web/node_modules/
+web/dist/
+web/.env
+supabase/.temp/
+supabase/.branches/
+archive/legacy/fastapi/data/
+
+.site/
+release/
+
+# Migrated legacy event build outputs
+legacy-event/node_modules/
+legacy-event/dist/
+legacy-event/.env.local
+
+# v4 reference products are generated on demand (tests use a temp copy)
+challenge/reference/v4/products/
+worklog/

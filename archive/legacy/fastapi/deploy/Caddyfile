@@ -1,0 +1,8 @@
+# Replace survey.example.org with your domain. Caddy obtains TLS certificates automatically.
+survey.example.org {
+    encode zstd gzip
+    request_body {
+        max_size 25MB
+    }
+    reverse_proxy web:8000
+}

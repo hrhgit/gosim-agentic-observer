@@ -1,0 +1,72 @@
+--- /Users/herh/MyFiles/Projects/gosim-agentic-observer/agents/claude-baseline-v1/agent/core/planner.py	2026-10-04 20:59:57
++++ agent/core/planner.py	2026-10-05 04:16:41
+@@ -18,6 +18,7 @@
+ from __future__ import annotations
+ 
+ import heapq
++from . import chooser
+ import math
+ 
+ from .astro import DEG, OMEGA, RAD
+@@ -145,11 +146,20 @@
+         if not scored:
+             return None
+         top = heapq.nlargest(k_zones, scored) if len(scored) > k_zones else scored
++        if chooser.MODE != "off":
++            per_region = {}
++            for item in sorted(scored, reverse=True):
++                bucket = per_region.setdefault(chooser.region_of(cat.zra[item[1]]), [])
++                if len(bucket) < 2:
++                    bucket.append(item)
++            seen = {z for _, z in top}
++            top = list(top) + [item for bucket in per_region.values() for item in bucket if item[1] not in seen]
+         ctx = (t, lst, zen, north, east, moon, rho, w_level, t_cap, t_floor, price, night, calibrate, rem)
+         plans = []
+         for _, z in top:
+             plan = self._evaluate(z, ctx)
+             if plan is not None:
++                plan["z"] = z
+                 plans.append(plan)
+         if not plans:
+             return None
+@@ -183,13 +193,38 @@
+             if top is None:
+                 continue
+             score = top[0] + (plan["u_s"] - 1.0) * top[2]
++            plan["duration"] = top[1]
++            plan["nv"] = top[0]
++            plan["score"] = score
+             if best_score is None or score > best_score:
+                 best_score = score
+                 best_plan = plan
+-                best_plan["duration"] = top[1]
+-                best_plan["nv"] = top[0]
++        if best_plan is not None and chooser.MODE not in ("off", "planner") and not calibrate:
++            regional = {}
++            for plan in plans:
++                if "score" in plan and plan["score"] > 0.0:
++                    r = chooser.region_of(cat.zra[plan["z"]])
++                    if r not in regional or plan["score"] > regional[r]["score"]:
++                        regional[r] = plan
++            ordered = sorted(regional.items(), key=lambda kv: -kv[1]["score"])[:6]
++            if len(ordered) >= 2 and ordered[0][1] is best_plan:
++                options = []
++                for r, plan in ordered:
++                    z = plan["z"]
++                    sa = cat.zcx[z] * zx + cat.zcy[z] * zy + cat.zcz[z] * zz
++                    ha = ((lst - cat.zra[z] + 180.0) % 360.0) - 180.0
++                    members = cat.zmembers[z]
++                    gain = next((total for duration, eff, total, science in plan["curve"] if duration == plan["duration"]), 0.0)
++                    options.append({"region": r, "score": plan["score"], "gain": gain, "minutes": plan["duration"] / 60.0, "alt": math.asin(max(-1.0, min(1.0, sa))) * DEG,
++                                    "hours_tonight": max(0.0, min((cat.zhmax[z] - ha) / 15.0, rem / 3600.0)),
++                                    "season_hours": cat.season_vis[cat.zcoarse[z]][night] / 3600.0,
++                                    "required": sum(1 for j in sv.zreq[z]) if sv.zreq[z] else 0,
++                                    "request": len(sv.zextra.get(z, ()))})
++                best_plan = ordered[chooser.choose(options, sv, t, night, lst)][1]
+         if best_plan is None:
+             return None
++        if chooser.DMODE != "off" and not calibrate:
++            best_plan["duration"] = chooser.choose_duration(best_plan["curve"], best_plan["duration"], price, rem / 3600.0, len(best_plan.get("cell_keys", ())))
+         picks = self._picks(best_plan, t, rem, calibrate)
+         if not picks:
+             return None

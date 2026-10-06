@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ t('docs_page.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<div class="wrap page-head"><span class="kicker">{{ t('docs_page.kicker') }}</span><h1 class="mt-4">{{ t('docs_page.title') }}</h1></div>
+<section class="section"><div class="wrap"><div class="grid" style="grid-template-columns:1fr;gap:3rem">
+  <div style="display:grid;gap:3rem;grid-template-columns:1fr">
+    <article class="prose" id="doc">{{ doc | safe }}</article>
+  </div>
+</div></div></section>
+{% endblock %}

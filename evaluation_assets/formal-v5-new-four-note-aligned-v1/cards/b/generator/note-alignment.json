@@ -1,0 +1,123 @@
+{
+ "card": "b",
+ "faults": [
+  {
+   "onset": "2027-07-04T22:00:00Z",
+   "end": "2027-07-07T22:00:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": false,
+   "notes": [
+    "V4RQ1011"
+   ],
+   "formal_run_correct_report": "2027-07-04T23:50:46Z"
+  },
+  {
+   "onset": "2027-07-07T22:00:00Z",
+   "end": "2027-08-04T02:45:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1009",
+    "V4RQ1010",
+    "V4RQ1011",
+    "V4RQ1013",
+    "V4RQ1014"
+   ],
+   "formal_run_correct_report": "2027-07-11T21:17:12Z"
+  },
+  {
+   "onset": "2027-08-04T02:45:00Z",
+   "end": "2027-09-02T00:30:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1018",
+    "V4RQ1019"
+   ],
+   "formal_run_correct_report": "2027-08-04T22:12:39Z"
+  },
+  {
+   "onset": "2027-09-02T00:30:00Z",
+   "end": "2027-09-10T23:00:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1026",
+    "V4RQ1028",
+    "V4RQ1029"
+   ],
+   "formal_run_correct_report": "2027-09-03T23:20:34Z"
+  },
+  {
+   "onset": "2027-09-10T23:00:00Z",
+   "end": "2027-10-09T00:30:00Z",
+   "level": 0.5,
+   "level_stated": true,
+   "announced_in_advance": false,
+   "notes": [
+    "V4RQ1032",
+    "V4RQ1033"
+   ],
+   "formal_run_correct_report": "2027-09-11T01:48:22Z"
+  },
+  {
+   "onset": "2027-10-09T00:30:00Z",
+   "end": "2027-12-01T01:45:00Z",
+   "level": 0.3,
+   "level_stated": true,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1039",
+    "V4RQ1041",
+    "V4RQ1042"
+   ],
+   "formal_run_correct_report": "2027-10-10T21:46:20Z"
+  }
+ ],
+ "faults_in_source_set": 6,
+ "wind_sectors_closed": 3,
+ "stops": [
+  {
+   "start": "2027-06-17T20:15:00Z",
+   "end": "2027-06-18T00:15:00Z",
+   "note": "V4RQ1006",
+   "kind": "maintenance",
+   "formal_run_exposures": 20,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-08-14T21:30:00Z",
+   "end": "2027-08-15T01:30:00Z",
+   "note": "V4RQ1022",
+   "kind": "maintenance",
+   "formal_run_exposures": 13,
+   "formal_run_all_zero_share": 0.9230769230769231,
+   "applied": true
+  },
+  {
+   "start": "2027-09-22T20:45:00Z",
+   "end": "2027-09-22T23:45:00Z",
+   "note": "V4RQ1035",
+   "kind": "maintenance",
+   "formal_run_exposures": 9,
+   "formal_run_all_zero_share": 0.8888888888888888,
+   "applied": true
+  },
+  {
+   "start": "2027-11-23T21:45:00Z",
+   "end": "2027-11-24T00:15:00Z",
+   "note": "V4RQ1050",
+   "kind": "maintenance",
+   "formal_run_exposures": 0,
+   "formal_run_all_zero_share": null,
+   "applied": false
+  }
+ ],
+ "slots_closed_for_stops": 44,
+ "slots_with_changed_efficiency": 2113
+}

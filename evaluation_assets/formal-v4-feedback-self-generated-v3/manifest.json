@@ -1,0 +1,827 @@
+{
+  "classification": "self-generated local evaluation data; not official hidden competition data",
+  "feedback_sha256": "9ad0d40654da919b9d082ae0b6dd9ad4837815df18c8353ac535446a73cb5b5f",
+  "official_feedback_archives": [
+    {
+      "evaluation_id": "3fd992a4-4cde-4bd4-be41-3965ba3b83d3",
+      "file": "3fd992a4.zip",
+      "sha256": "de4d6b3c857898b03717fb2a7635e3d8746d5ff4b674cae76f2cb926bb51e10b"
+    },
+    {
+      "evaluation_id": "90070558-36cc-48d4-81a7-ae9e8bcb21db",
+      "file": "90070558.zip",
+      "sha256": "9b237419bacf388ac848810d0945c3963a202311b8619d7f81e89272d9c69889"
+    },
+    {
+      "evaluation_id": "a0a244e9-bd36-4698-a665-2674fc4c4425",
+      "file": "a0a244e9.zip",
+      "sha256": "1fdacf5bb97750803c8e314fba78b435567ddbb9cf3bf47f3a59b757a5cea200"
+    }
+  ],
+  "schema_version": "feedback-informed-self-generated-v3",
+  "source_formal_manifest": "cards/formal_package_manifest.json",
+  "suites": {
+    "heavier": {
+      "a": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "rocket_launch": 4
+          },
+          "variant": "heavier"
+        },
+        "formal_card": "A",
+        "generated": {
+          "event_counts": {
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 3,
+            "rocket_launch": 4,
+            "terrain_obstruction": 1
+          },
+          "night_count": 123,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105201,
+          "title_zh": "寒潮、短时避让与地震"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/a",
+          "sha256": {
+            "config/v4_fiber_config.json": "2f82c01de00f7bd88db9b58a976e602bba60793f0b9f7386c2a84abbddeb7165",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "8436949cb09f7c27f64b1abd31ee96eaae5d95d1da9b60ec24d480bafe29797e",
+            "public/targets.csv": "05dc5357fad3b12e3ede1d7aeb7eb59ec5f9b666980ba0cbc409f74c3697f736",
+            "public/taskcard.en.md": "59cdd93c8d349a9f44c2afef016edce9351cbbbe33c80340715f1ba7ab36efc2",
+            "public/taskcard.zh.md": "0c7da00bd034bcec15f43a8d28ae7dd4a561dde240ae759dd75240bc1277125c",
+            "public/v4_night_calendar.csv": "12ac0149f781dc4a207e85ab448b1e07f5eb3b477ff327c0a3f8a45d212344a5"
+          }
+        }
+      },
+      "b": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "overcast": 48,
+            "rain": 40,
+            "rocket_launch": 4
+          },
+          "variant": "heavier"
+        },
+        "formal_card": "B",
+        "generated": {
+          "event_counts": {
+            "cloudy": 60,
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 3,
+            "rainy": 50,
+            "rocket_launch": 4,
+            "terrain_obstruction": 1
+          },
+          "night_count": 183,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105202,
+          "title_zh": "频繁雨云与方向变化"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/b",
+          "sha256": {
+            "config/v4_fiber_config.json": "de599d5f177a6f7088fa980ea1e8211887496eeaf90cb956f92a1469f07fbbed",
+            "config/v4_score_config.json": "37ba53bbf40e1407aebe58bcf611417d2ad5b23bc852e7878e11bdb439fbb007",
+            "public/footprint.csv": "482f9fb1b8881512a9531210d415de5c9e66b05dc58239a9da71cf979b482fd1",
+            "public/targets.csv": "ab8089a285fcf4890dc1cf82ea50ae6fa5b8e60da6c68a44473967910298dccb",
+            "public/taskcard.en.md": "bde4e9a73f44c2fe2f11b4f663acbbdad0fd7923c9f0d3b898b78de789053d16",
+            "public/taskcard.zh.md": "911401a3ea2bb04d1529e7a619cde1e29eb46c7ea1af1e838bce865f7985fe6a",
+            "public/v4_night_calendar.csv": "0fa59747bf19906fccc8d4d2319e2eb6dc288de7c663547c4193e13b33e78984"
+          }
+        }
+      },
+      "c": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "rain": 35,
+            "rocket_launch": 4
+          },
+          "variant": "heavier"
+        },
+        "formal_card": "C",
+        "generated": {
+          "event_counts": {
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 3,
+            "rainy": 44,
+            "rocket_launch": 4,
+            "terrain_obstruction": 1
+          },
+          "night_count": 121,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105203,
+          "title_zh": "频繁降雨与小容量排程"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/c",
+          "sha256": {
+            "config/v4_fiber_config.json": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+            "public/targets.csv": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+            "public/taskcard.en.md": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+            "public/taskcard.zh.md": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+            "public/v4_night_calendar.csv": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8"
+          }
+        }
+      },
+      "d": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 3,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 12,
+            "earthquake": 2,
+            "haze": 15,
+            "overcast": 30,
+            "rain": 18,
+            "rocket_launch": 12,
+            "storm": 3
+          },
+          "variant": "heavier"
+        },
+        "formal_card": "D",
+        "generated": {
+          "event_counts": {
+            "cloudy": 38,
+            "cold_wave": 12,
+            "data_loss": 1,
+            "earthquake": 2,
+            "instrument_fault": 5,
+            "pointing_offset": 1,
+            "rainy": 23,
+            "rocket_launch": 12,
+            "smoggy": 19,
+            "terrain_obstruction": 2,
+            "tornado": 3
+          },
+          "night_count": 365,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": true,
+          "seed": 8105204,
+          "title_zh": "全年多类事件与数据恢复"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/d",
+          "sha256": {
+            "config/v4_fiber_config.json": "c5ab48f95d5aa2c9f974326afef8f3abe73a8367ff5ecea5dd44b5eb9d66637d",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "d39a36ec06eefea05a573189ab30e5f9dd4781ced495cc8aa905269ab2c5ab4b",
+            "public/targets.csv": "656e63f7ea6f5dafb382eb96287bd511f792a690d43bcbfab39ef93907cce89c",
+            "public/taskcard.en.md": "d6aa9aeaf98d4e3c2f3c4f626a551659258f8d69fdf073d8d8997bde031879bd",
+            "public/taskcard.zh.md": "c5736f96f3176040cd88dbd4ce97536254dd49c31d09fd5de2faf58fbc748483",
+            "public/v4_night_calendar.csv": "31a751081cdbf14a8979092dd84a384df160999c53bc85996b11c5ec2b73334e"
+          }
+        }
+      }
+    },
+    "lighter": {
+      "a": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "rocket_launch": 4
+          },
+          "variant": "lighter"
+        },
+        "formal_card": "A",
+        "generated": {
+          "event_counts": {
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 1,
+            "rocket_launch": 4
+          },
+          "night_count": 123,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105101,
+          "title_zh": "寒潮、短时避让与地震"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/a",
+          "sha256": {
+            "config/v4_fiber_config.json": "2f82c01de00f7bd88db9b58a976e602bba60793f0b9f7386c2a84abbddeb7165",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "8436949cb09f7c27f64b1abd31ee96eaae5d95d1da9b60ec24d480bafe29797e",
+            "public/targets.csv": "05dc5357fad3b12e3ede1d7aeb7eb59ec5f9b666980ba0cbc409f74c3697f736",
+            "public/taskcard.en.md": "59cdd93c8d349a9f44c2afef016edce9351cbbbe33c80340715f1ba7ab36efc2",
+            "public/taskcard.zh.md": "0c7da00bd034bcec15f43a8d28ae7dd4a561dde240ae759dd75240bc1277125c",
+            "public/v4_night_calendar.csv": "12ac0149f781dc4a207e85ab448b1e07f5eb3b477ff327c0a3f8a45d212344a5"
+          }
+        }
+      },
+      "b": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "overcast": 48,
+            "rain": 40,
+            "rocket_launch": 4
+          },
+          "variant": "lighter"
+        },
+        "formal_card": "B",
+        "generated": {
+          "event_counts": {
+            "cloudy": 48,
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 1,
+            "rainy": 40,
+            "rocket_launch": 4
+          },
+          "night_count": 183,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105102,
+          "title_zh": "频繁雨云与方向变化"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/b",
+          "sha256": {
+            "config/v4_fiber_config.json": "de599d5f177a6f7088fa980ea1e8211887496eeaf90cb956f92a1469f07fbbed",
+            "config/v4_score_config.json": "37ba53bbf40e1407aebe58bcf611417d2ad5b23bc852e7878e11bdb439fbb007",
+            "public/footprint.csv": "482f9fb1b8881512a9531210d415de5c9e66b05dc58239a9da71cf979b482fd1",
+            "public/targets.csv": "ab8089a285fcf4890dc1cf82ea50ae6fa5b8e60da6c68a44473967910298dccb",
+            "public/taskcard.en.md": "bde4e9a73f44c2fe2f11b4f663acbbdad0fd7923c9f0d3b898b78de789053d16",
+            "public/taskcard.zh.md": "911401a3ea2bb04d1529e7a619cde1e29eb46c7ea1af1e838bce865f7985fe6a",
+            "public/v4_night_calendar.csv": "0fa59747bf19906fccc8d4d2319e2eb6dc288de7c663547c4193e13b33e78984"
+          }
+        }
+      },
+      "c": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "rain": 35,
+            "rocket_launch": 4
+          },
+          "variant": "lighter"
+        },
+        "formal_card": "C",
+        "generated": {
+          "event_counts": {
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 1,
+            "rainy": 35,
+            "rocket_launch": 4
+          },
+          "night_count": 121,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105103,
+          "title_zh": "频繁降雨与小容量排程"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/c",
+          "sha256": {
+            "config/v4_fiber_config.json": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+            "public/targets.csv": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+            "public/taskcard.en.md": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+            "public/taskcard.zh.md": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+            "public/v4_night_calendar.csv": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8"
+          }
+        }
+      },
+      "d": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 3,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 12,
+            "earthquake": 2,
+            "haze": 15,
+            "overcast": 30,
+            "rain": 18,
+            "rocket_launch": 12,
+            "storm": 3
+          },
+          "variant": "lighter"
+        },
+        "formal_card": "D",
+        "generated": {
+          "event_counts": {
+            "cloudy": 30,
+            "cold_wave": 12,
+            "data_loss": 1,
+            "earthquake": 2,
+            "instrument_fault": 3,
+            "pointing_offset": 1,
+            "rainy": 18,
+            "rocket_launch": 12,
+            "smoggy": 15,
+            "tornado": 3
+          },
+          "night_count": 365,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": true,
+          "seed": 8105104,
+          "title_zh": "全年多类事件与数据恢复"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/d",
+          "sha256": {
+            "config/v4_fiber_config.json": "c5ab48f95d5aa2c9f974326afef8f3abe73a8367ff5ecea5dd44b5eb9d66637d",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "d39a36ec06eefea05a573189ab30e5f9dd4781ced495cc8aa905269ab2c5ab4b",
+            "public/targets.csv": "656e63f7ea6f5dafb382eb96287bd511f792a690d43bcbfab39ef93907cce89c",
+            "public/taskcard.en.md": "d6aa9aeaf98d4e3c2f3c4f626a551659258f8d69fdf073d8d8997bde031879bd",
+            "public/taskcard.zh.md": "c5736f96f3176040cd88dbd4ce97536254dd49c31d09fd5de2faf58fbc748483",
+            "public/v4_night_calendar.csv": "31a751081cdbf14a8979092dd84a384df160999c53bc85996b11c5ec2b73334e"
+          }
+        }
+      }
+    },
+    "nominal": {
+      "a": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "rocket_launch": 4
+          },
+          "variant": "nominal"
+        },
+        "formal_card": "A",
+        "generated": {
+          "event_counts": {
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 1,
+            "rocket_launch": 4
+          },
+          "night_count": 123,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105001,
+          "title_zh": "寒潮、短时避让与地震"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/a",
+          "sha256": {
+            "config/v4_fiber_config.json": "2f82c01de00f7bd88db9b58a976e602bba60793f0b9f7386c2a84abbddeb7165",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "8436949cb09f7c27f64b1abd31ee96eaae5d95d1da9b60ec24d480bafe29797e",
+            "public/targets.csv": "05dc5357fad3b12e3ede1d7aeb7eb59ec5f9b666980ba0cbc409f74c3697f736",
+            "public/taskcard.en.md": "59cdd93c8d349a9f44c2afef016edce9351cbbbe33c80340715f1ba7ab36efc2",
+            "public/taskcard.zh.md": "0c7da00bd034bcec15f43a8d28ae7dd4a561dde240ae759dd75240bc1277125c",
+            "public/v4_night_calendar.csv": "12ac0149f781dc4a207e85ab448b1e07f5eb3b477ff327c0a3f8a45d212344a5"
+          }
+        }
+      },
+      "b": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "overcast": 48,
+            "rain": 40,
+            "rocket_launch": 4
+          },
+          "variant": "nominal"
+        },
+        "formal_card": "B",
+        "generated": {
+          "event_counts": {
+            "cloudy": 48,
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 1,
+            "rainy": 40,
+            "rocket_launch": 4
+          },
+          "night_count": 183,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105002,
+          "title_zh": "频繁雨云与方向变化"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/b",
+          "sha256": {
+            "config/v4_fiber_config.json": "de599d5f177a6f7088fa980ea1e8211887496eeaf90cb956f92a1469f07fbbed",
+            "config/v4_score_config.json": "37ba53bbf40e1407aebe58bcf611417d2ad5b23bc852e7878e11bdb439fbb007",
+            "public/footprint.csv": "482f9fb1b8881512a9531210d415de5c9e66b05dc58239a9da71cf979b482fd1",
+            "public/targets.csv": "ab8089a285fcf4890dc1cf82ea50ae6fa5b8e60da6c68a44473967910298dccb",
+            "public/taskcard.en.md": "bde4e9a73f44c2fe2f11b4f663acbbdad0fd7923c9f0d3b898b78de789053d16",
+            "public/taskcard.zh.md": "911401a3ea2bb04d1529e7a619cde1e29eb46c7ea1af1e838bce865f7985fe6a",
+            "public/v4_night_calendar.csv": "0fa59747bf19906fccc8d4d2319e2eb6dc288de7c663547c4193e13b33e78984"
+          }
+        }
+      },
+      "c": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 1,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 4,
+            "earthquake": 2,
+            "rain": 35,
+            "rocket_launch": 4
+          },
+          "variant": "nominal"
+        },
+        "formal_card": "C",
+        "generated": {
+          "event_counts": {
+            "cold_wave": 4,
+            "earthquake": 2,
+            "instrument_fault": 1,
+            "rainy": 35,
+            "rocket_launch": 4
+          },
+          "night_count": 121,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": false,
+          "seed": 8105003,
+          "title_zh": "频繁降雨与小容量排程"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/c",
+          "sha256": {
+            "config/v4_fiber_config.json": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+            "public/targets.csv": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+            "public/taskcard.en.md": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+            "public/taskcard.zh.md": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+            "public/v4_night_calendar.csv": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8"
+          }
+        }
+      },
+      "d": {
+        "classification": "self-generated local evaluation data; not official hidden competition data",
+        "design_evidence": {
+          "assumed": [
+            "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+            "Reference numeric weather model/durations and seeded event placement",
+            "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+            "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+            "D offset scale is synthetic; agent estimates are not ground truth",
+            "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+          ],
+          "confirmed": [
+            "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+            "D state_resync window_max_fraction 0.15",
+            "published event families and global/compass scopes"
+          ],
+          "fault_count_lower_bound": 3,
+          "not_copied": [
+            "official event timestamps",
+            "official request target IDs",
+            "official data-loss fractions"
+          ],
+          "public_episode_counts": {
+            "cold_snap": 12,
+            "earthquake": 2,
+            "haze": 15,
+            "overcast": 30,
+            "rain": 18,
+            "rocket_launch": 12,
+            "storm": 3
+          },
+          "variant": "nominal"
+        },
+        "formal_card": "D",
+        "generated": {
+          "event_counts": {
+            "cloudy": 30,
+            "cold_wave": 12,
+            "data_loss": 1,
+            "earthquake": 2,
+            "instrument_fault": 3,
+            "pointing_offset": 1,
+            "rainy": 18,
+            "rocket_launch": 12,
+            "smoggy": 15,
+            "tornado": 3
+          },
+          "night_count": 365,
+          "observation_request_count": 6,
+          "request_settings": "generator/observation_request_settings.json",
+          "weather_config": "generator/weather_config.json"
+        },
+        "profile": {
+          "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+          "hard_mode": true,
+          "seed": 8105004,
+          "title_zh": "全年多类事件与数据恢复"
+        },
+        "schema_version": "self-generated-formal-local-card-v1",
+        "source_public_inputs": {
+          "directory": "cards/d",
+          "sha256": {
+            "config/v4_fiber_config.json": "c5ab48f95d5aa2c9f974326afef8f3abe73a8367ff5ecea5dd44b5eb9d66637d",
+            "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+            "public/footprint.csv": "d39a36ec06eefea05a573189ab30e5f9dd4781ced495cc8aa905269ab2c5ab4b",
+            "public/targets.csv": "656e63f7ea6f5dafb382eb96287bd511f792a690d43bcbfab39ef93907cce89c",
+            "public/taskcard.en.md": "d6aa9aeaf98d4e3c2f3c4f626a551659258f8d69fdf073d8d8997bde031879bd",
+            "public/taskcard.zh.md": "c5736f96f3176040cd88dbd4ce97536254dd49c31d09fd5de2faf58fbc748483",
+            "public/v4_night_calendar.csv": "31a751081cdbf14a8979092dd84a384df160999c53bc85996b11c5ec2b73334e"
+          }
+        }
+      }
+    }
+  }
+}

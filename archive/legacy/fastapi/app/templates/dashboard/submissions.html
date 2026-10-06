@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ t('subs.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap">
+  <span class="kicker">{{ t('dash.title') }}</span><h1 class="section-title sm mt-3">{{ t('subs.title') }}</h1>
+  <div class="mt-4">{% include "dashboard/_nav.html" %}</div>
+  {% if not submissions %}<p class="text2">{{ t('subs.empty') }}</p>{% else %}
+  <div class="table-wrap"><table class="table"><thead><tr><th>{{ t('subs.id') }}</th><th>{{ t('subs.when') }}</th><th>{{ t('subs.phase') }}</th><th>{{ t('subs.kind') }}</th><th>{{ t('subs.scenario') }}</th><th>{{ t('common.status') }}</th><th class="r">{{ t('subs.score') }}</th><th class="r">{{ t('subs.science') }}</th><th class="r">{{ t('subs.completion') }}</th><th>{{ t('subs.by') }}</th></tr></thead><tbody>
+  {% for s in submissions %}<tr><td><a class="accent-l m" href="/submissions/{{ s.id }}">#{{ s.id }}</a>{% if s.title %}<div class="xs text3">{{ s.title }}</div>{% endif %}</td><td class="m xs">{{ s.created_at.strftime('%Y-%m-%d %H:%M') }}</td><td>{{ pick(s.phase.name_en, s.phase.name_zh) }}</td><td>{{ t('kind.' + s.kind) }}</td><td class="m xs">{{ s.scenario.slug if s.scenario else '—' }}</td><td><span class="pill {{ s.status }}">{{ t('status.' + s.status) }}</span></td><td class="r m">{{ '%.2f' % s.score if s.score is not none else '—' }}</td><td class="r m">{{ '%.2f' % s.science_score if s.science_score is not none else '—' }}</td><td class="r m">{{ '%.1f%%' % (s.completion * 100) if s.completion is not none else '—' }}</td><td class="small">{{ s.user.name }}</td></tr>{% endfor %}</tbody></table></div>
+  {% endif %}
+</div></section>
+{% endblock %}

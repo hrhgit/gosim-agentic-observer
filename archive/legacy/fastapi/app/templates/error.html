@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ status }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section"><div class="wrap">
+  <span class="kicker">{{ status }}</span>
+  <h1 class="section-title mt-4">{% if status == 404 %}{{ t('common.not_found') }}{% elif status == 403 %}{{ t('common.forbidden') }}{% else %}{{ t('common.error_title') }}{% endif %}</h1>
+  <p class="lede mt-3">{{ detail }}</p>
+  <p class="mt-4"><a class="btn" href="/">{{ t('common.home') }} →</a></p>
+</div></section>
+{% endblock %}

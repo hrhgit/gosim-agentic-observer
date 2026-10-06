@@ -1,0 +1,11 @@
+{
+  "training_seconds": 2.006700958998408,
+  "rows": 50078,
+  "scenes": 16,
+  "parameters": 1109,
+  "epochs": 12,
+  "initializations": 1,
+  "frozen_trunk": true,
+  "online_updates": false,
+  "selected_epoch": 1
+}

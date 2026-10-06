@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="top" class="hero">
+  <div class="hero-media" style="background-image:url(/static/media/survey-milky-way.jpg)">
+    <video autoplay loop muted playsinline preload="metadata" poster="/static/media/survey-milky-way.jpg"><source src="/static/media/survey-night-sky.mp4" type="video/mp4"></video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="wrap hero-in">
+    <div class="hero-stage"><div class="hero-copy">
+      <div class="hero-eyebrow"><span class="live-dot"></span>{{ t('hero.eyebrow') }}</div>
+      <h1 class="hero-title {{ 'zh' if locale == 'zh' else '' }}">{{ t('hero.system') }}</h1>
+      <p class="hero-sub">{{ t('hero.subtitle') }}</p>
+      <div class="hero-intro">
+        <p>{{ t('hero.lede') }}</p>
+        <div class="hero-actions">
+          {% if user %}<a class="btn primary" href="/dashboard">{{ t('hero.cta_dashboard') }} <span>→</span></a>
+          {% elif registration_open %}<a class="btn primary" href="/register">{{ t('hero.cta_register') }} <span>→</span></a>
+          {% else %}<span class="btn primary disabled">{{ t('nav.registration_closed') }}</span>{% endif %}
+          <a class="btn" href="/brief">{{ t('hero.cta_brief') }} <span>→</span></a>
+        </div>
+      </div>
+    </div></div>
+    <div class="hero-metrics">
+      {% for m in t('hero.metrics') %}<div><b>{{ m.value }}</b><span>{{ m.label }}</span></div>{% endfor %}
+    </div>
+  </div>
+  <div class="hero-note" aria-hidden="true">{{ t('hero.side_note') }}</div>
+</section>
+
+<section id="about" class="section"><div class="wrap">
+  <div class="grid grid-2c">
+    <div class="reveal"><span class="kicker">{{ t('home.vision.kicker') }}</span><h2 class="section-title mt-4">{{ t('home.vision.title') }}</h2></div>
+    <div class="reveal d1">
+      <div class="photo" style="height:clamp(300px,40vw,540px)"><img src="/static/media/cosmos-control-room.jpg" alt="" loading="lazy"><span class="stamp">{{ pick('OBSERVATORY CONTROL / HUMAN IN THE LOOP', '观测站控制 / 人在回路') }}</span></div>
+      <div class="split rule-t" style="padding-top:2rem">
+        <p style="font-size:clamp(1.25rem,2vw,1.875rem);font-weight:500;line-height:1.45;letter-spacing:-.02em">{{ t('home.vision.lede') }}</p>
+        <div><div class="text2" style="line-height:1.75">{% for p in t('home.vision.paragraphs') %}<p class="mb-2">{{ p }}</p>{% endfor %}</div>
+          <a href="/brief" class="label" style="display:inline-block;border-bottom:1px solid var(--accent);padding-bottom:.4rem;color:var(--fg)">{{ t('home.vision.link') }} ↗</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="stats mt-8 reveal">{% for s in t('home.vision.stats') %}<div class="stat"><b>{{ s.value }}</b><span>{{ s.label }}</span></div>{% endfor %}</div>
+</div></section>
+
+<section id="mission" class="section"><div class="wrap"><div class="grid grid-2b">
+  <div class="reveal sticky">
+    <div class="flex between"><span class="kicker">{{ t('home.mission.kicker') }}</span><span class="label accent">02 / 07</span></div>
+    <h2 class="section-title mt-4">{{ t('home.mission.title') }}</h2>
+    <p class="lede mt-3">{{ t('home.mission.lede') }}</p>
+    <div class="mission-900"><b>900</b><div><span>{{ pick('seconds', '秒') }}</span><span>{{ pick('one decision', '一次决策') }}</span></div></div>
+  </div>
+  <div>
+    <div class="photo reveal mb-4" style="height:clamp(260px,32vw,440px)"><img src="/static/media/cosmos-instrument.jpg" alt="" loading="lazy"><span class="stamp">{{ pick('INSTRUMENT CALIBRATION / HUMAN OVERSIGHT', '仪器标定 / 人类监督') }}</span></div>
+    {% for c in t('home.mission.cards') %}
+    <article class="poster-card row-n reveal"><span class="num">0{{ loop.index }}</span><div><h3>{{ c.title }}</h3><p>{{ c.desc }}</p></div></article>
+    {% endfor %}
+    <div class="paper reveal mt-4"><span class="label accent">{{ pick('Entry requirement', '参赛要求') }}</span><p class="mt-2" style="font-size:clamp(1.25rem,2.2vw,1.875rem);font-weight:600;line-height:1.4;letter-spacing:-.02em;max-width:24ch">{{ t('home.mission.closing') }}</p></div>
+  </div>
+</div></div></section>
+
+<section id="participate" class="section"><div class="wrap">
+  <div class="paper reveal"><div class="marker top"></div><div class="marker bottom"></div>
+    <div class="grid grid-2">
+      <div><div class="num">03</div><span class="label accent mt-3" style="display:inline-block">{{ t('home.participate.kicker') }}</span><h2 class="section-title mt-3">{{ t('home.participate.title') }}</h2><p class="text2 mt-3" style="font-size:1.05rem;max-width:26rem">{{ t('home.participate.lede') }}</p></div>
+      <div>
+        <div class="rows">{% for s in t('home.participate.steps') %}<article class="row-n"><span class="num">{{ s.n }}</span><div><h3>{{ s.title }}</h3><p>{{ s.desc }}</p></div></article>{% endfor %}</div>
+        <div class="mt-4" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.3);border-bottom:1px solid rgba(0,0,0,.3)">
+          {% for it in t('home.participate.timeline') %}<div style="border-right:1px solid rgba(0,0,0,.25);padding:1.1rem .75rem 1.1rem 0;{% if loop.last %}border-right:0{% endif %};{% if not loop.first %}padding-left:.75rem{% endif %}"><div style="font-weight:600;color:var(--accent);font-size:1.1rem">{{ it.label }}</div><div class="label mt-1" style="color:#5f5f5f">{{ it.desc }}</div></div>{% endfor %}
+        </div>
+        <div class="mt-4 actions-inline">
+          {% if user %}<a class="btn dark" href="/submit">{{ t('dash.new_submission') }}</a>{% elif registration_open %}<a class="btn dark" href="/register">{{ t('home.participate.cta') }}</a>{% endif %}
+          <a class="btn dark" style="background:transparent;color:#09090a;border-color:#09090a" href="/download/starter-kit.zip">{{ t('dash.quick.kit') }} ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex between mt-4 label reveal"><span>{{ pick('Open worldwide / solo builders welcome', '全球开放 / 欢迎个人开发者') }}</span><span>{{ pick('Same scenario / same simulator / same score', '同一场景 / 同一模拟器 / 同一评分') }}</span></div>
+</div></section>
+
+<section id="prizes" class="section"><div class="wrap">
+  <div class="grid grid-2c rule-y reveal" style="padding:3.5rem 0">
+    <div><span class="label accent">{{ t('home.prizes.kicker') }}</span><h2 class="section-title mt-3">{{ t('home.prizes.title') }}</h2><p class="lede mt-3">{{ t('home.prizes.lede') }}</p></div>
+    <div>{% for p in t('home.prizes.tiers') %}
+      <article style="display:grid;grid-template-columns:3rem 1fr auto;align-items:center;gap:1rem;border-top:1px solid rgba(255,255,255,.25);padding:1.75rem 0;{% if loop.last %}border-bottom:1px solid rgba(255,255,255,.25){% endif %}">
+        <span class="num">0{{ loop.index }}</span><div><h3 style="font-size:clamp(1.1rem,1.8vw,1.5rem)">{{ p.place }}</h3><p class="label mt-1">{{ p.count }}</p></div><strong style="font-size:clamp(1.5rem,3vw,2.25rem);letter-spacing:-.04em">{{ p.amount }}</strong>
+      </article>{% endfor %}</div>
+  </div>
+  <div class="flex between mt-3 label"><span>{{ pick('6 awards total', '共 6 个奖项') }}</span><span>{{ pick('Awards · Oct 17 · Shenzhen', '10 月 17 日 · 深圳颁奖') }}</span></div>
+</div></section>
+
+<section id="evaluation" class="section"><div class="wrap">
+  <div class="grid grid-2b">
+    <div class="reveal"><span class="kicker">{{ t('home.evaluation.kicker') }}</span><h2 class="section-title mt-4">{{ t('home.evaluation.title') }}</h2><p class="lede mt-3">{{ t('home.evaluation.lede') }}</p>
+      <p class="mt-3"><a class="label accent" href="/rules">{{ t('home.evaluation.link') }} →</a></p></div>
+    <div class="reveal d1"><pre class="code">{{ t('home.evaluation.formula') }}</pre>
+      <dl class="dl dl-2 mt-4">{% for c in t('home.evaluation.criteria') %}<div><dt>{{ c.term }}</dt><dd>{{ c.desc }}</dd></div>{% endfor %}</dl></div>
+  </div>
+</div></section>
+
+<section id="submission" class="section"><div class="wrap">
+  <div class="reveal" style="max-width:48rem"><span class="kicker">{{ t('home.submission.kicker') }}</span><h2 class="section-title mt-4">{{ t('home.submission.title') }}</h2></div>
+  <div class="cards cards-3 mt-6 reveal d1">{% for it in t('home.submission.items') %}<article class="card"><span class="num">0{{ loop.index }}</span><h3 class="mt-2">{{ it.title }}</h3><p>{{ it.desc }}</p></article>{% endfor %}</div>
+  <p class="mt-3"><a class="label accent" href="/docs">{{ t('home.submission.link') }} →</a></p>
+</div></section>
+
+<section id="leaderboard" class="section"><div class="wrap"><div class="grid grid-2">
+  <div class="reveal"><span class="kicker">{{ t('home.leaderboard.kicker') }}</span><h2 class="section-title mt-4">{{ t('home.leaderboard.title') }}</h2><p class="lede mt-3">{{ t('home.leaderboard.lede') }}</p>
+    <div class="mt-6 label accent"><span class="signal"></span>{% if board and board.visible and board.entries %}{{ pick('CosmosBench signal live', 'CosmosBench 信号在线') }}{% else %}{{ pick('Awaiting benchmark signal', '等待基准信号') }}{% endif %}</div>
+    <div class="stats mt-6" style="grid-template-columns:1fr 1fr"><div class="stat"><b>{{ stats.teams }}</b><span>{{ t('home.stats_labels.teams') }}</span></div><div class="stat"><b>{{ stats.submissions }}</b><span>{{ t('home.stats_labels.submissions') }}</span></div></div>
+  </div>
+  <div class="reveal d1 rule-y">
+    <div class="flex between rule-b" style="padding:1.1rem 0"><span class="label">{% if board_phase %}{{ pick(board_phase.name_en, board_phase.name_zh) }} · {{ t('leaderboard.status.' + board_phase.status) }}{% endif %}{% if board and board.updated_at %} · {{ t('leaderboard.updated') }} <span data-board-updated>{{ board.updated_at[:16].replace('T',' ') }} UTC</span>{% endif %}</span><a class="label accent" href="/leaderboard{% if board_phase %}/{{ board_phase.slug }}{% endif %}">{{ t('leaderboard.full') }} ↗</a></div>
+    {% if board and board.visible and board.entries %}
+    <div class="table-wrap"><table class="table" data-leaderboard="/api/leaderboard?phase={{ board_phase.slug }}&limit=10" data-my-team="{{ user.team_id if user and user.team_id else '' }}"><thead><tr><th>#</th><th>{{ t('leaderboard.team') }}</th><th class="r">{{ t('leaderboard.score') }}</th><th class="r">{{ t('leaderboard.science') }}</th><th class="r">{{ t('leaderboard.completion') }}</th><th class="r">{{ t('leaderboard.uniformity') }}</th><th class="r">{{ t('leaderboard.submissions') }}</th></tr></thead>
+      <tbody>{% for e in board.entries %}<tr class="{{ 'me' if user and user.team_id == e.team_id else '' }}"><td class="m accent">{{ e.rank }}</td><td>{{ e.team_name }}</td><td class="r m">{{ '%.2f' % e.total_score }}</td><td class="r m">{{ '%.2f' % e.science_score }}</td><td class="r m">{{ '%.1f%%' % (e.completion_rate * 100) }}</td><td class="r m">{{ '%.3f' % e.uniformity_score }}</td><td class="r m">{{ e.submission_count }}</td></tr>{% endfor %}</tbody></table></div>
+    {% else %}
+    <div class="center" style="padding:4rem 1rem"><div style="font-size:2.5rem;font-weight:600;color:rgba(255,255,255,.08)">00</div><p class="text2 mt-2 small" style="max-width:24rem;margin-left:auto;margin-right:auto">{% if board and not board.visible %}{{ t('leaderboard.hidden') }}{% else %}{{ t('leaderboard.empty') }}{% endif %}</p></div>
+    {% endif %}
+  </div>
+</div></div></section>
+
+<section id="organizers" class="section"><div class="wrap">
+  <div class="reveal"><span class="kicker">{{ t('home.credibility.kicker') }}</span><h2 class="section-title mt-4">{{ t('home.credibility.title') }}</h2></div>
+  <div class="cards cards-3 mt-6 reveal d1">{% for it in t('home.credibility.items') %}<article class="card"><span class="label accent">{{ it.role }}</span><h3 class="mt-2">{{ it.name }}</h3><p>{{ it.desc }}</p></article>{% endfor %}</div>
+  {% if announcements %}
+  <div class="mt-6 reveal"><div class="flex between rule-b" style="padding-bottom:.75rem"><span class="label">{{ t('home.announcements.kicker') }}</span><a class="label accent" href="/announcements">{{ t('home.announcements.all') }} →</a></div>
+    {% for a in announcements %}<div class="flex between" style="padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.1)"><span>{{ pick(a.title_en, a.title_zh) }}</span><span class="label">{{ a.created_at.strftime('%Y-%m-%d') }}</span></div>{% endfor %}</div>
+  {% endif %}
+</div></section>
+
+<section class="section tight"><div class="wrap">
+  <div class="cta-poster reveal"><img src="/static/media/cosmos-observatory-hero.jpg" alt="" loading="lazy"><div class="cta-overlay"></div>
+    <div class="cta-in">
+      <div class="flex between label rule-b" style="padding-bottom:1.1rem;color:rgba(255,255,255,.6)"><span>{{ t('cta.tag') }}</span><span>{{ pick('Final transmission', '最终传输') }}</span></div>
+      <div><h2 class="section-title">{{ t('cta.title') }}</h2>
+        <div class="split rule-t mt-4" style="padding-top:1.75rem;align-items:end"><div><p class="text2" style="max-width:40rem;font-size:1.05rem">{{ t('cta.tagline') }}</p><p class="label accent mt-2">{{ t('cta.location') }}</p></div>
+          <div>{% if user %}<a class="btn light" href="/submit">{{ t('dash.new_submission') }}</a>{% elif registration_open %}<a class="btn light" href="/register">{{ t('cta.button') }}</a>{% else %}<span class="btn light disabled">{{ t('nav.registration_closed') }}</span>{% endif %}</div></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+{% endblock %}

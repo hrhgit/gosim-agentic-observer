@@ -1,0 +1,12 @@
+{
+  "stage": 2,
+  "policy": "policy.pt",
+  "policy_sha256": "2881264f156701024984091112a27663dec7c4a8c247c69fa0c752bbfce51f4b",
+  "upstream": null,
+  "upstream_sha256": null,
+  "search": null,
+  "selected_for_adoption": false,
+  "experiment_scope": "SELF-GENERATED small scenes only",
+  "adoption_reason": "Independent 16-scene test failed; keep original rule entry",
+  "training_source": "artifacts/global-planning-v2/small-stages/protocol.json"
+}

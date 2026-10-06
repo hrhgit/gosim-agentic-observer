@@ -1,0 +1,2930 @@
+{
+  "meta": {
+    "title": "Agentic Observer Hackathon · GOSIM",
+    "description": "The GOSIM survey-agent hackathon: write an observing agent for an observatory. Every 15 minutes it uses the public sky state and the weather bulletins to decide what to point at next.",
+    "wordmark_note": "Agentic Observer",
+    "brand": "Agentic Observer Hackathon",
+    "pages": {
+      "home": {
+        "title": "Home",
+        "description": "The GOSIM survey-agent hackathon: write an observing agent for an observatory. Every 15 minutes it uses the public sky state and the weather bulletins to decide what to point at next."
+      },
+      "brief": {
+        "title": "Full event brief",
+        "description": "Mission, timeline, prizes and evaluation of the Agentic Observer Hackathon."
+      },
+      "rules": {
+        "title": "Rules",
+        "description": "Eligibility, submission limits, scoring and conduct rules for the Agentic Observer Hackathon."
+      },
+      "cards": {
+        "title": "Task cards",
+        "description": "Practice cards and hackathon cards: each card’s task, time limit and file downloads."
+      },
+      "docs": {
+        "title": "Docs",
+        "description": "The participant-agent-protocol messages, the challenge-score scorer and scenario files."
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Answers to common questions about registration, teams, submissions and scoring."
+      },
+      "resources": {
+        "title": "Resources",
+        "description": "Task cards, per-scenario configuration and reference files, and the public development scenarios."
+      },
+      "leaderboard": {
+        "title": "Leaderboard",
+        "description": "Live standing per phase: total, base science, programme bonus, request reward, penalties, finished patches and must-do patches still missing."
+      },
+      "announcements": {
+        "title": "Announcements",
+        "description": "Organizer announcements for the Agentic Observer Hackathon."
+      },
+      "register": {
+        "title": "Register",
+        "description": "Create an account or log in to take part."
+      },
+      "reset": {
+        "title": "Reset password",
+        "description": "Set a new password for your account."
+      },
+      "dashboard": {
+        "title": "Dashboard",
+        "description": "Your team, quota and recent submissions."
+      },
+      "team": {
+        "title": "Team",
+        "description": "Create or join a team with an invite code."
+      },
+      "submit": {
+        "title": "Participate",
+        "description": "Submit a complete project for evaluation."
+      },
+      "submissions": {
+        "title": "Submissions",
+        "description": "All submissions of your team with status and score."
+      },
+      "submission": {
+        "title": "Submission",
+        "description": "Score breakdown, decision replay, observed sky map and action timeline of one submission."
+      },
+      "profile": {
+        "title": "Profile",
+        "description": "Your account details and preferences."
+      },
+      "admin": {
+        "title": "Admin",
+        "description": "Organizer console."
+      },
+      "not_found": {
+        "title": "Page not found",
+        "description": "This page does not exist."
+      },
+      "start": {
+        "title": "Get started in 3 steps",
+        "description": "Read the docs, build your agent and submit — three steps to your first score."
+      },
+      "teammates": {
+        "title": "Find teammates",
+        "description": "Find each other by astronomy tier and AI tier, and build a complementary team."
+      },
+      "cli": {
+        "title": "Command-line tool",
+        "kicker": "survey26",
+        "description": "Install the survey26 command-line tool, create a personal API token, and do everything the website offers from a terminal or a coding agent."
+      },
+      "about": {
+        "title": "About",
+        "description": "The organizer, sponsor and scientific committee of the Agentic Observer Hackathon."
+      }
+    }
+  },
+  "nav": {
+    "start": "Get started",
+    "brief": "Full event brief",
+    "rules": "Rules",
+    "cards": "Task cards",
+    "docs": "Docs",
+    "resources": "Resources",
+    "leaderboard": "Leaderboard",
+    "faq": "FAQ",
+    "dashboard": "Dashboard",
+    "login": "Log in",
+    "register": "Register",
+    "logout": "Log out",
+    "admin": "Admin",
+    "announcements": "Announcements",
+    "submit": "Participate",
+    "team": "Team",
+    "submissions": "Competition history",
+    "profile": "Profile",
+    "menu": "Menu",
+    "registration_closed": "Registration closed",
+    "reset": "Reset password",
+    "teammates": "Find teammates",
+    "more": "More",
+    "series": {
+      "label": "Shenzhen hackathon series",
+      "pick": "Pick an event",
+      "current": "Current",
+      "items": [
+        {
+          "n": "01",
+          "name": "Agentic Observer Hackathon",
+          "sub": "Shenzhen 2026 · Agentic Observer",
+          "href": "",
+          "current": true
+        },
+        {
+          "n": "02",
+          "name": "Agentic App Hackathon",
+          "sub": "Shenzhen 2026 · Agentic App",
+          "href": "https://create.gosim.org/agenticapp26/",
+          "current": false
+        },
+        {
+          "n": "03",
+          "name": "Agentic Software Factory Hackathon",
+          "sub": "Shenzhen 2026 · OAIC",
+          "href": "https://create.gosim.org/factory26/",
+          "current": false
+        }
+      ]
+    },
+    "register_float": "Register",
+    "about": "About",
+    "find_uid": "Find by UID",
+    "wechat_qr": "WeChat QR code"
+  },
+  "hero": {
+    "eyebrow": "GOSIM Hackathon · Intelligent Survey Operations",
+    "system": "Agentic Observer Hackathon",
+    "titleLines": [
+      "Agentic Observer",
+      "Hackathon"
+    ],
+    "subtitle": "Intelligent Survey Operations",
+    "lede": "Write an agent that runs a survey telescope's night shift: it reads the sky state and picks the next observation every 15 simulated minutes.",
+    "pipeline": [
+      {
+        "label": "Online Training",
+        "date": "Oct 2–3",
+        "note": "Sessions with international astronomers and agent experts"
+      },
+      {
+        "label": "Online Competition",
+        "date": "Oct 5–7",
+        "note": "KIMI model support · $5,500 prize pool"
+      },
+      {
+        "label": "Awards Day",
+        "date": "Oct 17",
+        "note": "1st & 2nd prize teams invited to GOSIM Shenzhen"
+      }
+    ],
+    "location": [
+      "Online training Oct 2–3 · Online competition Oct 5–7",
+      "October 17 · Awards at GOSIM Shenzhen"
+    ],
+    "cta": "Mission card coming soon",
+    "cta_register": "Register now",
+    "cta_dashboard": "Open dashboard",
+    "cta_brief": "Full event brief",
+    "metrics": [
+      {
+        "value": "$5,500",
+        "label": "prize pool"
+      },
+      {
+        "value": "Oct 2–17",
+        "label": "2026 · online + Shenzhen"
+      },
+      {
+        "value": "Open",
+        "label": "worldwide · solo or team"
+      }
+    ],
+    "side_note": "Site 31.96°N / a decision every 15 minutes / 900 s CPU budget per card",
+    "console": {
+      "title": "Official example replay",
+      "replay_note": "Local practice card L1 · {nights} nights · {actions} decisions",
+      "paused": "Paused",
+      "pause": "Pause",
+      "resume": "Resume",
+      "aria": "Replay sky map: required and optional targets light up as pointings land",
+      "weather": "Seeing · Transparency · Sky · Instrument",
+      "dome_closed": "Dome closed",
+      "score": "Score",
+      "tiles": "Targets",
+      "legend_meridian": "Overhead now",
+      "legend_required": "Must do",
+      "legend_flexible": "Optional",
+      "legend_completed": "Completed",
+      "legend_interrupted": "Interrupted",
+      "explainer": "This is the whole observable sky. Each mark is a target, and it fills in once a fibre has observed it. Every 15 minutes the agent picks a pointing (where to aim the telescope and which targets its 16 fibres go to) or waits for better weather.",
+      "tour_replay": "What am I looking at?",
+      "tour_title": "Sky map walkthrough",
+      "tour_next": "Next",
+      "tour_done": "Start watching",
+      "tour_skip": "Skip",
+      "tour": {
+        "axes": "The horizontal axis is right ascension (roughly the sky's longitude), cropped to the range where this catalogue's targets sit. The vertical axis is declination (roughly latitude).",
+        "tiles": "◇ marks a required target (REQUIRED), □ an optional one (FLEXIBLE). A ring means it is high enough to observe now; a filled mark has already been observed by a fibre. During a pointing, thin lines connect it to the targets its 16 fibres are on.",
+        "meridian": "The dashed blue line is where the telescope is pointing now. It drifts right as the Earth turns, and moves faster around dawn because the replay skips the daytime.",
+        "hud": "The row below shows the current slot, the weather and progress. The four weather figures are seeing, transparency, sky brightness and instrument efficiency; hover them for details. The score goes up as targets are observed."
+      },
+      "weather_help": "Seeing: how blurred stars are, lower is sharper (arcseconds). Transparency: how clear the atmosphere is, higher is better. Sky: how bright the night sky itself is. Instrument: how much the equipment is delivering right now.",
+      "seek": "Drag the replay position",
+      "lst": "Where the telescope points right now · sky time {lst}",
+      "tour_close": "Close walkthrough",
+      "aria_3d": "3D replay: the dome of sky over the observatory, a beam for where the telescope points, and points of light for targets that brighten once observed",
+      "explainer_3d": "Here an agent is running an observatory's night shift. Every 15 minutes it decides where the telescope points, and 16 fibres observe targets in that field at once. Observed targets light up and score. Nothing can be observed in daylight, through cloud, or too low in the sky.",
+      "speed": "Playback speed",
+      "night_tick": "N{n}",
+      "hud_time": "Night {n}/{nights} · time",
+      "daytime": "Daytime · no observing",
+      "off_hours": "Outside observing hours",
+      "legend_waiting": "Dim: not yet observed",
+      "legend_done": "Bright: observed",
+      "legend_beam": "Telescope pointing",
+      "legend_min_alt": "30° altitude line (too low below)",
+      "story": {
+        "loading": "Loading the replay…",
+        "observe": "Pointing {k}: {n} of 16 fibres land on targets, +{score} points",
+        "observe_required": "Pointing {k}: {n} targets hit, {r} of them must-do, +{score} points",
+        "observe_blocked": "Cloud is too thick and the dome is shut: this pointing captures nothing, 0 points",
+        "dawn": "Dawn is coming; night {night} of observing is over",
+        "day": "Daytime: the Sun is up, so the telescope waits for dark (fast-forwarding)",
+        "dusk": "It is dark again. Night {night} begins and the agent picks new targets",
+        "closed": "Too cloudy, dome closed. Waiting for the weather to clear…",
+        "wait": "Nothing worth observing right now; waiting for the next 15 minutes",
+        "done": "{nights} nights done: {done} / {total} targets observed, final score {score}"
+      },
+      "tour3d": {
+        "dome": "This is the sky above an observatory in Chile. The dome is the sky; nothing below the horizon is visible. Each point is a target: orange is required, blue is optional. Dim ones haven't been observed yet, bright ones have.",
+        "beam": "The blue beam is the telescope's pointing, and the agent decides every 15 minutes where to move it. The circle at the bottom right is a zoom of the field of view: each of the 16 fibres goes to one target, so one pointing can observe several.",
+        "limits": "Targets rise in the east and set in the west. Nothing can be observed when a target is too low (below the dashed orange line), in daytime, or when it's too cloudy (dome closed). The agent then waits or moves to another part of the sky.",
+        "score": "Below are the current time, weather and score. Each observed target adds points; the agent tries to score as much as it can over these 7 nights."
+      },
+      "sky3d": {
+        "north": "N",
+        "east": "E",
+        "south": "S",
+        "west": "W",
+        "sun": "Sun",
+        "moon": "Moon",
+        "min_alt": "30° altitude",
+        "observatory": "Observatory",
+        "pointing": "Telescope",
+        "inset_title": "Telescope field · zoomed",
+        "inset_live": "{n}/16 fibres on targets",
+        "inset_idle": "Telescope idle",
+        "inset_day": "Daytime, not observing",
+        "inset_closed": "Dome closed",
+        "hint": "Drag to turn · click, then scroll to zoom · double-click to reset",
+        "hint_touch": "Swipe sideways to turn",
+        "loading": "Preparing the 3D sky…"
+      }
+    },
+    "pipeline_intro": "Milestones",
+    "cta_start": "Get started in 3 steps"
+  },
+  "home": {
+    "vision": {
+      "kicker": "01 / Vision",
+      "title": "Build an open benchmark for intelligent survey operations",
+      "lede": "There are far more tiles than observing time, so every pointing is a trade-off.",
+      "paragraphs": [
+        "A survey telescope has thousands of tiles it could observe each night, while the weather, target visibility and science priorities keep changing. Each choice the observer makes affects the quality of the final sample.",
+        "We want this to be an open benchmark: an agent reads the state of the night sky and decides the next observation every 15 simulated minutes. All teams get the same survey plan, weather replay, observation requests, simulator and scoring rule, so the only difference is strategy."
+      ],
+      "link": "Read the full event brief"
+    },
+    "mission": {
+      "kicker": "02 / Mission",
+      "title": "Where should the telescope look next",
+      "lede": "Your agent makes the decisions a lead observer makes on shift.",
+      "cards": [
+        {
+          "title": "Read the state",
+          "desc": "At each decision the agent receives the weather, forecast, survey progress and the tiles it can observe right now."
+        },
+        {
+          "title": "Weigh the trade-offs",
+          "desc": "With good dark time, do you go after faint targets or finish the tile that needs one more exposure? If the forecast says it will clear later, is it worth waiting another slot?"
+        },
+        {
+          "title": "Make the call",
+          "desc": "One action per slot: observe a tile or wait, with a reason."
+        }
+      ],
+      "closing": "You don't need an astronomy background. There are two online trainings on October 2 and 3 (times to be announced): one on the astronomy survey task, one on the competition and agents. Practice also takes complete projects and uses the same evaluation flow as the competition, so you can try things out there first.",
+      "cardKicker": "How the challenge arrives",
+      "cardTitle": "One Survey Mission Card",
+      "cardLede": "Every round of the challenge starts from a mission card. Everything that round holds you to is written on it:",
+      "cardItems": [
+        {
+          "term": "Science goal",
+          "desc": "What this survey is actually trying to answer."
+        },
+        {
+          "term": "Footprint",
+          "desc": "How much sky to cover, and how it divides into tiles."
+        },
+        {
+          "term": "Time budget",
+          "desc": "How many 900-second slots there are to spend."
+        },
+        {
+          "term": "Telescope site",
+          "desc": "Latitude, visibility limits, slot length, and the airmass constraint."
+        },
+        {
+          "term": "Available programs",
+          "desc": "Which of DARK, BRIGHT and BACKUP this round opens up."
+        },
+        {
+          "term": "Target classes",
+          "desc": "Which objects count toward yield, and what each is worth."
+        },
+        {
+          "term": "Observing constraints",
+          "desc": "What you may not do, and what crossing the line costs."
+        },
+        {
+          "term": "Scoring rule",
+          "desc": "How the score is computed and which penalties apply."
+        }
+      ],
+      "cardNote": "The authoritative input and output formats and the interface contract are defined by the mission card. The public development scenarios are on Resources."
+    },
+    "participate": {
+      "kicker": "03 / How to participate",
+      "title": "Three steps",
+      "lede": "Registration, teams, submissions and scores all live on this site.",
+      "steps": [
+        {
+          "n": "01",
+          "title": "Register & team up",
+          "desc": "Sign up online and create or join a team. Competing alone works too."
+        },
+        {
+          "n": "02",
+          "title": "Build your agent",
+          "desc": "Build your agent following the docs and iterate on the public practice cards. Deterministic code, an LLM called with your own key, or both."
+        },
+        {
+          "n": "03",
+          "title": "Submit for evaluation",
+          "desc": "Practice accepts a complete project evaluated in the cloud on a separate board. The formal competition accepts complete projects only (public repository or private ZIP). Every team is scored by the same frozen scorer."
+        }
+      ],
+      "timeline": [
+        {
+          "label": "Oct 2–3",
+          "desc": "Online training"
+        },
+        {
+          "label": "Oct 5–7",
+          "desc": "Online competition"
+        },
+        {
+          "label": "Oct 17",
+          "desc": "Awards at GOSIM Shenzhen"
+        }
+      ],
+      "cta": "Register now"
+    },
+    "prizes": {
+      "kicker": "04 / Awards",
+      "title": "$5,500 in prizes",
+      "lede": "Awarded on the final ranking: the score of each team's final version on the hidden cards E–H.",
+      "tiers": [
+        {
+          "place": "First Prize",
+          "amount": "$2,000",
+          "count": "1 winner"
+        },
+        {
+          "place": "Second Prize",
+          "amount": "$1,000",
+          "count": "2 winners"
+        },
+        {
+          "place": "Third Prize",
+          "amount": "$500",
+          "count": "3 winners"
+        }
+      ]
+    },
+    "leaderboard": {
+      "kicker": "Leaderboard",
+      "title": "Live standings",
+      "lede": "Boards update as soon as scoring finishes: practice boards keep each team's best score per card, and the competition board keeps each team's best complete evaluation (the mean over cards A–D). Both are feedback only; the final ranking uses only the hidden cards E–H.",
+      "signal_live": "Board live",
+      "signal_waiting": "Awaiting benchmark signal",
+      "feed": "Live evaluation feed"
+    },
+    "evaluation": {
+      "kicker": "05 / Evaluation",
+      "title": "Scoring rules",
+      "lede": "Each card is scored by the published scorer, and the card's score settings arrive in full in the initialize message. Below are the main points; section 5 of the rules has the full rules and formulas.",
+      "formula": "total = Σ best score per target\n      − 50 × missing required targets\n      − 200 × (1 − J)        evenness penalty\n      ± fault reports\n      + rewards of completed observation requests\ntarget score = science weight × factor × program bonus\nfactor = min(brightness × exposure s × sky quality ÷ (f0 × T0), 1)",
+      "criteria": [
+        {
+          "term": "Target score",
+          "desc": "A target scores only if it falls in its assigned fibre's cell and stays at or above 30° altitude for the whole exposure. A target can be observed again, but only its best exposure counts. f0 × T0 is 0.5 × 900 = 450 on most cards."
+        },
+        {
+          "term": "Program bonus",
+          "desc": "If the declared program matches the target's sky band, the score is multiplied by DARK 1.20, BRIGHT 1.12 or BACKUP 1.06; otherwise by 1.00."
+        },
+        {
+          "term": "Required targets",
+          "desc": "Each required target that is not completed costs 50 points. Completion needs a best factor of at least 0.5, and the program bonus cannot replace that threshold."
+        },
+        {
+          "term": "Even coverage",
+          "desc": "The completed fraction is computed per 10° right-ascension band and its evenness measured with Jain's index J. The penalty is 200 × (1 − J), at most 200 points."
+        },
+        {
+          "term": "Fault reports",
+          "desc": "Instrument faults never appear in bulletins or forecasts; only exposure scores reveal them. A report while an unrepaired fault exists earns 100 points and repairs it at once. After each correct report, wrong reports are free up to the card's allowance, then cost 150 each; consecutive reports have a separate cap."
+        },
+        {
+          "term": "Observation requests",
+          "desc": "A card may publish time-limited observation requests during the survey. Complete the minimum number of targets before the deadline (judged on the factor, without the program bonus) and you get the request's reward at the deadline; a missed request costs nothing. Valid exposures count automatically, with no accept action."
+        },
+        {
+          "term": "Time limit",
+          "desc": "Each card has a budget of 900 s of normalized CPU time. Only CPU time the agent uses during its own turns counts; waiting on a model API or the network does not. There is also a 30-minute real-time cap. The survey ends when time runs out, the agent errs or it sends finish; earlier observations still score and the terminal penalties still apply."
+        },
+        {
+          "term": "Results and ranking",
+          "desc": "An evaluation's result is the mean over cards A–D, and the online board is feedback only. The final ranking uses only the final version's results on the hidden cards E–H: each card is evaluated 3 times (at the same time) and averaged, then the four cards are averaged."
+        }
+      ],
+      "link": "Read the full rules"
+    },
+    "submission": {
+      "kicker": "06 / Submission",
+      "title": "How to enter a run",
+      "items": [
+        {
+          "title": "Projects",
+          "desc": "Practice accepts a complete project (40 per team per day, separate board). The formal competition accepts complete projects only: a public repository URL or a private ZIP, evaluated round by round in the cloud."
+        },
+        {
+          "title": "Limits",
+          "desc": "Any language; model calls are optional. Project ZIP up to 50 MB. Competition: 40 evaluations per team per day, each running cards A–D, with a budget of 900 s of normalized CPU time and a 30-minute real-time cap per card."
+        }
+      ],
+      "link": "Submission docs"
+    },
+    "credibility": {
+      "kicker": "07 / Organizers",
+      "title": "Who runs the event",
+      "items": [
+        {
+          "role": "Organizer",
+          "name": "GOSIM Foundation",
+          "desc": "Global Open-Source Innovation Meetup. Awards Day is held at GOSIM Shenzhen on October 17, 2026."
+        },
+        {
+          "role": "Token sponsor",
+          "name": "KIMI",
+          "desc": "With thanks to the open-source LLM KIMI for the token sponsorship."
+        }
+      ],
+      "committee": {
+        "kicker": "Scientific committee",
+        "intro": "The Scientific Committee is seven scientists from astronomy and physics research institutions. They review the challenge design, the task cards and the scoring.",
+        "members": [
+          {
+            "photo": "zhongxu-zhai",
+            "name": "Zhongxu Zhai",
+            "title": "Associate Professor",
+            "org": "Department of Astronomy, Shanghai Jiao Tong University"
+          },
+          {
+            "photo": "wei-wang",
+            "name": "Wei Wang",
+            "title": "Professor",
+            "org": "Department of Physics, Shanghai Jiao Tong University"
+          },
+          {
+            "photo": "dezi-liu",
+            "name": "Dezi Liu",
+            "title": "Associate Researcher",
+            "org": "Southwest Institute for Astronomy Research, Yunnan University"
+          },
+          {
+            "photo": "xiangkun-liu",
+            "name": "Xiangkun Liu",
+            "title": "Professor",
+            "org": "Southwest Institute for Astronomy Research, Yunnan University"
+          },
+          {
+            "photo": "huanyuan-shan",
+            "name": "Huanyuan Shan",
+            "title": "Research Professor",
+            "org": "Shanghai Astronomical Observatory, Chinese Academy of Sciences"
+          },
+          {
+            "photo": "ting-tan",
+            "name": "Ting Tan",
+            "title": "Postdoctoral Researcher",
+            "org": "Université Paris-Saclay"
+          },
+          {
+            "photo": "yifei-luo",
+            "name": "Yifei Luo",
+            "title": "Postdoctoral Researcher",
+            "org": "Lawrence Berkeley National Laboratory"
+          }
+        ]
+      },
+      "octos": {
+        "kicker": "Agent technology support",
+        "title": "Supported by the team behind the open-source agent OS Octos",
+        "desc": "The Octos technical team provides agent technology support for this event.",
+        "cta": "Visit Octos on GitHub",
+        "logoAlt": "Octos logo"
+      }
+    },
+    "stats_labels": {
+      "teams": "registered teams",
+      "teams_on_board": "teams on the board",
+      "submissions": "scored runs"
+    },
+    "announcements": {
+      "kicker": "Announcements",
+      "all": "All announcements"
+    },
+    "participants": {
+      "kicker": "Participants · LIVE",
+      "title": "Registered participants",
+      "lede": "Participants who choose to show their card appear here, with their astronomy tier, AI tier and whether they're looking for a team.",
+      "stat_total": "Registered",
+      "stat_teams": "Teams",
+      "stat_looking": "Seeking teammates",
+      "looking": "Seeking teammates",
+      "in_team": "Team · {team}",
+      "empty_title": "No cards yet",
+      "empty_desc": "Tick “show my card” when registering and you will appear here.",
+      "cta_board": "Find teammates",
+      "cta_wall_register": "Register",
+      "cta_wall_profile": "Manage my card",
+      "looking_astro": "Needs {n} astro teammate(s)",
+      "looking_ai": "Needs {n} agent teammate(s)"
+    },
+    "quest": {
+      "kicker": "Participation path",
+      "note": "Fully online · solo entry supported",
+      "current_chip": "Current stage",
+      "done_chip": "✓ Completed",
+      "locked_chip": "Later step",
+      "levels": [
+        {
+          "title": "Register",
+          "desc": "Enter your name, email and password and pick your astronomy and AI tiers.",
+          "time": "~2 min",
+          "to": "/register"
+        },
+        {
+          "title": "Create a team",
+          "desc": "Scores are recorded per team, so solo entrants create a team too. You can look for teammates by tier on the Teammates page.",
+          "time": "~1 min",
+          "to": "/team"
+        },
+        {
+          "title": "Run the example, then make it yours",
+          "desc": "Read the docs, build an agent and submit it to the Practice board.",
+          "time": "~20 min",
+          "to": "/start"
+        },
+        {
+          "title": "Enter the online competition",
+          "desc": "October 5–7: submit a complete project, evaluate it on the task cards A–D and choose your final version; the hidden cards E–H decide the ranking.",
+          "time": "Oct 5",
+          "to": "/compete"
+        }
+      ]
+    },
+    "rail": {
+      "top": "Top",
+      "film": "Film",
+      "quest": "Main quest",
+      "participants": "Participants",
+      "vision": "Vision",
+      "mission": "Mission",
+      "participate": "How to enter",
+      "prizes": "Prizes",
+      "evaluation": "Evaluation",
+      "submission": "Submission",
+      "board": "Leaderboard",
+      "organizers": "Organizers",
+      "cta": "Sign up"
+    },
+    "rail_label": "Page map",
+    "film": {
+      "kicker": "Event film",
+      "play": "Play"
+    },
+    "credits": {
+      "aria": "Organizer, sponsor and scientific committee",
+      "committee_names": "{names} and {more} more",
+      "name_sep": ", ",
+      "all": "See all"
+    }
+  },
+  "vision": {
+    "pageTitle": "Agentic Observer Hackathon",
+    "pageSubtitle": "A GOSIM Hackathon for Intelligent Survey Operations",
+    "intro": "This participant briefing explains why survey operations need agent observers, what a human leading observer does, how the challenge works across three planning horizons, what you submit, how scoring works, the astronomy you need, and the event schedule.",
+    "backToHome": "Back to home",
+    "sections": [
+      {
+        "kicker": "01 / Why",
+        "title": "The observing plan shapes the science sample",
+        "paragraphs": [
+          "A survey telescope maps large areas of sky systematically. It does not spend a whole night on a single object; it visits thousands of tiles across many nights, building up statistically powerful samples of galaxies, quasars, and stars.",
+          "Cosmology runs on samples like these: large, uniform, well calibrated. Wide surveys reveal the large-scale structure of the universe, constrain its expansion history, underpin dark energy measurements, and tie galaxy evolution to cosmic time. Spectroscopic surveys add a third dimension — redshift. Position on the sky plus redshift gives you a three-dimensional map of cosmic structure. DESI is one concrete, public example: spectra for large samples of galaxies and quasars, used to map the expanding universe and study dark energy.",
+          "But survey operations are hard. Weather changes what a 900-second exposure is worth through seeing, transparency, and sky brightness. Target visibility shifts with airmass and position on the sky. Observing programs prefer different conditions: DARK, BRIGHT, and BACKUP. The footprint has to be covered broadly and evenly for the science to hold up. High-priority tiles, nearly finished tiles, and under-covered regions all compete for the same block of time. One bad tactical choice spends real observing time and changes every plan that follows.",
+          "Modern AI systems open a path: an assistant that reads state, calls computational tools, reasons under physical constraints, proposes a plan, monitors quality, and explains every choice. The long-term goal is an observing agent that can genuinely take part in real survey operations. This hackathon narrows that long-term vision into one focused benchmark."
+        ],
+        "highlight": "You build the observer’s logic. We provide the mission definition, tile table, observing constraints, weather scenarios, simulator, and evaluation protocol."
+      },
+      {
+        "kicker": "02 / The Observer",
+        "title": "What a human lead observer actually does",
+        "paragraphs": [
+          "A seasoned lead observer makes a full set of decisions every 900-second slot: understand the science goal and decide tonight's tactical priority; read seeing, transparency, sky brightness, and the short-term forecast; judge whether tonight suits DARK, BRIGHT, or BACKUP observing; keep the tiles that are visible now, legal, and worth the time; trade off science yield, priority, airmass, footprint balance, and wasted time; finish a tile when completing it beats over-exposure; replan around weather systems, forest-fire smoke, scheduled rocket launches, and changing efficiency; use fast validation signals to calibrate later decisions; and explain why this action was chosen in this slot.",
+          "These duties are what the observing agent is taking over. We do not expect an agent to outperform a human immediately. We expect it to be evaluated objectively against a fixed interface, fixed data, and fixed scoring — so it can become a viable component of real survey operations."
+        ],
+        "duties": [
+          {
+            "n": "01",
+            "title": "Night strategy",
+            "desc": "Understand the science goal and decide tonight’s tactical priority."
+          },
+          {
+            "n": "02",
+            "title": "Reading the weather",
+            "desc": "Seeing, transparency, sky brightness, and the short-term forecast."
+          },
+          {
+            "n": "03",
+            "title": "Program selection",
+            "desc": "Judge whether tonight suits DARK, BRIGHT, or BACKUP observing."
+          },
+          {
+            "n": "04",
+            "title": "Candidate filtering",
+            "desc": "Keep the tiles that are visible now, legal, and worth the time."
+          },
+          {
+            "n": "05",
+            "title": "Tile ranking",
+            "desc": "Trade off science yield, priority, airmass, footprint balance, and wasted time."
+          },
+          {
+            "n": "06",
+            "title": "Completion management",
+            "desc": "Finish a tile when the value of completing it beats the cost of over-exposure."
+          },
+          {
+            "n": "07",
+            "title": "Replanning",
+            "desc": "React to forecast disruptions, inserted requests, and changing observing efficiency."
+          },
+          {
+            "n": "08",
+            "title": "Quality monitoring",
+            "desc": "Use fast validation signals to calibrate later decisions."
+          },
+          {
+            "n": "09",
+            "title": "Logging the reason",
+            "desc": "Explain why the observer chose this action in this slot."
+          }
+        ]
+      },
+      {
+        "kicker": "03 / Challenge Format",
+        "title": "The Survey Mission Card and the challenge loop",
+        "paragraphs": [
+          "Every challenge instance starts from a Survey Mission Card: the science goal, footprint area, time budget, telescope site, available observing programs, target classes, observing constraints, and scoring rules — everything a round holds you to. On this platform the mission card takes the form of published evaluation scenarios: tile catalogue, observing constraints, weather and forecasts, ad-hoc requests, simulator, and scoring configuration. The public development scenarios (dev-reference, dev-fortnight) are on the Resources page; competition scenarios are provided by the platform when the competition starts.",
+          "Every participant faces the same evaluation scenario: the overall survey plan, per-night seeing and weather replay, ad-hoc observing requests, predictable mid-term disruptions, simulator, and scoring rule are fixed. The agent receives the current state and returns the next observing action every 900 seconds."
+        ],
+        "loopTitle": "The decision loop",
+        "loop": [
+          {
+            "stage": "Fixed inputs",
+            "items": [
+              "Science goal",
+              "Footprint tiles",
+              "Weather replay"
+            ]
+          },
+          {
+            "stage": "Agent state",
+            "items": [
+              "Weather + forecast",
+              "Survey progress",
+              "Available tiles"
+            ]
+          },
+          {
+            "stage": "Reasoning",
+            "items": [
+              "Rank",
+              "Explain",
+              "Decide"
+            ]
+          },
+          {
+            "stage": "Action",
+            "items": [
+              "Observe",
+              "or wait"
+            ]
+          },
+          {
+            "stage": "Metrics",
+            "items": [
+              "Science yield",
+              "Uniformity + waste",
+              "Violations"
+            ]
+          }
+        ]
+      },
+      {
+        "kicker": "04 / Planning Horizons",
+        "title": "Plan across the survey, the week, and the next 900 seconds",
+        "paragraphs": [
+          "Long term — the organizers provide the overall survey plan in the mission card, while the agent manages that plan in flight. Final scoring includes survey completeness and completion quality.",
+          "Middle term — the agent builds a flexible month, week, and day plan from progress and forecast conditions, absorbing weather systems, forest-fire smoke, scheduled launches, and newly inserted observing requests. This layer may be enabled as mission cards evolve.",
+          "Short term — every 900-second slot, the agent makes an immediate tactical choice using the middle-term plan and real-time seeing and transparency. This is the focus of the scored benchmark."
+        ]
+      },
+      {
+        "kicker": "05 / Participant Job",
+        "title": "Build a reproducibly runnable observer project",
+        "paragraphs": [
+          "Any language is allowed. Submit a complete project (public repository or private ZIP) that the platform evaluates round by round in the cloud. See Docs for the interface.",
+          "The server reveals current observations step by step and scores the actual decisions. Future weather and anomaly answers remain private.",
+          "When ready, submit a complete project on Participate, then study replays to improve your strategy.",
+          "The platform keeps the full record of every evaluation — the decisions file, the run log, and a slot-by-slot replay — for organizer review, and for you to inspect why each step went the way it did."
+        ],
+        "actionCode": "return {\n    \"action\": \"observe\",\n    \"tile_id\": \"T00037\",\n    \"program\": \"DARK\",\n    \"request_id\": \"\",\n    \"reason\": \"highest preview estimate\",\n}"
+      },
+      {
+        "kicker": "06 / Scoring",
+        "title": "How scoring and the simulated environment work",
+        "paragraphs": [
+          "What a completed exposure earns depends on the atmosphere and the moon at the time; matching the night's programme and answering a request add more on top. Six things cost you: unsafe observations, invalid actions, avoidable waiting, unfinished must-do patches (REQUIRED), optional shortfall per region (FLEXIBLE), and expired requests. A good agent keeps trading immediate output against coverage, weather risk, request deadlines and the time budget.",
+          "Evaluation follows open-science principles: fixed data and fixed scoring let every submitted observation result be evaluated consistently; readable result artifacts make outcomes inspectable; separate development and final-evaluation weather compare generalization instead of tuning to a known scenario.",
+          "Visualization turns completed tile fractions into an observed-target map — a 3D spatial sample and a 2D butterfly plot of sky position plus simulated redshift, in the style DESI uses — so different strategies produce visibly different maps.",
+          "The same observer interface can support future mission cards for real survey-log replay, z > 5 quasar planning, LBG planning, and target-of-opportunity inserts; the community can propose new fixed datasets for follow-up tracks."
+        ],
+        "formula": "total = base_science + program_bonus + request_reward\n      - unsafe_observation - invalid_action - avoidable_wait\n      - required_miss - flexible_shortfall - request_miss"
+      },
+      {
+        "kicker": "07 / Glossary",
+        "title": "A little astronomy is enough",
+        "paragraphs": [
+          "You do not need an astronomy background to read the state dictionary and reason about it. A Tile is a patch of sky observed in one pointing; the Footprint is the full survey area; Targets are the object counts inside each tile. High-priority tiles carry extra scientific weight, nearly complete tiles are one exposure from completion, and under-covered regions are lagging behind the rest of the footprint.",
+          "Seeing describes atmospheric blur — lower is better. Transparency describes how clear the atmosphere is — higher is better. Sky brightness is background glow; darker is better for faint targets. Airmass measures how much atmosphere the light crosses and changes with sky position — lower is better. DARK, BRIGHT, and BACKUP are programs matched to dark, bright, and poor conditions. donefrac is tile completion: 0 means just started, 1 means finished.",
+          "The decision snapshot contains current_site_weather (observability, seeing, transparency, sky quality, instrument efficiency, active events), candidate_tiles (the legal options right now, each with geometry, airmass, lunar factor, effective weather, science value and window), active_requests, the forecasts issued so far, and progress (completed tiles, FLEXIBLE completions per region)."
+        ],
+        "actionCode": "return {\n    \"action\": \"observe\",\n    \"tile_id\": \"T00037\",\n    \"program\": \"DARK\",\n    \"request_id\": \"\",\n    \"reason\": \"highest preview estimate\",\n}"
+      },
+      {
+        "kicker": "08 / Timeline",
+        "title": "Three stages from training to awards",
+        "paragraphs": [
+          "The event has three stages: online training from October 2–3, online competition from October 5–7, and Awards Day at GOSIM Shenzhen on October 17. Final results are expected to be published before October 10, ahead of Awards Day.",
+          "Training covers the simulator and participant protocol; details will be announced. The competition accepts complete projects. The server reveals current information step by step and scores each complete multi-scenario batch."
+        ],
+        "rounds": [
+          {
+            "number": "01",
+            "name": "Online Training",
+            "dates": "Oct 2–3",
+            "format": "Online",
+            "challenge": "Learn the shared simulator, mission cards, and the observer interface, then prepare with public development scenarios.",
+            "participants": "Open worldwide to individuals and teams."
+          },
+          {
+            "number": "02",
+            "name": "Online Competition",
+            "dates": "Oct 5–7",
+            "format": "Online",
+            "challenge": "Submit a complete project. Future weather stays private; all scenarios in the same batch contribute to the mean score.",
+            "participants": "All registered teams."
+          },
+          {
+            "number": "03",
+            "name": "Awards Day",
+            "dates": "Oct 17",
+            "format": "GOSIM Shenzhen",
+            "challenge": "Prizes are presented at the closing ceremony of the GOSIM Shenzhen conference. Final results are expected to be published before October 10.",
+            "participants": "First- and second-prize teams and invited participants."
+          }
+        ]
+      }
+    ]
+  },
+  "about": {
+    "kicker": "01 / Why",
+    "title": "The observing plan is what shapes the final science sample",
+    "p1": "A survey telescope works by sweeping systematically across large areas of sky. Rather than spending a whole night on one object, it images thousands of patches over many nights, building a sample of galaxies, quasars and stars large enough to do statistics on.",
+    "p2": "Modern cosmology runs on samples like that: large, uniform and well calibrated. Wide surveys reveal the large-scale structure of the universe, constrain its expansion history, underpin dark-energy measurements and tie galaxy evolution to cosmic time. Spectroscopic surveys add one more dimension — redshift. Position on the sky plus redshift is enough to map cosmic structure in three dimensions.",
+    "p3": "DESI is a public example of this in progress: it measures spectra for large samples of galaxies and quasars to map the expanding universe and study dark energy.",
+    "hardTitle": "Why survey operations are hard",
+    "hardItems": [
+      {
+        "term": "Weather",
+        "desc": "Changes what a 900-second exposure is worth, through seeing, transparency, and sky brightness."
+      },
+      {
+        "term": "Target visibility",
+        "desc": "Shifts through the night with airmass and position on the sky."
+      },
+      {
+        "term": "Observing programs",
+        "desc": "Each prefers different conditions: DARK, BRIGHT, and BACKUP."
+      },
+      {
+        "term": "The footprint",
+        "desc": "Has to be covered broadly and evenly for the science analysis to hold up."
+      }
+    ],
+    "hardClosing": "High-priority patches, nearly finished patches and under-covered regions all compete for the same stretch of time. One bad call spends real observing time and changes the plan for the rest of the night. Decisions made at night have to work — and have to be explainable.",
+    "whyNowTitle": "Why an observing agent, and why now",
+    "whyNow": "The long-term goal is an observing agent that genuinely takes part in running a survey. What a human night operator does is turn science goals, weather, instrument state, completion progress and candidate patches into a decision about what to point at now. Today's AI systems make that plausible: read the state, call computational tools, reason under physical constraints, propose a plan, watch the quality, and explain every choice.",
+    "whyNowClosing": "This hackathon narrows that long-term goal into one problem you can actually compete on.",
+    "split": [
+      {
+        "side": "You build",
+        "desc": "The observer’s logic — the system that decides."
+      },
+      {
+        "side": "We provide",
+        "desc": "The mission definition, tile table, observing constraints, weather scenarios, simulator, and evaluation protocol."
+      }
+    ]
+  },
+  "observer": {
+    "kicker": "02 / The Observer",
+    "title": "What a human lead observer actually does",
+    "intro": "These nine jobs are what the observing agent is taking over.",
+    "duties": [
+      {
+        "n": "01",
+        "title": "Night strategy",
+        "desc": "Understand the science goal and decide tonight’s tactical priority."
+      },
+      {
+        "n": "02",
+        "title": "Reading the weather",
+        "desc": "Seeing, transparency, sky brightness, and the short-term forecast."
+      },
+      {
+        "n": "03",
+        "title": "Program selection",
+        "desc": "Judge whether tonight suits DARK, BRIGHT, or BACKUP observing."
+      },
+      {
+        "n": "04",
+        "title": "Candidate filtering",
+        "desc": "Keep the tiles that are visible now, legal, and worth the time."
+      },
+      {
+        "n": "05",
+        "title": "Tile ranking",
+        "desc": "Trade off science yield, priority, airmass, footprint balance, and wasted time."
+      },
+      {
+        "n": "06",
+        "title": "Completion management",
+        "desc": "Finish a tile when the value of completing it beats the cost of over-exposure."
+      },
+      {
+        "n": "07",
+        "title": "Replanning",
+        "desc": "React to forecast disruptions, inserted requests, and changing observing efficiency."
+      },
+      {
+        "n": "08",
+        "title": "Quality monitoring",
+        "desc": "Use fast validation signals to calibrate later decisions."
+      },
+      {
+        "n": "09",
+        "title": "Logging the reason",
+        "desc": "Explain why the observer chose this action in this slot."
+      }
+    ]
+  },
+  "challenge": {
+    "kicker": "03 / Format",
+    "title": "The Survey Mission Card",
+    "intro": "Every challenge instance starts from a Survey Mission Card. It defines the science goal, footprint area, time budget, telescope site, observing programs, target classes, constraints, scoring rules, and authoritative interface contract. The mission card and public development data will be released before the hackathon begins.",
+    "cards": [
+      {
+        "title": "Mission definition",
+        "desc": "Which sky to cover, which targets matter, how much time you have."
+      },
+      {
+        "title": "Telescope / site",
+        "desc": "Latitude, visibility limits, slot length, airmass constraints."
+      },
+      {
+        "title": "Public dev data",
+        "desc": "Tile catalogue, example weather scenarios, initial state, and visual reports."
+      },
+      {
+        "title": "Final eval data",
+        "desc": "Organizer-supplied weather replay, run in the same simulator."
+      },
+      {
+        "title": "Your deliverable",
+        "desc": "The observation results generated by your agent, submitted through the competition platform."
+      },
+      {
+        "title": "One evaluation",
+        "desc": "Every agent faces the same survey plan, weather replay, inserted requests, disruptions, simulator, and scoring rule."
+      }
+    ],
+    "loopTitle": "How one decision goes round",
+    "loop": [
+      {
+        "stage": "Fixed inputs",
+        "items": [
+          "Science goal",
+          "Footprint tiles",
+          "Weather replay"
+        ]
+      },
+      {
+        "stage": "Agent state",
+        "items": [
+          "Weather + forecast",
+          "Survey progress",
+          "Available tiles"
+        ]
+      },
+      {
+        "stage": "Reasoning",
+        "items": [
+          "Rank",
+          "Explain",
+          "Decide"
+        ]
+      },
+      {
+        "stage": "Action",
+        "items": [
+          "Observe",
+          "or wait"
+        ]
+      },
+      {
+        "stage": "Metrics",
+        "items": [
+          "Science yield",
+          "Uniformity + waste",
+          "Violations"
+        ]
+      }
+    ],
+    "loopNote": "The only variable is the agent's strategy. The survey plan, the weather replay, the incoming requests, the foreseeable interruptions, the simulator and the scoring rules are identical for everyone."
+  },
+  "build": {
+    "kicker": "04 / Participant Job",
+    "title": "What participants do",
+    "intro": "Build and run an agent in any programming language using the observer interface defined by the Survey Mission Card. Submit only the observation results generated by the agent.",
+    "io": [
+      {
+        "term": "Input",
+        "desc": "A small state dictionary: weather, forecast, survey progress, and the legal candidate tiles."
+      },
+      {
+        "term": "Output",
+        "desc": "One observing plan for the next 900-second slot, such as observe a tile_id under DARK or wait. The reason text is free form."
+      },
+      {
+        "term": "Scoring",
+        "desc": "Effective targets, tiles completed, evenness of footprint coverage, time efficiency, and action legality."
+      },
+      {
+        "term": "Deliverable",
+        "desc": "Only the observation results generated by the agent, submitted in the format required by the competition platform."
+      }
+    ],
+    "starterTitle": "Illustrative example only",
+    "starterIntro": "This minimal utility rule illustrates one possible design; it does not constrain implementation language, architecture, or strategy. Follow the Survey Mission Card for the official interface.",
+    "starterCode": "tiles = state[\"available_tiles\"]\nif len(tiles) == 0:\n    return {\"action\": \"wait\"}\n\nbest = max(tiles, key=lambda t: t[\"expected_weighted_gain\"])\nreturn {\"action\": \"observe\", \"tile_id\": best[\"tile_id\"], \"plan\": \"DARK\",\n        \"reason\": \"highest useful gain\"}",
+    "starterClosing": "Weather, completion, airmass, footprint balance, and waste are useful strategy factors. How to weigh them and how to structure the agent are left to each participant.",
+    "archTitle": "Illustrative architectures",
+    "architectures": [
+      {
+        "name": "Utility agent",
+        "desc": "Score every candidate tile, take the highest."
+      },
+      {
+        "name": "Weather-aware planner",
+        "desc": "Use the forecast to decide whether to spend or save a high-value tile."
+      },
+      {
+        "name": "Completion manager",
+        "desc": "Spot tiles near donefrac = 1 and manage over-exposure waste."
+      },
+      {
+        "name": "Footprint balancer",
+        "desc": "Up-weight regions that are behind on coverage."
+      },
+      {
+        "name": "Risk-controlled agent",
+        "desc": "Filter out high-waste, high-airmass, or low-value options before ranking."
+      },
+      {
+        "name": "Lead / support pair",
+        "desc": "One module proposes the plan, another checks constraints and explains the risk."
+      },
+      {
+        "name": "LLM planner + rule checker",
+        "desc": "Language reasoning for strategy, deterministic code for legality."
+      }
+    ],
+    "archCode": "AgentObserver\n  -> WeatherInterpreter\n  -> ProgramSelector\n  -> CandidateFilter\n  -> TileRanker\n  -> FootprintBalancer\n  -> CompletionManager\n  -> SupportObserver / RiskChecker\n  -> ReasonLogger",
+    "scenariosTitle": "Situations you will meet",
+    "scenariosIntro": "These situations come up again and again.",
+    "scenarios": [
+      {
+        "when": "Excellent dark night",
+        "then": "Spend the slot on the highest preview estimate: REQUIRED tiles first, then FLEXIBLE tiles in under-covered regions, in the DARK program."
+      },
+      {
+        "when": "Marginal but usable weather",
+        "then": "Prefer robust tiles, completion opportunities, and low-waste options."
+      },
+      {
+        "when": "Forecast improving",
+        "then": "Compare current speed against future speed before spending a high-value tile."
+      },
+      {
+        "when": "Footprint unbalanced",
+        "then": "Give under-covered regions a bonus."
+      },
+      {
+        "when": "Tile near completion",
+        "then": "Finish it when the completion bonus beats the waste cost."
+      },
+      {
+        "when": "High airmass",
+        "then": "Discount the utility of tiles that are harder to observe well."
+      }
+    ]
+  },
+  "scoring": {
+    "kicker": "05 / Scoring",
+    "title": "How the score works",
+    "intro": "What a completed exposure earns depends on the atmosphere and the moon at the time; matching the night's programme and answering a request add more. Six things cost you: unsafe observations, invalid actions, avoidable waiting, missed must-do patches, optional shortfall per region, and expired requests. A good agent trades immediate gain against covering the whole survey.",
+    "formula": "total = base_science + program_bonus + request_reward\n      - unsafe_observation - invalid_action - avoidable_wait\n      - required_miss - flexible_shortfall - request_miss",
+    "principlesTitle": "Open-science design principles",
+    "principles": [
+      {
+        "term": "Consistent benchmark",
+        "desc": "Fixed data and scoring evaluate every submitted observation result under the same standard."
+      },
+      {
+        "term": "Inspectable results",
+        "desc": "Readable observation-result artifacts make each team’s outcome reviewable."
+      },
+      {
+        "term": "Scientific but light evaluation",
+        "desc": "Target yield, tile completion, weather response, footprint balance, and waste."
+      },
+      {
+        "term": "Clearly bounded scoring",
+        "desc": "Short-term planning is primary; middle-term planning may be enabled as mission cards evolve."
+      },
+      {
+        "term": "Dev and eval weather separated",
+        "desc": "Separate scenarios compare generalization instead of tuning to known weather."
+      }
+    ],
+    "principlesClosing": "Future mission cards can add real survey-log replay, z > 5 quasar planning, LBG planning, and target-of-opportunity inserts. The community can propose new fixed datasets for follow-up tracks.",
+    "vizTitle": "Seeing the result",
+    "viz": [
+      "The test data includes a deterministic table of simulated target coordinates. Each tile’s target count is bound to fixed simulated coordinates through the random seed, the tile_id, and the target class.",
+      "After a run, the simulator converts completed tile fractions into an observed-target map — how many simulated galaxies and quasars the agent actually reached.",
+      "A 3D view keeps the observed simulated universe as a spatial sample; a 2D butterfly plot folds sky position and simulated redshift together, in the style DESI uses.",
+      "Different observing strategies produce visibly different maps of cosmic structure. The visualization helps a team explain its strategy, its footprint balance, and what it missed."
+    ],
+    "vizNote": "This picture is the layer built for people to look at; what is actually scored is always the planning itself."
+  },
+  "glossary": {
+    "kicker": "06 / Glossary",
+    "title": "A little astronomy is enough",
+    "intro": "You do not need an astronomy background to read the state dictionary and reason about it. This much will do.",
+    "terms": [
+      {
+        "term": "Tile",
+        "desc": "A small patch of sky the telescope can observe in one pointing."
+      },
+      {
+        "term": "Footprint",
+        "desc": "The whole sky area the survey intends to cover."
+      },
+      {
+        "term": "Targets",
+        "desc": "In this planning benchmark, the object counts inside each tile."
+      },
+      {
+        "term": "Seeing",
+        "desc": "How blurred the image is. Lower is better."
+      },
+      {
+        "term": "Transparency",
+        "desc": "How clear the atmosphere is. Higher is better."
+      },
+      {
+        "term": "Sky brightness",
+        "desc": "Background noise. For faint targets, darker is usually better."
+      },
+      {
+        "term": "Airmass",
+        "desc": "How much atmosphere the light passes through. Lower is better."
+      },
+      {
+        "term": "DARK / BRIGHT / BACKUP",
+        "desc": "Observing programs matched to dark, bright, and poor sky conditions."
+      },
+      {
+        "term": "Must-do / optional (REQUIRED / FLEXIBLE)",
+        "desc": "At the end of a run every unfinished must-do patch costs 1000; each region needs four optional patches finished, and every one short costs 100."
+      },
+      {
+        "term": "lunar_quality_factor",
+        "desc": "Continuous moonlight reduction of the combined quality: 1 while the moon is down, down to 0.25 near a bright moon."
+      }
+    ],
+    "stateTitle": "What is in the state",
+    "state": [
+      {
+        "field": "current_site_weather",
+        "desc": "Site weather for the current slot: whether it is observable, seeing, transparency, sky brightness, instrument efficiency, and any weather event in progress."
+      },
+      {
+        "field": "forecasts",
+        "desc": "Every forecast published so far, revised daily and not guaranteed accurate — you only see revisions from before the current moment."
+      },
+      {
+        "field": "progress",
+        "desc": "Patches already finished, and how many optional patches are done in each region."
+      },
+      {
+        "field": "candidate_tiles",
+        "desc": "The patches that are legal right now: geometry, airmass, lunar factor, effective weather, science value and observing window."
+      }
+    ],
+    "actionCode": "return {\n    \"action\": \"observe\",\n    \"tile_id\": 100123,\n    \"plan\": \"DARK\",\n    \"reason\": \"good weather and highest useful gain\",\n}"
+  },
+  "schedule": {
+    "kicker": "07 / Timeline",
+    "title": "Schedule",
+    "intro": "Online training runs October 2–3, the online competition runs October 5–7, and Awards Day is October 17.",
+    "challengeLabel": "Survey task",
+    "participantsLabel": "Who participates",
+    "rounds": [
+      {
+        "number": "01",
+        "name": "Online Training",
+        "dates": "Oct 2–3",
+        "format": "Online",
+        "challenge": "Learn the shared simulator, mission cards, and the observer interface, then prepare with public development scenarios.",
+        "participants": "Open worldwide to individuals and teams."
+      },
+      {
+        "number": "02",
+        "name": "Online Competition",
+        "dates": "Oct 5–7",
+        "format": "Online",
+        "challenge": "Submit a complete project. Future weather stays private; all scenarios in the same batch contribute to the mean score.",
+        "participants": "All registered teams."
+      },
+      {
+        "number": "03",
+        "name": "Awards Day",
+        "dates": "Oct 17",
+        "format": "GOSIM Shenzhen",
+        "challenge": "Prizes are presented at the closing ceremony of the GOSIM Shenzhen conference. Final results are expected to be published before October 10.",
+        "participants": "First- and second-prize teams and invited participants."
+      }
+    ]
+  },
+  "leaderboard": {
+    "kicker": "Leaderboard",
+    "title": "Standings",
+    "intro": "",
+    "refresh": "Refresh",
+    "full": "Full board",
+    "updated": "Updated",
+    "loading": "Loading the leaderboard…",
+    "empty": "No scored submission yet in this phase.",
+    "unavailable": "The leaderboard is temporarily unavailable. Please try again shortly.",
+    "team": "Team / Agent",
+    "score": "Score",
+    "science": "Science",
+    "completion": "Completion",
+    "uniformity": "Uniformity",
+    "submissions": "Result submissions",
+    "phase": "Phase",
+    "scenarios": "Scenarios",
+    "rank": "#",
+    "kind": "Type",
+    "best_run": "Best run",
+    "hidden": "Standings for this phase are hidden until the organizers publish them.",
+    "frozen": "This board is frozen. New submissions are still scored but the board is not updated.",
+    "published": "Final results published.",
+    "live": "Live",
+    "tie": "Ties keep the earlier submission ahead.",
+    "mean_note": "Competition score = the mean of cards A–D in the same completed evaluation. Each team keeps its best complete evaluation; each card tab shows that evaluation’s score on the card.",
+    "download_csv": "Download CSV",
+    "json": "JSON",
+    "n_entries": "{n} teams",
+    "status": {
+      "open": "open",
+      "upcoming": "upcoming",
+      "closed": "closed",
+      "disabled": "disabled"
+    },
+    "no_phases": "No phase has been configured yet.",
+    "tabs": {
+      "practice": "Practice",
+      "debug": "Debug board",
+      "competition": "Competition",
+      "final": "Final"
+    },
+    "debug_submissions_closed": "Submissions closed",
+    "competition_starts": "Starts Oct 5, 00:00 Beijing time",
+    "me": "your team",
+    "chart": {
+      "title": "Score composition · top 10",
+      "penalty": "penalties",
+      "your_team": "Your team",
+      "your_position": "Your position",
+      "teams_on_board": "Teams on board",
+      "scored_runs": "Scored runs",
+      "last_update": "Last update",
+      "tooltip": "Total {score} · base {base} · bonus {bonus} · requests {requests} · coverage {coverage} · penalties −{penalty} · {tiles} patches · must-do missing {missing}",
+      "legend_base": "base science",
+      "legend_bonus": "program bonus",
+      "legend_request": "requests",
+      "tiles": "tiles",
+      "req_missing": "REQ missing"
+    },
+    "base_science": "Base science",
+    "bonus": "Bonus",
+    "requests": "Requests",
+    "coverage": "Coverage",
+    "penalties": "Penalties",
+    "tiles": "Tiles",
+    "required_missing": "REQ missing",
+    "nights": "{n} nights",
+    "per_scenario_note": "The practice board ranks each scenario separately: each board compares scores on that scenario only, with a team's best score there.",
+    "detail": {
+      "board_scenario": "Board: {scenario}",
+      "board_mean": "Board: mean over the cards in each evaluation",
+      "close": "Close",
+      "evenness": "Coverage evenness",
+      "scored_at": "Scored at",
+      "github": "Leader on GitHub @{handle}",
+      "view_submission": "Open this submission",
+      "board_card": "Board: {card}",
+      "board_overall": "Board: overall, the mean of the cards"
+    },
+    "calibrated_score": "Calibrated score",
+    "raw_score": "Raw score",
+    "calibration_note": "Rankings use difficulty-calibrated scores. Component scores are shown before calibration.",
+    "public_board": "Online board: each team’s best complete evaluation on the task cards A–D (900 s per card); the Overall tab is the mean over A–D and each card has its own tab. It is live, but it does not decide the final ranking — after the online phase ends, each team’s final version is evaluated 3 times on each of the hidden cards E–H, each card is the mean of its 3 evaluations, and only the mean over E–H ranks.",
+    "final_board": "Final ranking: each team’s final version evaluated 3 times on each of the hidden cards E–H after the online phase ended; each card shows the mean of its 3 evaluations and the Overall tab is the mean over E–H. A card not completed in an evaluation because of the team itself scores 0 there and still counts in the mean.",
+    "overall": "Overall",
+    "unfinished": "Unfinished",
+    "unfinished_help": "Not completed because of the team itself (project build failure, crash, protocol error or a rejected trace): scores 0 and counts in the mean.",
+    "final_version": "Final version: {score}",
+    "final_version_unscored": "Final version: no score yet",
+    "final_version_default": "Not chosen (default: best version)",
+    "final_version_help": "The best evaluation in this phase of the version this team chose as its final version; the final ranking is decided by that version's evaluation on the hidden cards E–H.",
+    "averaged_runs": "mean of {n}",
+    "averaged_runs_help": "Each card is the mean of {n} evaluations of the team's final version; the Overall tab is the mean over the cards.",
+    "range": "range {low}–{high}",
+    "range_help": "Lowest and highest of the {n} evaluations averaged here.",
+    "organizer_preview": "Organizer preview: participants cannot see this board until the organizers publish it.",
+    "cards": "Cards",
+    "overall_note": "Overall = the mean of a team's card scores in its best complete evaluation (a scored run on every card). Each card tab shows the run on that card from the same evaluation.",
+    "card_note": "This board ranks each team's run on this card, taken from its best complete evaluation (the one with the highest mean over all cards).",
+    "targets_observed": "Targets",
+    "components": {
+      "sum_best_scores": "Best scores",
+      "required_penalty": "Required penalty",
+      "uniformity_penalty": "Uniformity penalty",
+      "report_settlement": "Reports",
+      "observation_request_reward": "Observation requests",
+      "base_science": "Base science",
+      "program_bonus": "Bonus",
+      "request_reward": "Requests",
+      "report_reward": "Reports",
+      "coverage_bonus": "Coverage"
+    }
+  },
+  "cta": {
+    "title": "Come build an observing agent",
+    "tagline": "Every team gets the same survey plan, weather replay, observation requests, simulator and scoring rule. What differs is the strategy.",
+    "location": "Online development and evaluation · October 17 at GOSIM Shenzhen",
+    "button": "Register now",
+    "tag": "2026 / GOSIM / AGENTIC OBSERVER"
+  },
+  "footer": {
+    "copyright": "2026 GOSIM · Agentic Observer Hackathon",
+    "license": {
+      "prefix": "Challenge data, task cards, evaluation code and example projects are provided under ",
+      "linkText": "CC BY-NC 4.0",
+      "suffix": " (attribution, non-commercial); please cite the GOSIM 2026 Agentic Observer Hackathon (https://create.gosim.org/survey26/)."
+    },
+    "mainSite": "GOSIM",
+    "lockup": "OPEN / OBSERVER",
+    "links": {
+      "rules": "Rules",
+      "docs": "Docs",
+      "api": "API",
+      "status": "Status",
+      "code": "Code of conduct",
+      "contact": "Contact"
+    },
+    "contact_email": "hackathon@gosim.org",
+    "ticker": {
+      "cadence": "a decision every 15 minutes",
+      "when": "Night of {date} · {start}–{end} UT",
+      "code_hint": "N = night number · S = slot number",
+      "dome_open": "Dome open · observing",
+      "dome_closed": "Dome closed · poor weather",
+      "budget_label": "900 s total · shared for the whole run",
+      "fact_hint": "Click to see what fits in 900 seconds"
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "download": "Download",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "none": "None",
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "updated": "Updated",
+    "created": "Created",
+    "actions": "Actions",
+    "status": "Status",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "optional": "optional",
+    "required": "required",
+    "public": "public",
+    "hidden": "hidden",
+    "copy": "Copy",
+    "copied": "Copied",
+    "view": "View",
+    "error_title": "Something went wrong",
+    "not_found": "Page not found",
+    "forbidden": "You do not have access to this page",
+    "home": "Home",
+    "utc": "UTC",
+    "seconds": "s",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "confirm": "Confirm",
+    "saved": "Saved.",
+    "deleted": "Deleted.",
+    "upload": "Upload",
+    "uploading": "Uploading…",
+    "working": "Working…",
+    "submit": "Submit",
+    "team": "Team",
+    "user": "User",
+    "date": "Date",
+    "level": "Level",
+    "id": "ID",
+    "signed_in_as": "Signed in as",
+    "no_data": "Nothing here yet.",
+    "by": "by",
+    "or": "or",
+    "update_available": "The site was updated — please refresh"
+  },
+  "status": {
+    "queued": "Queued",
+    "running": "Running",
+    "scored": "Scored",
+    "invalid": "Invalid",
+    "failed": "Failed",
+    "cancelled": "Cancelled"
+  },
+  "kind": {
+    "results": "Results file",
+    "agent": "Agent run"
+  },
+  "auth": {
+    "register_title": "Register",
+    "register_lede": "Create an account, then create or join a team. One account per person.",
+    "login_title": "Log in",
+    "login_lede": "Use the email and password you registered with.",
+    "name": "Full name",
+    "nickname": "Nickname",
+    "nickname_hint": "Up to 40 characters. Used on the participants wall and team pages; leave blank to use your full name.",
+    "email": "Email",
+    "password": "Password (8+ characters)",
+    "password2": "Repeat password",
+    "github": "GitHub username",
+    "affiliation": "Affiliation",
+    "agree": "I have read the rules and the code of conduct.",
+    "submit_register": "Create account",
+    "submit_login": "Log in",
+    "have_account": "Already registered?",
+    "no_account": "No account yet?",
+    "forgot": "Forgot password?",
+    "forgot_title": "Reset password",
+    "forgot_lede": "Enter your email. If it is registered, a reset link is sent.",
+    "send_reset": "Send reset link",
+    "reset_title": "Choose a new password",
+    "reset_submit": "Set password",
+    "forgot_sent_title": "Check your inbox",
+    "forgot_sent": "If that email is registered, a reset link has been sent. It is valid for two hours.",
+    "forgot_no_email": "Email delivery is not configured on this deployment. Contact the organizers to reset your password.",
+    "reset_invalid_title": "Link expired",
+    "reset_invalid": "This reset link is invalid or has expired. Request a new one.",
+    "verify_ok_title": "Email verified",
+    "verify_ok": "Your email address is verified.",
+    "verify_failed_title": "Verification failed",
+    "verify_failed": "This verification link is invalid or has expired.",
+    "closed_notice": "Registration is currently closed.",
+    "errors": {
+      "registration_closed": "Registration is closed.",
+      "rate_limited": "Too many attempts. Try again in a few minutes.",
+      "name_required": "Name is required.",
+      "nickname_too_long": "Nickname must be 40 characters or fewer.",
+      "email_invalid": "Enter a valid email address.",
+      "password_too_short": "Password must be at least 8 characters.",
+      "password_too_long": "Password is too long.",
+      "password_mismatch": "Passwords do not match.",
+      "agree_required": "You must accept the rules.",
+      "email_taken": "This email is already registered.",
+      "bad_credentials": "Email or password is incorrect.",
+      "banned": "This account is suspended.",
+      "contact_required": "Please leave a contact (WeChat ID or e-mail) — team-forming and event notices need it."
+    },
+    "reset_lede": "Choose a new password for your account.",
+    "reset_done": "Password updated.",
+    "reset_no_session": "Open the reset link from your email to set a new password.",
+    "register_done": "Account created. Check your inbox to confirm your email, then log in.",
+    "register_done_session": "Account created.",
+    "login_done": "Logged in.",
+    "logout_done": "Logged out.",
+    "back_to_login": "Back to log in",
+    "tab_register": "Create account",
+    "tab_login": "Log in",
+    "steps": [
+      "Create your account (no e-mail confirmation needed)",
+      "Create a team or join one with an invite code",
+      "Submit a complete project for evaluation"
+    ],
+    "about_you": "Participant profile",
+    "about_you_note": "Your tiers appear on your participant card, helping entrants from different backgrounds find each other and form teams.",
+    "city": "City",
+    "contact": "Contact",
+    "contact_ph": "WeChat ID or e-mail — for team contact and event notices; visible to logged-in participants only",
+    "heard_from": "How did you hear about us",
+    "blurb": "One-line introduction",
+    "blurb_ph": "Shown on the participants wall, e.g. experienced in agent development, seeking a partner with an astronomy background",
+    "show_on_wall": "Display my card on the participants wall (can be withdrawn at any time)",
+    "role_options": {
+      "student": "Student",
+      "engineer": "Engineer",
+      "researcher": "Researcher",
+      "product": "Product / design",
+      "other": "Other"
+    },
+    "heard_options": {
+      "friend": "Friend or colleague",
+      "community": "Chat groups / community",
+      "gosim": "GOSIM official channels",
+      "social": "Social media",
+      "other": "Other"
+    },
+    "step1_label": "Step 1 / 2 · Create the account",
+    "step2_label": "Step 2 / 2 · Your participant card",
+    "next_step": "Next",
+    "prev_step": "Back",
+    "seeking_label": "Team-up intent",
+    "seeking_astro": "Looking for astronomy-background teammates",
+    "seeking_ai": "Looking for agent-background teammates",
+    "seeking_none": "I don't need teammates",
+    "seeking_count": "Preferred teammate count",
+    "team_full_notice": "All {limit} team places are taken and registration is closed: no new team can be created. You can still create an account and join an existing team with an invite code from its leader."
+  },
+  "mail": {
+    "verify_subject": "Verify your Agentic Observer account",
+    "verify_body": "Open this link to verify your email:\n{url}\n",
+    "reset_subject": "Reset your Agentic Observer password",
+    "reset_body": "Open this link to choose a new password (valid 2 hours):\n{url}\n"
+  },
+  "dash": {
+    "title": "Dashboard",
+    "welcome": "Signed in as {name}",
+    "no_team_title": "You are not on a team yet",
+    "no_team": "Create a team (solo is fine) or join one with an invite code before submitting.",
+    "team": "Team",
+    "members": "Members",
+    "recent": "Recent submissions",
+    "all_submissions": "All submissions",
+    "new_submission": "New submission",
+    "phases": "Phases",
+    "quota": "today",
+    "best": "Best",
+    "quick": {
+      "kit": "Resources",
+      "docs": "Read the docs",
+      "board": "Leaderboard"
+    },
+    "verify_notice": "Your email is not verified yet. Check your inbox.",
+    "loading": "Loading dashboard…",
+    "quota_used": "{used} / {limit} today",
+    "quest": {
+      "title": "Getting started",
+      "progress": "{done}/{total} done",
+      "done_step": "done",
+      "next_action": "Next: {action}",
+      "done_title": "All set",
+      "done_text": "Keep improving your agent and submitting to climb the leaderboard.",
+      "done_board": "View leaderboard",
+      "practice": {
+        "team": {
+          "title": "Form a team (or go solo)",
+          "hint": "Teams have up to 3 people; competing alone uses a one-person team.",
+          "action": "Form a team"
+        },
+        "prepare": {
+          "title": "Read the docs",
+          "hint": "Follow the docs to build your agent.",
+          "action": "Open the docs"
+        },
+        "submit": {
+          "title": "Make your first submission",
+          "hint": "Submit a project on Participate; the platform scores it automatically.",
+          "action": "Submit"
+        },
+        "review": {
+          "title": "Watch the replay and score",
+          "hint": "See what each decision observed, then improve your strategy.",
+          "action": "View replay and score"
+        }
+      },
+      "competition": {
+        "team": {
+          "title": "Form a team",
+          "hint": "Teams have up to 3 people; you can also compete alone.",
+          "action": "Form a team"
+        },
+        "prepare": {
+          "title": "Prepare your project (docs)",
+          "hint": "Use the complete example project and interface docs to build your agent in any language.",
+          "action": "Open the docs"
+        },
+        "submit": {
+          "title": "Submit your project and start an evaluation",
+          "hint": "Upload a repository or ZIP on Participate, confirm the version, then start the evaluation.",
+          "action": "Go to Participate"
+        },
+        "review": {
+          "title": "Check the score and replay",
+          "hint": "When the evaluation finishes, review the score breakdown and replay to find what to improve.",
+          "action": "View score and replay"
+        }
+      }
+    }
+  },
+  "credits": {
+    "title": "API credits",
+    "kicker": "sponsor codes",
+    "lede": "Sponsor API codes, one per team per provider. Cloud evaluations use the keys you save under Keys and network on the Participate page.",
+    "need_team": "Codes are issued per team. Create or join a team to claim them.",
+    "empty": "No sponsor codes are available yet.",
+    "available": "{n} left",
+    "claim": "Claim code",
+    "reveal": "Reveal",
+    "hide": "Hide",
+    "claimed": "Code claimed.",
+    "already": "Your team already holds a code for this provider.",
+    "loading": "Loading credits…",
+    "errors": {
+      "need_team": "Join or create a team before claiming a code.",
+      "no_codes_left": "No codes left for this provider.",
+      "banned": "This account is suspended."
+    }
+  },
+  "kimi_plan": {
+    "title": "Kimi Coding Plan",
+    "kicker": "One per team",
+    "guide": "Download the Kimi usage guide (PDF)",
+    "redeem": "Redeem on Kimi",
+    "lede": "The first 100 teams that run through Practice (at least one successful practice score) each get one Kimi Coding Plan code, first come, first served. The captain claims it; every member can see it here.",
+    "coming_soon": "Kimi Coding Plan codes are coming soon. Captains of teams that have run through the practice round can claim theirs here.",
+    "sold_out": "All Kimi Coding Plan codes have been given out (first 100 teams, first come, first served).",
+    "eligible": "Your team qualifies.",
+    "not_eligible": "Your team still needs one successful score in the practice round.",
+    "hidden": "Hidden/test teams do not receive a code.",
+    "wait_captain": "Your team qualifies. Ask your captain to claim the code; it will then show up here for everyone.",
+    "claim": "Claim the team code",
+    "claimed": "Kimi Coding Plan code claimed.",
+    "already": "Your team already has its Kimi Coding Plan code.",
+    "claimed_by": "Claimed by {name} · {at}",
+    "errors": {
+      "captain_only": "Only the team captain can claim the Kimi Coding Plan code.",
+      "not_eligible": "Your team needs one successful score in the practice round first.",
+      "no_codes_left": "All Kimi Coding Plan codes have been given out (first 100 teams, first come, first served).",
+      "need_team": "Create or join a team first."
+    },
+    "popup_title": "Your team can claim a Kimi Coding Plan code",
+    "popup_captain": "Your team has run through the practice round and qualifies for one Kimi Coding Plan code. As captain, claim it on your dashboard; every member will then see it there.",
+    "popup_member": "Your team has run through the practice round and qualifies for one Kimi Coding Plan code. Ask your captain to claim it on the dashboard; it will then show up there for everyone.",
+    "popup_go": "Claim on the dashboard",
+    "sponsor": "Sponsored by KIMI"
+  },
+  "profile": {
+    "title": "Profile",
+    "role": "Role",
+    "save": "Save profile",
+    "password_title": "Change password",
+    "current": "Current password",
+    "new": "New password",
+    "new2": "Repeat new password",
+    "change": "Change password",
+    "token_title": "API token",
+    "token_lede": "Use this token with the JSON API. Rotating it invalidates the old one.",
+    "rotate": "Rotate token",
+    "language": "Interface language",
+    "saved": "Profile saved.",
+    "email_note": "Your email address is your login and cannot be changed here.",
+    "locale_note": "Interface language is stored on your profile and used for emails.",
+    "avatar_title": "Avatar",
+    "avatar_hint": "PNG, JPG or WEBP, up to 2 MB. It will be cropped to a square.",
+    "avatar_upload": "Upload avatar",
+    "avatar_change": "Change avatar",
+    "avatar_remove": "Remove avatar",
+    "avatar_uploading": "Uploading…",
+    "avatar_updated": "Avatar updated.",
+    "avatar_removed": "Avatar removed.",
+    "errors": {
+      "avatar_bad_type": "Please choose a PNG, JPG or WEBP image.",
+      "avatar_too_large": "That image is larger than 2 MB.",
+      "avatar_invalid_image": "That file could not be read as an image.",
+      "avatar_invalid_url": "That avatar could not be saved. Please try uploading again.",
+      "avatar_not_found": "That avatar could not be saved. Please try uploading again."
+    }
+  },
+  "team": {
+    "title": "Team",
+    "create_title": "Create a team",
+    "join_title": "Join with an invite code",
+    "name": "Team name",
+    "max_size": "Max size (1–3)",
+    "project_idea": "Approach (optional)",
+    "github_repo": "Repository (optional)",
+    "invite_code": "Invite code",
+    "create": "Create team",
+    "join": "Join team",
+    "leader": "Leader",
+    "invite_lede": "Share this code with teammates. Anyone with the code can join until the team is full or locked.",
+    "regenerate": "Regenerate code",
+    "locked": "Locked (no new members)",
+    "kick": "Remove",
+    "transfer": "Make leader",
+    "leave": "Leave team",
+    "disband": "Disband team",
+    "disband_confirm": "Disband the team? This cannot be undone.",
+    "open_teams": "Teams looking for members",
+    "no_open_teams": "No open teams right now.",
+    "ask_code": "Ask the leader for the invite code.",
+    "solo_hint": "To compete alone, create a team with a size of 1.",
+    "errors": {
+      "already_in_team": "You are already on a team.",
+      "name_length": "Team name must be 2–60 characters.",
+      "name_taken": "That team name is taken.",
+      "bad_code": "Unknown invite code.",
+      "locked": "This team is locked.",
+      "full": "This team is full.",
+      "leader_must_transfer": "Transfer leadership before leaving.",
+      "has_submissions": "A team with submissions cannot be disbanded.",
+      "recipient_unavailable": "This person cannot currently receive a team invitation.",
+      "team_unavailable": "This team is no longer available.",
+      "invitation_not_found": "This request is not addressed to you.",
+      "invitation_finished": "This request has already been handled."
+    },
+    "members": "Members",
+    "copy_code": "Copy code",
+    "leave_confirm": "Leave the team?",
+    "kick_confirm": "Remove this member from the team?",
+    "transfer_confirm": "Make this member the team leader?",
+    "code_regenerated": "Invite code regenerated.",
+    "saved": "Team updated.",
+    "not_in_team": "You are not on a team.",
+    "leader_only": "Only the team leader can do this.",
+    "bad_size": "Team size must be between the current member count and 3.",
+    "entry_hint": "Create a team or join with an invite code. You will be asked to log in first if needed.",
+    "manage_hint": "You already belong to a team. Invite teammates here; each person can belong to one team.",
+    "invite_people": "Invite teammates",
+    "invite_link": "Invite link",
+    "copy_link": "Copy invite link",
+    "copy_fallback": "Copy failed. Select the invite code or link and copy it manually.",
+    "solo": "Go solo in one click",
+    "solo_lede": "Going solo? Create a one-person team named after you in one click. You can raise the size limit and invite teammates later.",
+    "solo_done": "Solo team “{name}” created. You can start now.",
+    "directory": {
+      "title": "Teams",
+      "lede": "Choose a team to send a request. You join after its captain accepts.",
+      "search": "Search team names",
+      "show_all": "Show all ({n})",
+      "recruiting": "{n} recruiting",
+      "empty": "No matching teams",
+      "create_own": "Create your own team",
+      "go_solo": "Compete solo",
+      "more": "Show {n} more",
+      "request": "Request to join",
+      "requested": "Request sent · view progress",
+      "sign_in": "Sign in to request",
+      "yours": "Your team",
+      "paused": "Not recruiting",
+      "full": "Full",
+      "in_team": "Already in a team"
+    },
+    "capacity": {
+      "full": "All {limit} team places are taken and registration is closed. No new team can be created; you can still join an existing team that has room, using its invite code.",
+      "remaining": "Team places: {remaining} of {limit} left. New teams stop automatically once {limit} are registered."
+    }
+  },
+  "submit": {
+    "title": "Participate",
+    "phase": "Phase",
+    "kind": "Submission type",
+    "scenario": "Scenario",
+    "file": "File",
+    "file_results": "decisions.csv",
+    "title_field": "Label (optional)",
+    "notes": "Notes (optional, private to your team)",
+    "button": "Upload and queue",
+    "quota_left": "{n} left today",
+    "phase_closed": "closed",
+    "phase_upcoming": "opens {date}",
+    "help_results": "Scores the decisions.csv you produced locally.",
+    "help_agent": "The platform runs your program on every scenario in this phase, hidden weather included, with one time budget per scenario, and averages the scores.",
+    "errors": {
+      "need_team": "Create or join a team first.",
+      "bad_phase": "Unknown phase.",
+      "phase_closed": "This phase is not open for submissions.",
+      "bad_kind": "Unknown submission type.",
+      "results_not_allowed": "This phase does not accept results files.",
+      "agents_not_allowed": "This route accepts decisions.csv only; submit complete projects on the Participate page.",
+      "bad_scenario": "Choose a scenario of this phase.",
+      "scenario_hidden": "This scenario's weather is not published yet; submissions open when the competition starts.",
+      "daily_limit": "Daily limit of {n} submissions reached for this phase.",
+      "file_required": "Choose a file.",
+      "results_csv": "Results must be a .csv file.",
+      "agent_file": "Agent must be a .py or .zip file.",
+      "too_large": "File exceeds {mb} MB.",
+      "invalid_file": "File rejected",
+      "cannot_cancel": "Only queued submissions can be cancelled.",
+      "folder_empty": "The folder has no files to package."
+    },
+    "uploading": "Uploading file…",
+    "hashing": "Computing checksum…",
+    "queued": "Submission queued.",
+    "no_phase": "No phase is open for submissions right now.",
+    "no_scenario": "No scenarios are configured for this phase yet.",
+    "all_scenarios": "All scenarios of the phase",
+    "agent_hints": [
+      "If you call a large model, drag the whole agent folder in: include .env (your API key, never shown to anyone) and requirements.txt (installed before the clock starts).",
+      "Limits: 20 MB per upload, 2,000 files, 50 MB uncompressed, no symlinks. Caches, scratch/ and run_output/ are left out automatically."
+    ],
+    "wallclock": "Time budget",
+    "wallclock_note": "Each card has one budget of normalized CPU time: only CPU your agent uses during its turns counts, adjusted for machine speed; waiting and platform processing are not counted; a 30-minute real-time cap applies. No per-step timeout. Anything committed before it runs out still scores.",
+    "wallclock_results_note": "A results file is replayed offline and costs no budget; the budget only applies to agents running on the platform.",
+    "weather_public": "weather public",
+    "weather_hidden": "weather hidden",
+    "drop_agent": "Drop your whole agent folder, or a .zip, here",
+    "drop_results": "Drop your decisions.csv here",
+    "pick_folder": "Choose a folder (we zip it for you)",
+    "packed": "Packed {n} file(s) in the browser",
+    "team_env": {
+      "intro_open": "No model credits are provided. If your program calls a model or another external service, save the variables it needs here (API keys, endpoints, model names). During evaluation these variables are provided to your program as environment variables. You may use several providers, protocols and models at the same time; their cost is your team's.",
+      "network_title": "Network access",
+      "network_open": "During evaluation your program can reach any public address over HTTPS (port 443) and HTTP (port 80); no domain needs to be listed. Other ports, private and internal addresses, the local host and cloud metadata addresses are unreachable. The platform sets HTTPS_PROXY, so common SDKs need no extra configuration; programs that ignore proxy settings can connect by host name directly as well.",
+      "network_log": "The platform records every address your program connects to during an evaluation (host and port, number of connections, bytes sent and received, first and last time), never any content. The record is attached to your team's run log and result files, and the organizers can see it as well. Every decision must be made by your program; no human may take part.",
+      "route": {
+        "title": "Egress route",
+        "intro": "Some model services refuse requests from the evaluation machines' addresses. If yours does, choose a route: your program's outbound connections then go through that route instead of directly. Direct is the default.",
+        "direct": "Direct (default)",
+        "cn": "China route",
+        "overseas": "Overseas route",
+        "fallback": "If the route is unavailable, connect directly (recommended; otherwise such connections fail)",
+        "note": "Applies to evaluations started after the change. The run's network record shows the route each address used. Route traffic per run is limited; please use it only for your program's own needs.",
+        "saved": "Egress route saved."
+      },
+      "collapsed_hint_open": "Model keys, endpoints and other environment variables",
+      "title": "Keys and network (optional)",
+      "collapsed_hint": "Model keys, endpoints and the domains your program may reach",
+      "intro": "No model credits are provided. If your program calls a model or another external service, save the variables it needs here (API keys, endpoints, model names) and list the domains it must reach. During evaluation these variables are provided to your program as environment variables, and the program can reach only the domains listed below, over HTTPS (port 443); all other network access is unavailable. You may use several providers, protocols and models at the same time; their cost is your team's.",
+      "relay_banner": "Your team previously chose not to save its key. Evaluations now use the variables saved here: please save the keys you need below, otherwise model calls will fail during evaluation.",
+      "final_note": "The hidden final uses the variables saved here as well; no page needs to stay open. Saved keys are deleted automatically after the hidden final results are published and verified, and you can delete or replace them at any time.",
+      "vars_title": "Environment variables",
+      "vars_help": "Use upper-case letters, digits and underscores for names, e.g. OPENAI_API_KEY, OPENAI_BASE_URL, OPENAI_MODEL. Values marked \"Save encrypted as a secret\" are stored encrypted and afterwards only their last 4 characters are shown; leave endpoints and model names unmarked so they stay visible. Saving a name again replaces it. Up to {variables} variables of at most 8 KB each; names starting with OBSERVER_ or SAC_ and proxy settings are reserved by the platform.",
+      "name": "Name",
+      "value": "Value",
+      "secret": "Save encrypted as a secret (not shown again)",
+      "save": "Save variable",
+      "delete": "Delete",
+      "no_variables": "No variables saved yet.",
+      "domains_title": "Allowed domains",
+      "domains_help": "Enter the domain only, without https:// or a path, e.g. api.kimi.com, api.deepseek.com, api.anthropic.com, generativelanguage.googleapis.com. Only names that resolve to public addresses are accepted, never IP addresses or internal names. Up to {domains} domains.",
+      "domain": "Domain",
+      "add_domain": "Add domain",
+      "remove": "Remove",
+      "no_domains": "No domains yet: during evaluation your program cannot reach any external service.",
+      "proxy_note": "The platform also sets HTTPS_PROXY and related variables, so common SDKs (OpenAI, Anthropic, requests, httpx, reqwest and others) reach these domains without extra configuration; programs that ignore proxy settings can connect to these domains directly as well.",
+      "saved": "Variable saved.",
+      "deleted": "Variable deleted.",
+      "domains_saved": "Domains updated.",
+      "invalid_variable": "Invalid name or value: use upper-case letters, digits and underscores, not a reserved name; the value must not be empty and at most 8 KB.",
+      "variable_limit": "The variable limit has been reached; delete a variable you no longer use first.",
+      "invalid_domain": "Invalid domain: enter the name only (e.g. api.kimi.com), without https://, a port or a path, and not an IP address or internal name; at most 10.",
+      "domain_not_public": "This domain does not resolve right now, or resolves to a non-public address, so it cannot be added.",
+      "svc": {
+        "title": "Add a model service",
+        "title_more": "Add or change a model service",
+        "intro": "Pick a provider and paste your API key. The base URL and model are filled in for you and can be changed. The key is stored encrypted and only its last 4 characters are shown afterwards; the base URL and model are saved as plain variables.",
+        "examples": "The official examples read three variables: OPENAI_API_KEY, OPENAI_BASE_URL and OPENAI_MODEL. Without a prefix the service is saved under exactly these names (Anthropic is saved as ANTHROPIC_API_KEY, ANTHROPIC_BASE_URL, ANTHROPIC_MODEL, which your program reads itself).",
+        "provider": "Provider",
+        "custom": "Custom (OpenAI-compatible)",
+        "key": "API key",
+        "key_keep": "Leave empty to keep the saved key",
+        "base_url": "Base URL",
+        "model": "Model",
+        "model_empty": "With no model, no _MODEL variable is saved and your program decides; see the provider's docs for model names.",
+        "prefix": "Name prefix (optional)",
+        "prefix_help": "Use it to set up several providers at once, e.g. KIMI saves KIMI_API_KEY, KIMI_BASE_URL and KIMI_MODEL without touching OPENAI_*. Your program has to read prefixed variables itself.",
+        "saves_as": "Saved as:",
+        "clash": "Your team already has {prefix}_* ({current}). Replace it, or save under another prefix?",
+        "replace": "Replace {prefix}_*",
+        "use_prefix": "Save as {prefix}_*",
+        "save": "Save model service",
+        "cancel": "Cancel editing",
+        "edit": "Edit",
+        "editing": "Editing {prefix}_*. Leave the key empty to keep the saved key.",
+        "saved": "Model service saved.",
+        "deleted": "Model service deleted.",
+        "delete_confirm": "Delete these variables? {names}",
+        "over_limit": "Saving would exceed the limit of {n} variables. Delete variables you no longer use first.",
+        "key_ending": "key …{hint}",
+        "no_model": "no model set",
+        "advanced": "Advanced: custom variables",
+        "notes": {
+          "kimi": "Kimi Coding Plan: use the model kimi-for-coding or k3. These models only accept the default temperature, so do not send temperature. Accounts outside mainland China should change the base URL to https://api.kimi.ai/coding/v1.",
+          "anthropic": "Anthropic uses the Messages API and is saved as ANTHROPIC_* variables. The official examples only read OPENAI_*, so your program reads these with the Anthropic SDK."
+        }
+      },
+      "flags": {
+        "help": "Each variable can be switched off: it is kept (secrets stay encrypted) but not given to your program in evaluations; switch it on again instead of deleting and re-adding it. Variables marked “Model” are left out of evaluations started with “This evaluation without a model”; model-service variables and names such as OPENAI_*, ANTHROPIC_*, *_API_KEY, *_BASE_URL and *_MODEL are marked automatically, and you can change the mark.",
+        "enabled_label": "On",
+        "model_label": "Model",
+        "model_help": "Left out of evaluations started with “This evaluation without a model”.",
+        "off_pill": "Off",
+        "disable": "Switch off",
+        "enable": "Switch on",
+        "service_help": "Switched off: the key is kept but not given to your program in evaluations; switch it on again at any time.",
+        "disabled": "Switched off: not given to your program in evaluations.",
+        "enabled": "Switched on.",
+        "model_saved": "Updated."
+      }
+    },
+    "model_api": {
+      "title": "Model API (optional)",
+      "intro": "No model credits are provided. The platform does not require a model call, but awards require agent (LLM-driven) techniques in at least two stages. If your project never calls a model, skip this section entirely. Otherwise choose how the platform handles your key:",
+      "choice": "How your model key is handled",
+      "tradeoff": "Saved (default): stored encrypted and deleted automatically after the results are verified. Not saved: keep this page open during evaluations.",
+      "stored": "Save encrypted on the server (default)",
+      "stored_help": "The key is stored encrypted on the server, so you can close this page during evaluation. It is deleted automatically after the hidden final results are published and verified.",
+      "relay": "Do not save (page relay)",
+      "relay_help": "The key stays only in this page and is never stored on the server. Keep this page open until each evaluation finishes; model calls fail while it is closed. If your team is verified as a top team, you must also open this page at the time agreed with the organizers.",
+      "relay_deletes": "Choosing this deletes the saved key.",
+      "usage": "Your project keeps using the OPENAI_BASE_URL and OPENAI_API_KEY provided for each run; model calls go to your endpoint. The model named in each request is forwarded unchanged; the default model is used when none is given.",
+      "limits": "Each run allows up to {calls} model calls, at most {concurrency} at a time. Tokens are not capped (your team's key pays for them).",
+      "limits_tokens": "Each run allows up to {calls} model calls and {tokens} tokens, at most {concurrency} calls at a time.",
+      "saved_title": "Saved model API",
+      "key_ending": "Key ending in {hint}",
+      "key_hidden": "Key hidden",
+      "saved_at": "Saved {time}",
+      "none": "No key saved yet.",
+      "endpoint": "API endpoint",
+      "endpoint_hint": "Any public https:// address works (an OpenAI-compatible API on the default port). IP addresses and internal addresses are not accepted. The suggestions are common providers. For the Kimi Coding Plan handed out by the organizers, use endpoint https://api.kimi.com/coding/v1 and model kimi-for-coding (or k3).",
+      "endpoint_refused": "This API address can't be used. Use a public https:// address on the default port whose name resolves, not an IP address or an internal address.",
+      "protocol": "Protocol",
+      "protocol_openai": "OpenAI-compatible (/v1/chat/completions)",
+      "protocol_anthropic": "Anthropic Messages (/v1/messages)",
+      "protocol_hint": "OpenAI-compatible is the default. Choose Anthropic Messages only if your provider speaks that API, and give its endpoint exactly as the Anthropic SDK expects (usually without a trailing /v1 — the SDK appends /v1/messages itself). The platform never translates between the two; a mismatched call is refused.",
+      "model": "Default model",
+      "model_hint": "Your agent may set the model parameter of each request to any model your provider offers (for example a fast, inexpensive model for simple steps and a stronger one for key decisions); the platform forwards it unchanged. Requests without a model (or with model team-model) use the default model here. Model calls are paid for by your team's key. If the provider rejects a request because it does not recognise the model name, the platform retries it once with the default model.",
+      "key": "API key",
+      "save": "Save encrypted key",
+      "replace": "Replace key",
+      "delete": "Delete saved key",
+      "cancel": "Cancel",
+      "saved_notice": "Key saved encrypted.",
+      "deleted_notice": "Saved key deleted.",
+      "stored_selected": "Keys will be saved encrypted on the server.",
+      "relay_selected": "Keys will not be saved. Keep this page open during evaluations.",
+      "keep_open": "Keep this page open until each evaluation finishes, including automatic adaptation. Closing it clears the key; reconnecting requires entering it again.",
+      "relay_running": "An evaluation is running: connect your key here and keep this page open until it finishes.",
+      "connect": "Connect (key not saved)",
+      "disconnect": "Disconnect and clear key",
+      "connected": "Connected for this page session.",
+      "working": "Calling your API…",
+      "call_failed": "The model call failed. Check your API and quota.",
+      "invalid": "Check the endpoint, model and key.",
+      "collapsed_hint": "Only projects that call a model need a key here; pure-code projects can skip this section."
+    }
+  },
+  "subs": {
+    "worker_online": "Evaluator online · last seen {s} s ago",
+    "worker_offline": "No evaluator is reporting right now: queued runs start as soon as the next worker comes up (normally within a few minutes).",
+    "queue_next": "your run is next",
+    "queue_ahead": "{n} run(s) ahead of yours",
+    "queue_running": "your run is being evaluated",
+    "title": "Submissions",
+    "id": "ID",
+    "when": "Submitted",
+    "phase": "Phase",
+    "kind": "Type",
+    "score": "Score",
+    "by": "By",
+    "empty": "No submissions yet.",
+    "empty_csv": "No CSV submissions yet.",
+    "detail_title": "Submission #{id}",
+    "file": "File",
+    "sha": "SHA-256",
+    "error": "Error",
+    "evaluations": "Evaluations",
+    "scenario": "Scenario",
+    "runtime": "Runtime",
+    "report": "score_report.json",
+    "decisions": "decisions.csv",
+    "log": "Agent log",
+    "cancel": "Cancel",
+    "waiting": "Waiting for the worker… this page refreshes automatically.",
+    "actions_title": "Action timeline",
+    "tiles_done": "Tiles completed",
+    "stderr": "stderr (last lines)",
+    "show_all": "Show all actions",
+    "download_failed": "Download failed.",
+    "no_report": "Report not available yet.",
+    "refresh": "Refresh",
+    "back": "All submissions",
+    "live": "live",
+    "skymap": {
+      "title": "Observed universe",
+      "hidden": "The patch catalogue for this scenario is not public",
+      "decision": "Decision",
+      "play": "Play",
+      "pause": "Pause",
+      "start": "Before the first decision",
+      "night": "Night",
+      "tiles": "tiles",
+      "unavailable": "Tile catalogue could not be loaded."
+    },
+    "mean_of_scenarios": "mean over scenarios",
+    "base_science": "Base science",
+    "program_bonus": "Program bonus",
+    "request_reward": "Request reward",
+    "coverage_bonus": "Coverage evenness",
+    "coverage_evenness": "Evenness",
+    "coverage_weight_note": "Coverage bonus = weight × base science × evenness (Jain's fairness index). The weight lives in the scenario's score_config.json; scenarios at weight 0 score nothing here.",
+    "penalties": "Penalties",
+    "required_missing": "Must-do patches missed",
+    "flexible_shortfall": "Optional patches short",
+    "termination": "Termination",
+    "tiles": "tiles",
+    "completion_title": "Completion",
+    "none_missing": "None — every must-do patch finished",
+    "exposures": "Completed exposures",
+    "actions": "Actions",
+    "flexible_by_region": "Optional patches per region (quota 4)",
+    "requests_title": "Observation requests",
+    "req_satisfied": "satisfied / required",
+    "req_feasible": "feasible",
+    "req_reward": "reward",
+    "req_penalty": "penalty",
+    "no_requests": "No request was issued before the final cursor.",
+    "wait_title": "Wait seconds",
+    "agent_run": "Agent run",
+    "committed_actions": "Committed actions",
+    "in_flight_ignored": "an in-flight response was discarded at the cutoff",
+    "wallclock": "Wall clock used",
+    "agent_error": "Agent error",
+    "workflow": "workflow_result.json",
+    "reading_title": "Reading the report",
+    "reading_formula": "Every panel above is a term of the published formula:",
+    "reading_note": "Missed must-do patches, optional shortfall and expired requests are all settled when the run ends — including runs cut short by the time budget or by an agent error. Hover the timeline to see the quality of each exposure segment.",
+    "termination_reason": {
+      "survey_complete": "survey complete",
+      "global_wallclock_expired": "wall clock expired",
+      "agent_error": "agent error",
+      "agent_initialization_error": "initialization error",
+      "trace_complete": "Results file replayed"
+    },
+    "termination_help": {
+      "survey_complete": "The agent answered every decision request through to the last slot on the calendar.",
+      "global_wallclock_expired": "This scenario's time budget ran out. Anything committed before then still scores; the rest of the calendar counts as unused time and the end-of-run penalties apply.",
+      "agent_error": "The agent exited or answered with something other than a valid decision_response. The actions committed before the error are scored, with the terminal penalties applied.",
+      "agent_initialization_error": "The agent did not start or did not read the initialize message within 30 seconds. No action was committed; the run carries the full terminal penalties.",
+      "trace_complete": "A decisions.csv was replayed row by row to the end."
+    },
+    "penalty_kind": {
+      "unsafe_observation": "unsafe observation",
+      "invalid_action": "invalid action",
+      "avoidable_wait": "avoidable wait",
+      "required_miss": "Must-do patches missed",
+      "flexible_shortfall": "Optional patches short",
+      "request_miss": "request miss",
+      "fault_misreport": "False fault reports",
+      "wrong_tag_report": "Incorrect anomaly tags"
+    },
+    "wait_kind": {
+      "explicit": "explicit waits",
+      "implicit": "Implicit wait (the whole slot was skipped)",
+      "invalid": "consumed by invalid actions",
+      "avoidable": "avoidable (penalised)",
+      "unavailable": "unavailable (closed or nothing observable)"
+    },
+    "request_status": {
+      "completed": "completed",
+      "expired": "expired",
+      "missed": "missed",
+      "excused_unobservable": "excused (unobservable)",
+      "open": "open",
+      "active": "active",
+      "pending": "pending"
+    },
+    "outcome_class": {
+      "completed": "completed",
+      "wait": "wait",
+      "interrupted": "interrupted",
+      "unsafe": "unsafe",
+      "invalid": "invalid"
+    },
+    "replay": {
+      "title": "Decision replay",
+      "open": "Load replay",
+      "new_tab": "Open in new tab",
+      "note": "A self-contained replay page built from the score report, opened in an isolated sandbox.",
+      "download": "decision_replay.html"
+    }
+  },
+  "flash": {
+    "profile_saved": "Profile saved.",
+    "password_changed": "Password changed.",
+    "token_rotated": "API token rotated.",
+    "team_created": "Team created.",
+    "team_joined": "Joined {name}.",
+    "team_saved": "Team updated.",
+    "team_left": "You left the team.",
+    "team_disbanded": "Team disbanded.",
+    "submission_queued": "Submission queued for evaluation.",
+    "submission_cancelled": "Submission cancelled."
+  },
+  "resources": {
+    "kicker": "Resources",
+    "title": "Resources",
+    "lede": "Task cards, example projects and reference material.",
+    "flow_cards": "Task cards",
+    "flow_cards_hint": "Cards A–D are for debugging during the main competition.",
+    "card_view": "Read the card",
+    "card_zip": "Download ZIP",
+    "card_pending": "files not online yet",
+    "card_locked": "published at the start",
+    "card_formal_title": "Hackathon card {card}",
+    "card_hidden_label": "Hidden card",
+    "card_hidden_title": "Hidden card {card}",
+    "card_not_public": "Not public",
+    "hidden_note_title": "Hidden cards E–H",
+    "hidden_note_p1": "After the deadline, the platform evaluates each team's final submitted version on these 4 cards to decide the final ranking.",
+    "hidden_note_p2": "Same as A–D: message protocol, scoring rules, time limits, telescope and fibre settings, event kinds (only events described in the docs).",
+    "hidden_note_p3": "Different from A–D: timing of weather and events, observing season and moon phase, targets and sky region, each card's difficulty emphasis. The amount of variation is similar to A–D.",
+    "hidden_note_p4": "So let your agent decide from the information it receives during the run; don't hard-code a strategy around A–D's weather or targets.",
+    "nights": "nights",
+    "tiles_n": "tiles",
+    "cli": "Command line",
+    "docs": "Documentation",
+    "docs_desc": "Registration and teams, complete-project submission, launch configuration, model APIs, evaluation quota and the final version.",
+    "cli_tool": "Command-line tool (survey26)",
+    "cli_tool_desc": "Do everything the website offers from a terminal or a coding agent: team, keys and network, project upload, evaluations, logs and results. Includes the personal API token setup and a usage guide for coding agents.",
+    "flow_examples": "Example projects",
+    "flow_examples_hint": "Complete example agent projects. Pick a language to start from and adapt the strategy to your own.",
+    "flow_talks": "Talk recordings",
+    "flow_talks_hint": "Recordings of the online talks, hosted on Bilibili. Press play to watch.",
+    "talk1_title": "Talk 1 · Astronomy topics behind the Agentic Observer hackathon",
+    "talk1_speakers": "Dr. Yifei Luo · Lawrence Berkeley National Laboratory",
+    "talk2_title": "Talk 2 · Hands-on topics for the Agentic Observer hackathon",
+    "talk2_speakers": "Dr. Haosong Wang · Shanghai Astronomical Observatory, CAS  ·  Mr. Yao Li · Upstream Labs",
+    "talk_play": "Play",
+    "talk_open_bilibili": "Watch on Bilibili",
+    "talk_tencent_replay": "Tencent Meeting replay",
+    "examples_bundle_download": "Download all examples (incl. local practice cards)",
+    "example_github": "View on GitHub",
+    "example_zip": "Download ZIP",
+    "example_python_pro_desc": "A strong reference agent (Python standard library only): a carefully built observation planner plus a few LLM calls at key points.",
+    "example_python_desc": "A complete agent project: planning, memory, two LLM-driven stages, protocol and action validation.",
+    "example_typescript_desc": "The same strategy in TypeScript (Node.js): planning, memory, two LLM-driven stages, protocol and action validation.",
+    "example_typescript_pro_desc": "The Python Pro agent ported to TypeScript (Node.js 22+, built-ins only): the same planner and LLM stages, decision-for-decision identical, about 6x less CPU.",
+    "example_rust_desc": "The same strategy in Rust: planning, memory, two LLM-driven stages, protocol and action validation.",
+    "example_rust_pro_desc": "python-pro ported to Rust: the same planner, fault handling and LLM stages, at about 1/30 of the CPU time per decision.",
+    "flow2": "Reference",
+    "flow2_hint": "What you'll need for building and submitting your agent."
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Questions before you register",
+    "items": [
+      {
+        "q": "I am not a strong programmer. What is the minimum?",
+        "a": "Your agent is a long-running program: at every decision it reads one JSON message (decision_request) from standard input and writes one action to standard output: observe (pointing, fibre assignments, exposure time and program), wait, report or finish. The easiest start is to download an example project from the Resources page, run it on the local practice cards, and then change its strategy. See the Docs for the protocol and how to submit."
+      },
+      {
+        "q": "Do I need an astronomy background?",
+        "a": "Not much, though it helps. At the start your agent receives the site, the target catalogue (position, class, brightness, weight, required or not), the sky footprint, the fibre configuration and the scoring parameters; at every decision it receives the current time, the latest weather bulletin and forecast, new messages (such as time-limited observation requests), the result of the last exposure and the time remaining. Terms such as altitude, moonlight and the DARK/BRIGHT/BACKUP programs are explained in the Docs. You are also welcome to team up with someone who has an astronomy background."
+      },
+      {
+        "q": "Can I compete alone?",
+        "a": "Yes. Create a team with a size of 1. Teams may have up to 3 members."
+      },
+      {
+        "q": "Which languages can I use?",
+        "a": "Any implementation language. Both Practice and the competition take a complete project (a public GitHub repository or a ZIP), which the platform builds and runs in the cloud. The Resources page offers example projects in Python, TypeScript and Rust."
+      },
+      {
+        "q": "Can I use an LLM or a commercial API?",
+        "a": "Yes, and awards require agent (LLM-driven) techniques in at least two stages. Bring your own API and quota. In the \"Keys and network\" section of Participate, save your keys and other variables; during evaluation they are provided to your program as environment variables, and the program can reach any public address over HTTPS and HTTP (never private or metadata addresses); the platform records the addresses it connects to (never content). Keys are stored encrypted, used only for evaluation and verification, and deleted after the hidden final results are verified; the hidden final uses them as well, with no page open."
+      },
+      {
+        "q": "What is the time limit per card?",
+        "a": "Each card has a budget of 900 s of normalized CPU time (global_wallclock_seconds in the initialize message), on Practice, in the competition and on the hidden cards. Only the CPU time your agent's container uses during its turns counts (from each decision_request until your response), divided by the machine's speed factor (measured by the platform with a fixed calibration program; 1.0 = the median evaluation machine, larger = slower). Waiting on a model API or the network and platform processing are not counted. Each request's wallclock.remaining_seconds gives the budget left; plan by it. A real-time cap of 30 minutes per card stops programs that hang. There is no per-decision limit. When the budget or the cap is used up the agent is stopped, earlier observations still score and the terminal penalties apply. This timing applies to every evaluation started from 4 October 2026; earlier results remain valid."
+      },
+      {
+        "q": "Which task-card data are not public?",
+        "a": "Each task card publishes its targets, sky footprint, site, telescope and fibre configuration, observing calendar and scoring parameters: practice cards α–δ can be downloaded from the Resources page now, cards A–D are published when the competition starts, and hidden cards E–H are not published before the competition ends. The actual weather of each time slot, the full forecast series, the event timeline and instrument faults are not public for any card, practice cards α–δ included; during a run your agent only receives a bulletin every 15 minutes, a forecast about once a week and other messages, and never sees future weather. The local practice cards bundled with the example projects include their full weather and event files, for local debugging and scoring only."
+      },
+      {
+        "q": "How many submissions can I make?",
+        "a": "Practice: 40 complete-project evaluations per team per day (separate board). Competition: 40 evaluations per team per day, each running once on every card A–D (900 s per card), and the online board keeps your best complete evaluation. Daily quotas reset at 00:00 UTC (08:00 Beijing time); failures caused by the platform are not counted. The Practice board ranks each card separately."
+      },
+      {
+        "q": "Is the leaderboard score the final result?",
+        "a": "No. The online board (October 5–7) is live feedback only. After the online phase, each team's final version is evaluated 3 times on each of the hidden cards E–H and each card is averaged; only the mean over E–H decides the final ranking. The 3 evaluations of a card run at the same time, so your model service must handle concurrent calls. We recommend making your agent behave consistently (for example with repeatable random number generation in your own program). You can check this with “Evaluate 3 times and average”. Exact ties are settled by the organizers and announced with the results. The organizers verify the top teams and expect to confirm the awards before October 10. Winning teams' entries must be released as open source."
+      },
+      {
+        "q": "Do I have to attend in Shenzhen?",
+        "a": "No. The competition is online. The first- and second-prize teams are invited to the GOSIM Shenzhen conference on October 16–17 and go on stage at the closing ceremony on October 17. In principle, GOSIM covers their travel and accommodation; each team gets a booth and a roll-up banner on site. Conference staff will contact the winners with details after the competition. Remote acceptance is possible."
+      },
+      {
+        "q": "Is the platform free?",
+        "a": "Yes. Registration, data and scoring are free."
+      },
+      {
+        "q": "Must I open-source my agent?",
+        "a": "Award-winning entries must be released as open source."
+      },
+      {
+        "q": "What happens if my agent crashes or times out?",
+        "a": "If the program crashes, exits early, or answers with a message that cannot be parsed or does not follow the protocol, the card ends with agent_error; when the 900 s run out it ends with global_wallclock_expired. In both cases the valid observations made before still score and the terminal penalties still apply. Build and run logs are under Logs for that evaluation on the Participate page, visible only to your team and the organizers. Fix the problem and resubmit within the daily limit."
+      },
+      {
+        "q": "Are prizes taxed?",
+        "a": "Prize amounts are gross. Payment details are confirmed with winning teams after Awards Day."
+      },
+      {
+        "q": "Does the platform provide API credits?",
+        "a": "The platform does not provide model credits. Cloud runs of complete projects use your own API key, set on the Participate page. The first 100 teams to complete the practice round (at least one successful practice score) get a Kimi perk: one Kimi Coding Plan code per team, first come, first served. Once the organizers release the codes, the captain claims it on the dashboard."
+      },
+      {
+        "q": "Can a Python agent use third-party libraries such as numpy?",
+        "a": "Yes. List them in requirements.txt at the project root and put the install command in the build field of observer.project.json; the platform runs it in the build step before the evaluation starts (the build has internet access, and its time does not count toward the 900 s per card). The container's system directories are read-only, so install into the project folder, for example \"build\": [[\"pip\", \"install\", \"--no-cache-dir\", \"--target\", \".deps\", \"-r\", \"requirements.txt\"]], and set \"PYTHONPATH\": \"/workspace/.deps\" under \"environment\"; a plain pip install -r requirements.txt fails because the system directories are read-only. A requirements.txt without a build step is not installed automatically. While the agent runs it has no network access except the model API, so downloading or installing anything at run time will not work. The same applies to other languages, for example npm ci or cargo build. We recommend one Practice submission first to confirm that the build and run succeed."
+      },
+      {
+        "q": "Can my agent use several models or several providers at once?",
+        "a": "Yes. In \"Keys and network\", save a key for each provider (e.g. KIMI_API_KEY, DEEPSEEK_API_KEY). Your program can then call several providers at the same time, over any protocol (OpenAI-compatible, Anthropic Messages or the provider's own API), with no domain to list, and choose the model for each request, for example a fast, inexpensive model for simple steps and a stronger one for key decisions. Model calls are paid for by your team. See the example projects' READMEs for code."
+      },
+      {
+        "q": "Can I do everything from the command line or let a coding agent do it?",
+        "a": "Yes. The official survey26 command-line tool (Resources → Command-line tool) covers everything the website offers to contestants: team, keys and network, project upload, version confirmation, evaluations, logs, results, the final version and the leaderboard. Create a personal API token on your profile page and set it as SURVEY26_TOKEN. The tool has the same daily limits and quotas as the website, and every command supports --json output for programs and coding agents."
+      },
+      {
+        "q": "What can a personal API token do, and how do I protect it?",
+        "a": "A token acts as your account, with exactly your permissions, daily limits and quotas; organizer functions are never available with a token, and tokens cannot create or revoke other tokens. Anyone who has the token can act as you, so do not put it in repositories, project ZIPs, logs or chats. The profile page shows when each token was last used; revoke a token there when it is no longer needed or may have been exposed, and it stops working immediately."
+      },
+      {
+        "q": "Which network addresses can my program reach during evaluation? Is it recorded?",
+        "a": "Any public address over HTTPS (port 443) and HTTP (port 80); other ports, private and internal addresses, the local host and cloud metadata addresses are unreachable. The platform records every address your program connects to in each evaluation (host and port, number of connections, bytes sent and received, first and last time), never any content; the record is attached to your team's run log (agent.log) and result files (egress.json), and the organizers can see it as well. Every decision must be made by your program; external services must not be used to bring a human into the decisions."
+      }
+    ]
+  },
+  "rules_page": {
+    "kicker": "Rules",
+    "title": "Competition rules and scoring",
+    "version": "Rules version 2.0 · 2026-10-01 · task cards",
+    "phases_title": "Phase configuration (live)",
+    "daily": "submissions/day",
+    "board": "board",
+    "board_modes": {
+      "live": "live",
+      "frozen": "frozen",
+      "hidden": "hidden",
+      "published": "published"
+    }
+  },
+  "cards_page": {
+    "kicker": "Task cards",
+    "title": "Task cards",
+    "lede": "Each task card is one complete simulated survey season. Practice cards α–δ are public now; hackathon cards A–D are published when the competition starts; hidden cards E–H are not published before the hackathon ends.",
+    "practice": "Practice cards",
+    "formal": "Hackathon cards",
+    "download": "Download card files (ZIP)",
+    "files": "{n} files",
+    "kit_hint": "Unzip into your project’s cards/ folder.",
+    "files_pending": "The card files are not online yet; once they are, download them here or on Resources.",
+    "locked_title": "Not published yet",
+    "locked": "Hackathon card {card} is published when the competition starts — Oct 5, 00:00 Beijing time (Oct 4, 16:00 UTC; Oct 4, 09:00 PDT; Oct 4, 12:00 EDT): the card page and the public inputs (targets, sky footprint, site, telescope and fibres, observing calendar, score settings). Weather, forecasts and events stay private."
+  },
+  "docs_page": {
+    "kicker": "Docs",
+    "title": "Participant documentation",
+    "toc": "Contents",
+    "protocol": {
+      "title": "Protocol at a glance",
+      "tabs": {
+        "initialize": "initialize",
+        "decision_request": "decision_request",
+        "decision_response": "decision_response"
+      },
+      "desc": {
+        "initialize": "Sent once on stdin before the clock starts, no reply expected: calendar, site, the full tile and target catalogue with tile_science_value, the scoring contract and global_wallclock_seconds.",
+        "decision_request": "Sent once per decision: the cursor, the current slot's site weather, the candidate tiles with geometry, lunar factor and effective weather, the active requests, night and weekly publications when due, and your progress. Never any future weather.",
+        "decision_response": "Your agent replies with one JSON line carrying the same decision_sequence: observe a tile in a program (optionally tagged with a request_id), or wait out the slot."
+      },
+      "truncated": "Real messages from the 14-night reference run; long arrays are truncated with \"… more\" markers."
+    }
+  },
+  "ann": {
+    "kicker": "Announcements",
+    "title": "Announcements",
+    "empty": "No announcements yet.",
+    "empty_hint": "Training and competition logistics will be published here and emailed to registered teams.",
+    "pinned": "Pinned",
+    "levels": {
+      "info": "info",
+      "warning": "warning",
+      "success": "success"
+    },
+    "popup_close": "Close announcement",
+    "popup_all": "See all announcements",
+    "popup_ok": "Got it",
+    "popup_more": "{n} more pinned, shown next",
+    "popup_dont_show": "Don't show this again"
+  },
+  "admin": {
+    "title": "Admin",
+    "kicker": "Admin",
+    "nav": {
+      "overview": "Overview",
+      "phases": "Phases",
+      "scenarios": "Scenarios",
+      "submissions": "Submissions",
+      "teams": "Teams",
+      "users": "Users",
+      "announcements": "Announcements",
+      "credits": "Credits",
+      "settings": "Settings",
+      "incidents": "Incidents"
+    },
+    "stats": {
+      "users": "users",
+      "teams": "teams",
+      "submissions": "submissions",
+      "queued": "queued",
+      "scored": "scored",
+      "failed": "failed"
+    },
+    "recent": "Recent submissions",
+    "audit": "Audit log",
+    "all": "all",
+    "done": "Done.",
+    "phases": {
+      "new": "New phase",
+      "slug": "slug",
+      "order": "order",
+      "name_en": "name_en",
+      "name_zh": "name_zh",
+      "description_en": "description_en",
+      "description_zh": "description_zh",
+      "starts_at": "starts_at (UTC)",
+      "ends_at": "ends_at (UTC)",
+      "daily_limit": "daily_limit",
+      "leaderboard_mode": "leaderboard_mode",
+      "scenarios": "scenarios",
+      "allow_results": "allow results (decisions.csv)",
+      "allow_agents": "allow agent runs",
+      "counts_for_final": "counts for final ranking",
+      "active": "active",
+      "rescore": "Rescore all submissions of {slug}",
+      "rescore_confirm": "Re-queue every submission of this phase?",
+      "rescored": "{n} submissions re-queued.",
+      "saved": "Phase saved.",
+      "delete_confirm": "Delete this phase?"
+    },
+    "scenarios": {
+      "slug": "slug",
+      "name": "name",
+      "description": "description",
+      "seed": "seed / checksum",
+      "checksum": "checksum",
+      "nights": "nights",
+      "slots": "slots",
+      "tiles": "tiles",
+      "targets": "targets",
+      "requests": "requests",
+      "wallclock": "Time budget",
+      "contract": "contract",
+      "flags": "flags",
+      "files": "files",
+      "weather_public": "weather public",
+      "forecasts_public": "forecasts public",
+      "events_public": "events public",
+      "tiles_public": "tiles public",
+      "active": "active",
+      "saved": "Scenario saved.",
+      "cli_title": "Creating scenarios",
+      "cli_note": "Scenarios are no longer uploaded from the browser. Generate or register a scenario directory with the worker CLI (service role); it uploads config/ and outputs/reference/ to the scenarios bucket, computes the counts and the checksum, and inserts the row. Flags and the wall clock can be edited here.",
+      "rotate": "Rotate seed",
+      "rotate_confirm": "Generate a fresh random seed for {slug} and rebuild the scenario?\n\nThe old seed stops being valid immediately. Only do this while the phase using it is not open — rotating mid-competition invalidates evaluations already in flight.",
+      "rotate_queued": "Queued. The worker rebuilds the scenario within a minute.",
+      "job_status": {
+        "queued": "Queued…",
+        "running": "Generating…",
+        "done": "Done",
+        "failed": "Failed"
+      },
+      "job_already_pending": "A rotation is already in progress for this scenario.",
+      "unknown_scenario": "No such scenario."
+    },
+    "submissions": {
+      "any_status": "any status",
+      "any_phase": "any phase",
+      "team_filter": "team",
+      "rescore": "rescore",
+      "exclude": "exclude",
+      "include": "include",
+      "cancel": "cancel",
+      "excluded": "excluded",
+      "user": "user",
+      "actions": "actions"
+    },
+    "incidents": {
+      "intro": "Platform-caused failures (DB timeouts, runner crashes, GitHub Actions hiccups, lease expiry) retry automatically and never show as \"failed\" to a team; this page is only for the rare cases where the retry budget ran out, or for watching one that is still retrying.",
+      "open_incidents": "Open incidents",
+      "retrying": "Currently retrying",
+      "reason": "Reason",
+      "team": "Team",
+      "since": "Retrying since",
+      "attempts": "Attempts",
+      "status": "Status",
+      "parked": "Parked",
+      "requeue": "Requeue now",
+      "no_incidents": "No open incidents.",
+      "no_retrying": "Nothing is currently retrying.",
+      "requeued": "Requeued."
+    },
+    "users": {
+      "placeholder": "email or name",
+      "toggle_admin": "admin",
+      "toggle_ban": "ban",
+      "remove_from_team": "unteam",
+      "flags": "flags",
+      "joined": "joined",
+      "admin": "admin",
+      "banned": "banned",
+      "confirm_ban": "Toggle ban for this user?",
+      "confirm_admin": "Toggle admin for this user?",
+      "recovery_link": "Reset link",
+      "link_ready": "Link generated and copied to the clipboard.",
+      "link_hint": "Send this to them directly (valid for one hour, single use):",
+      "no_link_returned": "No link was generated — check that this email is registered on the platform."
+    },
+    "teams": {
+      "hide": "hide",
+      "show": "show",
+      "lock": "lock",
+      "unlock": "unlock",
+      "rename": "rename",
+      "rename_placeholder": "new name",
+      "members": "members",
+      "subs": "subs",
+      "flags": "flags",
+      "code": "code",
+      "hidden": "hidden",
+      "locked": "locked",
+      "final_title": "Final versions",
+      "final_help": "Each team’s version for the hidden final evaluation on cards E–H: its choice, else the version of its best scored evaluation. Nobody keeps a page open during that run; it uses the variables each team saved under Keys and network.",
+      "final_phase": "Phase",
+      "final_version": "Version",
+      "final_source": "Source",
+      "final_chosen": "chosen",
+      "final_best": "best evaluation",
+      "final_score": "Best score",
+      "final_model": "Model key",
+      "final_locked": "locked",
+      "final_open": "changeable until"
+    },
+    "announcements": {
+      "new": "New announcement",
+      "title_en": "title_en",
+      "title_zh": "title_zh",
+      "body_en": "body_en",
+      "body_zh": "body_zh",
+      "level": "level",
+      "pinned": "pinned (shown in the top banner)",
+      "published": "published",
+      "saved": "Announcement saved.",
+      "deleted": "Announcement deleted.",
+      "delete_confirm": "Delete this announcement?",
+      "renotify": "Remind everyone again",
+      "renotify_help": "Editing never re-shows the popup; this shows it once more to everyone (pinned announcements only).",
+      "renotify_confirm": "Show this announcement's popup to everyone once more? (Not needed for ordinary edits.)",
+      "renotified": "Everyone will be reminded again.",
+      "notify_version": "Reminder version"
+    },
+    "credits": {
+      "stats": "Stock per provider",
+      "provider": "provider",
+      "available": "available",
+      "assigned": "assigned",
+      "revoked": "revoked",
+      "total": "total",
+      "note": "note",
+      "import": "Import codes",
+      "import_provider": "provider",
+      "import_note": "note (shown to teams)",
+      "import_codes": "codes, one per line",
+      "import_submit": "Import",
+      "imported": "{n} codes imported.",
+      "assign": "Assign a code to a team",
+      "assign_team": "team",
+      "assign_provider": "provider",
+      "replace": "replace the team's current code for this provider",
+      "assign_submit": "Assign",
+      "assigned_flash": "Assigned code {code}.",
+      "list": "Codes",
+      "any_provider": "any provider",
+      "any_status": "any status",
+      "code": "code",
+      "team": "team",
+      "assigned_by": "assigned by",
+      "assigned_at": "assigned at",
+      "revoke": "revoke",
+      "delete": "delete",
+      "revoke_confirm": "Revoke this code? It will not be handed out again.",
+      "delete_confirm": "Delete this unused code?",
+      "revoked_flash": "Code revoked.",
+      "deleted_flash": "Code deleted.",
+      "status": {
+        "available": "available",
+        "assigned": "assigned",
+        "revoked": "revoked"
+      },
+      "errors": {
+        "already_assigned": "This team already has a code for that provider. Tick \"replace\" to revoke it first.",
+        "no_codes_left": "No codes left for this provider."
+      },
+      "xl_title": "Import from Excel",
+      "xl_lede": "Pick an .xlsx or .csv file. It is parsed locally in your browser and never uploaded. Codes are masked in the preview. Empty rows and duplicates are skipped.",
+      "xl_drop": "Drop the spreadsheet here, or click to choose a file (.xlsx / .csv)",
+      "xl_file": "File",
+      "xl_sheet": "Sheet",
+      "xl_code_col": "Code column",
+      "xl_note_col": "Note column (optional)",
+      "xl_none": "None",
+      "xl_default_note": "Default note",
+      "xl_has_header": "First row is a header",
+      "xl_col": "Column",
+      "xl_summary": "{n} codes will be imported; {skipped} rows skipped (empty or duplicate).",
+      "xl_submit": "Import {n} codes",
+      "xl_result": "Imported {n}; {dup} already existed; {skipped} empty/duplicate rows skipped.",
+      "xl_bad_file": "Could not read this file. Save it as .xlsx or .csv and try again."
+    },
+    "settings": {
+      "registration_open": "registration open",
+      "saved": "Settings saved.",
+      "runtime": "Runtime (from environment)",
+      "site_url": "site url",
+      "supabase_url": "supabase url",
+      "base_path": "base path",
+      "credits_note": "API credits note",
+      "credits_note_hint": "Shown at the top of the dashboard credits panel. Leave empty to hide.",
+      "credits_note_en": "note (en)",
+      "credits_note_zh": "note (zh)",
+      "registration_deadline": "Registration deadline (new sign-ups stop automatically; existing logins unaffected; empty = none)"
+    },
+    "worker": {
+      "title": "Evaluation worker",
+      "online": "Online",
+      "offline": "Offline",
+      "never": "No worker heartbeat recorded yet.",
+      "queued": "Queued",
+      "processed": "Processed this run",
+      "last_beat": "Since last beat",
+      "busy": "Evaluating",
+      "idle": "Idle",
+      "offline_hint": "If no worker is online for more than {minutes} minutes, run the “Evaluation worker” workflow once from GitHub Actions to start a new one."
+    },
+    "kimi": {
+      "title": "Kimi Coding Plan",
+      "lede": "Import codes above with provider \"kimi\". Captains of teams with a successful practice score (scored practice CSV or scored formal practice-projects batch) claim one code each. Hidden teams are listed but cannot self-claim.",
+      "team": "team",
+      "captain": "captain",
+      "first_scored": "first successful score",
+      "code": "code",
+      "claimed_at": "claimed at",
+      "claimed_by": "claimed by",
+      "hidden": "hidden",
+      "summary": "{eligible} eligible teams · {claimed} claimed · {pool} codes in the pool"
+    }
+  },
+  "construction": {
+    "title": "Site Under Construction",
+    "desc": "This site is still being completed. The mission card and registration details are forthcoming; the schedule shown on the site is the current confirmed schedule.",
+    "ok": "Got it"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "not_configured": "This deployment is not connected to Supabase yet (VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY).",
+    "session_required": "Please log in to continue.",
+    "admin_required": "Admin access required.",
+    "already_in_team": "You are already on a team.",
+    "bad_code": "That invite code is not right.",
+    "full": "This team is full.",
+    "locked": "This team is locked and not taking new members.",
+    "name_length": "Team names need 2–60 characters.",
+    "name_taken": "That team name is taken.",
+    "bad_size": "Team size must be between 1 and 3, and not below the current member count.",
+    "leader_only": "Only the team leader can do this.",
+    "leader_must_transfer": "You are the leader: hand leadership to someone else before leaving.",
+    "has_submissions": "This team already has submissions, so it cannot be disbanded or emptied.",
+    "not_in_team": "You are not on a team.",
+    "not_member": "That person is not on your team.",
+    "cannot_remove_leader": "The leader cannot be removed from the team.",
+    "need_team": "Create or join a team first.",
+    "bad_phase": "There is no such phase.",
+    "phase_closed": "This phase is not taking submissions right now.",
+    "results_not_allowed": "This phase does not accept results files.",
+    "agents_not_allowed": "This route accepts decisions.csv only; submit complete projects on the Participate page.",
+    "bad_scenario": "Choose a scenario from this phase.",
+    "bad_storage_path": "The file did not upload to the right place. Reload the page and submit again.",
+    "daily_limit": "Today's submissions are used up.",
+    "cannot_cancel": "Only submissions still in the queue can be cancelled.",
+    "no_codes_left": "No codes left from this provider.",
+    "already_assigned": "This team already has a code from this provider.",
+    "cannot_change_self": "You cannot do this to your own account.",
+    "unknown_action": "That action is not supported.",
+    "unknown_scenario": "There is no such scenario.",
+    "job_already_pending": "A job is already running for this scenario.",
+    "banned": "This account is suspended.",
+    "online_session_required": "Submit a complete project on the Participate page.",
+    "team_limit_reached": "All team places are taken and registration is closed, so no new team can be created. You can still join an existing team with an invite code."
+  },
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "phase_clock": {
+    "now": "Now",
+    "next": "Next",
+    "no_open": "No open phase",
+    "fallback_next": "Online Competition",
+    "ends": "{name} ends",
+    "in": "in {d}d {h}h",
+    "days": "d",
+    "hours": "h",
+    "minutes": "m",
+    "seconds": "s",
+    "countdown_aria": "Countdown to the next phase",
+    "none_scheduled": "No further phase scheduled",
+    "starts_on": "starts {date} (Beijing time)",
+    "left_days": "{n} days to go",
+    "left_day": "1 day to go",
+    "left_hours": "{n} h to go",
+    "left_soon": "starting soon",
+    "next_line": "Next: {name} · {day} · {left}"
+  },
+  "start_page": {
+    "title": "Get started in 3 steps"
+  },
+  "tiers": {
+    "astro_label": "Astronomy tier",
+    "ai_label": "AI tier",
+    "astro": [
+      "New stargazer",
+      "Amateur astronomer",
+      "Data or observing experience",
+      "Survey-grade researcher"
+    ],
+    "astro_hints": [
+      "New to astronomy and here to learn",
+      "Knows the constellations; has used sky apps or joined observing sessions",
+      "Has worked with astronomy data, imaged deep sky or operated a telescope",
+      "Works in astronomy research or survey operations"
+    ],
+    "ai": [
+      "AI beginner",
+      "Works with LLM APIs",
+      "Has built agents",
+      "Senior practitioner"
+    ],
+    "ai_hints": [
+      "Has not yet called an AI from code",
+      "Has used LLM APIs and understands prompt engineering",
+      "Has built agents, workflows or trained models",
+      "Works in AI engineering or research"
+    ]
+  },
+  "teammates": {
+    "kicker": "Participants wall",
+    "title": "Find teammates",
+    "lede": "Participants with astronomy, AI and engineering backgrounds can find teammates with complementary skills here. With complementary sorting on, candidates whose strengths complement yours are shown first.",
+    "self_title": "My card",
+    "self_on": "On the wall",
+    "self_off": "Not on the wall",
+    "self_blurb": "One-line introduction",
+    "self_blurb_ph": "e.g. experienced in agent development, seeking a partner with an astronomy background",
+    "self_save": "Save my card",
+    "saved_on": "Saved — your card is displayed on the wall.",
+    "saved_off": "Saved — your card has been removed from the wall.",
+    "login_hint": "Log in to get on the wall, use complementary sorting, and see contact details.",
+    "filter_astro": "Astronomy tier",
+    "filter_ai": "AI tier",
+    "filter_any": "Any",
+    "filter_looking": "Only participants seeking teammates",
+    "filter_comp": "Complementary first (strengths that complement mine)",
+    "comp_chip": "Complements you",
+    "no_team": "No team yet",
+    "reveal": "Show contact",
+    "no_contact": "No contact shared — try their GitHub, or reach them through a team invite code.",
+    "login_to_contact": "Log in to see contact",
+    "empty_title": "No participants match these filters",
+    "empty_desc": "Loosen the filters, or display your own card first."
+  },
+  "browser_notice": {
+    "title": "Please open this site in Chrome",
+    "body": "Safari keeps showing an old version of this site and displays parts of it incorrectly. Copy the address and open it in Chrome.",
+    "copy": "Copy the address",
+    "stay": "Use Safari anyway"
+  },
+  "eggs": {
+    "mid_autumn": {
+      "title": "Happy Mid-Autumn Festival!",
+      "close": "Close"
+    }
+  },
+  "start3": {
+    "practice": {
+      "subtitle": "No astronomy background needed. If this is your first time, just do these three steps in order.",
+      "s1_title": "Step 1 · Read the docs",
+      "s1_desc": "The docs describe the task, the agent interface and scoring.",
+      "s1_cta": "Open the docs",
+      "s2_title": "Step 2 · Build your agent",
+      "s2_lead": "Build your agent to the protocol in the docs.",
+      "s2_desc": "Iterate on the decision logic to raise your score.",
+      "s2_link": "Read the task description",
+      "s2_examples_link": "View example projects",
+      "s3_title": "Step 3 · Submit a complete project",
+      "s3_intro": "Log in and open Participate:",
+      "s3_points": [
+        "Complete project: upload your code; the platform runs and scores it in the cloud. 40 per team per day."
+      ],
+      "s3_cta": "Go to Participate",
+      "help_prefix": "More questions? See the",
+      "help_faq": "FAQ",
+      "help_or": "or the",
+      "help_rules": "Rules",
+      "help_suffix": "."
+    },
+    "competition": {
+      "subtitle": "No astronomy background needed. Do these three steps in order to take part.",
+      "s1_title": "Step 1 · Read the docs",
+      "s1_desc": "The docs describe the task, the agent interface and scoring.",
+      "s1_cta": "Open the docs",
+      "s2_title": "Step 2 · Build your agent",
+      "s2_lead": "Build your agent to the protocol in the docs.",
+      "s2_desc": "Iterate on the decision logic, then move to Step 3.",
+      "s2_link": "Read the task description",
+      "s2_examples_link": "View example projects",
+      "s3_title": "Step 3 · Submit a complete project",
+      "s3_intro": "Log in and open Participate: upload your code → confirm the version → start an evaluation.",
+      "s3_points": [
+        "40 evaluations per team per day; each runs your agent on the task cards A–D, 900 s per card, and the board shows the mean over A–D.",
+        "Choose your final version before the competition ends.",
+        "The final ranking uses only that version's score on the hidden cards E–H (3 evaluations per card, averaged, then the mean over E–H)."
+      ],
+      "s3_cta": "Go to Participate",
+      "help_prefix": "More questions? See the",
+      "help_faq": "FAQ",
+      "help_or": "or the",
+      "help_rules": "Rules",
+      "help_suffix": "."
+    }
+  },
+  "about_page": {
+    "kicker": "Organizer · Sponsor · Committee"
+  },
+  "friends": {
+    "title": "Friends",
+    "my_uid": "Your UID",
+    "uid_hint": "Give it to people who want to add you as a friend or invite you to their team. Only you can see it here.",
+    "add_label": "Add a friend by UID",
+    "add_placeholder": "9-digit UID",
+    "add": "Send request",
+    "daily_note": "Up to {n} requests a day.",
+    "incoming_title": "Friend requests",
+    "outgoing_title": "Waiting for an answer",
+    "friends_title": "Your friends",
+    "none": "No friends yet. Share your UID to get started.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "block": "Block",
+    "unblock": "Unblock",
+    "remove": "Remove",
+    "cancel": "Withdraw",
+    "invite_team": "Invite to team",
+    "no_team": "No team yet",
+    "blocked_title": "Blocked",
+    "remove_confirm": "Remove this friend?",
+    "block_confirm": "Block this person? They will not be told, and you will no longer see their requests.",
+    "invited": "Invitation sent. They can accept it on their Notifications page.",
+    "invalid_uid": "A UID has 9 digits.",
+    "invite_uid_title": "Invite by UID",
+    "invite_uid_lede": "Ask the person for their UID (shown on their profile page). They join after accepting your invitation.",
+    "invite_uid_send": "Send invitation",
+    "pending": "pending",
+    "result": {
+      "sent": "Friend request sent.",
+      "accepted": "You are now friends.",
+      "already_friends": "You are already friends."
+    },
+    "errors": {
+      "self": "That is your own UID.",
+      "uid_unavailable": "No one can receive a request at this UID.",
+      "daily_limit": "You have reached today's limit. Try again tomorrow.",
+      "blocked_by_you": "You have blocked this person. Unblock them first.",
+      "request_not_found": "This request is not available.",
+      "request_finished": "This request has already been handled.",
+      "not_friends": "You are not friends.",
+      "user_not_found": "This person is not available.",
+      "not_in_team": "Create or join a team first.",
+      "leader_only": "Only the team captain can invite.",
+      "locked": "Your team is locked.",
+      "full": "Your team is full.",
+      "uid_not_found": "No participant has this UID.",
+      "recipient_in_team": "This person is already on a team.",
+      "not_found": "No one found with this UID."
+    },
+    "find_title": "Find by UID",
+    "find_lede": "Enter someone's 9-digit UID (shown on their profile page) to see their card, add them as a friend or invite them to your team.",
+    "find_button": "Find",
+    "find_login": "Log in to find people by UID.",
+    "add_friend": "Add friend",
+    "already": "Already friends",
+    "request_sent_short": "Request sent",
+    "invited_short": "Invited",
+    "this_is_you": "This is your own UID."
+  },
+  "wechat_qr": {
+    "title": "WeChat QR code",
+    "lede": "Optional. Add your WeChat QR code so teammates can reach you. Only signed-in participants you allow can see it; it is never public.",
+    "upload": "Upload QR code",
+    "replace": "Replace",
+    "delete": "Delete",
+    "hint": "PNG, JPG or WEBP, at most 1 MB. It must be a QR code.",
+    "visibility": "Who can see it",
+    "vis_friends": "Friends only",
+    "vis_all": "All signed-in participants",
+    "uploaded": "QR code saved.",
+    "deleted": "QR code deleted.",
+    "visibility_saved": "Saved.",
+    "delete_confirm": "Delete your WeChat QR code?",
+    "show": "WeChat QR",
+    "view_note": "Shown only to signed-in participants. Please do not share it elsewhere.",
+    "report": "Report this image",
+    "report_prompt": "What is wrong with this image? (optional)",
+    "reported": "Thank you. The organizers will review it.",
+    "admin_title": "Reported WeChat QR codes",
+    "admin_count": "Reports:",
+    "admin_replaced": "already replaced or deleted",
+    "admin_remove": "Remove image",
+    "admin_dismiss": "Dismiss",
+    "admin_remove_confirm": "Remove this QR code? The image is deleted.",
+    "errors": {
+      "too_large": "The image is larger than 1 MB.",
+      "not_an_image": "Please choose a PNG, JPG or WEBP image.",
+      "not_a_qr": "No QR code was found in this image. Please upload a clear picture of your WeChat QR code.",
+      "no_wechat_qr": "This QR code is not available.",
+      "invalid_visibility": "Unknown visibility.",
+      "storage_unavailable": "Upload failed. Please try again shortly.",
+      "admin_only": "Organizers only."
+    },
+    "prompt": "Upload your WeChat QR code so others can reach you.",
+    "prompt_button": "Upload WeChat QR code",
+    "prompt_done": "Saved. By default only your friends can see it.",
+    "prompt_settings": "Change who can see it",
+    "menu": "WeChat QR code"
+  },
+  "cards": {
+    "card_not_available": "This card is not available (the request or invitation may have been answered or withdrawn)."
+  },
+  "dm": {
+    "fab_label": "Friends and messages",
+    "fab_label_count": "Friends and messages, {n} waiting",
+    "title": "Friends",
+    "all_friends": "Friends page",
+    "close": "Close",
+    "back": "Back",
+    "add_label": "Add a friend by UID",
+    "add_button": "Find",
+    "friends": "Friends & messages",
+    "empty": "No friends yet. Type someone's 9-digit UID above to add them.",
+    "no_messages": "No messages yet. Say hi!",
+    "you": "You: ",
+    "deleted": "This message was removed by the organizers",
+    "placeholder": "Write a message…",
+    "send": "Send",
+    "sending": "Sending…",
+    "cant_send": "You are not friends right now, so you can't send messages.",
+    "report": "Report",
+    "report_prompt": "Report this message? You can add a short reason (optional); the organizers will take a look.",
+    "reported": "Reported. The organizers will take a look.",
+    "blocked": "Blocked.",
+    "hint": "Only friends can message each other. Plain text, up to 1000 characters.",
+    "load_failed": "Couldn't load right now. Please try again in a moment.",
+    "unread_n": "{n} unread",
+    "errors": {
+      "not_friends": "You are not friends right now, so the message wasn't sent.",
+      "empty": "The message is empty.",
+      "too_long": "Messages can be up to 1000 characters.",
+      "rate_minute": "That's a bit fast. Please wait a minute.",
+      "rate_day": "You've reached today's limit (200 messages). Talk tomorrow!",
+      "message_not_found": "This message isn't available.",
+      "user_not_found": "This user isn't available."
+    },
+    "admin_title": "Reported messages",
+    "admin_from": "From",
+    "admin_to": "To",
+    "admin_count": "Reports",
+    "admin_delete": "Delete message",
+    "admin_dismiss": "Dismiss",
+    "admin_delete_confirm": "Delete this message? Both people will see \"removed by the organizers\"."
+  },
+  "friend_team": {
+    "board_online": "Online",
+    "board_practice": "Practice overall",
+    "rank": "#{n}",
+    "no_score": "No score yet",
+    "apply": "Ask to join",
+    "applied": "Request sent. The captain will decide.",
+    "requested": "Requested",
+    "reason_requested": "You already asked; waiting for the captain.",
+    "reason_locked": "team locked",
+    "reason_full": "team full"
+  }
+}

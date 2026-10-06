@@ -1,0 +1,29 @@
+{% extends "admin/_layout.html" %}
+{% set heading = 'Phases' %}
+{% block admin %}
+{% macro phase_form(p) %}
+<form method="post" action="/admin/phases/save" class="panel mt-4"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if p %}<input type="hidden" name="id" value="{{ p.id }}">{% endif %}
+  <div class="grid-form">
+    <label class="field"><span>slug</span><input type="text" name="slug" value="{{ p.slug if p else '' }}" required></label>
+    <label class="field"><span>order</span><input type="number" name="order" value="{{ p.order if p else 0 }}"></label>
+    <label class="field"><span>name_en</span><input type="text" name="name_en" value="{{ p.name_en if p else '' }}"></label>
+    <label class="field"><span>name_zh</span><input type="text" name="name_zh" value="{{ p.name_zh if p else '' }}"></label>
+    <label class="field full"><span>description_en</span><textarea name="description_en">{{ p.description_en if p else '' }}</textarea></label>
+    <label class="field full"><span>description_zh</span><textarea name="description_zh">{{ p.description_zh if p else '' }}</textarea></label>
+    <label class="field"><span>starts_at (UTC, ISO)</span><input type="text" name="starts_at" placeholder="2026-10-04T16:00" value="{{ p.starts_at.isoformat(timespec='minutes') if p and p.starts_at else '' }}"></label>
+    <label class="field"><span>ends_at (UTC, ISO)</span><input type="text" name="ends_at" placeholder="2026-10-07T15:59" value="{{ p.ends_at.isoformat(timespec='minutes') if p and p.ends_at else '' }}"></label>
+    <label class="field"><span>daily_limit</span><input type="number" name="daily_limit" value="{{ p.daily_limit if p else 10 }}"></label>
+    <label class="field"><span>leaderboard_mode</span><select name="leaderboard_mode">{% for m in ['live','frozen','hidden','published'] %}<option value="{{ m }}" {% if p and p.leaderboard_mode == m %}selected{% endif %}>{{ m }}</option>{% endfor %}</select></label>
+    <div class="field full"><span>scenarios</span>{% for s in scenarios %}<label class="check" style="display:inline-flex;margin-right:1rem"><input type="checkbox" name="scenario_ids" value="{{ s.id }}" {% if p and s.id in (p.scenario_ids or []) %}checked{% endif %}> {{ s.slug }}{% if not s.weather_public %} (hidden){% endif %}</label>{% endfor %}</div>
+  </div>
+  <label class="check"><input type="checkbox" name="allow_results" {% if not p or p.allow_results %}checked{% endif %}> allow results (decisions.csv)</label>
+  <label class="check"><input type="checkbox" name="allow_agents" {% if not p or p.allow_agents %}checked{% endif %}> allow agent runs</label>
+  <label class="check"><input type="checkbox" name="counts_for_final" {% if p and p.counts_for_final %}checked{% endif %}> counts for final ranking</label>
+  <label class="check"><input type="checkbox" name="is_active" {% if not p or p.is_active %}checked{% endif %}> active</label>
+  <div class="actions-inline"><button class="btn primary sm" type="submit">Save</button>{% if p %}<span class="pill {{ p.status }}">{{ p.status }}</span>{% endif %}</div>
+</form>
+{% if p %}<form method="post" action="/admin/rescore-phase/{{ p.id }}" data-confirm="Re-queue every submission of this phase?" class="mt-2"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="btn sm" type="submit">Rescore all submissions of {{ p.slug }}</button></form>{% endif %}
+{% endmacro %}
+{% for p in rows %}<h2 class="label accent mt-6">{{ p.slug }}</h2>{{ phase_form(p) }}{% endfor %}
+<h2 class="label accent mt-8">New phase</h2>{{ phase_form(None) }}
+{% endblock %}

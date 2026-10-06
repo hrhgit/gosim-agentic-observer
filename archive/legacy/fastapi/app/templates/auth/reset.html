@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section"><div class="wrap"><div class="grid grid-2">
+  <div><span class="kicker">{{ t('auth.reset_title') }}</span><h1 class="section-title mt-4">{{ t('auth.reset_title') }}</h1></div>
+  <div class="form-card">{% if errors %}<div class="errors"><ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+    <form method="post" action="/reset/{{ token }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label class="field"><span>{{ t('auth.password') }}</span><input type="password" name="password" required minlength="8"></label>
+    <label class="field"><span>{{ t('auth.password2') }}</span><input type="password" name="password2" required minlength="8"></label>
+    <button class="btn primary" type="submit">{{ t('auth.reset_submit') }} →</button></form></div>
+</div></div></section>
+{% endblock %}

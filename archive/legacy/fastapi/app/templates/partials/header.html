@@ -1,0 +1,31 @@
+{% set nav_items = [('/brief', t('nav.brief')), ('/rules', t('nav.rules')), ('/docs', t('nav.docs')), ('/resources', t('nav.resources')), ('/leaderboard', t('nav.leaderboard')), ('/faq', t('nav.faq'))] %}
+<header class="site-header">
+  <div class="wrap header-in">
+    <a href="/" class="wordmark" aria-label="Agent Observer home">
+      <b>GOSIM <span>Create</span></b><span class="sep"></span><span class="tag">{{ t('meta.wordmark_note') }}</span>
+    </a>
+    <nav class="nav">
+      {% for href, label in nav_items %}<a href="{{ href }}" class="{{ 'active' if path.startswith(href) else '' }}">{{ label }}</a>{% endfor %}
+      {% if user %}<a href="/dashboard" class="{{ 'active' if path.startswith('/dashboard') or path.startswith('/team') or path.startswith('/submi') else '' }}">{{ t('nav.dashboard') }}</a>{% endif %}
+      {% if is_admin %}<a href="/admin" class="{{ 'active' if path.startswith('/admin') else '' }}">{{ t('nav.admin') }}</a>{% endif %}
+    </nav>
+    <div class="hdr-actions">
+      <a class="btn-lang" href="/lang/{{ 'en' if locale == 'zh' else 'zh' }}?next={{ path }}">{{ pick('中文', 'EN') }}</a>
+      {% if user %}
+        <form method="post" action="/logout" class="inline-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="btn-register ghost" type="submit">{{ t('nav.logout') }}</button></form>
+      {% elif registration_open %}
+        <a class="btn-register" href="/register">{{ t('nav.register') }}</a>
+      {% else %}
+        <a class="btn-register" href="/login">{{ t('nav.login') }}</a>
+      {% endif %}
+      <button class="btn-burger" data-burger aria-label="{{ t('nav.menu') }}"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-nav" data-mobile-nav>
+    {% for href, label in nav_items %}<a href="{{ href }}">{{ label }}</a>{% endfor %}
+    {% if user %}<a href="/dashboard">{{ t('nav.dashboard') }}</a>{% if is_admin %}<a href="/admin">{{ t('nav.admin') }}</a>{% endif %}{% else %}<a href="/login">{{ t('nav.login') }}</a>{% if registration_open %}<a href="/register">{{ t('nav.register') }}</a>{% endif %}{% endif %}
+  </div>
+</header>
+{% if banner %}
+<div class="banner {{ banner.level }}"><div class="wrap"><span class="tag">{{ t('ann.kicker') }}</span><span>{{ pick(banner.title_en, banner.title_zh) }}</span><a href="/announcements" class="label accent" style="margin-left:auto;white-space:nowrap">{{ t('home.announcements.all') }} →</a></div></div>
+{% endif %}

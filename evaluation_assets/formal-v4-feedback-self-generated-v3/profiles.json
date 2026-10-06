@@ -1,0 +1,1419 @@
+{
+  "heavier": {
+    "a": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.015
+      },
+      "condition_overrides": {
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "rocket_launch": 4
+        },
+        "variant": "heavier"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 0,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 3,
+        "rainy": 0,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105201,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          1,
+          2
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "寒潮、短时避让与地震",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 5.0,
+          "magnitude_range": [
+            5.5,
+            7.0
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.25,
+            0.5
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.002,
+            "max_abs_az_rad": 0.002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            50.0,
+            85.0
+          ],
+          "sector_width_deg_range": [
+            70.0,
+            140.0
+          ]
+        }
+      }
+    },
+    "b": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.015
+      },
+      "condition_overrides": {
+        "cloudy": {
+          "scope_weights": {
+            "ALL": 0.3125,
+            "HORIZON_SECTOR": 0.6875
+          }
+        },
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "overcast": 48,
+          "rain": 40,
+          "rocket_launch": 4
+        },
+        "variant": "heavier"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 60,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 3,
+        "rainy": 50,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105202,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          1,
+          2
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "频繁雨云与方向变化",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 5.0,
+          "magnitude_range": [
+            5.5,
+            7.0
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.25,
+            0.5
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.002,
+            "max_abs_az_rad": 0.002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            50.0,
+            85.0
+          ],
+          "sector_width_deg_range": [
+            70.0,
+            140.0
+          ]
+        }
+      }
+    },
+    "c": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.015
+      },
+      "condition_overrides": {
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "rain": 35,
+          "rocket_launch": 4
+        },
+        "variant": "heavier"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 0,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 3,
+        "rainy": 44,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105203,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          1,
+          2
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "频繁降雨与小容量排程",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 5.0,
+          "magnitude_range": [
+            5.5,
+            7.0
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.25,
+            0.5
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.002,
+            "max_abs_az_rad": 0.002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            50.0,
+            85.0
+          ],
+          "sector_width_deg_range": [
+            70.0,
+            140.0
+          ]
+        }
+      }
+    },
+    "d": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.015
+      },
+      "condition_overrides": {
+        "cloudy": {
+          "scope_weights": {
+            "ALL": 0.16666666666666666,
+            "HORIZON_SECTOR": 0.8333333333333334
+          }
+        },
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "smoggy": {
+          "scope_weights": {
+            "ALL": 0.2,
+            "HORIZON_SECTOR": 0.8
+          }
+        },
+        "tornado": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 3,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 12,
+          "earthquake": 2,
+          "haze": 15,
+          "overcast": 30,
+          "rain": 18,
+          "rocket_launch": 12,
+          "storm": 3
+        },
+        "variant": "heavier"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 38,
+        "cold_wave": 12,
+        "earthquake": 2,
+        "instrument_fault": 5,
+        "rainy": 23,
+        "rocket_launch": 12,
+        "smoggy": 19,
+        "tornado": 3
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105204,
+      "stress": true,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          1,
+          2
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "全年多类事件与数据恢复",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 5.0,
+          "magnitude_range": [
+            5.5,
+            7.0
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.25,
+            0.5
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.002,
+            "max_abs_az_rad": 0.002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            50.0,
+            85.0
+          ],
+          "sector_width_deg_range": [
+            70.0,
+            140.0
+          ]
+        }
+      }
+    }
+  },
+  "lighter": {
+    "a": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.003
+      },
+      "condition_overrides": {
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "rocket_launch": 4
+        },
+        "variant": "lighter"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 0,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 1,
+        "rainy": 0,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105101,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "寒潮、短时避让与地震",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 3.0,
+          "magnitude_range": [
+            4.5,
+            6.2
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.55,
+            0.8
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0002,
+            "max_abs_az_rad": 0.0002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            35.0,
+            65.0
+          ],
+          "sector_width_deg_range": [
+            30.0,
+            80.0
+          ]
+        }
+      }
+    },
+    "b": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.003
+      },
+      "condition_overrides": {
+        "cloudy": {
+          "scope_weights": {
+            "ALL": 0.3125,
+            "HORIZON_SECTOR": 0.6875
+          }
+        },
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "overcast": 48,
+          "rain": 40,
+          "rocket_launch": 4
+        },
+        "variant": "lighter"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 48,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 1,
+        "rainy": 40,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105102,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "频繁雨云与方向变化",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 3.0,
+          "magnitude_range": [
+            4.5,
+            6.2
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.55,
+            0.8
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0002,
+            "max_abs_az_rad": 0.0002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            35.0,
+            65.0
+          ],
+          "sector_width_deg_range": [
+            30.0,
+            80.0
+          ]
+        }
+      }
+    },
+    "c": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.003
+      },
+      "condition_overrides": {
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "rain": 35,
+          "rocket_launch": 4
+        },
+        "variant": "lighter"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 0,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 1,
+        "rainy": 35,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105103,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "频繁降雨与小容量排程",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 3.0,
+          "magnitude_range": [
+            4.5,
+            6.2
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.55,
+            0.8
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0002,
+            "max_abs_az_rad": 0.0002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            35.0,
+            65.0
+          ],
+          "sector_width_deg_range": [
+            30.0,
+            80.0
+          ]
+        }
+      }
+    },
+    "d": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.003
+      },
+      "condition_overrides": {
+        "cloudy": {
+          "scope_weights": {
+            "ALL": 0.16666666666666666,
+            "HORIZON_SECTOR": 0.8333333333333334
+          }
+        },
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "smoggy": {
+          "scope_weights": {
+            "ALL": 0.2,
+            "HORIZON_SECTOR": 0.8
+          }
+        },
+        "tornado": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 3,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 12,
+          "earthquake": 2,
+          "haze": 15,
+          "overcast": 30,
+          "rain": 18,
+          "rocket_launch": 12,
+          "storm": 3
+        },
+        "variant": "lighter"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 30,
+        "cold_wave": 12,
+        "earthquake": 2,
+        "instrument_fault": 3,
+        "rainy": 18,
+        "rocket_launch": 12,
+        "smoggy": 15,
+        "tornado": 3
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105104,
+      "stress": true,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "全年多类事件与数据恢复",
+      "weather_overrides": {
+        "earthquake": {
+          "decay_nights": 3.0,
+          "magnitude_range": [
+            4.5,
+            6.2
+          ]
+        },
+        "instrument_fault": {
+          "instrument_efficiency_multiplier_range": [
+            0.55,
+            0.8
+          ]
+        },
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0002,
+            "max_abs_az_rad": 0.0002
+          }
+        },
+        "weather_events": {
+          "sector_altitude_limit_deg_range": [
+            35.0,
+            65.0
+          ],
+          "sector_width_deg_range": [
+            30.0,
+            80.0
+          ]
+        }
+      }
+    }
+  },
+  "nominal": {
+    "a": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.008
+      },
+      "condition_overrides": {
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "rocket_launch": 4
+        },
+        "variant": "nominal"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 0,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 1,
+        "rainy": 0,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105001,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "寒潮、短时避让与地震",
+      "weather_overrides": {
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0005,
+            "max_abs_az_rad": 0.0005
+          }
+        }
+      }
+    },
+    "b": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.008
+      },
+      "condition_overrides": {
+        "cloudy": {
+          "scope_weights": {
+            "ALL": 0.3125,
+            "HORIZON_SECTOR": 0.6875
+          }
+        },
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "overcast": 48,
+          "rain": 40,
+          "rocket_launch": 4
+        },
+        "variant": "nominal"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 48,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 1,
+        "rainy": 40,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105002,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "频繁雨云与方向变化",
+      "weather_overrides": {
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0005,
+            "max_abs_az_rad": 0.0005
+          }
+        }
+      }
+    },
+    "c": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.008
+      },
+      "condition_overrides": {
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 1,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 4,
+          "earthquake": 2,
+          "rain": 35,
+          "rocket_launch": 4
+        },
+        "variant": "nominal"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 0,
+        "cold_wave": 4,
+        "earthquake": 2,
+        "instrument_fault": 1,
+        "rainy": 35,
+        "rocket_launch": 4,
+        "smoggy": 0,
+        "tornado": 0
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105003,
+      "stress": false,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "频繁降雨与小容量排程",
+      "weather_overrides": {
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0005,
+            "max_abs_az_rad": 0.0005
+          }
+        }
+      }
+    },
+    "d": {
+      "background_closure": {
+        "reopen_probability_per_closed_slot": 0.32,
+        "seasonal_probability_amplitude": 0.002,
+        "start_probability_per_open_slot": 0.008
+      },
+      "condition_overrides": {
+        "cloudy": {
+          "scope_weights": {
+            "ALL": 0.16666666666666666,
+            "HORIZON_SECTOR": 0.8333333333333334
+          }
+        },
+        "cold_wave": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "rainy": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        },
+        "smoggy": {
+          "scope_weights": {
+            "ALL": 0.2,
+            "HORIZON_SECTOR": 0.8
+          }
+        },
+        "tornado": {
+          "scope_weights": {
+            "ALL": 1.0,
+            "HORIZON_SECTOR": 0.0
+          }
+        }
+      },
+      "design_evidence": {
+        "assumed": [
+          "Episode counts used as nominal generated event counts; overlaps may conceal additional events",
+          "Reference numeric weather model/durations and seeded event placement",
+          "Fault count uses repair lower bound; onset, efficiency and undetected faults are unknown",
+          "Closure probability, quake strength/decay and exact sector boundaries are hypotheses",
+          "D offset scale is synthetic; agent estimates are not ground truth",
+          "Heavier terrain tests transfer only; no terrain was announced in downloaded runs"
+        ],
+        "confirmed": [
+          "6 requests, 8 targets each, minimum 6, 100 points, 0.5 threshold, two-night window",
+          "D state_resync window_max_fraction 0.15",
+          "published event families and global/compass scopes"
+        ],
+        "fault_count_lower_bound": 3,
+        "not_copied": [
+          "official event timestamps",
+          "official request target IDs",
+          "official data-loss fractions"
+        ],
+        "public_episode_counts": {
+          "cold_snap": 12,
+          "earthquake": 2,
+          "haze": 15,
+          "overcast": 30,
+          "rain": 18,
+          "rocket_launch": 12,
+          "storm": 3
+        },
+        "variant": "nominal"
+      },
+      "difficulty_focus_zh": "按线上公开反馈设计的新事件；强度与边界仍属自建假设。",
+      "event_counts": {
+        "cloudy": 30,
+        "cold_wave": 12,
+        "earthquake": 2,
+        "instrument_fault": 3,
+        "rainy": 18,
+        "rocket_launch": 12,
+        "smoggy": 15,
+        "tornado": 3
+      },
+      "requests": {
+        "completion_reward": 100.0,
+        "count": 6,
+        "include_required_targets": false,
+        "minimum_completion_fraction": 0.75,
+        "reason": "time-critical follow-up",
+        "targets_per_request": 8,
+        "window_nights": 2
+      },
+      "seed": 8105004,
+      "stress": true,
+      "terrain": {
+        "max_altitude_deg_range": [
+          35.0,
+          50.0
+        ],
+        "sector_count": [
+          0,
+          0
+        ],
+        "width_deg_range": [
+          30.0,
+          70.0
+        ]
+      },
+      "title_zh": "全年多类事件与数据恢复",
+      "weather_overrides": {
+        "stress_tests": {
+          "data_loss": {
+            "window_max_fraction": 0.15
+          },
+          "pointing_offset": {
+            "max_abs_alt_rad": 0.0005,
+            "max_abs_az_rad": 0.0005
+          }
+        }
+      }
+    }
+  }
+}

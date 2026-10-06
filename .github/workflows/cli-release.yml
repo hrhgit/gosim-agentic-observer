@@ -1,0 +1,108 @@
+name: CLI release
+
+# Builds the Rust survey26 binaries and publishes them with SHA-256 checksums to a GitHub
+# Release named after the tag (cli-vX.Y.Z). The release is never marked "latest": the
+# website publisher collects the latest release, which must stay the site build.
+on:
+  push:
+    tags: ["cli-v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to (re)publish, e.g. cli-v1.1.0"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cli-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  conformance:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pytest
+      - run: cargo build --release --locked --manifest-path cli-rs/Cargo.toml
+      - name: Both builds agree (shared spec, messages and scenarios)
+        run: python -m pytest -q tests/test_cli_conformance.py tests/test_survey26_cli.py
+      - name: Tag matches the CLI version
+        run: |
+          tag="${{ inputs.tag || github.ref_name }}"
+          version=$(python -c "import sys; sys.path.insert(0, 'cli'); import survey26; print(survey26.__version__)")
+          test "$tag" = "cli-v$version"
+
+  build:
+    needs: conformance
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: macos-14, target: aarch64-apple-darwin, asset: survey26-macos-arm64 }
+          - { os: macos-14, target: x86_64-apple-darwin, asset: survey26-macos-x86_64 }
+          - { os: ubuntu-24.04, target: x86_64-unknown-linux-musl, asset: survey26-linux-x86_64 }
+          - { os: ubuntu-24.04-arm, target: aarch64-unknown-linux-musl, asset: survey26-linux-aarch64 }
+          - { os: windows-2022, target: x86_64-pc-windows-msvc, asset: survey26-windows-x86_64.exe }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          persist-credentials: false
+      - run: rustup target add ${{ matrix.target }}
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y musl-tools
+      - name: Build
+        shell: bash
+        env:
+          CC_x86_64_unknown_linux_musl: musl-gcc
+          CC_aarch64_unknown_linux_musl: musl-gcc
+          RUSTFLAGS: ${{ runner.os == 'Windows' && '-C target-feature=+crt-static' || '' }}
+        run: cargo build --release --locked --manifest-path cli-rs/Cargo.toml --target ${{ matrix.target }}
+      - name: Package and smoke test
+        shell: bash
+        run: |
+          mkdir -p dist
+          src=cli-rs/target/${{ matrix.target }}/release/survey26
+          [ "${{ runner.os }}" = "Windows" ] && src="$src.exe"
+          cp "$src" "dist/${{ matrix.asset }}"
+          "./dist/${{ matrix.asset }}" --version
+          if [ "${{ runner.os }}" = "Linux" ]; then file "dist/${{ matrix.asset }}" | grep -Eq "statically linked|static-pie linked"; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset }}
+          path: dist/${{ matrix.asset }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Checksums and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          cd dist
+          sha256sum survey26-* > SHA256SUMS
+          cat SHA256SUMS
+          if gh release view "$TAG" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" survey26-* SHA256SUMS --clobber -R "$GITHUB_REPOSITORY"
+          else
+            gh release create "$TAG" survey26-* SHA256SUMS -R "$GITHUB_REPOSITORY" --latest=false \
+              --title "survey26 command-line tool $TAG" \
+              --notes "Prebuilt survey26 binaries (Rust build of cli/survey26.py, identical commands and --json output). Guide: https://create.gosim.org/survey26/platform/cli — verify downloads with SHA256SUMS."
+          fi

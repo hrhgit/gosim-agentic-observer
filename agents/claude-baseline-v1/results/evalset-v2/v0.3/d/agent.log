@@ -1,0 +1,46 @@
+init: 30000 targets, 1500 required, 1092 zones, 279 season cells, 365 nights, 100 fibres pitch 0.2449 deg, price0 0.01259/s, cpu 0.12s
+pointing: offset estimate alt -0.0596 az +0.0375 deg (+-0.0012/0.0024), 19 unexpected misses, mismatch 0
+2027-01-24T11:30:00Z obs=226 total=6781.562016 req_left=880 rho=1.392 W=1.465 e=0.95 price=0.01381 avgT=1214 k=2.0 own=3.3ms eng=9.5ms floor=1528 miss=32/7505 gain/pred=0.994 capped=3/226 cpu_left=656.794 wall_left=1796.608
+2027-02-09T06:52:40Z obs=458 total=10968.074732 req_left=773 rho=1.522 W=1.602 e=0.95 price=0.00865 avgT=1145 k=4.7 own=3.4ms eng=10.9ms floor=1373 miss=43/12645 gain/pred=0.994 capped=94/461 cpu_left=655.83 wall_left=1793.128
+2027-02-20T12:12:37Z obs=697 total=13365.12087 req_left=699 rho=1.337 W=1.407 e=0.95 price=0.00678 avgT=1121 k=8.4 own=4.3ms eng=12.3ms floor=60 miss=48/16195 gain/pred=0.994 capped=234/700 cpu_left=654.743 wall_left=1789.245
+2027-03-04T05:35:59Z obs=935 total=15469.605847 req_left=606 rho=1.377 W=1.449 e=0.95 price=0.00772 avgT=1131 k=14.0 own=10.0ms eng=14.1ms floor=60 miss=55/19410 gain/pred=0.989 capped=400/938 cpu_left=652.685 wall_left=1783.917
+report: e=0.725 W=1.501 rho=1.088 low_count=2 at 2027-03-16T13:05:29Z
+report at 2027-03-16T13:05:29Z: correct=False delta=0.0 free_left=1
+2027-03-18T06:17:56Z obs=1170 total=17764.722268 req_left=494 rho=1.155 W=1.216 e=0.95 price=0.00495 avgT=1940 k=14.0 own=8.5ms eng=20.8ms floor=60 miss=66/22824 gain/pred=0.996 capped=543/1173 cpu_left=650.468 wall_left=1777.764
+2027-04-01T05:45:09Z obs=1404 total=20477.971142 req_left=341 rho=1.796 W=1.891 e=0.95 price=0.00474 avgT=1748 k=14.0 own=9.6ms eng=22.4ms floor=60 miss=83/26572 gain/pred=0.995 capped=649/1407 cpu_left=647.999 wall_left=1770.161
+2027-04-13T10:51:00Z obs=1642 total=22867.566123 req_left=267 rho=2.276 W=2.396 e=0.95 price=0.00471 avgT=1207 k=14.0 own=8.6ms eng=20.9ms floor=60 miss=91/30134 gain/pred=0.995 capped=749/1645 cpu_left=645.106 wall_left=1761.666
+2027-04-22T12:36:00Z obs=1883 total=24785.501965 req_left=239 rho=1.956 W=2.059 e=0.95 price=0.00215 avgT=1766 k=14.0 own=8.2ms eng=24.3ms floor=60 miss=93/32965 gain/pred=0.996 capped=828/1886 cpu_left=642.775 wall_left=1753.418
+report: e=0.470 W=1.702 rho=0.800 low_count=4 at 2027-04-23T08:56:00Z
+report at 2027-04-23T08:56:00Z: correct=True delta=100.0 free_left=2
+2027-05-05T05:20:00Z obs=2119 total=26395.785131 req_left=179 rho=0.998 W=1.051 e=0.95 price=0.00304 avgT=2115 k=14.0 own=8.7ms eng=30.8ms floor=60 miss=95/35440 gain/pred=0.996 capped=950/2122 cpu_left=640.281 wall_left=1744.058
+2027-05-18T04:45:00Z obs=2289 total=27484.820506 req_left=133 rho=1.218 W=1.283 e=0.95 price=0.00285 avgT=2420 k=14.0 own=5.6ms eng=31.0ms floor=60 miss=104/37028 gain/pred=0.997 capped=1063/2291 cpu_left=741.895 wall_left=1734.552
+2027-05-29T04:00:00Z obs=2448 total=28815.705954 req_left=81 rho=1.473 W=1.551 e=0.95 price=0.00372 avgT=2306 k=14.0 own=6.0ms eng=36.6ms floor=60 miss=106/38925 gain/pred=1.000 capped=1154/2450 cpu_left=740.216 wall_left=1725.029
+2027-06-08T10:41:00Z obs=2600 total=29834.106209 req_left=35 rho=1.218 W=1.282 e=0.95 price=0.00159 avgT=2525 k=14.0 own=6.6ms eng=38.2ms floor=60 miss=106/40590 gain/pred=1.002 capped=1244/2603 cpu_left=738.533 wall_left=1713.525
+2027-06-18T13:02:30Z obs=2737 total=30958.703272 req_left=3 rho=1.359 W=1.430 e=0.95 price=0.00245 avgT=2278 k=14.0 own=5.3ms eng=38.2ms floor=60 miss=108/42084 gain/pred=1.004 capped=1320/2740 cpu_left=737.189 wall_left=1702.091
+state_resync: window {'action_count_at_trigger': 2791, 'action_index_start': 2575, 'action_index_end_exclusive': 2654, 'window_start_fraction': 0.922619, 'window_end_fraction': 0.951008, 'window_max_fraction': 0.05} dropped 79 of our exposures
+2027-06-26T11:42:30Z obs=2823 total=31061.464568 req_left=9 rho=0.853 W=1.302 e=0.66 price=0.00198 avgT=2379 k=14.0 own=5.6ms eng=40.3ms floor=60 miss=108/43181 gain/pred=1.004 capped=1363/2826 cpu_left=736.046 wall_left=1690.453
+2027-07-04T06:30:00Z obs=2876 total=31449.533273 req_left=4 rho=0.426 W=1.226 e=0.35 price=0.00155 avgT=2648 k=14.0 own=1.9ms eng=65.0ms floor=60 miss=110/43918 gain/pred=1.003 capped=1390/2878 cpu_left=837.413 wall_left=1678.311
+2027-07-11T10:00:00Z obs=2928 total=31639.021017 req_left=4 rho=0.352 W=0.958 e=0.37 price=0.00106 avgT=2388 k=14.0 own=1.5ms eng=41.0ms floor=60 miss=111/44406 gain/pred=1.003 capped=1412/2930 cpu_left=836.778 wall_left=1667.187
+report: e=0.400 W=0.840 rho=0.336 low_count=4 at 2027-07-12T14:33:22Z
+report at 2027-07-12T14:33:22Z: correct=True delta=100.0 free_left=2
+2027-07-21T12:02:30Z obs=3025 total=31975.137112 req_left=1 rho=0.783 W=0.957 e=0.82 price=0.00048 avgT=2846 k=14.0 own=4.5ms eng=50.7ms floor=60 miss=111/45214 gain/pred=1.003 capped=1462/3028 cpu_left=835.599 wall_left=1649.577
+2027-08-04T06:45:00Z obs=3189 total=32315.450128 req_left=1 rho=1.153 W=1.214 e=0.95 price=0.00036 avgT=2980 k=14.0 own=7.1ms eng=62.1ms floor=60 miss=114/46204 gain/pred=1.003 capped=1545/3192 cpu_left=833.588 wall_left=1632.795
+2027-08-14T06:30:00Z obs=3300 total=32406.10855 req_left=1 rho=0.925 W=0.974 e=0.95 price=0.00011 avgT=2854 k=14.0 own=1.8ms eng=78.0ms floor=60 miss=114/46681 gain/pred=1.003 capped=1597/3302 cpu_left=849.383 wall_left=1612.896
+2027-08-21T06:45:00Z obs=3318 total=32415.662493 req_left=1 rho=0.793 W=0.835 e=0.95 price=0.00010 avgT=2927 k=14.0 own=1.5ms eng=66.1ms floor=60 miss=114/46747 gain/pred=1.003 capped=1609/3320 cpu_left=848.597 wall_left=1594.864
+2027-08-27T08:45:00Z obs=3319 total=32415.676827 req_left=1 rho=0.759 W=0.799 e=0.95 price=0.00009 avgT=2871 k=14.0 own=2.0ms eng=75.9ms floor=60 miss=114/46751 gain/pred=1.003 capped=1610/3321 cpu_left=848.077 wall_left=1577.349
+2027-09-02T12:45:00Z obs=3319 total=32415.676827 req_left=1 rho=0.759 W=0.799 e=0.95 price=0.00009 avgT=2871 k=14.0 own=2.0ms eng=61.9ms floor=60 miss=114/46751 gain/pred=1.003 capped=1610/3321 cpu_left=847.549 wall_left=1559.567
+2027-09-09T08:45:00Z obs=3319 total=32415.676827 req_left=1 rho=0.759 W=0.799 e=0.95 price=0.00009 avgT=2871 k=14.0 own=2.2ms eng=63.0ms floor=60 miss=114/46751 gain/pred=1.003 capped=1610/3321 cpu_left=863.898 wall_left=1541.693
+2027-09-16T07:15:00Z obs=3319 total=32415.676827 req_left=1 rho=0.759 W=0.799 e=0.95 price=0.00009 avgT=2871 k=14.0 own=1.8ms eng=52.9ms floor=60 miss=114/46751 gain/pred=1.003 capped=1610/3321 cpu_left=863.373 wall_left=1526.782
+2027-09-23T08:45:00Z obs=3319 total=32415.676827 req_left=1 rho=0.759 W=0.799 e=0.95 price=0.00009 avgT=2871 k=14.0 own=1.6ms eng=50.4ms floor=60 miss=114/46751 gain/pred=1.003 capped=1610/3321 cpu_left=862.899 wall_left=1513.165
+2027-09-30T12:45:00Z obs=3319 total=32415.676827 req_left=1 rho=0.759 W=0.799 e=0.95 price=0.00009 avgT=2871 k=14.0 own=1.8ms eng=53.2ms floor=60 miss=114/46751 gain/pred=1.003 capped=1610/3321 cpu_left=862.441 wall_left=1499.325
+2027-10-09T05:45:00Z obs=3321 total=32415.819215 req_left=1 rho=0.319 W=0.336 e=0.95 price=0.00007 avgT=2862 k=14.0 own=1.8ms eng=60.2ms floor=60 miss=114/46753 gain/pred=1.003 capped=1611/3323 cpu_left=919.532 wall_left=1483.22
+report: e=0.742 W=0.487 rho=0.361 low_count=4 at 2027-10-17T06:10:57Z
+report at 2027-10-17T06:10:57Z: correct=True delta=100.0 free_left=2
+2027-10-17T09:15:00Z obs=3331 total=32415.819215 req_left=1 rho=0.689 W=0.726 e=0.95 price=0.00005 avgT=2047 k=14.0 own=2.9ms eng=52.0ms floor=60 miss=114/46770 gain/pred=1.003 capped=1611/3333 cpu_left=918.794 wall_left=1469.255
+2027-10-26T11:15:00Z obs=3331 total=32415.819215 req_left=1 rho=0.689 W=0.726 e=0.95 price=0.00005 avgT=2047 k=14.0 own=1.8ms eng=60.2ms floor=60 miss=114/46770 gain/pred=1.003 capped=1611/3333 cpu_left=918.321 wall_left=1453.475
+2027-11-08T08:00:00Z obs=3350 total=32439.276438 req_left=1 rho=1.229 W=1.294 e=0.95 price=0.00032 avgT=2775 k=14.0 own=1.2ms eng=48.0ms floor=60 miss=114/46870 gain/pred=1.003 capped=1615/3352 cpu_left=917.748 wall_left=1439.168
+2027-11-23T08:30:00Z obs=3372 total=32453.907543 req_left=1 rho=0.924 W=1.307 e=0.95 price=0.00023 avgT=2938 k=14.0 own=1.5ms eng=51.8ms floor=60 miss=114/46968 gain/pred=1.003 capped=1628/3374 cpu_left=917.167 wall_left=1425.478
+2027-12-09T08:15:00Z obs=3372 total=32453.907543 req_left=1 rho=0.924 W=1.307 e=0.95 price=0.00023 avgT=2938 k=14.0 own=1.1ms eng=61.0ms floor=60 miss=114/46968 gain/pred=1.003 capped=1628/3374 cpu_left=916.908 wall_left=1412.564
+2027-12-28T07:30:00Z obs=3372 total=32453.907543 req_left=1 rho=0.924 W=1.307 e=0.95 price=0.00023 avgT=2938 k=14.0 own=1.0ms eng=56.5ms floor=60 miss=114/46968 gain/pred=1.003 capped=1628/3375 cpu_left=916.666 wall_left=1399.285
+report at 2028-01-01T10:30:00Z: correct=False delta=0.0 free_left=1
+finish: {"decisions": 13920, "grace_seconds": 30.0, "last_decision_sequence": 8298, "observe_actions": 3392, "schema_version": "v4-finish-v1", "termination_reason": "survey_complete"}

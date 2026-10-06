@@ -1,0 +1,32 @@
+{
+  "classification": "reconstructed contestant-visible formal timeline plus SELF-GENERATED hidden-condition hypotheses; NOT official hidden truth",
+  "source_evaluation": "ed5ec77b-ac2d-450d-90df-95ff22477b75",
+  "source_capture_sha256": "bd46a1c92173e8d74c9d01fe12819b7aa20419a13b8480f445ef431301d8c943",
+  "public_inputs_sha256": {
+    "config/v4_fiber_config.json": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+    "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+    "public/footprint.csv": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+    "public/targets.csv": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+    "public/taskcard.en.md": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+    "public/taskcard.zh.md": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+    "public/v4_night_calendar.csv": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8"
+  },
+  "seed": 9105003,
+  "exact_public_records": [
+    "bulletins",
+    "forecasts",
+    "observation_requests"
+  ],
+  "assumptions": [
+    "one event per contiguous kind/direction episode",
+    "episode slot-edge timing proxy",
+    "reference weather, new seed, no unannounced background closures",
+    "severity .75; directional width60deg maxalt60deg",
+    "quake decay at least reference4nights, increased if required by published duration; magnitude is conditional on this assumption",
+    "fault .55 efficiency and repair-night onset; no undetected faults",
+    "D unknown pointing offset set to zero; data-loss notice timestamp used as trigger proxy"
+  ],
+  "data_loss_semantics": "Fractions replayed; action-index window and invalidated count change with agent actions. Observed notice time may be later than actual trigger.",
+  "public_bulletin_regeneration_verified": true,
+  "official_report_outcomes_verified": true
+}

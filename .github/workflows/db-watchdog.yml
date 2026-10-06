@@ -1,0 +1,63 @@
+name: DB watchdog
+
+# Checks the Supabase project every ~5 min and restarts it on a sustained
+# outage. No notifications are sent anywhere; see ops/db-watchdog.md.
+#
+# `schedule` is kept as a free extra chance, but GitHub's cron trigger has
+# been observed to fire only sporadically for this repo (hours between
+# fires instead of ~5 min) rather than just occasionally-delayed, so the
+# last step below makes each run re-dispatch the next one via
+# workflow_dispatch - a self-sustaining chain, same pattern already used by
+# .github/workflows/worker.yml upstream. If the chain ever breaks (a commit
+# makes the job fail before that step, Actions gets disabled, etc.) nothing
+# else restarts it - kick it off again with a manual workflow_dispatch.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Log the restart decision but never call the restart API
+        type: boolean
+        default: false
+      simulate_fail:
+        description: Force every check to report failure (for testing the restart branch)
+        type: boolean
+        default: false
+
+concurrency:
+  group: db-watchdog
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Fetch watchdog script
+        uses: actions/checkout@v5
+        with:
+          sparse-checkout: |
+            scripts/db_watchdog.py
+          sparse-checkout-cone-mode: false
+      - name: Check project health and restart if needed
+        env:
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          SIMULATE_FAIL: ${{ github.event.inputs.simulate_fail || 'false' }}
+        run: python3 scripts/db_watchdog.py
+      - name: Self-redispatch (fallback for an unreliable schedule trigger)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run db-watchdog.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"

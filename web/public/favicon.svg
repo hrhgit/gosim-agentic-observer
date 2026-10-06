@@ -1,0 +1,7 @@
+<!-- Agentic Observer Hackathon: a must-do patch (REQUIRED, the diamond) that is reachable right now (the ring) and
+     finished (filled) — the moment the sky console animates. Sized so the ring still separates at 16px. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Agentic Observer Hackathon">
+  <rect width="64" height="64" rx="13" fill="#05070d"/>
+  <circle cx="32" cy="32" r="20.5" fill="none" stroke="#315efb" stroke-opacity=".5" stroke-width="3.5"/>
+  <path d="M32 14.5 L49.5 32 L32 49.5 L14.5 32 Z" fill="#315efb"/>
+</svg>

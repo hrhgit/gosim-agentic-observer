@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+*.zip
+# per-run bulk artefacts: reproducible from the agent and the card, too large to keep
+results/**/scratch/
+results/**/decisions.csv
+results/**/observations.csv
+results/**/messages.jsonl
+results/**/actions.jsonl
+results/**/workflow_result.json
+results/smoke*/
+results/tmp-*/
+results/tmp-*
+results/**/runner.stderr.log
+eval_sets/

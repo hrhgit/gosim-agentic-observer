@@ -1,0 +1,4 @@
+event_id,night_id,magnitude,degradation,seeing_multiplier,transparency_multiplier,sky_quality_multiplier,instrument_efficiency_multiplier
+V4EV0007,N20261005,4.670,0.202406,1.000000,1.000000,1.000000,0.797594
+V4EV0007,N20261006,4.670,0.122765,1.000000,1.000000,1.000000,0.877235
+V4EV0007,N20261007,4.670,0.074461,1.000000,1.000000,1.000000,0.925539

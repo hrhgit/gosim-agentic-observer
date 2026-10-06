@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ t('auth.register_title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section"><div class="wrap"><div class="grid grid-2">
+  <div><span class="kicker">{{ t('nav.register') }}</span><h1 class="section-title mt-4">{{ t('auth.register_title') }}</h1><p class="lede mt-3">{{ t('auth.register_lede') }}</p>
+    <div class="stats mt-6" style="grid-template-columns:1fr">{% for m in t('hero.metrics') %}<div class="stat" style="border-right:0"><b>{{ m.value }}</b><span>{{ m.label }}</span></div>{% endfor %}</div></div>
+  <div class="form-card">
+    {% if not registration_open %}<div class="errors">{{ t('auth.closed_notice') }}</div>{% endif %}
+    {% if errors %}<div class="errors"><ul>{% for e in errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+    <form method="post" action="/register">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="next" value="{{ next or '/dashboard' }}">
+      <div class="grid-form">
+        <label class="field"><span>{{ t('auth.name') }}</span><input type="text" name="name" required maxlength="120" value="{{ form.name or '' }}"></label>
+        <label class="field"><span>{{ t('auth.email') }}</span><input type="email" name="email" required value="{{ form.email or '' }}"></label>
+        <label class="field"><span>{{ t('auth.password') }}</span><input type="password" name="password" required minlength="8" autocomplete="new-password"></label>
+        <label class="field"><span>{{ t('auth.password2') }}</span><input type="password" name="password2" required minlength="8" autocomplete="new-password"></label>
+        <label class="field"><span>{{ t('auth.github') }} · {{ t('common.optional') }}</span><input type="text" name="github" maxlength="120" value="{{ form.github or '' }}"></label>
+        <label class="field"><span>{{ t('auth.affiliation') }} · {{ t('common.optional') }}</span><input type="text" name="affiliation" maxlength="200" value="{{ form.affiliation or '' }}"></label>
+      </div>
+      <label class="check"><input type="checkbox" name="looking_for_team" {% if form.looking_for_team %}checked{% endif %}> {{ t('auth.looking_for_team') }}</label>
+      <label class="check"><input type="checkbox" name="agree" required> <span>{{ t('auth.agree') }} <a class="accent-l" href="/rules" target="_blank">{{ t('nav.rules') }} ↗</a></span></label>
+      <button class="btn primary" type="submit" {% if not registration_open %}disabled{% endif %}>{{ t('auth.submit_register') }} →</button>
+    </form>
+    <p class="mt-4 small text3">{{ t('auth.have_account') }} <a class="accent-l" href="/login">{{ t('nav.login') }}</a></p>
+  </div>
+</div></div></section>
+{% endblock %}

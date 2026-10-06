@@ -1,0 +1,74 @@
+[
+ {
+  "id": "kimi-coding",
+  "cli": "kimi",
+  "label": "Kimi Coding Plan",
+  "protocol": "openai",
+  "baseUrl": "https://api.kimi.com/coding/v1",
+  "model": "kimi-for-coding",
+  "placeholder": "kimi-for-coding",
+  "prefix": "KIMI",
+  "note": "kimi"
+ },
+ {
+  "id": "moonshot",
+  "cli": "moonshot",
+  "label": "Moonshot (Kimi API)",
+  "protocol": "openai",
+  "baseUrl": "https://api.moonshot.cn/v1",
+  "model": "kimi-k3",
+  "placeholder": "kimi-k3",
+  "prefix": "MOONSHOT"
+ },
+ {
+  "id": "deepseek",
+  "cli": "deepseek",
+  "label": "DeepSeek",
+  "protocol": "openai",
+  "baseUrl": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "placeholder": "deepseek-flash",
+  "prefix": "DEEPSEEK"
+ },
+ {
+  "id": "openai",
+  "cli": "openai",
+  "label": "OpenAI",
+  "protocol": "openai",
+  "baseUrl": "https://api.openai.com/v1",
+  "model": "",
+  "placeholder": "gpt-…",
+  "prefix": "GPT"
+ },
+ {
+  "id": "anthropic",
+  "cli": "anthropic",
+  "label": "Anthropic",
+  "protocol": "anthropic",
+  "baseUrl": "https://api.anthropic.com",
+  "model": "",
+  "placeholder": "claude-…",
+  "prefix": "CLAUDE",
+  "note": "anthropic"
+ },
+ {
+  "id": "zhipu",
+  "cli": "zhipu",
+  "label": "Zhipu GLM",
+  "protocol": "openai",
+  "baseUrl": "https://open.bigmodel.cn/api/paas/v4",
+  "model": "glm-5.3",
+  "placeholder": "glm-5.3",
+  "prefix": "ZHIPU"
+ },
+ {
+  "id": "custom",
+  "cli": "custom",
+  "label": "Custom",
+  "protocol": "openai",
+  "baseUrl": "",
+  "model": "",
+  "placeholder": "model-name",
+  "prefix": "CUSTOM"
+ }
+]

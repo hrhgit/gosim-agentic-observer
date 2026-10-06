@@ -1,0 +1,58 @@
+{
+  "a": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.06755930241062713,
+    "median_relative_quality_error_nonzero": 0.09830313588505861,
+    "within_10_percent_nonzero_fraction": 0.5194805194805194,
+    "zero_quality_agreement_fraction": 0.9375,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false,
+    "odd_exposures_only": true,
+    "evaluation_scope": "reserved exposures of the same recorded weather, not independent scenarios",
+    "nonzero_sample_targets": 231,
+    "unique_sampled_exposures": 256
+  },
+  "b": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.05641883665848212,
+    "median_relative_quality_error_nonzero": 0.08823164499243508,
+    "within_10_percent_nonzero_fraction": 0.5497382198952879,
+    "zero_quality_agreement_fraction": 0.94140625,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false,
+    "odd_exposures_only": true,
+    "evaluation_scope": "reserved exposures of the same recorded weather, not independent scenarios",
+    "nonzero_sample_targets": 191,
+    "unique_sampled_exposures": 256
+  },
+  "c": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.0509709575880905,
+    "median_relative_quality_error_nonzero": 0.09536937633099699,
+    "within_10_percent_nonzero_fraction": 0.5271317829457365,
+    "zero_quality_agreement_fraction": 0.9609375,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false,
+    "odd_exposures_only": true,
+    "evaluation_scope": "reserved exposures of the same recorded weather, not independent scenarios",
+    "nonzero_sample_targets": 129,
+    "unique_sampled_exposures": 256
+  },
+  "d": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.054547200105249376,
+    "median_relative_quality_error_nonzero": 0.08379615691580289,
+    "within_10_percent_nonzero_fraction": 0.5442477876106194,
+    "zero_quality_agreement_fraction": 0.9765625,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false,
+    "odd_exposures_only": true,
+    "evaluation_scope": "reserved exposures of the same recorded weather, not independent scenarios",
+    "nonzero_sample_targets": 226,
+    "unique_sampled_exposures": 256
+  }
+}

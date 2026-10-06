@@ -1,0 +1,23 @@
+{% extends "admin/_layout.html" %}
+{% set heading = 'Scenarios' %}
+{% block admin %}
+<div class="table-wrap"><table class="table"><thead><tr><th>id</th><th>slug</th><th>name</th><th class="r">nights</th><th class="r">slots</th><th class="r">tiles</th><th>seed</th><th>checksum</th><th>flags</th><th></th></tr></thead><tbody>
+{% for s in rows %}<tr><td class="m">{{ s.id }}</td><td class="m">{{ s.slug }}</td><td>{{ s.name }}<div class="xs text3">{{ s.description }}</div></td><td class="r m">{{ s.n_nights }}</td><td class="r m">{{ s.n_slots }}</td><td class="r m">{{ s.n_tiles }}</td><td class="m">{{ s.seed if s.seed is not none else '—' }}</td><td class="m xs">{{ s.checksum[:12] }}</td>
+  <td><form method="post" action="/admin/scenarios/{{ s.id }}/update" class="actions-inline"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="name" value="{{ s.name }}"><input type="hidden" name="description" value="{{ s.description }}">
+    <label class="check" style="margin:0"><input type="checkbox" name="weather_public" {% if s.weather_public %}checked{% endif %}> weather public</label><label class="check" style="margin:0"><input type="checkbox" name="tiles_public" {% if s.tiles_public %}checked{% endif %}> tiles public</label><label class="check" style="margin:0"><input type="checkbox" name="is_active" {% if s.is_active %}checked{% endif %}> active</label><button class="copy-btn" type="submit">save</button></form></td>
+  <td class="xs"><a class="accent-l" href="/download/scenario/{{ s.slug }}/weather.csv">w</a> · <a class="accent-l" href="/download/scenario/{{ s.slug }}/tiles.csv">t</a> · <a class="accent-l" href="/download/scenario/{{ s.slug }}/score_config.json">c</a></td></tr>{% endfor %}</tbody></table></div>
+<div class="dash-grid mt-6">
+  <form method="post" action="/admin/scenarios/generate" class="panel"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><div class="hd"><h2>Generate (deterministic)</h2></div>
+    <div class="grid-form"><label class="field"><span>slug</span><input type="text" name="slug" required></label><label class="field"><span>name</span><input type="text" name="name"></label>
+      <label class="field"><span>seed</span><input type="number" name="seed" value="1"></label><label class="field"><span>n_nights</span><input type="number" name="n_nights" value="7"></label>
+      <label class="field"><span>slots_per_night</span><input type="number" name="slots_per_night" value="24"></label><label class="field"><span>n_tiles</span><input type="number" name="n_tiles" value="240"></label>
+      <label class="field"><span>first_night (UTC ISO)</span><input type="text" name="first_night" placeholder="2026-10-05T02:00"></label><label class="field full"><span>description</span><input type="text" name="description"></label></div>
+    <label class="check"><input type="checkbox" name="weather_public"> weather public</label><label class="check"><input type="checkbox" name="tiles_public" checked> tiles public</label>
+    <button class="btn primary sm" type="submit">Generate</button></form>
+  <form method="post" action="/admin/scenarios/upload" enctype="multipart/form-data" class="panel"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><div class="hd"><h2>Upload</h2></div>
+    <label class="field"><span>slug</span><input type="text" name="slug" required></label><label class="field"><span>name</span><input type="text" name="name"></label><label class="field"><span>description</span><input type="text" name="description"></label>
+    <label class="field"><span>weather.csv</span><input type="file" name="weather" accept=".csv" required></label><label class="field"><span>tiles.csv</span><input type="file" name="tiles" accept=".csv" required></label><label class="field"><span>score_config.json (optional, default = frozen config)</span><input type="file" name="config" accept=".json"></label>
+    <label class="check"><input type="checkbox" name="weather_public"> weather public</label><label class="check"><input type="checkbox" name="tiles_public" checked> tiles public</label>
+    <button class="btn primary sm" type="submit">Upload</button></form>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- LaunchAgent of the organizer's account (~/Library/LaunchAgents/, installed by
+     setup-vm.sh). Drop the two upstream arguments where GitHub is reachable directly. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>org.agentic-observer.egress-proxy</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/Shared/observer-fallback/egress-proxy.py</string>
+    <string>--listen</string><string>127.0.0.1:18080</string>
+    <string>--upstream</string><string>127.0.0.1:1082</string>
+  </array>
+  <key>StandardErrorPath</key><string>/Users/Shared/observer-fallback/egress-proxy.log</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+</dict>
+</plist>

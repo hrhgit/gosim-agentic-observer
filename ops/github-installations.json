@@ -1,0 +1,100 @@
+{
+  "app_id": 5057707,
+  "app_slug": "agentic-observer-2026-evaluator",
+  "owner": "BH3GEI",
+  "control_repository": "observer-control",
+  "enabled": true,
+  "installations": [
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-1",
+      "organization_id": "333200849",
+      "installation_id": 164336614,
+      "repository_id": "1385068069",
+      "approved_sha": "9284b3ce36075439096996f86ad5a2632c4eecb3"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-2",
+      "organization_id": "333201406",
+      "installation_id": 164336757,
+      "repository_id": "1385080413",
+      "approved_sha": "c51d1062c91446dcde5d532a4938ef60c2963ba5"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-3",
+      "organization_id": "333201712",
+      "installation_id": 164336772,
+      "repository_id": "1385081033",
+      "approved_sha": "004dee6a42b45693361222ba68c107eab7a8bbe3"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-4",
+      "organization_id": "333201861",
+      "installation_id": 164336804,
+      "repository_id": "1385081638",
+      "approved_sha": "447631f6d2bfc57ec0e1186e3d64247adf8e4ece"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-5",
+      "organization_id": "333201967",
+      "installation_id": 164336830,
+      "repository_id": "1385082054",
+      "approved_sha": "93c4a6b9f1c9c9a29238bc1ab6290452c961ed84"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-6",
+      "organization_id": "333202070",
+      "installation_id": 164336849,
+      "repository_id": "1385082742",
+      "approved_sha": "acd86bd197bf9ff74ddf5d76c2f7dd81f9792d5d"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-7",
+      "organization_id": "334568641",
+      "installation_id": 165805332,
+      "repository_id": "1391007433",
+      "approved_sha": "5fec1cdc1ab615f1484ae9cd3499009b8d7c1031"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-8",
+      "organization_id": "334568814",
+      "installation_id": 165805399,
+      "repository_id": "1391007487",
+      "approved_sha": "b32826c67846d8df34cc6753639307486dfd544f"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-9",
+      "organization_id": "334568943",
+      "installation_id": 165805479,
+      "repository_id": "1391007593",
+      "approved_sha": "9b71fadb1c3edf76c065db84995dc1380e6c3efb"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-10",
+      "organization_id": "334569056",
+      "installation_id": 165805548,
+      "repository_id": "1391007651",
+      "approved_sha": "57e7350085990706691f1bd7e87ab0b8ce391516"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-11",
+      "organization_id": "334569211",
+      "installation_id": 165805639,
+      "repository_id": "1391007710",
+      "approved_sha": "79dd13f4678fe921c126c82f9af9d6bb7cb09a69"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-12",
+      "organization_id": "334569349",
+      "installation_id": 165802042,
+      "repository_id": "1391007748",
+      "approved_sha": "cfa3556ce426775a14d41fda9f52025692955038"
+    },
+    {
+      "organization": "AGENTIC-OBSERVER26-runner-13",
+      "organization_id": "336376701",
+      "installation_id": 166758323,
+      "repository_id": "1399205505",
+      "approved_sha": "bf12db274702ff356842f2a6a8b10a4a23510bb0"
+    }
+  ]
+}

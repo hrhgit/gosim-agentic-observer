@@ -1,0 +1,522 @@
+decision_id,slot_id,action,tile_id,program,request_id,reason
+D000001,N20261005-S001,observe,T00042,DARK,,highest public current-snapshot estimate
+D000002,N20261005-S001,observe,T00058,DARK,,highest public current-snapshot estimate
+D000003,N20261005-S002,observe,T00057,DARK,,highest public current-snapshot estimate
+D000004,N20261005-S003,observe,T00049,DARK,,highest public current-snapshot estimate
+D000005,N20261005-S004,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000006,N20261005-S005,observe,T00050,DARK,,highest public current-snapshot estimate
+D000007,N20261005-S006,observe,T00001,DARK,,highest public current-snapshot estimate
+D000008,N20261005-S007,wait,,,,no legal observable candidate can finish in its known window
+D000009,N20261005-S008,observe,T00001,DARK,,highest public current-snapshot estimate
+D000010,N20261005-S009,observe,T00051,DARK,,highest public current-snapshot estimate
+D000011,N20261005-S010,observe,T00056,DARK,,highest public current-snapshot estimate
+D000012,N20261005-S010,observe,T00006,DARK,RQ0001,highest public current-snapshot estimate
+D000013,N20261005-S011,observe,T00055,DARK,,highest public current-snapshot estimate
+D000014,N20261005-S012,observe,T00061,DARK,,highest public current-snapshot estimate
+D000015,N20261005-S012,observe,T00063,DARK,,highest public current-snapshot estimate
+D000016,N20261005-S013,observe,T00005,DARK,,highest public current-snapshot estimate
+D000017,N20261005-S014,wait,,,,no legal observable candidate can finish in its known window
+D000018,N20261005-S015,wait,,,,no legal observable candidate can finish in its known window
+D000019,N20261005-S016,wait,,,,no legal observable candidate can finish in its known window
+D000020,N20261005-S017,wait,,,,no legal observable candidate can finish in its known window
+D000021,N20261005-S018,wait,,,,no legal observable candidate can finish in its known window
+D000022,N20261005-S019,wait,,,,no legal observable candidate can finish in its known window
+D000023,N20261005-S020,wait,,,,no legal observable candidate can finish in its known window
+D000024,N20261005-S021,wait,,,,no legal observable candidate can finish in its known window
+D000025,N20261005-S022,wait,,,,no legal observable candidate can finish in its known window
+D000026,N20261005-S023,wait,,,,no legal observable candidate can finish in its known window
+D000027,N20261005-S024,wait,,,,no legal observable candidate can finish in its known window
+D000028,N20261005-S025,wait,,,,no legal observable candidate can finish in its known window
+D000029,N20261005-S026,wait,,,,no legal observable candidate can finish in its known window
+D000030,N20261005-S027,wait,,,,no legal observable candidate can finish in its known window
+D000031,N20261005-S028,wait,,,,no legal observable candidate can finish in its known window
+D000032,N20261005-S029,wait,,,,no legal observable candidate can finish in its known window
+D000033,N20261005-S030,wait,,,,no legal observable candidate can finish in its known window
+D000034,N20261005-S031,wait,,,,no legal observable candidate can finish in its known window
+D000035,N20261005-S032,wait,,,,no legal observable candidate can finish in its known window
+D000036,N20261005-S033,wait,,,,no legal observable candidate can finish in its known window
+D000037,N20261005-S034,wait,,,,no legal observable candidate can finish in its known window
+D000038,N20261005-S035,wait,,,,no legal observable candidate can finish in its known window
+D000039,N20261005-S036,wait,,,,no legal observable candidate can finish in its known window
+D000040,N20261005-S037,wait,,,,no legal observable candidate can finish in its known window
+D000041,N20261005-S038,wait,,,,no legal observable candidate can finish in its known window
+D000042,N20261005-S039,wait,,,,no legal observable candidate can finish in its known window
+D000043,N20261005-S040,wait,,,,no legal observable candidate can finish in its known window
+D000044,N20261005-S041,wait,,,,no legal observable candidate can finish in its known window
+D000045,N20261005-S042,wait,,,,no legal observable candidate can finish in its known window
+D000046,N20261006-S001,observe,T00039,BRIGHT,,highest public current-snapshot estimate
+D000047,N20261006-S002,observe,T00054,DARK,,highest public current-snapshot estimate
+D000048,N20261006-S003,observe,T00044,BRIGHT,,highest public current-snapshot estimate
+D000049,N20261006-S003,observe,T00046,BRIGHT,,highest public current-snapshot estimate
+D000050,N20261006-S004,observe,T00059,BRIGHT,,highest public current-snapshot estimate
+D000051,N20261006-S005,observe,T00045,BRIGHT,,highest public current-snapshot estimate
+D000052,N20261006-S006,observe,T00052,BRIGHT,,highest public current-snapshot estimate
+D000053,N20261006-S006,observe,T00062,BRIGHT,,highest public current-snapshot estimate
+D000054,N20261006-S008,observe,T00048,BRIGHT,,highest public current-snapshot estimate
+D000055,N20261006-S009,observe,T00053,BRIGHT,,highest public current-snapshot estimate
+D000056,N20261006-S010,observe,T00004,BRIGHT,,highest public current-snapshot estimate
+D000057,N20261006-S011,wait,,,,no legal observable candidate can finish in its known window
+D000058,N20261006-S012,wait,,,,no legal observable candidate can finish in its known window
+D000059,N20261006-S013,wait,,,,no legal observable candidate can finish in its known window
+D000060,N20261006-S014,observe,T00009,BRIGHT,,highest public current-snapshot estimate
+D000061,N20261006-S015,observe,T00008,BRIGHT,,highest public current-snapshot estimate
+D000062,N20261006-S016,observe,T00014,BRIGHT,,highest public current-snapshot estimate
+D000063,N20261006-S017,observe,T00010,BRIGHT,,highest public current-snapshot estimate
+D000064,N20261006-S018,observe,T00011,BRIGHT,,highest public current-snapshot estimate
+D000065,N20261006-S019,observe,T00004,DARK,,highest public current-snapshot estimate
+D000066,N20261006-S020,observe,T00013,BRIGHT,,highest public current-snapshot estimate
+D000067,N20261006-S021,observe,T00015,BRIGHT,,highest public current-snapshot estimate
+D000068,N20261006-S023,observe,T00016,BRIGHT,,highest public current-snapshot estimate
+D000069,N20261006-S023,observe,T00007,DARK,,highest public current-snapshot estimate
+D000070,N20261006-S025,observe,T00003,DARK,,highest public current-snapshot estimate
+D000071,N20261006-S026,observe,T00011,DARK,,highest public current-snapshot estimate
+D000072,N20261006-S026,observe,T00060,BRIGHT,,highest public current-snapshot estimate
+D000073,N20261006-S028,observe,T00017,BRIGHT,,highest public current-snapshot estimate
+D000074,N20261006-S029,observe,T00019,BRIGHT,,highest public current-snapshot estimate
+D000075,N20261006-S031,observe,T00021,BRIGHT,,highest public current-snapshot estimate
+D000076,N20261006-S031,observe,T00016,DARK,,highest public current-snapshot estimate
+D000077,N20261006-S032,observe,T00020,BRIGHT,,highest public current-snapshot estimate
+D000078,N20261006-S033,observe,T00024,BRIGHT,,highest public current-snapshot estimate
+D000079,N20261006-S034,observe,T00023,BRIGHT,,highest public current-snapshot estimate
+D000080,N20261006-S034,observe,T00012,DARK,,highest public current-snapshot estimate
+D000081,N20261006-S036,observe,T00018,BRIGHT,,highest public current-snapshot estimate
+D000082,N20261006-S037,observe,T00022,BRIGHT,,highest public current-snapshot estimate
+D000083,N20261006-S038,observe,T00031,BRIGHT,,highest public current-snapshot estimate
+D000084,N20261006-S039,observe,T00021,BRIGHT,,highest public current-snapshot estimate
+D000085,N20261006-S039,observe,T00014,DARK,,highest public current-snapshot estimate
+D000086,N20261006-S040,observe,T00026,BACKUP,,highest public current-snapshot estimate
+D000087,N20261006-S042,observe,T00030,BACKUP,,highest public current-snapshot estimate
+D000088,N20261006-S042,wait,,,,no legal observable candidate can finish in its known window
+D000089,N20261007-S001,observe,T00043,BACKUP,,highest public current-snapshot estimate
+D000090,N20261007-S001,observe,T00064,BRIGHT,,highest public current-snapshot estimate
+D000091,N20261007-S002,observe,T00045,BRIGHT,,highest public current-snapshot estimate
+D000092,N20261007-S003,observe,T00059,DARK,,highest public current-snapshot estimate
+D000093,N20261007-S004,observe,T00062,DARK,,highest public current-snapshot estimate
+D000094,N20261007-S006,observe,T00064,BRIGHT,,highest public current-snapshot estimate
+D000095,N20261007-S007,observe,T00060,DARK,,highest public current-snapshot estimate
+D000096,N20261007-S008,observe,T00053,DARK,,highest public current-snapshot estimate
+D000097,N20261007-S009,observe,T00059,DARK,,highest public current-snapshot estimate
+D000098,N20261007-S010,observe,T00064,BRIGHT,,highest public current-snapshot estimate
+D000099,N20261007-S012,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000100,N20261007-S012,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000101,N20261007-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000102,N20261007-S015,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000103,N20261007-S015,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000104,N20261007-S016,observe,T00001,DARK,,highest public current-snapshot estimate
+D000105,N20261007-S017,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000106,N20261007-S019,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000107,N20261007-S020,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000108,N20261007-S020,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000109,N20261007-S021,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000110,N20261007-S022,observe,T00009,BRIGHT,,highest public current-snapshot estimate
+D000111,N20261007-S023,observe,T00008,BRIGHT,,highest public current-snapshot estimate
+D000112,N20261007-S024,observe,T00010,BRIGHT,,highest public current-snapshot estimate
+D000113,N20261007-S025,observe,T00013,BRIGHT,,highest public current-snapshot estimate
+D000114,N20261007-S027,observe,T00013,DARK,,highest public current-snapshot estimate
+D000115,N20261007-S028,observe,T00015,BRIGHT,,highest public current-snapshot estimate
+D000116,N20261007-S029,observe,T00010,BRIGHT,,highest public current-snapshot estimate
+D000117,N20261007-S031,observe,T00009,BRIGHT,,highest public current-snapshot estimate
+D000118,N20261007-S032,observe,T00015,DARK,,highest public current-snapshot estimate
+D000119,N20261007-S033,observe,T00010,BRIGHT,,highest public current-snapshot estimate
+D000120,N20261007-S035,observe,T00017,BRIGHT,,highest public current-snapshot estimate
+D000121,N20261007-S036,observe,T00019,BRIGHT,,highest public current-snapshot estimate
+D000122,N20261007-S038,observe,T00024,BRIGHT,,highest public current-snapshot estimate
+D000123,N20261007-S038,observe,T00023,BRIGHT,,highest public current-snapshot estimate
+D000124,N20261007-S039,observe,T00020,DARK,,highest public current-snapshot estimate
+D000125,N20261007-S040,observe,T00027,BACKUP,,highest public current-snapshot estimate
+D000126,N20261007-S041,observe,T00032,BACKUP,,highest public current-snapshot estimate
+D000127,N20261007-S042,wait,,,,no legal observable candidate can finish in its known window
+D000128,N20261008-S001,observe,T00048,BRIGHT,,highest public current-snapshot estimate
+D000129,N20261008-S002,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000130,N20261008-S003,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000131,N20261008-S005,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000132,N20261008-S006,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000133,N20261008-S008,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000134,N20261008-S009,wait,,,,no legal observable candidate can finish in its known window
+D000135,N20261008-S010,wait,,,,no legal observable candidate can finish in its known window
+D000136,N20261008-S011,wait,,,,no legal observable candidate can finish in its known window
+D000137,N20261008-S012,wait,,,,no legal observable candidate can finish in its known window
+D000138,N20261008-S013,wait,,,,no legal observable candidate can finish in its known window
+D000139,N20261008-S014,wait,,,,no legal observable candidate can finish in its known window
+D000140,N20261008-S015,wait,,,,no legal observable candidate can finish in its known window
+D000141,N20261008-S016,wait,,,,no legal observable candidate can finish in its known window
+D000142,N20261008-S017,wait,,,,no legal observable candidate can finish in its known window
+D000143,N20261008-S018,wait,,,,no legal observable candidate can finish in its known window
+D000144,N20261008-S019,wait,,,,no legal observable candidate can finish in its known window
+D000145,N20261008-S020,wait,,,,no legal observable candidate can finish in its known window
+D000146,N20261008-S021,wait,,,,no legal observable candidate can finish in its known window
+D000147,N20261008-S022,wait,,,,no legal observable candidate can finish in its known window
+D000148,N20261008-S023,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000149,N20261008-S024,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000150,N20261008-S026,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000151,N20261008-S027,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000152,N20261008-S029,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000153,N20261008-S030,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000154,N20261008-S032,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000155,N20261008-S033,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000156,N20261008-S035,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000157,N20261008-S036,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000158,N20261008-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000159,N20261008-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000160,N20261008-S039,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000161,N20261008-S040,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000162,N20261008-S040,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000163,N20261008-S041,observe,T00032,BACKUP,,highest public current-snapshot estimate
+D000164,N20261008-S042,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000165,N20261008-S042,wait,,,,no legal observable candidate can finish in its known window
+D000166,N20261009-S001,observe,T00042,BACKUP,,highest public current-snapshot estimate
+D000167,N20261009-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000168,N20261009-S003,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000169,N20261009-S004,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000170,N20261009-S006,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000171,N20261009-S007,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000172,N20261009-S009,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000173,N20261009-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000174,N20261009-S012,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000175,N20261009-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000176,N20261009-S014,wait,,,,no legal observable candidate can finish in its known window
+D000177,N20261009-S015,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000178,N20261009-S016,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000179,N20261009-S018,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000180,N20261009-S019,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000181,N20261009-S021,wait,,,,no legal observable candidate can finish in its known window
+D000182,N20261009-S022,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000183,N20261009-S023,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000184,N20261009-S025,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000185,N20261009-S026,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000186,N20261009-S028,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000187,N20261009-S029,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000188,N20261009-S031,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000189,N20261009-S032,wait,,,,no legal observable candidate can finish in its known window
+D000190,N20261009-S033,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000191,N20261009-S034,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000192,N20261009-S036,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000193,N20261009-S037,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000194,N20261009-S038,observe,T00002,BRIGHT,,highest public current-snapshot estimate
+D000195,N20261009-S038,observe,T00018,BRIGHT,,highest public current-snapshot estimate
+D000196,N20261009-S040,observe,T00018,BRIGHT,,highest public current-snapshot estimate
+D000197,N20261009-S041,observe,T00032,BACKUP,,highest public current-snapshot estimate
+D000198,N20261009-S042,wait,,,,no legal observable candidate can finish in its known window
+D000199,N20261010-S001,observe,T00048,BRIGHT,,highest public current-snapshot estimate
+D000200,N20261010-S002,observe,T00052,BRIGHT,,highest public current-snapshot estimate
+D000201,N20261010-S003,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000202,N20261010-S004,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000203,N20261010-S005,wait,,,,no legal observable candidate can finish in its known window
+D000204,N20261010-S006,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000205,N20261010-S007,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000206,N20261010-S009,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000207,N20261010-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000208,N20261010-S012,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000209,N20261010-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000210,N20261010-S015,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000211,N20261010-S016,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000212,N20261010-S017,wait,,,,no legal observable candidate can finish in its known window
+D000213,N20261010-S018,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000214,N20261010-S019,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000215,N20261010-S021,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000216,N20261010-S022,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000217,N20261010-S024,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000218,N20261010-S025,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000219,N20261010-S027,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000220,N20261010-S028,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000221,N20261010-S030,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000222,N20261010-S031,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000223,N20261010-S033,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000224,N20261010-S034,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000225,N20261010-S036,wait,,,,no legal observable candidate can finish in its known window
+D000226,N20261010-S037,wait,,,,no legal observable candidate can finish in its known window
+D000227,N20261010-S038,wait,,,,no legal observable candidate can finish in its known window
+D000228,N20261010-S039,wait,,,,no legal observable candidate can finish in its known window
+D000229,N20261010-S040,wait,,,,no legal observable candidate can finish in its known window
+D000230,N20261010-S041,wait,,,,no legal observable candidate can finish in its known window
+D000231,N20261010-S042,wait,,,,no legal observable candidate can finish in its known window
+D000232,N20261011-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000233,N20261011-S002,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000234,N20261011-S004,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000235,N20261011-S005,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000236,N20261011-S007,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000237,N20261011-S008,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000238,N20261011-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000239,N20261011-S011,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000240,N20261011-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000241,N20261011-S014,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000242,N20261011-S016,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000243,N20261011-S017,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000244,N20261011-S019,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000245,N20261011-S020,wait,,,,no legal observable candidate can finish in its known window
+D000246,N20261011-S021,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000247,N20261011-S022,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000248,N20261011-S024,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000249,N20261011-S025,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000250,N20261011-S027,wait,,,,no legal observable candidate can finish in its known window
+D000251,N20261011-S028,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000252,N20261011-S029,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000253,N20261011-S031,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000254,N20261011-S032,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000255,N20261011-S034,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000256,N20261011-S035,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000257,N20261011-S037,wait,,,,no legal observable candidate can finish in its known window
+D000258,N20261011-S038,wait,,,,no legal observable candidate can finish in its known window
+D000259,N20261011-S039,wait,,,,no legal observable candidate can finish in its known window
+D000260,N20261011-S040,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000261,N20261011-S040,observe,T00028,BACKUP,,highest public current-snapshot estimate
+D000262,N20261011-S042,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000263,N20261011-S042,wait,,,,no legal observable candidate can finish in its known window
+D000264,N20261012-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000265,N20261012-S002,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000266,N20261012-S004,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000267,N20261012-S005,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000268,N20261012-S007,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000269,N20261012-S008,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000270,N20261012-S010,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000271,N20261012-S011,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000272,N20261012-S013,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000273,N20261012-S014,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000274,N20261012-S016,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000275,N20261012-S017,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000276,N20261012-S019,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000277,N20261012-S020,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000278,N20261012-S022,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000279,N20261012-S023,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000280,N20261012-S025,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000281,N20261012-S026,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000282,N20261012-S028,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000283,N20261012-S029,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000284,N20261012-S031,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000285,N20261012-S032,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000286,N20261012-S034,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000287,N20261012-S035,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000288,N20261012-S037,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000289,N20261012-S037,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000290,N20261012-S038,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000291,N20261012-S039,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000292,N20261012-S039,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000293,N20261012-S040,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000294,N20261012-S041,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000295,N20261012-S041,observe,T00028,BACKUP,,highest public current-snapshot estimate
+D000296,N20261013-S001,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000297,N20261013-S002,observe,T00002,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000298,N20261013-S003,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000299,N20261013-S004,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000300,N20261013-S006,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000301,N20261013-S007,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000302,N20261013-S009,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000303,N20261013-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000304,N20261013-S012,wait,,,,no legal observable candidate can finish in its known window
+D000305,N20261013-S013,wait,,,,no legal observable candidate can finish in its known window
+D000306,N20261013-S014,wait,,,,no legal observable candidate can finish in its known window
+D000307,N20261013-S015,wait,,,,no legal observable candidate can finish in its known window
+D000308,N20261013-S016,wait,,,,no legal observable candidate can finish in its known window
+D000309,N20261013-S017,wait,,,,no legal observable candidate can finish in its known window
+D000310,N20261013-S018,wait,,,,no legal observable candidate can finish in its known window
+D000311,N20261013-S019,wait,,,,no legal observable candidate can finish in its known window
+D000312,N20261013-S020,wait,,,,no legal observable candidate can finish in its known window
+D000313,N20261013-S021,wait,,,,no legal observable candidate can finish in its known window
+D000314,N20261013-S022,wait,,,,no legal observable candidate can finish in its known window
+D000315,N20261013-S023,wait,,,,no legal observable candidate can finish in its known window
+D000316,N20261013-S024,wait,,,,no legal observable candidate can finish in its known window
+D000317,N20261013-S025,wait,,,,no legal observable candidate can finish in its known window
+D000318,N20261013-S026,wait,,,,no legal observable candidate can finish in its known window
+D000319,N20261013-S027,wait,,,,no legal observable candidate can finish in its known window
+D000320,N20261013-S028,wait,,,,no legal observable candidate can finish in its known window
+D000321,N20261013-S029,wait,,,,no legal observable candidate can finish in its known window
+D000322,N20261013-S030,wait,,,,no legal observable candidate can finish in its known window
+D000323,N20261013-S031,wait,,,,no legal observable candidate can finish in its known window
+D000324,N20261013-S032,wait,,,,no legal observable candidate can finish in its known window
+D000325,N20261013-S033,wait,,,,no legal observable candidate can finish in its known window
+D000326,N20261013-S034,wait,,,,no legal observable candidate can finish in its known window
+D000327,N20261013-S035,wait,,,,no legal observable candidate can finish in its known window
+D000328,N20261013-S036,wait,,,,no legal observable candidate can finish in its known window
+D000329,N20261013-S037,wait,,,,no legal observable candidate can finish in its known window
+D000330,N20261013-S038,wait,,,,no legal observable candidate can finish in its known window
+D000331,N20261013-S039,wait,,,,no legal observable candidate can finish in its known window
+D000332,N20261013-S040,wait,,,,no legal observable candidate can finish in its known window
+D000333,N20261013-S041,wait,,,,no legal observable candidate can finish in its known window
+D000334,N20261013-S042,wait,,,,no legal observable candidate can finish in its known window
+D000335,N20261014-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000336,N20261014-S002,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000337,N20261014-S004,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000338,N20261014-S005,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000339,N20261014-S007,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000340,N20261014-S008,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000341,N20261014-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000342,N20261014-S011,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000343,N20261014-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000344,N20261014-S014,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000345,N20261014-S016,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000346,N20261014-S017,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000347,N20261014-S019,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000348,N20261014-S020,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000349,N20261014-S022,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000350,N20261014-S023,wait,,,,no legal observable candidate can finish in its known window
+D000351,N20261014-S024,wait,,,,no legal observable candidate can finish in its known window
+D000352,N20261014-S025,wait,,,,no legal observable candidate can finish in its known window
+D000353,N20261014-S026,wait,,,,no legal observable candidate can finish in its known window
+D000354,N20261014-S027,wait,,,,no legal observable candidate can finish in its known window
+D000355,N20261014-S028,wait,,,,no legal observable candidate can finish in its known window
+D000356,N20261014-S029,wait,,,,no legal observable candidate can finish in its known window
+D000357,N20261014-S030,wait,,,,no legal observable candidate can finish in its known window
+D000358,N20261014-S031,wait,,,,no legal observable candidate can finish in its known window
+D000359,N20261014-S032,wait,,,,no legal observable candidate can finish in its known window
+D000360,N20261014-S033,wait,,,,no legal observable candidate can finish in its known window
+D000361,N20261014-S034,wait,,,,no legal observable candidate can finish in its known window
+D000362,N20261014-S035,wait,,,,no legal observable candidate can finish in its known window
+D000363,N20261014-S036,wait,,,,no legal observable candidate can finish in its known window
+D000364,N20261014-S037,wait,,,,no legal observable candidate can finish in its known window
+D000365,N20261014-S038,wait,,,,no legal observable candidate can finish in its known window
+D000366,N20261014-S039,wait,,,,no legal observable candidate can finish in its known window
+D000367,N20261014-S040,wait,,,,no legal observable candidate can finish in its known window
+D000368,N20261014-S041,wait,,,,no legal observable candidate can finish in its known window
+D000369,N20261014-S042,wait,,,,no legal observable candidate can finish in its known window
+D000370,N20261015-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000371,N20261015-S002,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000372,N20261015-S004,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000373,N20261015-S005,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000374,N20261015-S007,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000375,N20261015-S008,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000376,N20261015-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000377,N20261015-S011,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000378,N20261015-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000379,N20261015-S014,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000380,N20261015-S016,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000381,N20261015-S017,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000382,N20261015-S019,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000383,N20261015-S020,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000384,N20261015-S022,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000385,N20261015-S023,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000386,N20261015-S025,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000387,N20261015-S026,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000388,N20261015-S028,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000389,N20261015-S029,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000390,N20261015-S031,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000391,N20261015-S032,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000392,N20261015-S034,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000393,N20261015-S035,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000394,N20261015-S036,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000395,N20261015-S036,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000396,N20261015-S037,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000397,N20261015-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000398,N20261015-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000399,N20261015-S039,observe,T00028,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000400,N20261015-S040,observe,T00028,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000401,N20261015-S042,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000402,N20261015-S042,wait,,,,no legal observable candidate can finish in its known window
+D000403,N20261016-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000404,N20261016-S002,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000405,N20261016-S004,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000406,N20261016-S005,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000407,N20261016-S007,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000408,N20261016-S008,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000409,N20261016-S010,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000410,N20261016-S011,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000411,N20261016-S013,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000412,N20261016-S014,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000413,N20261016-S016,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000414,N20261016-S017,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000415,N20261016-S019,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000416,N20261016-S020,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000417,N20261016-S022,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000418,N20261016-S023,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000419,N20261016-S025,observe,T00001,BRIGHT,,repeat observation to confirm an anomalous realized-score deviation
+D000420,N20261016-S026,observe,T00001,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000421,N20261016-S028,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000422,N20261016-S029,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000423,N20261016-S031,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000424,N20261016-S032,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000425,N20261016-S034,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000426,N20261016-S035,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000427,N20261016-S036,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000428,N20261016-S036,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000429,N20261016-S037,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000430,N20261016-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000431,N20261016-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000432,N20261016-S039,observe,T00028,BACKUP,,repeat observation to confirm an anomalous realized-score deviation
+D000433,N20261016-S040,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000434,N20261016-S041,observe,T00025,BACKUP,,highest public current-snapshot estimate
+D000435,N20261016-S042,wait,,,,no legal observable candidate can finish in its known window
+D000436,N20261017-S001,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000437,N20261017-S002,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000438,N20261017-S004,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000439,N20261017-S005,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000440,N20261017-S007,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000441,N20261017-S008,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000442,N20261017-S010,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000443,N20261017-S011,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000444,N20261017-S013,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000445,N20261017-S014,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000446,N20261017-S016,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000447,N20261017-S017,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000448,N20261017-S019,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000449,N20261017-S020,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000450,N20261017-S022,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000451,N20261017-S023,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000452,N20261017-S025,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000453,N20261017-S026,observe,T00001,BRIGHT,,highest public current-snapshot estimate
+D000454,N20261017-S028,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000455,N20261017-S029,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000456,N20261017-S031,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000457,N20261017-S032,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000458,N20261017-S034,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000459,N20261017-S035,observe,T00001,BACKUP,,highest public current-snapshot estimate
+D000460,N20261017-S037,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000461,N20261017-S037,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000462,N20261017-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000463,N20261017-S039,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000464,N20261017-S039,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000465,N20261017-S040,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000466,N20261017-S041,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000467,N20261017-S041,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000468,N20261017-S042,observe,T00025,BACKUP,,highest public current-snapshot estimate
+D000469,N20261017-S043,wait,,,,no legal observable candidate can finish in its known window
+D000470,N20261018-S001,observe,T00042,BACKUP,,highest public current-snapshot estimate
+D000471,N20261018-S001,observe,T00042,BACKUP,,highest public current-snapshot estimate
+D000472,N20261018-S002,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000473,N20261018-S002,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000474,N20261018-S003,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000475,N20261018-S004,wait,,,,no legal observable candidate can finish in its known window
+D000476,N20261018-S005,wait,,,,no legal observable candidate can finish in its known window
+D000477,N20261018-S006,wait,,,,no legal observable candidate can finish in its known window
+D000478,N20261018-S007,wait,,,,no legal observable candidate can finish in its known window
+D000479,N20261018-S008,wait,,,,no legal observable candidate can finish in its known window
+D000480,N20261018-S009,wait,,,,no legal observable candidate can finish in its known window
+D000481,N20261018-S010,wait,,,,no legal observable candidate can finish in its known window
+D000482,N20261018-S011,wait,,,,no legal observable candidate can finish in its known window
+D000483,N20261018-S012,wait,,,,no legal observable candidate can finish in its known window
+D000484,N20261018-S013,wait,,,,no legal observable candidate can finish in its known window
+D000485,N20261018-S014,wait,,,,no legal observable candidate can finish in its known window
+D000486,N20261018-S015,wait,,,,no legal observable candidate can finish in its known window
+D000487,N20261018-S016,wait,,,,no legal observable candidate can finish in its known window
+D000488,N20261018-S017,wait,,,,no legal observable candidate can finish in its known window
+D000489,N20261018-S018,wait,,,,no legal observable candidate can finish in its known window
+D000490,N20261018-S019,wait,,,,no legal observable candidate can finish in its known window
+D000491,N20261018-S020,wait,,,,no legal observable candidate can finish in its known window
+D000492,N20261018-S021,wait,,,,no legal observable candidate can finish in its known window
+D000493,N20261018-S022,wait,,,,no legal observable candidate can finish in its known window
+D000494,N20261018-S023,wait,,,,no legal observable candidate can finish in its known window
+D000495,N20261018-S024,wait,,,,no legal observable candidate can finish in its known window
+D000496,N20261018-S025,wait,,,,no legal observable candidate can finish in its known window
+D000497,N20261018-S026,wait,,,,no legal observable candidate can finish in its known window
+D000498,N20261018-S027,wait,,,,no legal observable candidate can finish in its known window
+D000499,N20261018-S028,wait,,,,no legal observable candidate can finish in its known window
+D000500,N20261018-S029,wait,,,,no legal observable candidate can finish in its known window
+D000501,N20261018-S030,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000502,N20261018-S030,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000503,N20261018-S031,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000504,N20261018-S032,wait,,,,no legal observable candidate can finish in its known window
+D000505,N20261018-S033,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000506,N20261018-S033,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000507,N20261018-S034,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000508,N20261018-S035,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000509,N20261018-S035,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000510,N20261018-S036,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000511,N20261018-S037,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000512,N20261018-S037,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000513,N20261018-S038,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000514,N20261018-S039,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000515,N20261018-S039,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000516,N20261018-S040,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000517,N20261018-S041,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000518,N20261018-S041,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000519,N20261018-S042,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000520,N20261018-S043,observe,T00002,BACKUP,,highest public current-snapshot estimate
+D000521,N20261018-S043,wait,,,,no legal observable candidate can finish in its known window

@@ -1,0 +1,15 @@
+{
+  "schema_version": "observer-project-v1",
+  "protocol": "jsonl-v4",
+  "image": "node:20-slim",
+  "build": [
+    ["npm", "ci", "--include=dev"],
+    ["npm", "run", "build"]
+  ],
+  "run": ["node", "dist/index.js"],
+  "working_directory": ".",
+  "environment": {
+    "NPM_CONFIG_CACHE": "/workspace/.npm-cache",
+    "NPM_CONFIG_UPDATE_NOTIFIER": "false"
+  }
+}

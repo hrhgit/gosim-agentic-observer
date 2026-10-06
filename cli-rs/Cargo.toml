@@ -1,0 +1,19 @@
+[package]
+name = "survey26"
+version = "1.6.0"
+edition = "2021"
+description = "Official command-line tool of the GOSIM 2026 Agentic Observer Hackathon (Rust build of cli/survey26.py)"
+license = "CC-BY-NC-4.0"
+publish = false
+
+[dependencies]
+ureq = { version = "2.12", default-features = false, features = ["tls"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

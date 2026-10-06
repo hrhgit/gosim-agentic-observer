@@ -1,0 +1,8 @@
+event_id,event_type,actual_start_utc,actual_end_utc,scope_type,azimuth_start_deg,azimuth_end_deg,min_altitude_deg,max_altitude_deg,magnitude,severity,force_close,zero_score,seeing_multiplier,transparency_multiplier,sky_quality_multiplier,instrument_efficiency_multiplier
+V4EV0004,terrain_obstruction,2026-10-02T00:00:00Z,2027-02-01T08:45:00Z,HORIZON_SECTOR,15.883169,50.134721,0.000000,33.023308,,1.000000,false,true,1.000000,1.000000,1.000000,1.000000
+V4EV0005,instrument_fault,2026-10-25T01:30:00Z,2026-11-23T03:30:00Z,ALL,,,,,,1.000000,false,false,1.000000,1.000000,1.000000,0.529294
+V4EV0002,cloudy,2026-11-08T04:00:00Z,2026-11-08T06:15:00Z,ALL,,,,,,0.942316,false,false,1.235579,0.575958,0.670189,1.000000
+V4EV0006,instrument_fault,2026-11-23T03:30:00Z,2027-01-04T04:15:00Z,ALL,,,,,,1.000000,false,false,1.000000,1.000000,1.000000,0.416309
+V4EV0001,rainy,2026-11-28T01:00:00Z,2026-11-28T03:45:00Z,ALL,,,,,,0.634222,true,false,1.507378,0.524333,0.587756,1.000000
+V4EV0003,cloudy,2026-12-22T01:45:00Z,2026-12-22T06:15:00Z,ALL,,,,,,0.555052,false,false,1.138763,0.750227,0.805732,1.000000
+V4EV0007,instrument_fault,2027-01-04T04:15:00Z,2027-02-01T08:45:00Z,ALL,,,,,,1.000000,false,false,1.000000,1.000000,1.000000,0.439582

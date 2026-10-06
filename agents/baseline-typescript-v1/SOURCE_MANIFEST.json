@@ -1,0 +1,42 @@
+{
+  "python_project": "../claude-baseline-v1",
+  "strategy_commit": "2b5ae76",
+  "current_source_commit": "3b92d72878cbd50c71986679d5767471b83312a2",
+  "note": "Core modules match v1.0. agent.py also contains the later full-input logging addition. No Python source was modified by this migration.",
+  "node_version": "v22.23.3",
+  "python_version": "3.12",
+  "files": {
+    "agent/agent.py": {
+      "sha256": "2000bf97e5250b9d3954aa08f625b50d4e2c853d6904d3c9da5437f4f5fc8ce7",
+      "bytes": 21859
+    },
+    "agent/core/__init__.py": {
+      "sha256": "d1eb319c7de4a1e96f408f1f3f0528321508587de07701c9caa3ccb9889e7b6e",
+      "bytes": 59
+    },
+    "agent/core/astro.py": {
+      "sha256": "f6f66966a9fec7a81343af4fb075ba2c38210f6c7d09d53c4e889975b652dc1f",
+      "bytes": 7417
+    },
+    "agent/core/catalog.py": {
+      "sha256": "187f1117263fd76e012fa2e30995cc7f8625f9105549cedb5d5069c9bc8bca5c",
+      "bytes": 10195
+    },
+    "agent/core/conditions.py": {
+      "sha256": "675e3db6e7284bb181560c6a9d98c805685d27d096482971fefef2e57669eaed",
+      "bytes": 40167
+    },
+    "agent/core/planner.py": {
+      "sha256": "e23160178ac19d12fac33b56f36fb26400409b2dcc94a872796655a6486d68b0",
+      "bytes": 27822
+    },
+    "agent/core/pointing.py": {
+      "sha256": "1c7e7c3badce0702c7625fdb06258076438b72149300936b0a824d637465c598",
+      "bytes": 7661
+    },
+    "agent/core/state.py": {
+      "sha256": "2e8631d34fb96a0501ca442ba8a6194cf9e5a9f38fb6062900d9302afb25a1c1",
+      "bytes": 15701
+    }
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "initialize": {
+    "protocol_version": "participant-agent-protocol-v2",
+    "message_type": "initialize",
+    "payload": {
+      "schema_version": "initial-publication-v2",
+      "calendar": {
+        "first_night": "2026-09-07",
+        "last_night": "2026-09-20",
+        "night_count": 14,
+        "slot_count": 537,
+        "slot_duration_seconds": 900
+      },
+      "site": {
+        "latitude_deg": 31.9634,
+        "longitude_deg": -111.599,
+        "utc_offset_hours": -7.0,
+        "sun_altitude_limit_deg": -12.0
+      },
+      "tile_catalog": {
+        "tile_count": 64,
+        "required_tile_ids": [
+          "T00001",
+          "T00002",
+          "T00009",
+          "T00010",
+          "T00017",
+          "T00018",
+          "T00025",
+          "T00026",
+          "T00033",
+          "T00034",
+          "T00041",
+          "T00042",
+          "T00049",
+          "T00050",
+          "T00057",
+          "T00058"
+        ],
+        "region_ids": [
+          "R00",
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R07"
+        ],
+        "tiles": [
+          {
+            "tile_id": "T00001",
+            "ra_deg": "37.505464",
+            "dec_deg": "19.015311",
+            "nominal_exptime_seconds": 450,
+            "region_id": "R00",
+            "scheduling_class": "REQUIRED",
+            "available_from_utc": "2026-09-08T02:45:00Z",
+            "available_until_utc": "2026-09-21T12:15:00Z",
+            "n_lrg": 49,
+            "n_elg": 85,
+            "n_qso": 21,
+            "n_bgs": 52,
+            "tile_science_value": 193.1
+          },
+          {
+            "tile_id": "T00002",
+            "ra_deg": "27.326650",
+            "dec_deg": "16.817084",
+            "nominal_exptime_seconds": 900,
+            "region_id": "R00",
+            "scheduling_class": "REQUIRED",
+            "available_from_utc": "2026-09-08T02:45:00Z",
+            "available_until_utc": "2026-09-21T12:15:00Z",
+            "n_lrg": 80,
+            "n_elg": 108,
+            "n_qso": 16,
+            "n_bgs": 73,
+            "tile_science_value": 248.05
+          },
+          "… 62 more tiles"
+        ]
+      },
+      "target_catalog": [
+        {
+          "target_id": "TG00000001",
+          "tile_id": "T00001",
+          "target_class": "LRG",
+          "feature_flux": "0.40507229",
+          "redshift": "0.369563",
+          "science_weight": "1.0000"
+        },
+        {
+          "target_id": "TG00000002",
+          "tile_id": "T00001",
+          "target_class": "LRG",
+          "feature_flux": "0.36471297",
+          "redshift": "0.610182",
+          "science_weight": "1.0000"
+        },
+        "… 15973 more targets"
+      ],
+      "scoring_contract": {
+        "score_config": {
+          "schema_version": "challenge-score-v3",
+          "quality_thresholds": {
+            "dark": 0.65,
+            "bright": 0.4
+          },
+          "program_bonus": {
+            "DARK": 0.25,
+            "BRIGHT": 0.15,
+            "BACKUP": 0.08
+          },
+          "penalties": {
+            "unsafe_observation": 2000.0,
+            "invalid_action": 100.0,
+            "avoidable_wait_per_second": 0.001,
+            "required_miss": 1000.0,
+            "flexible_shortfall_per_tile": 100.0
+          },
+          "flexible_quota_per_region": 4,
+          "one_ordinary_credit_per_tile": true,
+          "interrupted_exposure_science_score": 0.0,
+          "coefficient_status": "provisional organizer calibration values"
+        },
+        "weather_score_interface": {
+          "airmass_exponent": 1.0,
+          "maximum_weather_quality": 3.0,
+          "formula": "H(is_observable) * instrument_efficiency * transparency * sky_quality / (seeing_arcsec * airmass)"
+        },
+        "lunar_model": {
+          "angular_decay_scale_deg": 35.0,
+          "altitude_exponent": 1.0,
+          "maximum_penalty": 0.75
+        },
+        "preview_semantics": "Current-snapshot estimates use the official public formula but cannot know unreleased future slot weather. Authoritative scores are computed by segmented replay."
+      },
+      "global_wallclock_seconds": 7200.0
+    }
+  },
+  "decision_request": {
+    "protocol_version": "participant-agent-protocol-v2",
+    "message_type": "decision_request",
+    "decision_sequence": 1,
+    "payload": {
+      "schema_version": "decision-snapshot-v3",
+      "decision_sequence": 1,
+      "cursor": {
+        "slot_id": "N20260907-S001",
+        "night_id": "N20260907",
+        "timestamp_utc": "2026-09-08T02:45:00Z",
+        "slot_offset_seconds": 0
+      },
+      "current_site_weather": {
+        "slot_id": "N20260907-S001",
+        "night_id": "N20260907",
+        "timestamp_utc": "2026-09-08T02:45:00Z",
+        "duration_seconds": 900,
+        "is_observable": true,
+        "seeing_arcsec": 1.087478,
+        "transparency": 0.920898,
+        "sky_quality": 0.91957,
+        "tile_id": null,
+        "active_event_ids": []
+      },
+      "tile_last_finished": null,
+      "candidate_tiles": [
+        {
+          "tile_id": "T00037",
+          "region_id": "R04",
+          "scheduling_class": "FLEXIBLE",
+          "nominal_exptime_seconds": 450,
+          "tile_science_value": 210.45,
+          "window_start_utc": "2026-09-08T02:45:00Z",
+          "window_end_utc": "2026-09-08T04:45:00Z",
+          "geometry": {
+            "tile_id": "T00037",
+            "timestamp_utc": "2026-09-08T02:45:00Z",
+            "altitude_deg": 45.8733054998371,
+            "azimuth_deg": 319.79033872911026,
+            "hour_angle_deg": 53.923032732149665,
+            "airmass": 1.3920152232601553,
+            "moon_separation_deg": 74.50456148004182,
+            "lunar_quality_factor": 1.0
+          },
+          "effective_weather": {
+            "slot_id": "N20260907-S001",
+            "night_id": "N20260907",
+            "timestamp_utc": "2026-09-08T02:45:00Z",
+            "duration_seconds": 900,
+            "is_observable": true,
+            "seeing_arcsec": 1.087478,
+            "transparency": 0.920898,
+            "sky_quality": 0.91957,
+            "tile_id": "T00037",
+            "active_event_ids": []
+          },
+          "already_completed": false
+        },
+        {
+          "tile_id": "T00038",
+          "region_id": "R04",
+          "scheduling_class": "FLEXIBLE",
+          "nominal_exptime_seconds": 600,
+          "tile_science_value": 217.65,
+          "window_start_utc": "2026-09-08T02:45:00Z",
+          "window_end_utc": "2026-09-08T04:45:00Z",
+          "geometry": {
+            "tile_id": "T00038",
+            "timestamp_utc": "2026-09-08T02:45:00Z",
+            "altitude_deg": 42.506859299706946,
+            "azimuth_deg": 329.50364855454137,
+            "hour_angle_deg": 57.649377732149674,
+            "airmass": 1.4784964055806669,
+            "moon_separation_deg": 71.19508419013151,
+            "lunar_quality_factor": 1.0
+          },
+          "effective_weather": {
+            "slot_id": "N20260907-S001",
+            "night_id": "N20260907",
+            "timestamp_utc": "2026-09-08T02:45:00Z",
+            "duration_seconds": 900,
+            "is_observable": true,
+            "seeing_arcsec": 1.087478,
+            "transparency": 0.920898,
+            "sky_quality": 0.91957,
+            "tile_id": "T00038",
+            "active_event_ids": []
+          },
+          "already_completed": false
+        },
+        "… 22 more candidates"
+      ],
+      "active_requests": [],
+      "night_start": {
+        "night": {
+          "night_id": "N20260907",
+          "night_date": "2026-09-07",
+          "solar_dusk_utc": "2026-09-08T02:36:09Z",
+          "solar_dawn_utc": "2026-09-08T12:12:31Z",
+          "observing_start_utc": "2026-09-08T02:45:00Z",
+          "observing_end_utc": "2026-09-08T12:00:00Z",
+          "night_seconds": 33300,
+          "slot_count": 37
+        },
+        "tile_windows": [
+          {
+            "window_id": "2026-09-07_T00001_W01",
+            "night_id": "N20260907",
+            "night_date": "2026-09-07",
+            "tile_id": "T00001",
+            "window_start_utc": "2026-09-08T06:30:00Z",
+            "window_end_utc": "2026-09-08T12:00:00Z",
+            "window_seconds": 19800,
+            "best_time_utc": "2026-09-08T10:52:30Z",
+            "best_airmass": 1.026305,
+            "mean_airmass": 1.214035,
+            "mean_lunar_quality_factor": 0.999792,
+            "minimum_lunar_quality_factor": 0.998683,
+            "region_id": "R00",
+            "scheduling_class": "REQUIRED",
+            "nominal_exptime_seconds": 450,
+            "available_until_utc": "2026-09-21T12:15:00Z"
+          },
+          {
+            "window_id": "2026-09-07_T00002_W01",
+            "night_id": "N20260907",
+            "night_date": "2026-09-07",
+            "tile_id": "T00002",
+            "window_start_utc": "2026-09-08T05:45:00Z",
+            "window_end_utc": "2026-09-08T12:00:00Z",
+            "window_seconds": 22500,
+            "best_time_utc": "2026-09-08T10:07:30Z",
+            "best_airmass": 1.035903,
+            "mean_airmass": 1.2283,
+            "mean_lunar_quality_factor": 0.999862,
+            "minimum_lunar_quality_factor": 0.999005,
+            "region_id": "R00",
+            "scheduling_class": "REQUIRED",
+            "nominal_exptime_seconds": 900,
+            "available_until_utc": "2026-09-21T12:15:00Z"
+          },
+          "… 44 more windows"
+        ]
+      },
+      "weekly": {
+        "issued_at_utc": "2026-09-08T02:45:00Z",
+        "weather_forecast": [
+          {
+            "forecast_id": "FC000001",
+            "event_id": "EV0001",
+            "revision": 1,
+            "issued_at_utc": "2026-09-08T02:45:00Z",
+            "condition": "rainy",
+            "predicted_start_utc": "2026-09-08T03:00:00Z",
+            "predicted_end_utc": "2026-09-08T10:30:00Z",
+            "spatial_scope_type": "ALL",
+            "spatial_scope_payload": "{}",
+            "severity": 1.0,
+            "probability": 0.97381,
+            "start_uncertainty_seconds": 900,
+            "end_uncertainty_seconds": 900
+          },
+          {
+            "forecast_id": "FC000012",
+            "event_id": "EV0025",
+            "revision": 1,
+            "issued_at_utc": "2026-09-08T02:45:00Z",
+            "condition": "cold_wave",
+            "predicted_start_utc": "2026-09-08T10:30:00Z",
+            "predicted_end_utc": "2026-09-09T03:00:00Z",
+            "spatial_scope_type": "ALL",
+            "spatial_scope_payload": "{}",
+            "severity": 1.0,
+            "probability": 0.913722,
+            "start_uncertainty_seconds": 1800,
+            "end_uncertainty_seconds": 1800
+          },
+          "… 11 more weather_forecast"
+        ],
+        "tile_windows": [
+          {
+            "window_id": "2026-09-07_T00001_W01",
+            "night_id": "N20260907",
+            "night_date": "2026-09-07",
+            "tile_id": "T00001",
+            "window_start_utc": "2026-09-08T06:30:00Z",
+            "window_end_utc": "2026-09-08T12:00:00Z",
+            "window_seconds": 19800,
+            "best_time_utc": "2026-09-08T10:52:30Z",
+            "best_airmass": 1.026305,
+            "mean_airmass": 1.214035,
+            "mean_lunar_quality_factor": 0.999792,
+            "minimum_lunar_quality_factor": 0.998683,
+            "region_id": "R00",
+            "scheduling_class": "REQUIRED",
+            "nominal_exptime_seconds": 450,
+            "available_until_utc": "2026-09-21T12:15:00Z"
+          },
+          {
+            "window_id": "2026-09-07_T00002_W01",
+            "night_id": "N20260907",
+            "night_date": "2026-09-07",
+            "tile_id": "T00002",
+            "window_start_utc": "2026-09-08T05:45:00Z",
+            "window_end_utc": "2026-09-08T12:00:00Z",
+            "window_seconds": 22500,
+            "best_time_utc": "2026-09-08T10:07:30Z",
+            "best_airmass": 1.035903,
+            "mean_airmass": 1.2283,
+            "mean_lunar_quality_factor": 0.999862,
+            "minimum_lunar_quality_factor": 0.999005,
+            "region_id": "R00",
+            "scheduling_class": "REQUIRED",
+            "nominal_exptime_seconds": 900,
+            "available_until_utc": "2026-09-21T12:15:00Z"
+          },
+          "… 326 more tile_windows"
+        ],
+        "observation_requests": []
+      },
+      "progress": {
+        "completed_tile_ids": [],
+        "flexible_completed_by_region": {}
+      }
+    }
+  },
+  "decision_response_observe": {
+    "protocol_version": "participant-agent-protocol-v2",
+    "message_type": "decision_response",
+    "decision_sequence": 1,
+    "action": "observe",
+    "tile_id": "T00037",
+    "program": "DARK",
+    "request_id": "",
+    "reason": "highest estimated gain per second among listed candidates",
+    "decision_source": "deterministic"
+  },
+  "decision_response_wait": {
+    "protocol_version": "participant-agent-protocol-v2",
+    "message_type": "decision_response",
+    "decision_sequence": 1,
+    "action": "wait",
+    "tile_id": "",
+    "program": "",
+    "request_id": "",
+    "reason": "no completable candidate in this slot",
+    "decision_source": "deterministic"
+  }
+}

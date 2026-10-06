@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ t('leaderboard.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<div class="wrap page-head"><span class="kicker">{{ t('leaderboard.kicker') }}</span><h1 class="mt-4">{{ t('leaderboard.title') }}</h1><p class="lede">{{ t('leaderboard.intro') }}</p></div>
+<section class="section tight"><div class="wrap">
+  {% if phases_all %}
+  <div class="tabs">{% for p in phases_all %}<a href="/leaderboard/{{ p.slug }}" class="{{ 'active' if phase and p.id == phase.id else '' }}">{{ pick(p.name_en, p.name_zh) }} · {{ t('leaderboard.status.' + p.status) }}</a>{% endfor %}</div>
+  {% endif %}
+  {% if phase %}
+  <div class="grid grid-2 mt-6">
+    <div>
+      <p class="text2">{{ pick(phase.description_en, phase.description_zh) }}</p>
+      <dl class="kv mt-4">
+        <dt>{{ t('common.status') }}</dt><dd><span class="pill {{ phase.status }}">{{ t('leaderboard.status.' + phase.status) }}</span> <span class="pill">{{ t('leaderboard.' + phase.leaderboard_mode) if phase.leaderboard_mode in ('live','frozen','published') else phase.leaderboard_mode }}</span></dd>
+        <dt>UTC</dt><dd class="m small">{{ phase.starts_at.strftime('%Y-%m-%d %H:%M') if phase.starts_at else '—' }} → {{ phase.ends_at.strftime('%Y-%m-%d %H:%M') if phase.ends_at else '—' }}</dd>
+        <dt>{{ t('leaderboard.scenarios') }}</dt><dd>{% for s in scenarios %}<span class="pill" title="{{ s.name }}">{{ s.slug }}{% if not s.weather_public %} · {{ t('common.hidden') }}{% endif %}</span> {% endfor %}</dd>
+        <dt>{{ t('common.updated') }}</dt><dd class="m small"><span data-board-updated>{{ board.updated_at[:19].replace('T',' ') if board.updated_at else '—' }}</span> UTC</dd>
+      </dl>
+      <p class="text3 small mt-4">{{ t('leaderboard.tie') }} {% if scenarios|length > 1 %}{{ t('leaderboard.mean_note') }}{% endif %}</p>
+      <p class="mt-3 actions-inline"><a class="btn sm" href="/api/leaderboard?phase={{ phase.slug }}&limit=500">{{ t('leaderboard.json') }} ↗</a>{% if is_admin %}<a class="btn sm" href="/admin/export/leaderboard.csv?phase={{ phase.slug }}">{{ t('leaderboard.download_csv') }}</a>{% endif %}</p>
+    </div>
+    <div>
+      {% if not board.visible %}<p class="text2" style="padding:3rem 0">{{ t('leaderboard.hidden') }}</p>
+      {% elif not board.entries %}<div class="center" style="padding:4rem 1rem"><div style="font-size:2.5rem;font-weight:600;color:rgba(255,255,255,.08)">00</div><p class="text2 mt-2 small">{{ t('leaderboard.empty') }}</p></div>
+      {% else %}
+      {% if phase.leaderboard_mode == 'frozen' %}<p class="pill warning mb-2">{{ t('leaderboard.frozen') }}</p>{% endif %}
+      <p class="label mb-2">{{ t('leaderboard.n_entries', n=board.count) }}</p>
+      <div class="table-wrap"><table class="table" {% if phase.leaderboard_mode == 'live' %}data-leaderboard="/api/leaderboard?phase={{ phase.slug }}&limit=500"{% endif %} data-my-team="{{ user.team_id if user and user.team_id else '' }}"><thead><tr><th>#</th><th>{{ t('leaderboard.team') }}</th><th class="r">{{ t('leaderboard.score') }}</th><th class="r">{{ t('leaderboard.science') }}</th><th class="r">{{ t('leaderboard.completion') }}</th><th class="r">{{ t('leaderboard.uniformity') }}</th><th class="r">{{ t('leaderboard.submissions') }}</th></tr></thead>
+        <tbody>{% for e in board.entries %}<tr class="{{ 'me' if user and user.team_id == e.team_id else '' }}"><td class="m accent">{{ e.rank }}</td><td>{{ e.team_name }}</td><td class="r m">{{ '%.2f' % e.total_score }}</td><td class="r m">{{ '%.2f' % e.science_score }}</td><td class="r m">{{ '%.1f%%' % (e.completion_rate * 100) }}</td><td class="r m">{{ '%.3f' % e.uniformity_score }}</td><td class="r m">{{ e.submission_count }}</td></tr>{% endfor %}</tbody></table></div>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}<p class="text2 mt-4">{{ t('leaderboard.empty') }}</p>{% endif %}
+</div></section>
+{% endblock %}

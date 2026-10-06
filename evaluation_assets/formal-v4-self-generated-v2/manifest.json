@@ -1,0 +1,154 @@
+{
+  "cards": {
+    "A": {
+      "classification": "self-generated local evaluation data; not official hidden competition data",
+      "formal_card": "A",
+      "generated": {
+        "event_counts": {
+          "cloudy": 2,
+          "instrument_fault": 3,
+          "rainy": 1,
+          "terrain_obstruction": 1
+        },
+        "night_count": 123,
+        "observation_request_count": 6,
+        "request_settings": "generator/observation_request_settings.json",
+        "weather_config": "generator/weather_config.json"
+      },
+      "profile": {
+        "difficulty_focus_zh": "先检验是否会根据公开的天气公告调整常规观测。",
+        "hard_mode": false,
+        "seed": 6041001,
+        "title_zh": "基础天气与公告"
+      },
+      "schema_version": "self-generated-formal-local-card-v1",
+      "source_public_inputs": {
+        "directory": "cards/a",
+        "sha256": {
+          "config/v4_fiber_config.json": "2f82c01de00f7bd88db9b58a976e602bba60793f0b9f7386c2a84abbddeb7165",
+          "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+          "public/footprint.csv": "8436949cb09f7c27f64b1abd31ee96eaae5d95d1da9b60ec24d480bafe29797e",
+          "public/targets.csv": "05dc5357fad3b12e3ede1d7aeb7eb59ec5f9b666980ba0cbc409f74c3697f736",
+          "public/taskcard.en.md": "59cdd93c8d349a9f44c2afef016edce9351cbbbe33c80340715f1ba7ab36efc2",
+          "public/taskcard.zh.md": "0c7da00bd034bcec15f43a8d28ae7dd4a561dde240ae759dd75240bc1277125c",
+          "public/v4_night_calendar.csv": "12ac0149f781dc4a207e85ab448b1e07f5eb3b477ff327c0a3f8a45d212344a5"
+        }
+      }
+    },
+    "B": {
+      "classification": "self-generated local evaluation data; not official hidden competition data",
+      "formal_card": "B",
+      "generated": {
+        "event_counts": {
+          "cloudy": 2,
+          "instrument_fault": 3,
+          "rocket_launch": 2,
+          "smoggy": 2,
+          "terrain_obstruction": 2
+        },
+        "night_count": 183,
+        "observation_request_count": 6,
+        "request_settings": "generator/observation_request_settings.json",
+        "weather_config": "generator/weather_config.json"
+      },
+      "profile": {
+        "difficulty_focus_zh": "检验是否会结合方向公告、永久遮挡和很小的光纤方格选择指向。",
+        "hard_mode": false,
+        "seed": 6041002,
+        "title_zh": "方向性天气与避让"
+      },
+      "schema_version": "self-generated-formal-local-card-v1",
+      "source_public_inputs": {
+        "directory": "cards/b",
+        "sha256": {
+          "config/v4_fiber_config.json": "de599d5f177a6f7088fa980ea1e8211887496eeaf90cb956f92a1469f07fbbed",
+          "config/v4_score_config.json": "37ba53bbf40e1407aebe58bcf611417d2ad5b23bc852e7878e11bdb439fbb007",
+          "public/footprint.csv": "482f9fb1b8881512a9531210d415de5c9e66b05dc58239a9da71cf979b482fd1",
+          "public/targets.csv": "ab8089a285fcf4890dc1cf82ea50ae6fa5b8e60da6c68a44473967910298dccb",
+          "public/taskcard.en.md": "bde4e9a73f44c2fe2f11b4f663acbbdad0fd7923c9f0d3b898b78de789053d16",
+          "public/taskcard.zh.md": "911401a3ea2bb04d1529e7a619cde1e29eb46c7ea1af1e838bce865f7985fe6a",
+          "public/v4_night_calendar.csv": "0fa59747bf19906fccc8d4d2319e2eb6dc288de7c663547c4193e13b33e78984"
+        }
+      }
+    },
+    "C": {
+      "classification": "self-generated local evaluation data; not official hidden competition data",
+      "formal_card": "C",
+      "generated": {
+        "event_counts": {
+          "cold_wave": 1,
+          "earthquake": 1,
+          "instrument_fault": 3,
+          "rainy": 1,
+          "tornado": 1
+        },
+        "night_count": 121,
+        "observation_request_count": 6,
+        "request_settings": "generator/observation_request_settings.json",
+        "weather_config": "generator/weather_config.json"
+      },
+      "profile": {
+        "difficulty_focus_zh": "检验是否能区分会公开的天气或地震影响，与只能从结果推断的仪器故障。",
+        "hard_mode": false,
+        "seed": 6041003,
+        "title_zh": "诊断：天气、地震与隐藏故障"
+      },
+      "schema_version": "self-generated-formal-local-card-v1",
+      "source_public_inputs": {
+        "directory": "cards/c",
+        "sha256": {
+          "config/v4_fiber_config.json": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+          "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+          "public/footprint.csv": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+          "public/targets.csv": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+          "public/taskcard.en.md": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+          "public/taskcard.zh.md": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+          "public/v4_night_calendar.csv": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8"
+        }
+      }
+    },
+    "D": {
+      "classification": "self-generated local evaluation data; not official hidden competition data",
+      "formal_card": "D",
+      "generated": {
+        "event_counts": {
+          "cloudy": 2,
+          "data_loss": 1,
+          "earthquake": 1,
+          "instrument_fault": 3,
+          "pointing_offset": 1,
+          "rainy": 1,
+          "rocket_launch": 1,
+          "smoggy": 1,
+          "terrain_obstruction": 1
+        },
+        "night_count": 365,
+        "observation_request_count": 6,
+        "request_settings": "generator/observation_request_settings.json",
+        "weather_config": "generator/weather_config.json"
+      },
+      "profile": {
+        "difficulty_focus_zh": "检验在长期巡天中处理多类天气、隐藏故障、数据丢失状态更正和固定指向偏差的能力。",
+        "hard_mode": true,
+        "seed": 6041004,
+        "title_zh": "Hard mode：恢复与长期稳定性"
+      },
+      "schema_version": "self-generated-formal-local-card-v1",
+      "source_public_inputs": {
+        "directory": "cards/d",
+        "sha256": {
+          "config/v4_fiber_config.json": "c5ab48f95d5aa2c9f974326afef8f3abe73a8367ff5ecea5dd44b5eb9d66637d",
+          "config/v4_score_config.json": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+          "public/footprint.csv": "d39a36ec06eefea05a573189ab30e5f9dd4781ced495cc8aa905269ab2c5ab4b",
+          "public/targets.csv": "656e63f7ea6f5dafb382eb96287bd511f792a690d43bcbfab39ef93907cce89c",
+          "public/taskcard.en.md": "d6aa9aeaf98d4e3c2f3c4f626a551659258f8d69fdf073d8d8997bde031879bd",
+          "public/taskcard.zh.md": "c5736f96f3176040cd88dbd4ce97536254dd49c31d09fd5de2faf58fbc748483",
+          "public/v4_night_calendar.csv": "31a751081cdbf14a8979092dd84a384df160999c53bc85996b11c5ec2b73334e"
+        }
+      }
+    }
+  },
+  "classification": "self-generated local evaluation data; not official hidden competition data",
+  "schema_version": "self-generated-formal-local-evaluations-v1",
+  "source_formal_manifest": "cards/formal_package_manifest.json"
+}

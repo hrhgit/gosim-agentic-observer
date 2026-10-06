@@ -1,0 +1,2108 @@
+{
+ "version": "1.6.0",
+ "prog": "survey26",
+ "description": "Official command-line tool of the GOSIM 2026 Agentic Observer Hackathon: everything the website (https://create.gosim.org/survey26/) lets a contestant do. Create a personal API token on your profile page first.",
+ "epilog": "Exit codes: 0 ok, 1 refused, 2 usage/needs --yes, 3 auth, 4 not found, 5 rate limited, 6 unavailable, 7 wait timeout, 8 limit reached, 9 preparation/evaluation failed. Guide: https://create.gosim.org/survey26/platform/cli",
+ "commands": [
+  {
+   "path": [
+    "login"
+   ],
+   "help": "save an API token on this computer (checks it first)",
+   "group": false,
+   "func": "cmd_login",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--token-stdin"
+     ],
+     "dest": "token_stdin",
+     "kind": "flag",
+     "help": "read the token from standard input"
+    }
+   ]
+  },
+  {
+   "path": [
+    "logout"
+   ],
+   "help": "remove the saved token from this computer",
+   "group": false,
+   "func": "cmd_logout",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "whoami"
+   ],
+   "help": "show the account and team the token acts as",
+   "group": false,
+   "func": "cmd_whoami",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "profile"
+   ],
+   "help": "your profile and avatar",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "profile",
+    "show"
+   ],
+   "help": "show your profile",
+   "group": false,
+   "func": "cmd_profile_show",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "profile",
+    "set"
+   ],
+   "help": "change profile fields",
+   "group": false,
+   "func": "cmd_profile_set",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--name"
+     ],
+     "dest": "name",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--nickname"
+     ],
+     "dest": "nickname",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--github"
+     ],
+     "dest": "github",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--affiliation"
+     ],
+     "dest": "affiliation",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--role"
+     ],
+     "dest": "role",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--locale"
+     ],
+     "dest": "locale",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--city"
+     ],
+     "dest": "city",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--contact"
+     ],
+     "dest": "contact",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--blurb"
+     ],
+     "dest": "blurb",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--astro-level"
+     ],
+     "dest": "astro_level",
+     "kind": "value",
+     "type": "int",
+     "choices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "help": ""
+    },
+    {
+     "flags": [
+      "--ai-level"
+     ],
+     "dest": "ai_level",
+     "kind": "value",
+     "type": "int",
+     "choices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "profile",
+    "avatar"
+   ],
+   "help": "avatar image",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "avatar_cmd"
+  },
+  {
+   "path": [
+    "profile",
+    "avatar",
+    "set"
+   ],
+   "help": "upload a PNG, JPG or WEBP (at most 2 MB; use a square image)",
+   "group": false,
+   "func": "cmd_avatar_set",
+   "positionals": [
+    {
+     "name": "file",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "profile",
+    "avatar",
+    "clear"
+   ],
+   "help": "remove your avatar",
+   "group": false,
+   "func": "cmd_avatar_clear",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "teammates"
+   ],
+   "help": "Find teammates page",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "teammates",
+    "list"
+   ],
+   "help": "people listed on Find teammates",
+   "group": false,
+   "func": "cmd_teammates_list",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--limit"
+     ],
+     "dest": "limit",
+     "kind": "value",
+     "type": "int",
+     "default": 200,
+     "help": ""
+    },
+    {
+     "flags": [
+      "--looking"
+     ],
+     "dest": "looking",
+     "kind": "flag",
+     "help": "only people looking for a team or teammates"
+    }
+   ]
+  },
+  {
+   "path": [
+    "teammates",
+    "contact"
+   ],
+   "help": "show someone's contact details (as on the page)",
+   "group": false,
+   "func": "cmd_teammates_contact",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "teammates",
+    "invite"
+   ],
+   "help": "invite someone to your team",
+   "group": false,
+   "func": "cmd_teammates_invite",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "teammates",
+    "visibility"
+   ],
+   "help": "show, or switch on/off, your listing on Find teammates",
+   "group": false,
+   "func": "cmd_teammates_visibility",
+   "positionals": [
+    {
+     "name": "state",
+     "nargs": 1,
+     "help": "",
+     "choices": [
+      "show",
+      "on",
+      "off"
+     ]
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--blurb"
+     ],
+     "dest": "blurb",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--contact"
+     ],
+     "dest": "contact",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--seeking"
+     ],
+     "dest": "seeking",
+     "kind": "value",
+     "type": "str",
+     "choices": [
+      "",
+      "astro",
+      "ai"
+     ],
+     "help": "the teammate you look for: astro (astronomy), ai, or '' (none)"
+    },
+    {
+     "flags": [
+      "--seeking-count"
+     ],
+     "dest": "seeking_count",
+     "kind": "value",
+     "type": "int",
+     "choices": [
+      1,
+      2
+     ],
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "team"
+   ],
+   "help": "create, join and manage your team",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "team",
+    "show"
+   ],
+   "help": "your team, invite code and members",
+   "group": false,
+   "func": "cmd_team_show",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "team",
+    "members"
+   ],
+   "help": "list members",
+   "group": false,
+   "func": "cmd_team_members",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "team",
+    "create"
+   ],
+   "help": "create a team (you become captain)",
+   "group": false,
+   "func": "cmd_team_create",
+   "positionals": [
+    {
+     "name": "name",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--max-size"
+     ],
+     "dest": "max_size",
+     "kind": "value",
+     "type": "int",
+     "choices": [
+      1,
+      2,
+      3
+     ],
+     "default": 3,
+     "help": ""
+    },
+    {
+     "flags": [
+      "--repo"
+     ],
+     "dest": "repo",
+     "kind": "value",
+     "type": "str",
+     "help": "GitHub repository (optional)"
+    },
+    {
+     "flags": [
+      "--idea"
+     ],
+     "dest": "idea",
+     "kind": "value",
+     "type": "str",
+     "help": "project idea (optional)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "join"
+   ],
+   "help": "join with an invite code",
+   "group": false,
+   "func": "cmd_team_join",
+   "positionals": [
+    {
+     "name": "code",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "team",
+    "leave"
+   ],
+   "help": "leave your team",
+   "group": false,
+   "func": "cmd_team_leave",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "set"
+   ],
+   "help": "captain: rename, size, repository, idea, lock",
+   "group": false,
+   "func": "cmd_team_set",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--name"
+     ],
+     "dest": "name",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--max-size"
+     ],
+     "dest": "max_size",
+     "kind": "value",
+     "type": "int",
+     "choices": [
+      1,
+      2,
+      3
+     ],
+     "help": ""
+    },
+    {
+     "flags": [
+      "--repo"
+     ],
+     "dest": "repo",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--idea"
+     ],
+     "dest": "idea",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--lock"
+     ],
+     "dest": "lock",
+     "kind": "flag",
+     "default": null,
+     "help": ""
+    },
+    {
+     "flags": [
+      "--unlock"
+     ],
+     "dest": "lock",
+     "kind": "flag_false",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "code"
+   ],
+   "help": "show the invite code and link",
+   "group": false,
+   "func": "cmd_team_code",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--regenerate"
+     ],
+     "dest": "regenerate",
+     "kind": "flag",
+     "help": "captain: make a new code (the old one stops working)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "transfer"
+   ],
+   "help": "captain: make another member captain",
+   "group": false,
+   "func": "cmd_team_transfer",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "kick"
+   ],
+   "help": "captain: remove a member",
+   "group": false,
+   "func": "cmd_team_kick",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "disband"
+   ],
+   "help": "captain: disband the team",
+   "group": false,
+   "func": "cmd_team_disband",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "team",
+    "directory"
+   ],
+   "help": "teams that accept join requests",
+   "group": false,
+   "func": "cmd_team_directory",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "team",
+    "request"
+   ],
+   "help": "ask a team's captain to let you join",
+   "group": false,
+   "func": "cmd_team_request",
+   "positionals": [
+    {
+     "name": "team_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "team",
+    "capacity"
+   ],
+   "help": "remaining team places",
+   "group": false,
+   "func": "cmd_team_capacity",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "team",
+    "invite-uid"
+   ],
+   "help": "captain: invite the person with this UID (9 digits) to your team",
+   "group": false,
+   "func": "cmd_team_invite_uid",
+   "positionals": [
+    {
+     "name": "uid",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "invites"
+   ],
+   "help": "team invitations and join requests",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "invites_cmd"
+  },
+  {
+   "path": [
+    "invites",
+    "list"
+   ],
+   "help": "list invitations and requests (marks received ones read)",
+   "group": false,
+   "func": "cmd_invites_list",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--keep-unread"
+     ],
+     "dest": "keep_unread",
+     "kind": "flag",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "invites",
+    "accept"
+   ],
+   "help": "accept an invitation or join request",
+   "group": false,
+   "func": "cmd_invites_respond",
+   "positionals": [
+    {
+     "name": "invitation_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "invites",
+    "decline"
+   ],
+   "help": "decline an invitation or join request",
+   "group": false,
+   "func": "cmd_invites_respond",
+   "positionals": [
+    {
+     "name": "invitation_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "invites",
+    "cancel"
+   ],
+   "help": "withdraw an invitation or request you sent",
+   "group": false,
+   "func": "cmd_invites_cancel",
+   "positionals": [
+    {
+     "name": "invitation_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends"
+   ],
+   "help": "friends, friend requests and your UID",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "friends",
+    "list"
+   ],
+   "help": "your UID, friends, pending requests and blocked people",
+   "group": false,
+   "func": "cmd_friends_list",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "add"
+   ],
+   "help": "send a friend request to a UID (at most 20 per day)",
+   "group": false,
+   "func": "cmd_friends_add",
+   "positionals": [
+    {
+     "name": "uid",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "accept"
+   ],
+   "help": "accept a friend request",
+   "group": false,
+   "func": "cmd_friends_respond",
+   "positionals": [
+    {
+     "name": "request_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "decline"
+   ],
+   "help": "decline a friend request",
+   "group": false,
+   "func": "cmd_friends_respond",
+   "positionals": [
+    {
+     "name": "request_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "cancel"
+   ],
+   "help": "withdraw a friend request you sent",
+   "group": false,
+   "func": "cmd_friends_cancel",
+   "positionals": [
+    {
+     "name": "request_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "remove"
+   ],
+   "help": "remove a friend",
+   "group": false,
+   "func": "cmd_friends_remove",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "block"
+   ],
+   "help": "block someone: their requests are no longer shown to you",
+   "group": false,
+   "func": "cmd_friends_block",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "friends",
+    "unblock"
+   ],
+   "help": "unblock someone",
+   "group": false,
+   "func": "cmd_friends_block",
+   "positionals": [
+    {
+     "name": "user_id",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "env"
+   ],
+   "help": "team variables (secrets) and allowed domains",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "env",
+    "show"
+   ],
+   "help": "list variables (secret values masked to the last 4 characters) and domains",
+   "group": false,
+   "func": "cmd_env_show",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "set"
+   ],
+   "help": "create or replace a variable (secret unless --plain)",
+   "group": false,
+   "func": "cmd_env_set",
+   "positionals": [
+    {
+     "name": "name",
+     "nargs": 1,
+     "help": ""
+    },
+    {
+     "name": "value",
+     "nargs": "?",
+     "help": "the value (visible in shell history; prefer --value-stdin)"
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--value-stdin"
+     ],
+     "dest": "value_stdin",
+     "kind": "flag",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--from-env"
+     ],
+     "dest": "from_env",
+     "kind": "value",
+     "type": "str",
+     "metavar": "VAR",
+     "help": "take the value from this environment variable"
+    },
+    {
+     "flags": [
+      "--plain"
+     ],
+     "dest": "plain",
+     "kind": "flag",
+     "help": "not secret: the value stays readable"
+    }
+   ]
+  },
+  {
+   "path": [
+    "env",
+    "unset"
+   ],
+   "help": "delete a variable",
+   "group": false,
+   "func": "cmd_env_unset",
+   "positionals": [
+    {
+     "name": "name",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "disable"
+   ],
+   "help": "switch a variable off: kept (secrets stay encrypted) but not given to evaluations",
+   "group": false,
+   "func": "cmd_env_disable",
+   "positionals": [
+    {
+     "name": "name",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "enable"
+   ],
+   "help": "switch a variable on again",
+   "group": false,
+   "func": "cmd_env_enable",
+   "positionals": [
+    {
+     "name": "name",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "tag"
+   ],
+   "help": "mark a variable model-related or not (model-related ones are left out of eval start --no-model)",
+   "group": false,
+   "func": "cmd_env_tag",
+   "positionals": [
+    {
+     "name": "name",
+     "nargs": 1,
+     "help": ""
+    },
+    {
+     "name": "tag",
+     "nargs": 1,
+     "help": "",
+     "choices": [
+      "model",
+      "none"
+     ]
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "model"
+   ],
+   "help": "add a model service like the website's quick form: key (secret), base URL and model",
+   "group": false,
+   "func": "cmd_env_model",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--provider"
+     ],
+     "dest": "provider",
+     "kind": "value",
+     "type": "str",
+     "choices": [
+      "kimi",
+      "moonshot",
+      "deepseek",
+      "openai",
+      "anthropic",
+      "zhipu",
+      "custom"
+     ],
+     "required": true,
+     "help": ""
+    },
+    {
+     "flags": [
+      "--key"
+     ],
+     "dest": "key",
+     "kind": "value",
+     "type": "str",
+     "required": true,
+     "help": "the API key ('-' reads it from standard input; recommended)"
+    },
+    {
+     "flags": [
+      "--base-url"
+     ],
+     "dest": "base_url",
+     "kind": "value",
+     "type": "str",
+     "help": "https:// address (default: the provider's; required for custom)"
+    },
+    {
+     "flags": [
+      "--model"
+     ],
+     "dest": "model",
+     "kind": "value",
+     "type": "str",
+     "help": "model name (default: the provider's, if any)"
+    },
+    {
+     "flags": [
+      "--prefix"
+     ],
+     "dest": "prefix",
+     "kind": "value",
+     "type": "str",
+     "help": "variable prefix, e.g. KIMI gives KIMI_API_KEY (default: OPENAI_*, ANTHROPIC_* for Anthropic)"
+    },
+    {
+     "flags": [
+      "--replace"
+     ],
+     "dest": "replace",
+     "kind": "flag",
+     "help": "overwrite variables that already exist"
+    }
+   ]
+  },
+  {
+   "path": [
+    "env",
+    "domains"
+   ],
+   "help": "allowed domains (not used while the platform allows any public address)",
+   "group": true,
+   "func": "cmd_env_domains",
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "domains_cmd"
+  },
+  {
+   "path": [
+    "env",
+    "domains",
+    "list"
+   ],
+   "help": "list domains",
+   "group": false,
+   "func": "cmd_env_domains",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "domains",
+    "set"
+   ],
+   "help": "replace the list (at most 10)",
+   "group": false,
+   "func": "cmd_env_domains",
+   "positionals": [
+    {
+     "name": "hosts",
+     "nargs": "+",
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "domains",
+    "clear"
+   ],
+   "help": "remove all domains",
+   "group": false,
+   "func": "cmd_env_domains",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "env",
+    "route"
+   ],
+   "help": "egress route for evaluations: direct (default), cn (China route) or overseas (overseas route); without arguments, show it",
+   "group": false,
+   "func": "cmd_env_route",
+   "positionals": [
+    {
+     "name": "route",
+     "nargs": "?",
+     "help": "",
+     "choices": [
+      "direct",
+      "cn",
+      "overseas"
+     ]
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--fallback"
+     ],
+     "dest": "fallback",
+     "kind": "flag",
+     "default": null,
+     "help": "when no route node works, connect directly (default)"
+    },
+    {
+     "flags": [
+      "--no-fallback"
+     ],
+     "dest": "fallback",
+     "kind": "flag_false",
+     "help": "when no route node works, refuse the connection instead"
+    }
+   ]
+  },
+  {
+   "path": [
+    "project"
+   ],
+   "help": "submit projects and manage versions",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "project",
+    "list"
+   ],
+   "help": "your project versions",
+   "group": false,
+   "func": "cmd_project_list",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--all"
+     ],
+     "dest": "all",
+     "kind": "flag",
+     "help": "include withdrawn versions"
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "submit-repo"
+   ],
+   "help": "submit a public GitHub repository (uses one of 10 daily uploads)",
+   "group": false,
+   "func": "cmd_project_submit_repo",
+   "positionals": [
+    {
+     "name": "url",
+     "nargs": 1,
+     "help": "https://github.com/OWNER/REPO, or a branch/folder link .../tree/BRANCH/FOLDER"
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    },
+    {
+     "flags": [
+      "--title"
+     ],
+     "dest": "title",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--branch"
+     ],
+     "dest": "branch",
+     "kind": "value",
+     "type": "str",
+     "help": "branch, tag or commit (default: the default branch)"
+    },
+    {
+     "flags": [
+      "--subdir"
+     ],
+     "dest": "subdir",
+     "kind": "value",
+     "type": "str",
+     "help": "project folder inside the repository (default: the repository root)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "upload"
+   ],
+   "help": "upload a complete project ZIP, at most 50 MB (uses one of 10 daily uploads)",
+   "group": false,
+   "func": "cmd_project_upload",
+   "positionals": [
+    {
+     "name": "zip",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    },
+    {
+     "flags": [
+      "--title"
+     ],
+     "dest": "title",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "show"
+   ],
+   "help": "a version: status, error, public test, execution settings, adapter files",
+   "group": false,
+   "func": "cmd_project_show",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--files"
+     ],
+     "dest": "files",
+     "kind": "flag",
+     "help": "print the added adapter files in full"
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "wait"
+   ],
+   "help": "wait until preparation finishes (exit 9 if it failed)",
+   "group": false,
+   "func": "cmd_project_wait",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--timeout"
+     ],
+     "dest": "timeout",
+     "kind": "value",
+     "type": "int",
+     "default": 1800,
+     "help": ""
+    },
+    {
+     "flags": [
+      "--interval"
+     ],
+     "dest": "interval",
+     "kind": "value",
+     "type": "int",
+     "default": 15,
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "logs"
+   ],
+   "help": "preparation (build) logs and the public test's agent.log",
+   "group": false,
+   "func": "cmd_project_logs",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--full"
+     ],
+     "dest": "full",
+     "kind": "flag",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "confirm"
+   ],
+   "help": "confirm a prepared version for evaluation (review it first with show --files)",
+   "group": false,
+   "func": "cmd_project_confirm",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "withdraw"
+   ],
+   "help": "withdraw a version that was never evaluated",
+   "group": false,
+   "func": "cmd_project_withdraw",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "download"
+   ],
+   "help": "download the prepared project of a version",
+   "group": false,
+   "func": "cmd_project_download",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-o",
+      "--output"
+     ],
+     "dest": "output",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "project",
+    "evidence"
+   ],
+   "help": "design award evidence of a version",
+   "group": false,
+   "func": "cmd_project_evidence",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--notes"
+     ],
+     "dest": "notes",
+     "kind": "value",
+     "type": "str",
+     "help": "architecture and reproduction notes ('-' reads standard input)"
+    },
+    {
+     "flags": [
+      "--code-url"
+     ],
+     "dest": "code_url",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "eval"
+   ],
+   "help": "start and follow evaluations",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "eval",
+    "start"
+   ],
+   "help": "evaluate a confirmed version once (uses 1 of today's evaluations)",
+   "group": false,
+   "func": "cmd_eval_start",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    },
+    {
+     "flags": [
+      "--phase"
+     ],
+     "dest": "phase",
+     "kind": "value",
+     "type": "str",
+     "help": "phase slug (default: the one the website uses)"
+    },
+    {
+     "flags": [
+      "--no-model"
+     ],
+     "dest": "no_model",
+     "kind": "flag",
+     "help": "this evaluation without a model: no model-related team variables, OBSERVER_MODEL_DISABLED=1 (to compare with and without an LLM)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "eval",
+    "selfcheck"
+   ],
+   "help": "evaluate 3 times and average (uses 3 of today's evaluations)",
+   "group": false,
+   "func": "cmd_eval_selfcheck",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    },
+    {
+     "flags": [
+      "--phase"
+     ],
+     "dest": "phase",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--no-model"
+     ],
+     "dest": "no_model",
+     "kind": "flag",
+     "help": "all 3 evaluations without a model (see eval start --no-model)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "eval",
+    "list"
+   ],
+   "help": "evaluation records (newest first)",
+   "group": false,
+   "func": "cmd_eval_list",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--limit"
+     ],
+     "dest": "limit",
+     "kind": "value",
+     "type": "int",
+     "default": 20,
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "eval",
+    "show"
+   ],
+   "help": "one evaluation: status and score per card ('latest' = newest)",
+   "group": false,
+   "func": "cmd_eval_show",
+   "positionals": [
+    {
+     "name": "batch",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "eval",
+    "wait"
+   ],
+   "help": "wait until an evaluation ends; prints the scores (exit 9 unless scored)",
+   "group": false,
+   "func": "cmd_eval_wait",
+   "positionals": [
+    {
+     "name": "batch",
+     "nargs": "?",
+     "help": "",
+     "default": "latest"
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--timeout"
+     ],
+     "dest": "timeout",
+     "kind": "value",
+     "type": "int",
+     "default": 3600,
+     "help": ""
+    },
+    {
+     "flags": [
+      "--interval"
+     ],
+     "dest": "interval",
+     "kind": "value",
+     "type": "int",
+     "default": 20,
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "results"
+   ],
+   "help": "scores, agent.log and result downloads",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "results",
+    "show"
+   ],
+   "help": "scores per card of an evaluation ('latest' = newest)",
+   "group": false,
+   "func": "cmd_eval_show",
+   "positionals": [
+    {
+     "name": "batch",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "results",
+    "log"
+   ],
+   "help": "a run's platform diagnostics and agent.log (last part, --tail N, --full, -o FILE)",
+   "group": false,
+   "func": "cmd_results_log",
+   "positionals": [
+    {
+     "name": "run",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "--full"
+     ],
+     "dest": "full",
+     "kind": "flag",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--tail"
+     ],
+     "dest": "tail",
+     "kind": "value",
+     "type": "int",
+     "help": ""
+    },
+    {
+     "flags": [
+      "--agent-only"
+     ],
+     "dest": "agent_only",
+     "kind": "flag",
+     "help": "only agent.log, without the platform diagnostics"
+    },
+    {
+     "flags": [
+      "-o",
+      "--output"
+     ],
+     "dest": "output",
+     "kind": "value",
+     "type": "str",
+     "help": "save the full agent.log to this file"
+    }
+   ]
+  },
+  {
+   "path": [
+    "results",
+    "download"
+   ],
+   "help": "download one card's result ZIP",
+   "group": false,
+   "func": "cmd_results_download",
+   "positionals": [
+    {
+     "name": "run",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-o",
+      "--output"
+     ],
+     "dest": "output",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "results",
+    "download-all"
+   ],
+   "help": "download all cards of an evaluation as one ZIP",
+   "group": false,
+   "func": "cmd_results_download_all",
+   "positionals": [
+    {
+     "name": "batch",
+     "nargs": "?",
+     "help": "",
+     "default": "latest"
+    }
+   ],
+   "options": [
+    {
+     "flags": [
+      "-o",
+      "--output"
+     ],
+     "dest": "output",
+     "kind": "value",
+     "type": "str",
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "final"
+   ],
+   "help": "the version used for the hidden final",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "final",
+    "show"
+   ],
+   "help": "show the final version (chosen, or the default best evaluation)",
+   "group": false,
+   "func": "cmd_final_show",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "final",
+    "set"
+   ],
+   "help": "choose a confirmed version as final",
+   "group": false,
+   "func": "cmd_final_set",
+   "positionals": [
+    {
+     "name": "revision",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  },
+  {
+   "path": [
+    "final",
+    "clear"
+   ],
+   "help": "clear the choice (the best evaluation's version applies)",
+   "group": false,
+   "func": "cmd_final_clear",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "-y",
+      "--yes"
+     ],
+     "dest": "yes",
+     "kind": "flag",
+     "help": "confirm without asking (needed with --json or without a terminal)"
+    }
+   ]
+  },
+  {
+   "path": [
+    "quota"
+   ],
+   "help": "evaluations and project preparations left today",
+   "group": false,
+   "func": "cmd_quota",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "competition"
+   ],
+   "help": "current competition mode and phases",
+   "group": false,
+   "func": "cmd_competition",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "leaderboard"
+   ],
+   "help": "leaderboard (online, practice-projects, practice)",
+   "group": false,
+   "func": "cmd_leaderboard",
+   "positionals": [],
+   "options": [
+    {
+     "flags": [
+      "--phase"
+     ],
+     "dest": "phase",
+     "kind": "value",
+     "type": "str",
+     "help": "online | practice-projects | practice (default: the current board)"
+    },
+    {
+     "flags": [
+      "--card"
+     ],
+     "dest": "card",
+     "kind": "value",
+     "type": "str",
+     "help": "card slug, e.g. v4-a (default: overall)"
+    },
+    {
+     "flags": [
+      "--mine"
+     ],
+     "dest": "mine",
+     "kind": "flag",
+     "help": "only your team's row"
+    },
+    {
+     "flags": [
+      "--limit"
+     ],
+     "dest": "limit",
+     "kind": "value",
+     "type": "int",
+     "default": 500,
+     "help": ""
+    }
+   ]
+  },
+  {
+   "path": [
+    "kimi"
+   ],
+   "help": "Kimi Coding Plan code",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "kimi",
+    "status"
+   ],
+   "help": "eligibility and your team's code",
+   "group": false,
+   "func": "cmd_kimi_status",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "kimi",
+    "claim"
+   ],
+   "help": "captain: claim the team's code",
+   "group": false,
+   "func": "cmd_kimi_claim",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "credits"
+   ],
+   "help": "sponsor API credit codes",
+   "group": true,
+   "func": null,
+   "positionals": [],
+   "options": [],
+   "subcommand_dest": "cmd"
+  },
+  {
+   "path": [
+    "credits",
+    "list"
+   ],
+   "help": "providers and your team's codes",
+   "group": false,
+   "func": "cmd_credits_list",
+   "positionals": [],
+   "options": []
+  },
+  {
+   "path": [
+    "credits",
+    "claim"
+   ],
+   "help": "claim a code from a provider",
+   "group": false,
+   "func": "cmd_credits_claim",
+   "positionals": [
+    {
+     "name": "provider",
+     "nargs": 1,
+     "help": ""
+    }
+   ],
+   "options": []
+  }
+ ]
+}

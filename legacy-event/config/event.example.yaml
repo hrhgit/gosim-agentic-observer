@@ -1,0 +1,41 @@
+# Reference copy of the confirmed 2026 event data.
+# The website currently reads public copy from src/i18n/en.ts and src/i18n/zh.ts.
+
+event:
+  name: "Agent Observer"
+  tagline: "Build an agent that decides where the telescope looks next"
+  organizer: "GOSIM Foundation"
+  dates: "October 1–17, 2026"
+  start_time: "2026-10-01T00:00:00+08:00"
+  end_time: "2026-10-17T23:59:59+08:00"
+  format: "Online + Awards at GOSIM Shenzhen"
+  registration_status: "coming_soon"
+  team_size: null
+  registration_deadline: null
+  participation_fee: null
+  contact: null
+
+awards:
+  total_pool: "$5,500"
+  count: 6
+  tiers:
+    - name: "First Prize"
+      prize: "$2,000"
+      count: 1
+    - name: "Second Prize"
+      prize: "$1,000"
+      count: 2
+    - name: "Third Prize"
+      prize: "$500"
+      count: 3
+
+schedule:
+  - name: "Online Training"
+    dates: "October 1–4"
+    format: "Online"
+  - name: "Online Competition"
+    dates: "October 5–7"
+    format: "Online"
+  - name: "Awards Day"
+    dates: "October 17"
+    format: "GOSIM Shenzhen"

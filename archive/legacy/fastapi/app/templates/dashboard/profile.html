@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}{{ t('profile.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap">
+  <span class="kicker">{{ t('dash.title') }}</span><h1 class="section-title sm mt-3">{{ t('profile.title') }}</h1>
+  <div class="mt-4">{% include "dashboard/_nav.html" %}</div>
+  <div class="dash-grid">
+    <div class="panel"><div class="hd"><h2>{{ t('profile.title') }}</h2><span class="m small text3">{{ user.email }}</span></div>
+      <form method="post" action="/profile"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="action" value="profile">
+        <div class="grid-form">
+          <label class="field"><span>{{ t('auth.name') }}</span><input type="text" name="name" value="{{ user.name }}" required></label>
+          <label class="field"><span>{{ t('auth.github') }}</span><input type="text" name="github" value="{{ user.github }}"></label>
+          <label class="field"><span>{{ t('auth.affiliation') }}</span><input type="text" name="affiliation" value="{{ user.affiliation }}"></label>
+          <label class="field"><span>{{ t('profile.role') }}</span><input type="text" name="role" value="{{ user.role }}"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="looking_for_team" {% if user.looking_for_team %}checked{% endif %}> {{ t('auth.looking_for_team') }}</label>
+        <button class="btn primary sm" type="submit">{{ t('profile.save') }}</button></form>
+      <div class="hd mt-6"><h2>{{ t('profile.password_title') }}</h2></div>
+      <form method="post" action="/profile"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="action" value="password">
+        <div class="grid-form"><label class="field full"><span>{{ t('profile.current') }}</span><input type="password" name="current" required></label>
+          <label class="field"><span>{{ t('profile.new') }}</span><input type="password" name="password" required minlength="8"></label>
+          <label class="field"><span>{{ t('profile.new2') }}</span><input type="password" name="password2" required minlength="8"></label></div>
+        <button class="btn sm" type="submit">{{ t('profile.change') }}</button></form>
+    </div>
+    <div>
+      <div class="panel"><div class="hd"><h2>{{ t('profile.token_title') }}</h2></div><p class="text2 small">{{ t('profile.token_lede') }}</p>
+        <div class="token mt-3" id="tok">{{ user.api_token }}</div>
+        <div class="actions-inline mt-3"><button class="copy-btn" data-copy="{{ user.api_token }}" data-copied="{{ t('common.copied') }}">{{ t('common.copy') }}</button>
+          <form method="post" action="/profile" class="inline-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="action" value="token"><button class="copy-btn" type="submit">{{ t('profile.rotate') }}</button></form></div>
+        <pre class="code mt-3">python3 sac_submit.py --base {{ settings.base_url }} \
+  --token {{ user.api_token[:6] }}… --phase practice --kind agent --file agent.py</pre></div>
+      <div class="panel mt-4"><div class="hd"><h2>{{ t('profile.language') }}</h2></div><div class="actions-inline"><a class="btn sm {{ 'primary' if locale == 'zh' else '' }}" href="/lang/zh?next=/profile">中文</a><a class="btn sm {{ 'primary' if locale == 'en' else '' }}" href="/lang/en?next=/profile">English</a></div></div>
+    </div>
+  </div>
+</div></section>
+{% endblock %}

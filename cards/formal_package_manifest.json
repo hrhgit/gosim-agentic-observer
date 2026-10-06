@@ -1,0 +1,203 @@
+{
+  "source_page": "https://create.gosim.org/survey26/platform/resources",
+  "source_api": "official Resources page public task-card storage",
+  "fetched_at": "2026-10-04T14:45:58.106378-07:00",
+  "cards": {
+    "a": {
+      "slug": "v4-a",
+      "file_count": 7,
+      "bytes_total": 1811418,
+      "files": [
+        {
+          "path": "config/v4_fiber_config.json",
+          "bytes": 357,
+          "sha256": "2f82c01de00f7bd88db9b58a976e602bba60793f0b9f7386c2a84abbddeb7165",
+          "content_type": "application/json"
+        },
+        {
+          "path": "config/v4_score_config.json",
+          "bytes": 869,
+          "sha256": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+          "content_type": "application/json"
+        },
+        {
+          "path": "public/footprint.csv",
+          "bytes": 3401,
+          "sha256": "8436949cb09f7c27f64b1abd31ee96eaae5d95d1da9b60ec24d480bafe29797e",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/targets.csv",
+          "bytes": 1782705,
+          "sha256": "05dc5357fad3b12e3ede1d7aeb7eb59ec5f9b666980ba0cbc409f74c3697f736",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/taskcard.en.md",
+          "bytes": 5152,
+          "sha256": "59cdd93c8d349a9f44c2afef016edce9351cbbbe33c80340715f1ba7ab36efc2",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/taskcard.zh.md",
+          "bytes": 4799,
+          "sha256": "0c7da00bd034bcec15f43a8d28ae7dd4a561dde240ae759dd75240bc1277125c",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/v4_night_calendar.csv",
+          "bytes": 14135,
+          "sha256": "12ac0149f781dc4a207e85ab448b1e07f5eb3b477ff327c0a3f8a45d212344a5",
+          "content_type": "text/csv"
+        }
+      ]
+    },
+    "b": {
+      "slug": "v4-b",
+      "file_count": 7,
+      "bytes_total": 3013372,
+      "files": [
+        {
+          "path": "config/v4_fiber_config.json",
+          "bytes": 369,
+          "sha256": "de599d5f177a6f7088fa980ea1e8211887496eeaf90cb956f92a1469f07fbbed",
+          "content_type": "application/json"
+        },
+        {
+          "path": "config/v4_score_config.json",
+          "bytes": 870,
+          "sha256": "37ba53bbf40e1407aebe58bcf611417d2ad5b23bc852e7878e11bdb439fbb007",
+          "content_type": "application/json"
+        },
+        {
+          "path": "public/footprint.csv",
+          "bytes": 11472,
+          "sha256": "482f9fb1b8881512a9531210d415de5c9e66b05dc58239a9da71cf979b482fd1",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/targets.csv",
+          "bytes": 2969689,
+          "sha256": "ab8089a285fcf4890dc1cf82ea50ae6fa5b8e60da6c68a44473967910298dccb",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/taskcard.en.md",
+          "bytes": 5187,
+          "sha256": "bde4e9a73f44c2fe2f11b4f663acbbdad0fd7923c9f0d3b898b78de789053d16",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/taskcard.zh.md",
+          "bytes": 4810,
+          "sha256": "911401a3ea2bb04d1529e7a619cde1e29eb46c7ea1af1e838bce865f7985fe6a",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/v4_night_calendar.csv",
+          "bytes": 20975,
+          "sha256": "0fa59747bf19906fccc8d4d2319e2eb6dc288de7c663547c4193e13b33e78984",
+          "content_type": "text/csv"
+        }
+      ]
+    },
+    "c": {
+      "slug": "v4-c",
+      "file_count": 7,
+      "bytes_total": 1786610,
+      "files": [
+        {
+          "path": "config/v4_fiber_config.json",
+          "bytes": 363,
+          "sha256": "791d4523807b4debd391015532a4c75788da7f929279d8ff359be673062992d5",
+          "content_type": "application/json"
+        },
+        {
+          "path": "config/v4_score_config.json",
+          "bytes": 869,
+          "sha256": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+          "content_type": "application/json"
+        },
+        {
+          "path": "public/footprint.csv",
+          "bytes": 4409,
+          "sha256": "c61d12727e306b86c91dc0342f6bf56ce28a0a9aed89657aa82973b1ead6a90a",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/targets.csv",
+          "bytes": 1757073,
+          "sha256": "d33d443675f3f6621d41902822c6fc8ceb450a1453593a7781e68db8d6cfa416",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/taskcard.en.md",
+          "bytes": 5167,
+          "sha256": "5b91bc5cbd639f42a6097397838bdec5792b76f47e37c73c2597d32ca3bfa9bd",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/taskcard.zh.md",
+          "bytes": 4822,
+          "sha256": "460e4957c36204b18f96cfe6fb06d2065384fecf750fb48f8aebbe43999822ac",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/v4_night_calendar.csv",
+          "bytes": 13907,
+          "sha256": "af226b5b88e26f92487a26f635d4ccf053f943efda9df23191c4088c8dd150d8",
+          "content_type": "text/csv"
+        }
+      ]
+    },
+    "d": {
+      "slug": "v4-d",
+      "file_count": 7,
+      "bytes_total": 1844361,
+      "files": [
+        {
+          "path": "config/v4_fiber_config.json",
+          "bytes": 376,
+          "sha256": "c5ab48f95d5aa2c9f974326afef8f3abe73a8367ff5ecea5dd44b5eb9d66637d",
+          "content_type": "application/json"
+        },
+        {
+          "path": "config/v4_score_config.json",
+          "bytes": 869,
+          "sha256": "4d96429e2219f96e4f882d177f69673d112f89ba2e473ac0bd628651ca087521",
+          "content_type": "application/json"
+        },
+        {
+          "path": "public/footprint.csv",
+          "bytes": 3441,
+          "sha256": "d39a36ec06eefea05a573189ab30e5f9dd4781ced495cc8aa905269ab2c5ab4b",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/targets.csv",
+          "bytes": 1787436,
+          "sha256": "656e63f7ea6f5dafb382eb96287bd511f792a690d43bcbfab39ef93907cce89c",
+          "content_type": "text/csv"
+        },
+        {
+          "path": "public/taskcard.en.md",
+          "bytes": 5432,
+          "sha256": "d6aa9aeaf98d4e3c2f3c4f626a551659258f8d69fdf073d8d8997bde031879bd",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/taskcard.zh.md",
+          "bytes": 5084,
+          "sha256": "c5736f96f3176040cd88dbd4ce97536254dd49c31d09fd5de2faf58fbc748483",
+          "content_type": "text/markdown; charset=utf-8"
+        },
+        {
+          "path": "public/v4_night_calendar.csv",
+          "bytes": 41723,
+          "sha256": "31a751081cdbf14a8979092dd84a384df160999c53bc85996b11c5ec2b73334e",
+          "content_type": "text/csv"
+        }
+      ]
+    }
+  }
+}

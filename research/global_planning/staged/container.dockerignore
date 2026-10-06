@@ -1,0 +1,16 @@
+**
+!agents
+!agents/global-planner-v2
+!agents/global-planner-v2/package.json
+!agents/global-planner-v2/package-lock.json
+!agents/global-planner-v2/tsconfig.json
+!agents/global-planner-v2/runtime
+!agents/global-planner-v2/runtime/**
+!agents/global-planner-v2/src
+!agents/global-planner-v2/src/**
+!agents/global-planner-v2/models
+!agents/global-planner-v2/models/**
+!research
+!research/global_planning
+!research/global_planning/staged
+!research/global_planning/staged/container.Dockerfile

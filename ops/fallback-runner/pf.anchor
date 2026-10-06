@@ -1,0 +1,18 @@
+# /etc/pf.anchors/observer-fallback — host-side boundary of the fallback VM.
+#
+# Lima's user-mode network runs inside limactl processes. Run the VM under its
+# own macOS account (observerfb) and these rules bound everything the VM can
+# reach, even if code inside it becomes root: the public internet, the
+# allowlisting egress proxy (127.0.0.1:18080) and its own SSH port. Never the
+# Mac's other loopback services (browser debugging port, local proxy) or the
+# local network.
+pass out quick on lo0 proto tcp from any to 127.0.0.1 port { 18080, 60022 } user observerfb
+# Replies of the VM's own SSH listener (limactl, owned by observerfb). On lo0
+# they leave as outbound packets of that account that match no state (the
+# connection's state was created in the other direction), so without this
+# rule limactl could not reach its own VM. Only that listening port; stateless
+# so the SYN-ACK matches too.
+pass out quick on lo0 proto tcp from 127.0.0.1 port 60022 to 127.0.0.1 user observerfb flags any no state
+block return out quick on lo0 all user observerfb
+block return out quick inet from any to { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 100.64.0.0/10, 169.254.0.0/16, 198.18.0.0/15, 224.0.0.0/4 } user observerfb
+block return out quick inet6 all user observerfb

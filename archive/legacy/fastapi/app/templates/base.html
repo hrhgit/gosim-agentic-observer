@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ 'zh-CN' if locale == 'zh' else 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ t('meta.title') }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ t('meta.description') }}{% endblock %}">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/site.css?v=1">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.description() }}">
+  <meta property="og:image" content="{{ settings.base_url }}/static/media/survey-milky-way.jpg">
+  {% block head %}{% endblock %}
+</head>
+<body class="poster">
+  {% include "partials/header.html" %}
+  {% if flash %}
+  <div class="flash">{% for f in flash %}<div class="{{ f.level }}"><span>{{ f.message }}</span></div>{% endfor %}</div>
+  {% endif %}
+  <main>{% block content %}{% endblock %}</main>
+  {% include "partials/footer.html" %}
+  <script src="/static/js/site.js?v=1" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

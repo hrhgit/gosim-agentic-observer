@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- LaunchAgent of the organizer's account (~/Library/LaunchAgents/, installed by
+     setup-vm.sh): starts the fallback VM on demand and stops it when idle. gh
+     reaches GitHub through the Mac's local proxy, like the egress proxy; drop
+     HTTPS_PROXY where GitHub is reachable directly. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>org.agentic-observer.fallback-watcher</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/Shared/observer-fallback/fallback-watcher.py</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict><key>HTTPS_PROXY</key><string>http://127.0.0.1:1082</string></dict>
+  <key>StandardOutPath</key><string>/Users/Shared/observer-fallback/watcher.log</string>
+  <key>StandardErrorPath</key><string>/Users/Shared/observer-fallback/watcher.log</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>ThrottleInterval</key><integer>60</integer>
+</dict>
+</plist>

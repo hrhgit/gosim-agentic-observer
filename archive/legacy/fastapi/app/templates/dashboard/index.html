@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ t('dash.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap">
+  <span class="kicker">{{ t('dash.title') }}</span><h1 class="section-title sm mt-3">{{ t('dash.welcome', name=user.name) }}</h1>
+  {% if settings.email_enabled and not user.is_verified %}<p class="pill warning mt-3">{{ t('dash.verify_notice') }}</p>{% endif %}
+  <div class="mt-4">{% include "dashboard/_nav.html" %}</div>
+  <div class="dash-grid">
+    <div>
+      {% if not team %}
+      <div class="panel"><div class="hd"><h2>{{ t('dash.no_team_title') }}</h2></div><p class="text2">{{ t('dash.no_team') }}</p><p class="mt-3"><a class="btn primary sm" href="/team">{{ t('nav.team') }} →</a></p></div>
+      {% else %}
+      <div class="panel"><div class="hd"><h2>{{ t('dash.recent') }}</h2><a class="label accent" href="/submissions">{{ t('dash.all_submissions') }} →</a></div>
+        {% if submissions %}<div class="table-wrap"><table class="table"><thead><tr><th>{{ t('subs.id') }}</th><th>{{ t('subs.phase') }}</th><th>{{ t('subs.kind') }}</th><th>{{ t('common.status') }}</th><th class="r">{{ t('subs.score') }}</th><th>{{ t('subs.when') }}</th></tr></thead><tbody>
+          {% for s in submissions %}<tr><td><a class="accent-l m" href="/submissions/{{ s.id }}">#{{ s.id }}</a></td><td>{{ pick(s.phase.name_en, s.phase.name_zh) }}</td><td>{{ t('kind.' + s.kind) }}</td><td><span class="pill {{ s.status }}">{{ t('status.' + s.status) }}</span></td><td class="r m">{{ '%.2f' % s.score if s.score is not none else '—' }}</td><td class="m xs">{{ s.created_at.strftime('%m-%d %H:%M') }}</td></tr>{% endfor %}</tbody></table></div>
+        {% else %}<p class="text2">{{ t('subs.empty') }}</p>{% endif %}
+        <p class="mt-3"><a class="btn primary sm" href="/submit">{{ t('dash.new_submission') }} →</a></p></div>
+      {% endif %}
+      <div class="panel mt-4"><div class="hd"><h2>{{ t('dash.phases') }}</h2><a class="label accent" href="/leaderboard">{{ t('dash.quick.board') }} →</a></div>
+        <div class="table-wrap"><table class="table"><thead><tr><th>{{ t('leaderboard.phase') }}</th><th>{{ t('common.status') }}</th><th>UTC</th><th class="r">{{ t('rules_page.daily') }}</th></tr></thead><tbody>
+        {% for p in phases_all %}<tr><td>{{ pick(p.name_en, p.name_zh) }}</td><td><span class="pill {{ p.status }}">{{ t('leaderboard.status.' + p.status) }}</span></td><td class="m xs">{{ p.starts_at.strftime('%m-%d %H:%M') if p.starts_at else '—' }} → {{ p.ends_at.strftime('%m-%d %H:%M') if p.ends_at else '—' }}</td><td class="r m">{{ p.daily_limit }}</td></tr>{% endfor %}</tbody></table></div></div>
+    </div>
+    <div>
+      {% if team %}<div class="panel"><div class="hd"><h2>{{ t('dash.team') }}</h2><a class="label accent" href="/team">{{ t('nav.team') }} →</a></div>
+        <p style="font-size:1.35rem;font-weight:600;letter-spacing:-.03em">{{ team.name }}</p>
+        <dl class="kv mt-3"><dt>{{ t('dash.members') }}</dt><dd>{{ team.members|length }} / {{ team.max_size }}</dd><dt>{{ t('team.invite_code') }}</dt><dd class="m">{{ team.invite_code }}</dd></dl>
+        <ul class="mt-3 small text2" style="list-style:none;padding:0;margin:0">{% for m in team.members %}<li>{{ m.name }}{% if m.id == team.leader_id %} · <span class="label accent">{{ t('team.leader') }}</span>{% endif %}</li>{% endfor %}</ul></div>{% endif %}
+      <div class="panel mt-4"><div class="hd"><h2>{{ t('resources.kicker') }}</h2></div>
+        <div class="actions-inline" style="flex-direction:column;align-items:stretch"><a class="btn sm" href="/download/starter-kit.zip">{{ t('dash.quick.kit') }} ↓</a><a class="btn sm" href="/docs">{{ t('dash.quick.docs') }} →</a><a class="btn sm" href="/skill.md">SKILL.md →</a></div></div>
+    </div>
+  </div>
+</div></section>
+{% endblock %}

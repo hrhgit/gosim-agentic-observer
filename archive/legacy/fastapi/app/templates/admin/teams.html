@@ -1,0 +1,8 @@
+{% extends "admin/_layout.html" %}
+{% set heading = 'Teams' %}
+{% block admin %}
+<p class="mb-3"><a class="btn sm" href="/admin/export/teams.csv">export csv</a></p>
+<div class="table-wrap"><table class="table"><thead><tr><th>id</th><th>name</th><th>members</th><th class="r">subs</th><th>flags</th><th>code</th><th>actions</th></tr></thead><tbody>
+{% for t_ in rows %}<tr><td class="m">{{ t_.id }}</td><td>{{ t_.name }}<div class="xs text3">{{ t_.github_repo }}</div></td><td class="small">{% for m in t_.members %}{{ m.name }}{% if m.id == t_.leader_id %}*{% endif %}{% if not loop.last %}, {% endif %}{% endfor %} <span class="text3">({{ t_.members|length }}/{{ t_.max_size }})</span></td><td class="r m">{{ counts.get(t_.id, 0) }}</td><td>{% if t_.is_hidden %}<span class="pill">hidden</span>{% endif %} {% if t_.is_locked %}<span class="pill">locked</span>{% endif %}</td><td class="m">{{ t_.invite_code }}</td>
+  <td><form method="post" action="/admin/teams/{{ t_.id }}/action" class="actions-inline"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="copy-btn" name="action" value="toggle_hidden">{{ 'show' if t_.is_hidden else 'hide' }}</button><button class="copy-btn" name="action" value="toggle_locked">{{ 'unlock' if t_.is_locked else 'lock' }}</button><input type="text" name="name" placeholder="rename" style="width:9rem;padding:.2rem .4rem;font-size:.8rem"><button class="copy-btn" name="action" value="rename">rename</button></form></td></tr>{% endfor %}</tbody></table></div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{
+  "source": "Public inference snapshot; trained assets copied without retraining",
+  "conditions_manifest_sha256": "9138b8ec1431a1e255db9cc20ba71f1718a7fef2ff7b5453bd5a8c99c8d12c9e",
+  "conditions_selected": "gru64/fresh_hybrid_12/endpoint_raw",
+  "fault_source_sha256": "e9c3eff4bcec9537d79c6d75a3c26469e8cb5bf5ab5bdb5bd5ab5246ca5a8e0c",
+  "fault_manifest_sha256": "096e49077345c2d7bf481ca8ebf566df6e4cbc02540ba6c5c2ff32932b2fa7c4",
+  "files": {
+    "research/observing_conditions/features.py": {
+      "source_sha256": "3d6564db75b6f7f737ace7c5eb339958eb724e41597e3d03b0743cea26f63ab2",
+      "snapshot_sha256": "3d6564db75b6f7f737ace7c5eb339958eb724e41597e3d03b0743cea26f63ab2"
+    },
+    "challenge/tile_geometry_simulator.py": {
+      "source_sha256": "d651caa58d05db0619e408e7613db27e5665d2d15e3e13f038182e137deede73",
+      "snapshot_sha256": "eae6b079610aafaddb2fd27765e475b25dcbe70543f35a521c3b3d622286e14d"
+    },
+    "challenge/v4_fiber_map.py": {
+      "source_sha256": "9ac7ffd1d865d7c5bc999e554ae9516d208980d948d39223d9f0a047f2d72892",
+      "snapshot_sha256": "049fe4cbf3370333545c63b3a04a0aa05a071da0f8b295aee6fbcdf1cd7451c6"
+    },
+    "challenge/v4_scorer.py": {
+      "source_sha256": "46154188eb409fb8408845d0a40ea07c143e1bb1f297f7ee79ab1559ac24cd66",
+      "snapshot_sha256": "981acaf4e625515ac46f9196a1b3c76ef7343325904bc3ac4a82296bf9fa3057"
+    },
+    "research/observing_conditions/models.py": {
+      "source_sha256": "647d372984779d078520104cbe3f4668c78f8ae5660c747232dd2be99aa0cb06",
+      "snapshot_sha256": "1f58dc6fb5436ff609a83710e4752be691b63b7ff545f44f17729abf5323a28d"
+    },
+    "research/observing_conditions/information_model.py": {
+      "source_sha256": "57cf99d63093b01ab6ec72c718acb7babdf925673390b828ff3e27b609cc8719",
+      "snapshot_sha256": "5fce78a3d169b14e25e8f021910c24baa2a5548491088d0d994b5ca9e3cae8b3"
+    },
+    "research/observing_conditions/metrics.py": {
+      "source_sha256": "21babb0a21649492bac1633b3dd3af73e7d6073ac09dccc674b92cb02260d14a",
+      "snapshot_sha256": "1722b964f8bea54eeb254c6fdcc38a9f1e0c7a960c2834f60edb40eaffe1e114"
+    },
+    "research/observing_conditions/information_predict.py": {
+      "source_sha256": "477ba4acf0a34d4f9e331e3a55ceb9d6c71191769f10e701f1a3018e1fe0045c",
+      "snapshot_sha256": "63b6119eb0661d117e6b3b03545723630a6b88e2af6671947ee65900f0fda7c4"
+    },
+    "research/observing_conditions/adaptation_model.py": {
+      "source_sha256": "c2a868c5b2eda263e293814e9f527988ae615d9f73ed9f175eac1c902b368d4e",
+      "snapshot_sha256": "e7e12f335848ac799943436e0895281d468d911385d3e3ab99bb0d15fb7f6e5e"
+    },
+    "research/observing_conditions/adaptation_features.py": {
+      "source_sha256": "c65f073eb2c952d2734a8e28daed6d2a23a44609b6f63063ccc2f70893b82a07",
+      "snapshot_sha256": "c65f073eb2c952d2734a8e28daed6d2a23a44609b6f63063ccc2f70893b82a07"
+    },
+    "research/observing_conditions/adaptation_feedback.py": {
+      "source_sha256": "193e5437d3ddba143ccde7b3db88991de518393d4ebdccbcf7357a0ae69208e4",
+      "snapshot_sha256": "193e5437d3ddba143ccde7b3db88991de518393d4ebdccbcf7357a0ae69208e4"
+    },
+    "research/observing_conditions/adaptation_cache.py": {
+      "source_sha256": "24387769aab067ba607c080461fdd4fca708c82673f0fc2484cc4b9a6d3de41e",
+      "snapshot_sha256": "24387769aab067ba607c080461fdd4fca708c82673f0fc2484cc4b9a6d3de41e"
+    },
+    "research/observing_conditions/adaptation_predict.py": {
+      "source_sha256": "3108d7a8c3b6b5098aea75fbe01ab937ba5faefc992df3a39818195a84b3c7d5",
+      "snapshot_sha256": "e52f51f788e40dc5c4d49f261b5df768f9a4086a7360d55839932dc42dd21292"
+    },
+    "research/observing_conditions/conditional_calibration.py": {
+      "source_sha256": "d3ae38190893190007e2b27f2ed56d00b881dc8a8534f435c11db460dfd26e1b",
+      "snapshot_sha256": "20ec74c56054708d4be1e9227b4e3e2ca04d5f1bcaa77ccff4c62e52322094a4"
+    },
+    "research/observing_conditions/reliability_calibration.py": {
+      "source_sha256": "4a09c9119b9889c5b85bfa0ccef54cb067e2cb5972c0211b83add992fec78713",
+      "snapshot_sha256": "1253e7fea26b9b8a49abdec8e8df489469da8e11038836e0db80a97da12d7f83"
+    },
+    "research/observing_conditions/endpoint_model.py": {
+      "source_sha256": "c388ab737b46905d89c6cc75553fcfdd1ce4e8c1a4c12ce5e3f53c5a59a45373",
+      "snapshot_sha256": "234d79a3f557333294f916d7ece60db93412f45d7ab2294bce971592b5896ce1"
+    },
+    "research/observing_conditions/reliability_data.py": {
+      "source_sha256": "5d6512d66f4862e9f176603db607fa7d57ec4e3dc333a64d8fa955fa8a923e35",
+      "snapshot_sha256": "53e91d9f63ff1e9bae6b078254833a1c4d7fddd04ec2f9a130918a93bac9ae07"
+    },
+    "research/observing_conditions/reliability_predict.py": {
+      "source_sha256": "2bce10a39312a178b2aa61f3dce5fd069863223e2da737b267ad64926a2168e5",
+      "snapshot_sha256": "a35b08549a142b3d73f3d28a6774616d582ef52a464036cdd68f96dc7e6b2456"
+    },
+    "research/instrument_faults/core.py": {
+      "source_sha256": "918f9b3fe1cb968011625f50f4da06cca8c430de205145da72cb15d855924bfc",
+      "snapshot_sha256": "918f9b3fe1cb968011625f50f4da06cca8c430de205145da72cb15d855924bfc"
+    },
+    "research/instrument_faults/feedback_only.py": {
+      "source_sha256": "b3f453bd07cfd26b1e000c430481a5097607f0840469d1130e73cc605456ca02",
+      "snapshot_sha256": "bd4b128bbd475869dfdb7fec9b7257c6db4aef0b90a9d26254b3ff06ffb9a15c"
+    },
+    "research/instrument_faults/report_model.py": {
+      "source_sha256": "0d1e0a1f8d03670812c255ad2780497812788cbf3cfb893a7015dcd8b77ea1f3",
+      "snapshot_sha256": "01492add63cd4440bdb88c214cacf03cd6a368ce6f1219b3371bd09eaba4a986"
+    },
+    "research/instrument_faults/benchmark.py": {
+      "source_sha256": "ebafeb1bfa248861394705fe0009185b89b847cc7a5722dbd1394f68ec462593",
+      "snapshot_sha256": "0b296338cbce4f5d327152ea870b37da8727846466b998ef7cb962a6c0d6f35a"
+    },
+    "agents/claude-baseline-v1/agent/core/conditions.py": {
+      "source_sha256": "675e3db6e7284bb181560c6a9d98c805685d27d096482971fefef2e57669eaed",
+      "snapshot_sha256": "675e3db6e7284bb181560c6a9d98c805685d27d096482971fefef2e57669eaed"
+    },
+    "agents/claude-baseline-v1/agent/core/astro.py": {
+      "source_sha256": "f6f66966a9fec7a81343af4fb075ba2c38210f6c7d09d53c4e889975b652dc1f",
+      "snapshot_sha256": "f6f66966a9fec7a81343af4fb075ba2c38210f6c7d09d53c4e889975b652dc1f"
+    }
+  }
+}

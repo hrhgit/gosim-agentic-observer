@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="section tight"><div class="wrap"><span class="kicker">{{ t('team.title') }}</span><h1 class="section-title sm mt-3">{{ team.name }}</h1>
+<dl class="kv mt-4"><dt>{{ t('dash.members') }}</dt><dd>{% for m in team.members %}{{ m.name }}{% if not loop.last %}, {% endif %}{% endfor %}</dd><dt>{{ t('team.github_repo') }}</dt><dd>{{ team.github_repo or '—' }}</dd></dl></div></section>
+{% endblock %}

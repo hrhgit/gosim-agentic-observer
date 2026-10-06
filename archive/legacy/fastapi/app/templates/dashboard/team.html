@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}{{ t('team.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap">
+  <span class="kicker">{{ t('dash.title') }}</span><h1 class="section-title sm mt-3">{{ t('team.title') }}</h1>
+  <div class="mt-4">{% include "dashboard/_nav.html" %}</div>
+  {% if team %}
+  {% set is_leader = team.leader_id == user.id %}
+  <div class="dash-grid">
+    <div class="panel"><div class="hd"><h2>{{ team.name }}</h2><span class="label">{{ team.members|length }} / {{ team.max_size }} · {{ t('team.locked') if team.is_locked else '' }}</span></div>
+      <div class="table-wrap"><table class="table"><thead><tr><th>{{ t('common.name') }}</th><th>{{ t('auth.github') }}</th><th>{{ t('auth.affiliation') }}</th><th></th></tr></thead><tbody>
+      {% for m in team.members %}<tr><td>{{ m.name }} {% if m.id == team.leader_id %}<span class="pill accent">{{ t('team.leader') }}</span>{% endif %}</td><td class="m small">{{ m.github or '—' }}</td><td class="small">{{ m.affiliation or '—' }}</td>
+        <td class="r">{% if is_leader and m.id != user.id %}<form method="post" action="/team/update" class="inline-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="user_id" value="{{ m.id }}"><button class="copy-btn" name="action" value="transfer">{{ t('team.transfer') }}</button> <button class="copy-btn" name="action" value="kick">{{ t('team.kick') }}</button></form>{% endif %}</td></tr>{% endfor %}</tbody></table></div>
+      {% if is_leader %}
+      <div class="hd mt-6"><h3>{{ t('common.save') }}</h3></div>
+      <form method="post" action="/team/update"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="action" value="save">
+        <div class="grid-form"><label class="field"><span>{{ t('team.max_size') }}</span><input type="number" name="max_size" min="{{ team.members|length }}" max="8" value="{{ team.max_size }}"></label>
+          <label class="field"><span>{{ t('team.github_repo') }}</span><input type="text" name="github_repo" value="{{ team.github_repo }}"></label>
+          <label class="field full"><span>{{ t('team.project_idea') }}</span><textarea name="project_idea">{{ team.project_idea }}</textarea></label></div>
+        <label class="check"><input type="checkbox" name="is_locked" {% if team.is_locked %}checked{% endif %}> {{ t('team.locked') }}</label>
+        <button class="btn primary sm" type="submit">{{ t('common.save') }}</button></form>
+      {% else %}
+      <dl class="kv mt-4"><dt>{{ t('team.github_repo') }}</dt><dd>{{ team.github_repo or '—' }}</dd><dt>{{ t('team.project_idea') }}</dt><dd style="white-space:pre-line">{{ team.project_idea or '—' }}</dd></dl>
+      {% endif %}
+    </div>
+    <div>
+      <div class="panel"><div class="hd"><h2>{{ t('team.invite_code') }}</h2></div><p class="text2 small">{{ t('team.invite_lede') }}</p>
+        <div class="token mt-3" style="font-size:1.4rem;letter-spacing:.2em">{{ team.invite_code }}</div>
+        <div class="actions-inline mt-3"><button class="copy-btn" data-copy="{{ team.invite_code }}" data-copied="{{ t('common.copied') }}">{{ t('common.copy') }}</button>
+          {% if is_leader %}<form method="post" action="/team/update" class="inline-form"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="action" value="regenerate"><button class="copy-btn" type="submit">{{ t('team.regenerate') }}</button></form>{% endif %}</div></div>
+      <div class="panel mt-4"><div class="hd"><h2>{{ t('common.actions') }}</h2></div><div class="actions-inline">
+        <form method="post" action="/team/leave" data-confirm="{{ t('team.leave') }}?"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="btn sm" type="submit">{{ t('team.leave') }}</button></form>
+        {% if is_leader %}<form method="post" action="/team/update" data-confirm="{{ t('team.disband_confirm') }}"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="action" value="disband"><button class="btn sm danger" type="submit">{{ t('team.disband') }}</button></form>{% endif %}
+      </div></div>
+    </div>
+  </div>
+  {% else %}
+  <div class="dash-grid">
+    <div class="panel"><div class="hd"><h2>{{ t('team.create_title') }}</h2></div><p class="text2 small mb-3">{{ t('team.solo_hint') }}</p>
+      <form method="post" action="/team/create"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <div class="grid-form"><label class="field"><span>{{ t('team.name') }}</span><input type="text" name="name" required minlength="2" maxlength="60"></label>
+          <label class="field"><span>{{ t('team.max_size') }}</span><input type="number" name="max_size" min="1" max="8" value="4"></label>
+          <label class="field"><span>{{ t('team.github_repo') }}</span><input type="text" name="github_repo"></label>
+          <label class="field"><span>{{ t('team.project_idea') }}</span><input type="text" name="project_idea"></label></div>
+        <button class="btn primary sm" type="submit">{{ t('team.create') }} →</button></form>
+    </div>
+    <div>
+      <div class="panel"><div class="hd"><h2>{{ t('team.join_title') }}</h2></div>
+        <form method="post" action="/team/join"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+          <label class="field"><span>{{ t('team.invite_code') }}</span><input type="text" name="invite_code" required style="text-transform:uppercase;font-family:var(--mono);letter-spacing:.15em"></label>
+          <button class="btn sm" type="submit">{{ t('team.join') }} →</button></form></div>
+      <div class="panel mt-4"><div class="hd"><h2>{{ t('team.open_teams') }}</h2></div>
+        {% if open_teams %}<ul style="list-style:none;padding:0;margin:0">{% for ot in open_teams %}<li class="flex between small" style="padding:.6rem 0;border-bottom:1px solid var(--line2)"><span>{{ ot.name }} <span class="text3">· {{ ot.members|length }}/{{ ot.max_size }}</span></span><span class="text3 xs">{{ t('team.ask_code') }}</span></li>{% endfor %}</ul>{% else %}<p class="text2 small">{{ t('team.no_open_teams') }}</p>{% endif %}</div>
+    </div>
+  </div>
+  {% endif %}
+</div></section>
+{% endblock %}

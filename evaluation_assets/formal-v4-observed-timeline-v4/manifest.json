@@ -1,0 +1,46 @@
+{
+  "a": {
+    "valid_bundle": true,
+    "bulletins_exact": 3777,
+    "forecasts_exact": 18,
+    "requests_exact": 6,
+    "public_hashes_verified": 7,
+    "report_outcomes_match": true,
+    "hypothesized_events": 11,
+    "observed_timeline_only": true,
+    "slots_without_received_bulletin": 0
+  },
+  "b": {
+    "valid_bundle": true,
+    "bulletins_exact": 6745,
+    "forecasts_exact": 27,
+    "requests_exact": 6,
+    "public_hashes_verified": 7,
+    "report_outcomes_match": true,
+    "hypothesized_events": 99,
+    "observed_timeline_only": true,
+    "slots_without_received_bulletin": 0
+  },
+  "c": {
+    "valid_bundle": true,
+    "bulletins_exact": 4742,
+    "forecasts_exact": 18,
+    "requests_exact": 6,
+    "public_hashes_verified": 7,
+    "report_outcomes_match": true,
+    "hypothesized_events": 46,
+    "observed_timeline_only": true,
+    "slots_without_received_bulletin": 1
+  },
+  "d": {
+    "valid_bundle": true,
+    "bulletins_exact": 11536,
+    "forecasts_exact": 53,
+    "requests_exact": 6,
+    "public_hashes_verified": 7,
+    "report_outcomes_match": true,
+    "hypothesized_events": 95,
+    "observed_timeline_only": true,
+    "slots_without_received_bulletin": 0
+  }
+}

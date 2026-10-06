@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ t('faq.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<div class="wrap page-head"><span class="kicker">{{ t('faq.kicker') }}</span><h1 class="mt-4">{{ t('faq.title') }}</h1></div>
+<section class="section"><div class="wrap-narrow">
+  {% for it in t('faq.items') %}<details id="q{{ loop.index }}" {% if loop.index <= 3 %}open{% endif %}><summary>{{ it.q }}</summary><p>{{ it.a }}</p></details>{% endfor %}
+  <p class="mt-6 text3 small">{{ pick('Other questions:', '其他问题：') }} <a class="accent-l" href="mailto:{{ t('footer.contact_email') }}">{{ t('footer.contact_email') }}</a></p>
+</div></section>
+{% endblock %}

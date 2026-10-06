@@ -1,0 +1,12 @@
+{
+  "selected_method": "gru",
+  "calibration": {
+    "gru": {
+      "blocked_temperature": 1.0,
+      "band_temperature": 1.0,
+      "interval_correction": 0.0,
+      "usable_interval_correction": 0.0
+    }
+  },
+  "validation_reliability_passed": false
+}

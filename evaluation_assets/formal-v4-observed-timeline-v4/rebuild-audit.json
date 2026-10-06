@@ -1,0 +1,42 @@
+{
+  "a": {
+    "byte_identical_rebuilt_files": 20,
+    "initialize_public_fields_match": [
+      "site",
+      "survey",
+      "instrument",
+      "scoring",
+      "footprint"
+    ]
+  },
+  "b": {
+    "byte_identical_rebuilt_files": 20,
+    "initialize_public_fields_match": [
+      "site",
+      "survey",
+      "instrument",
+      "scoring",
+      "footprint"
+    ]
+  },
+  "c": {
+    "byte_identical_rebuilt_files": 20,
+    "initialize_public_fields_match": [
+      "site",
+      "survey",
+      "instrument",
+      "scoring",
+      "footprint"
+    ]
+  },
+  "d": {
+    "byte_identical_rebuilt_files": 22,
+    "initialize_public_fields_match": [
+      "site",
+      "survey",
+      "instrument",
+      "scoring",
+      "footprint"
+    ]
+  }
+}

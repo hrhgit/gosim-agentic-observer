@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ t('submit.title') }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap">
+  <span class="kicker">{{ t('dash.title') }}</span><h1 class="section-title sm mt-3">{{ t('submit.title') }}</h1>
+  <div class="mt-4">{% include "dashboard/_nav.html" %}</div>
+  {% if not team %}<div class="panel"><p class="text2">{{ t('submit.errors.need_team') }}</p><p class="mt-3"><a class="btn primary sm" href="/team">{{ t('nav.team') }} →</a></p></div>
+  {% else %}
+  <div class="dash-grid">
+    <div class="panel">
+      <form method="post" action="/submit" enctype="multipart/form-data" data-kind>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <label class="field"><span>{{ t('submit.phase') }}</span>
+          <select name="phase">{% for p in phases_all %}<option value="{{ p.slug }}" data-allow-results="{{ 1 if p.allow_results else 0 }}" data-allow-agent="{{ 1 if p.allow_agents else 0 }}" {% if (selected and selected == p.slug) or (not selected and p.status == 'open' and loop.first) %}selected{% endif %} {% if p.status != 'open' and not is_admin %}disabled{% endif %}>{{ pick(p.name_en, p.name_zh) }} · {{ t('leaderboard.status.' + p.status) }} · {{ t('submit.quota_left', n=quota[p.id]) }}</option>{% endfor %}</select></label>
+        <div class="field"><span>{{ t('submit.kind') }}</span>
+          <label class="check"><input type="radio" name="kind" value="results" checked> <span><b>{{ t('kind.results') }}</b><br><small class="text3">{{ t('submit.help_results') }}</small></span></label>
+          <label class="check"><input type="radio" name="kind" value="agent"> <span><b>{{ t('kind.agent') }}</b><br><small class="text3">{{ t('submit.help_agent') }}</small></span></label></div>
+        <div data-show-kind="results">{% for p in phases_all %}<div data-phase-scenarios="{{ p.slug }}"><label class="field"><span>{{ t('submit.scenario') }}</span>
+          <select name="scenario" {% if not loop.first %}disabled{% endif %}>{% for s in scenarios[p.id] if s.weather_public or is_admin %}<option value="{{ s.slug }}">{{ s.slug }} · {{ s.name }}</option>{% endfor %}</select></label></div>{% endfor %}</div>
+        <label class="field"><span>{{ t('submit.file') }}</span><input type="file" name="file" required accept=".csv"><div class="help"><span data-show-kind="results">{{ t('submit.file_results') }}</span><span data-show-kind="agent">{{ t('submit.file_agent') }}</span></div></label>
+        <label class="field"><span>{{ t('submit.title_field') }}</span><input type="text" name="title" maxlength="160"></label>
+        <label class="field"><span>{{ t('submit.notes') }}</span><textarea name="notes" maxlength="2000"></textarea></label>
+        <button class="btn primary" type="submit">{{ t('submit.button') }} →</button>
+      </form>
+    </div>
+    <div><div class="panel"><div class="hd"><h2>{{ t('home.submission.title') }}</h2></div>{% for it in t('home.submission.items') %}<p class="small mb-2"><b>{{ it.title }}</b><br><span class="text2">{{ it.desc }}</span></p>{% endfor %}<p class="mt-3"><a class="label accent" href="/docs">{{ t('home.submission.link') }} →</a></p></div></div>
+  </div>
+  {% endif %}
+</div></section>
+{% endblock %}
+{% block scripts %}<script>
+document.querySelectorAll('select[name=phase]').forEach(function(sel){sel.addEventListener('change',function(){document.querySelectorAll('[data-phase-scenarios] select').forEach(function(s){s.disabled = s.closest('[data-phase-scenarios]').getAttribute('data-phase-scenarios')!==sel.value;});});sel.dispatchEvent(new Event('change'));});
+</script>{% endblock %}

@@ -1,0 +1,190 @@
+{
+ "card": "c",
+ "faults": [
+  {
+   "onset": "2026-12-26T12:45:00Z",
+   "end": "2027-01-17T08:15:00Z",
+   "level": 0.4,
+   "level_stated": true,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1008",
+    "V4RQ1009",
+    "V4RQ1010"
+   ],
+   "formal_run_correct_report": "2026-12-27T06:09:00Z"
+  },
+  {
+   "onset": "2027-01-17T08:15:00Z",
+   "end": "2027-01-22T06:30:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1018",
+    "V4RQ1020",
+    "V4RQ1021"
+   ],
+   "formal_run_correct_report": "2027-01-19T08:24:46Z"
+  },
+  {
+   "onset": "2027-01-22T06:30:00Z",
+   "end": "2027-02-14T07:15:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1022",
+    "V4RQ1024"
+   ],
+   "formal_run_correct_report": "2027-01-22T07:09:00Z"
+  },
+  {
+   "onset": "2027-02-14T07:15:00Z",
+   "end": "2027-02-16T07:30:00Z",
+   "level": 0.3,
+   "level_stated": true,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1030",
+    "V4RQ1032",
+    "V4RQ1033"
+   ],
+   "formal_run_correct_report": "2027-02-14T08:20:53Z"
+  },
+  {
+   "onset": "2027-02-16T07:30:00Z",
+   "end": "2027-03-06T06:45:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1031",
+    "V4RQ1032",
+    "V4RQ1033",
+    "V4RQ1034",
+    "V4RQ1035"
+   ],
+   "formal_run_correct_report": "2027-03-04T09:12:24Z"
+  },
+  {
+   "onset": "2027-03-06T06:45:00Z",
+   "end": "2027-04-01T15:00:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1038",
+    "V4RQ1040",
+    "V4RQ1041"
+   ],
+   "formal_run_correct_report": "2027-03-13T07:25:00Z"
+  }
+ ],
+ "faults_in_source_set": 6,
+ "wind_sectors_closed": 6,
+ "stops": [
+  {
+   "start": "2026-12-20T08:00:00Z",
+   "end": "2026-12-20T10:30:00Z",
+   "note": "V4RQ1006",
+   "kind": "maintenance",
+   "confidence": "firm",
+   "formal_run_exposures": 8,
+   "formal_run_all_zero_share": 0.875,
+   "applied": true
+  },
+  {
+   "start": "2026-12-31T08:30:00Z",
+   "end": "2026-12-31T11:30:00Z",
+   "note": "V4RQ1012",
+   "kind": "maintenance",
+   "confidence": "firm",
+   "formal_run_exposures": 24,
+   "formal_run_all_zero_share": 0.9583333333333334,
+   "applied": true
+  },
+  {
+   "start": "2027-01-29T05:30:00Z",
+   "end": "2027-01-29T15:30:00Z",
+   "note": "V4RQ1026",
+   "kind": "other",
+   "confidence": "firm",
+   "formal_run_exposures": 36,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-01-30T05:30:00Z",
+   "end": "2027-01-30T15:30:00Z",
+   "note": "V4RQ1026",
+   "kind": "other",
+   "confidence": "firm",
+   "formal_run_exposures": 69,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-02-05T05:45:00Z",
+   "end": "2027-02-05T15:30:00Z",
+   "note": "V4RQ1027",
+   "kind": "other",
+   "confidence": "low",
+   "formal_run_exposures": 77,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-02-06T05:45:00Z",
+   "end": "2027-02-06T15:30:00Z",
+   "note": "V4RQ1027",
+   "kind": "other",
+   "confidence": "low",
+   "formal_run_exposures": 65,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-02-11T10:30:00Z",
+   "end": "2027-02-11T13:30:00Z",
+   "note": "V4RQ1029",
+   "kind": "maintenance",
+   "confidence": "firm",
+   "formal_run_exposures": 16,
+   "formal_run_all_zero_share": 0.9375,
+   "applied": true
+  },
+  {
+   "start": "2027-02-21T05:45:00Z",
+   "end": "2027-03-03T15:15:00Z",
+   "note": "V4RQ1033",
+   "kind": "maintenance",
+   "confidence": "low",
+   "formal_run_exposures": 444,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-03-03T05:45:00Z",
+   "end": "2027-03-03T15:15:00Z",
+   "note": "V4RQ1038",
+   "kind": "other",
+   "confidence": "firm",
+   "formal_run_exposures": 42,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2027-03-15T05:45:00Z",
+   "end": "2027-03-26T15:00:00Z",
+   "note": "V4RQ1045",
+   "kind": "power",
+   "confidence": "firm",
+   "formal_run_exposures": 640,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  }
+ ],
+ "slots_closed_for_stops": 24,
+ "slots_with_changed_efficiency": 779
+}

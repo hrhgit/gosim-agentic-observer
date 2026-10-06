@@ -1,0 +1,1382 @@
+{
+  "version": "conditions-information-v3",
+  "architecture": "gru",
+  "seed": 101,
+  "context_dim": 242,
+  "history_dim": 75,
+  "candidate_dim": 29,
+  "quality_scale": 0.8235923647880554,
+  "parameters": 104141,
+  "epochs": 20,
+  "training_records": 262144,
+  "signature": "c498e1c8678b14d30e54f62299c49602e12ce99c00f17e84ef1b0ad78131aac2",
+  "torch": "2.14.1",
+  "python": "3.12.14",
+  "feature_version": "public-env-features-v1",
+  "calibration": {
+    "blocked_temperature": 1.1405696037324669,
+    "band_temperature": 1.24174204033478,
+    "interval_correction": 0.028673768043518066,
+    "coverage_target": 0.9,
+    "limitation": "Empirical scene-held-out calibration; no independent-row or distribution-shift guarantee.",
+    "usable_interval_correction": 0.000635981559753418,
+    "usable_point_mass_note": "U contains atoms at 0/1; achievable deterministic coverage is discrete."
+  },
+  "region_calibration": {
+    "method": "empirical region-mean absolute residual calibration",
+    "corrections": {
+      "quality": 0.4523002041710744,
+      "usable": 0.27064912186728596
+    },
+    "target": 0.9,
+    "independent_scenes": 32,
+    "region_exposure_samples": 6144,
+    "limitation": "Measured scene-held-out coverage only; no pointwise, joint, or shifted-distribution guarantee. Region mean is conditional on sampled positions meeting the full-exposure height requirement."
+  },
+  "source": "Formal A-D public input + explicitly self-generated weather; NOT official hidden weather/results",
+  "quality_definition": "Q_env, instrument efficiency=1; hidden instrument faults excluded",
+  "validation_reliable": true,
+  "final_test_passed": false,
+  "acceptance": {
+    "test": {
+      "probability_calibration": true,
+      "quality_range": true,
+      "usable_range": true,
+      "informative_proper_score": true,
+      "region_quality_range": true,
+      "region_usable_range": true,
+      "subgroup_reliability": false
+    },
+    "weather_test": {
+      "probability_calibration": true,
+      "quality_range": true,
+      "usable_range": true,
+      "informative_proper_score": true,
+      "region_quality_range": true,
+      "region_usable_range": true,
+      "subgroup_reliability": false
+    },
+    "site_test": {
+      "probability_calibration": true,
+      "quality_range": true,
+      "usable_range": true,
+      "informative_proper_score": true,
+      "region_quality_range": true,
+      "region_usable_range": true,
+      "subgroup_reliability": false
+    }
+  },
+  "reliability_evidence": {
+    "status": "Overall targets met; subgroup failures and limited evidence remain.",
+    "calibration_scenes": 32,
+    "region_calibration_scenes": 32,
+    "test_scenes": {
+      "test": 16,
+      "weather_test": 8,
+      "site_test": 8
+    },
+    "point_metrics": {
+      "test": {
+        "samples": 32768,
+        "quality_mae": 0.2446162849664688,
+        "quality_pinball": 0.06554674955303842,
+        "quality_interval_score": 1.4772485494613647,
+        "quality_coverage": 0.882080078125,
+        "quality_width": 0.9266959428787231,
+        "usable_mae": 0.12905727326869965,
+        "usable_pinball": 0.035354386608447384,
+        "usable_interval_score": 0.9325554370880127,
+        "usable_coverage": 0.905242919921875,
+        "usable_width": 0.27879709005355835,
+        "blocked_brier": 0.0742219015955925,
+        "blocked_log_loss": 0.2669769525527954,
+        "band_brier": 0.34266952217710966,
+        "band_log_loss": 0.6076176166534424,
+        "blocked_ece": 0.012244507087075363,
+        "band_ece": 0.03536837241972535,
+        "blocked_frequency": 0.154541015625,
+        "band_counts": [
+          21969,
+          7183,
+          3616
+        ]
+      },
+      "weather_test": {
+        "samples": 16384,
+        "quality_mae": 0.2832356095314026,
+        "quality_pinball": 0.07387841717755993,
+        "quality_interval_score": 1.6029689311981201,
+        "quality_coverage": 0.8526611328125,
+        "quality_width": 0.9448627233505249,
+        "usable_mae": 0.12411205470561981,
+        "usable_pinball": 0.026820432622147162,
+        "usable_interval_score": 0.7075386047363281,
+        "usable_coverage": 0.916015625,
+        "usable_width": 0.29686832427978516,
+        "blocked_brier": 0.06375345587730408,
+        "blocked_log_loss": 0.23709166049957275,
+        "band_brier": 0.2923289207872857,
+        "band_log_loss": 0.5322872996330261,
+        "blocked_ece": 0.02881628256136537,
+        "band_ece": 0.042975237960376944,
+        "blocked_frequency": 0.135498046875,
+        "band_counts": [
+          11984,
+          2480,
+          1920
+        ]
+      },
+      "site_test": {
+        "samples": 16384,
+        "quality_mae": 0.23933902382850647,
+        "quality_pinball": 0.06755650894797643,
+        "quality_interval_score": 1.6265193223953247,
+        "quality_coverage": 0.900146484375,
+        "quality_width": 1.1118427515029907,
+        "usable_mae": 0.13043366372585297,
+        "usable_pinball": 0.030417392180667385,
+        "usable_interval_score": 0.8708702325820923,
+        "usable_coverage": 0.91680908203125,
+        "usable_width": 0.3131468892097473,
+        "blocked_brier": 0.07233516126871109,
+        "blocked_log_loss": 0.2767332196235657,
+        "band_brier": 0.1912005010266672,
+        "band_log_loss": 0.4017677903175354,
+        "blocked_ece": 0.02125792091032963,
+        "band_ece": 0.03173231954338007,
+        "blocked_frequency": 0.10467529296875,
+        "band_counts": [
+          14091,
+          1248,
+          1045
+        ]
+      }
+    },
+    "region_metrics": {
+      "test": {
+        "region_exposure_samples": 3072,
+        "geometry_eligible_fraction": 0.9755135995370371,
+        "quality_mean_mae": 0.23623270212591455,
+        "quality_mean_coverage": 0.8678385416666666,
+        "quality_mean_interval_score": 1.562384355654122,
+        "quality_mean_width": 0.8861056971355289,
+        "usable_mean_mae": 0.11453517613442055,
+        "usable_mean_coverage": 0.8889973958333334,
+        "usable_mean_interval_score": 1.200232688950709,
+        "usable_mean_width": 0.3397800693832882,
+        "blocked_fraction_mse": 0.06216440122915833,
+        "band_fraction_mse": 0.2939424419577317,
+        "spatial_quality_std_mae": 0.03626151684712416
+      },
+      "weather_test": {
+        "region_exposure_samples": 1536,
+        "geometry_eligible_fraction": 0.9803240740740741,
+        "quality_mean_mae": 0.2328788280901903,
+        "quality_mean_coverage": 0.8704427083333334,
+        "quality_mean_interval_score": 1.6132821867987748,
+        "quality_mean_width": 0.8633133689402311,
+        "usable_mean_mae": 0.07805949387709908,
+        "usable_mean_coverage": 0.9166666666666666,
+        "usable_mean_interval_score": 0.7148417622013484,
+        "usable_mean_width": 0.335502646691777,
+        "blocked_fraction_mse": 0.030255217652088617,
+        "band_fraction_mse": 0.2282159587465072,
+        "spatial_quality_std_mae": 0.03844064107288977
+      },
+      "site_test": {
+        "region_exposure_samples": 1536,
+        "geometry_eligible_fraction": 0.9691116898148149,
+        "quality_mean_mae": 0.23201258353695806,
+        "quality_mean_coverage": 0.8951822916666666,
+        "quality_mean_interval_score": 1.446283789304096,
+        "quality_mean_width": 0.8935210748253821,
+        "usable_mean_mae": 0.07880615467426351,
+        "usable_mean_coverage": 0.9361979166666666,
+        "usable_mean_interval_score": 0.6066349811070236,
+        "usable_mean_width": 0.3355574818245853,
+        "blocked_fraction_mse": 0.02545600344587819,
+        "band_fraction_mse": 0.1547348503659173,
+        "spatial_quality_std_mae": 0.03866255047955747
+      }
+    },
+    "sampling_sensitivity": {
+      "independent_scenes": 12,
+      "representative_counts": [
+        9,
+        36
+      ],
+      "predicted_region_quality_mean_absolute_change": 0.002391634664161891,
+      "true_region_quality_mean_absolute_change": 0.007633225025416838,
+      "true_blocked_fraction_absolute_change": 0.009996229657687991,
+      "geometry_eligible_fraction_absolute_change": 0.008969907407407406,
+      "limitation": "One exposure per chosen independent scene; 36-point estimate is also approximate. No parameter changed based on this check."
+    },
+    "all_checks_passed": false,
+    "limitation": "Only self-generated scenarios evaluated; no individual, joint, real competition, or arbitrary new-distribution guarantee.",
+    "subgroup_review": {
+      "test": {
+        "rows": [
+          {
+            "category": "card",
+            "value": "a",
+            "independent_scenes": 4,
+            "samples": 8192,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.03282486868238266,
+            "band_ece": 0.19047892040634906,
+            "quality_coverage": 0.8878173828125,
+            "usable_coverage": 0.8709716796875
+          },
+          {
+            "category": "card",
+            "value": "b",
+            "independent_scenes": 4,
+            "samples": 8192,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.04357993292614992,
+            "band_ece": 0.06549264942850641,
+            "quality_coverage": 0.8931884765625,
+            "usable_coverage": 0.887939453125
+          },
+          {
+            "category": "card",
+            "value": "c",
+            "independent_scenes": 4,
+            "samples": 8192,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.04138427721568405,
+            "band_ece": 0.0636876943462994,
+            "quality_coverage": 0.872314453125,
+            "usable_coverage": 0.9432373046875
+          },
+          {
+            "category": "card",
+            "value": "d",
+            "independent_scenes": 4,
+            "samples": 8192,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.016735599889216246,
+            "band_ece": 0.04738749846001156,
+            "quality_coverage": 0.875,
+            "usable_coverage": 0.9188232421875
+          },
+          {
+            "category": "lead_seconds",
+            "value": "0",
+            "independent_scenes": 16,
+            "samples": 9184,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.019169540067433738,
+            "band_ece": 0.06436024957015228,
+            "quality_coverage": 0.9022212543554007,
+            "usable_coverage": 0.9103876306620209
+          },
+          {
+            "category": "lead_seconds",
+            "value": "900",
+            "independent_scenes": 16,
+            "samples": 7936,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.00853409623960033,
+            "band_ece": 0.02368700029628892,
+            "quality_coverage": 0.8922631048387096,
+            "usable_coverage": 0.9107862903225806
+          },
+          {
+            "category": "lead_seconds",
+            "value": "1800",
+            "independent_scenes": 16,
+            "samples": 8288,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.019380204864098007,
+            "band_ece": 0.03825855280320306,
+            "quality_coverage": 0.8646235521235521,
+            "usable_coverage": 0.9034749034749034
+          },
+          {
+            "category": "lead_seconds",
+            "value": "3600",
+            "independent_scenes": 16,
+            "samples": 7360,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.02045013366024131,
+            "band_ece": 0.04815299775825976,
+            "quality_coverage": 0.865625,
+            "usable_coverage": 0.8948369565217391
+          },
+          {
+            "category": "requested_seconds",
+            "value": "60",
+            "independent_scenes": 16,
+            "samples": 5152,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.01915439711203972,
+            "band_ece": 0.027237570234314064,
+            "quality_coverage": 0.8827639751552795,
+            "usable_coverage": 0.9258540372670807
+          },
+          {
+            "category": "requested_seconds",
+            "value": "300",
+            "independent_scenes": 16,
+            "samples": 5408,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.030620249605478617,
+            "band_ece": 0.06232546772063881,
+            "quality_coverage": 0.8350591715976331,
+            "usable_coverage": 0.886094674556213
+          },
+          {
+            "category": "requested_seconds",
+            "value": "600",
+            "independent_scenes": 16,
+            "samples": 5760,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.02022128137177788,
+            "band_ece": 0.05347077507370462,
+            "quality_coverage": 0.8930555555555556,
+            "usable_coverage": 0.9097222222222222
+          },
+          {
+            "category": "requested_seconds",
+            "value": "900",
+            "independent_scenes": 16,
+            "samples": 5632,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.020801164201243824,
+            "band_ece": 0.04608547079855767,
+            "quality_coverage": 0.88671875,
+            "usable_coverage": 0.9051846590909091
+          },
+          {
+            "category": "requested_seconds",
+            "value": "1800",
+            "independent_scenes": 16,
+            "samples": 4544,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.02257268160456975,
+            "band_ece": 0.06978128947732434,
+            "quality_coverage": 0.8664172535211268,
+            "usable_coverage": 0.8873239436619719
+          },
+          {
+            "category": "requested_seconds",
+            "value": "3600",
+            "independent_scenes": 16,
+            "samples": 6272,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.023924996908005727,
+            "band_ece": 0.04799155220721981,
+            "quality_coverage": 0.9191645408163265,
+            "usable_coverage": 0.9137436224489796
+          },
+          {
+            "category": "events",
+            "value": "rain",
+            "independent_scenes": 16,
+            "samples": 1312,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.053514054953688536,
+            "band_ece": 0.054749456427355375,
+            "quality_coverage": 0.9275914634146342,
+            "usable_coverage": 0.9024390243902439
+          },
+          {
+            "category": "events",
+            "value": "overcast",
+            "independent_scenes": 14,
+            "samples": 1472,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.02412679789046271,
+            "band_ece": 0.056855058499976366,
+            "quality_coverage": 0.9082880434782609,
+            "usable_coverage": 0.8913043478260869
+          },
+          {
+            "category": "events",
+            "value": "haze",
+            "independent_scenes": 16,
+            "samples": 2208,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": false
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.020037140071297574,
+            "band_ece": 0.09306628785797975,
+            "quality_coverage": 0.9311594202898551,
+            "usable_coverage": 0.9501811594202898
+          },
+          {
+            "category": "events",
+            "value": "cold_snap",
+            "independent_scenes": 16,
+            "samples": 3488,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.03624003623407163,
+            "band_ece": 0.0460849442186022,
+            "quality_coverage": 0.8876146788990825,
+            "usable_coverage": 0.9088302752293578
+          },
+          {
+            "category": "events",
+            "value": "storm",
+            "independent_scenes": 1,
+            "samples": 32,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.00914674997329712,
+            "band_ece": 0.013972997665405273,
+            "quality_coverage": 1.0,
+            "usable_coverage": 1.0
+          },
+          {
+            "category": "events",
+            "value": "rocket_launch",
+            "independent_scenes": 3,
+            "samples": 96,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.13427073469695944,
+            "band_ece": 0.3719165911898017,
+            "quality_coverage": 0.6041666666666666,
+            "usable_coverage": 0.8958333333333334
+          },
+          {
+            "category": "events",
+            "value": "earthquake",
+            "independent_scenes": 16,
+            "samples": 7744,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.012879348152186259,
+            "band_ece": 0.06634287326885312,
+            "quality_coverage": 0.8669938016528925,
+            "usable_coverage": 0.9025051652892562
+          },
+          {
+            "category": "altitude",
+            "value": "30-50",
+            "independent_scenes": 16,
+            "samples": 13943,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.017188252973212817,
+            "band_ece": 0.041902104880651964,
+            "quality_coverage": 0.8688947859140788,
+            "usable_coverage": 0.887685576992039
+          },
+          {
+            "category": "altitude",
+            "value": "50-70",
+            "independent_scenes": 16,
+            "samples": 12929,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.009889571700509936,
+            "band_ece": 0.048327925357204364,
+            "quality_coverage": 0.8931858612421688,
+            "usable_coverage": 0.9175496944852657
+          },
+          {
+            "category": "altitude",
+            "value": "70-90",
+            "independent_scenes": 16,
+            "samples": 5896,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.01199470282553757,
+            "band_ece": 0.033355316084024866,
+            "quality_coverage": 0.8889077340569878,
+            "usable_coverage": 0.9197761194029851
+          }
+        ],
+        "minimum_scene_evidence": 8,
+        "sufficiently_supported_groups_pass": false,
+        "limited_evidence_groups": 6,
+        "failed_groups": 8,
+        "limitation": "Empirical subgroup checks; eight scenes is an evidence flag, not a coverage guarantee."
+      },
+      "weather_test": {
+        "rows": [
+          {
+            "category": "card",
+            "value": "a",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.04464860229199985,
+            "band_ece": 0.07785742155920161,
+            "quality_coverage": 0.919189453125,
+            "usable_coverage": 0.900146484375
+          },
+          {
+            "category": "card",
+            "value": "b",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.02383404318788962,
+            "band_ece": 0.06992285455271485,
+            "quality_coverage": 0.848876953125,
+            "usable_coverage": 0.92041015625
+          },
+          {
+            "category": "card",
+            "value": "c",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.03553078184313563,
+            "band_ece": 0.10068432330990618,
+            "quality_coverage": 0.839599609375,
+            "usable_coverage": 0.890625
+          },
+          {
+            "category": "card",
+            "value": "d",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.041758065560770774,
+            "band_ece": 0.046458815564619727,
+            "quality_coverage": 0.802978515625,
+            "usable_coverage": 0.952880859375
+          },
+          {
+            "category": "lead_seconds",
+            "value": "0",
+            "independent_scenes": 8,
+            "samples": 4416,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.03603371335919002,
+            "band_ece": 0.04921128823332475,
+            "quality_coverage": 0.8808876811594203,
+            "usable_coverage": 0.9288949275362319
+          },
+          {
+            "category": "lead_seconds",
+            "value": "900",
+            "independent_scenes": 8,
+            "samples": 4672,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.026415487337133472,
+            "band_ece": 0.0321479108302586,
+            "quality_coverage": 0.8439640410958904,
+            "usable_coverage": 0.9143835616438356
+          },
+          {
+            "category": "lead_seconds",
+            "value": "1800",
+            "independent_scenes": 8,
+            "samples": 3392,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.02345013766734035,
+            "band_ece": 0.058275155831822446,
+            "quality_coverage": 0.7980542452830188,
+            "usable_coverage": 0.9112617924528302
+          },
+          {
+            "category": "lead_seconds",
+            "value": "3600",
+            "independent_scenes": 8,
+            "samples": 3904,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.041241199323014344,
+            "band_ece": 0.0699943560070633,
+            "quality_coverage": 0.8785860655737705,
+            "usable_coverage": 0.907530737704918
+          },
+          {
+            "category": "requested_seconds",
+            "value": "60",
+            "independent_scenes": 8,
+            "samples": 2688,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.05604839063016697,
+            "band_ece": 0.0636798301742861,
+            "quality_coverage": 0.8470982142857143,
+            "usable_coverage": 0.8965773809523809
+          },
+          {
+            "category": "requested_seconds",
+            "value": "300",
+            "independent_scenes": 8,
+            "samples": 2976,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.025002676157421005,
+            "band_ece": 0.08899335728292301,
+            "quality_coverage": 0.8511424731182796,
+            "usable_coverage": 0.9163306451612904
+          },
+          {
+            "category": "requested_seconds",
+            "value": "600",
+            "independent_scenes": 8,
+            "samples": 2848,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.035238570816228894,
+            "band_ece": 0.04314335250803218,
+            "quality_coverage": 0.8448033707865169,
+            "usable_coverage": 0.9346910112359551
+          },
+          {
+            "category": "requested_seconds",
+            "value": "900",
+            "independent_scenes": 8,
+            "samples": 2848,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.03813237505062388,
+            "band_ece": 0.06195942071538543,
+            "quality_coverage": 0.863061797752809,
+            "usable_coverage": 0.9202949438202247
+          },
+          {
+            "category": "requested_seconds",
+            "value": "1800",
+            "independent_scenes": 8,
+            "samples": 2176,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.030210354714654386,
+            "band_ece": 0.061040108345503746,
+            "quality_coverage": 0.8322610294117647,
+            "usable_coverage": 0.9223345588235294
+          },
+          {
+            "category": "requested_seconds",
+            "value": "3600",
+            "independent_scenes": 8,
+            "samples": 2848,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.04624835531530755,
+            "band_ece": 0.06611257139527965,
+            "quality_coverage": 0.8725421348314607,
+            "usable_coverage": 0.90625
+          },
+          {
+            "category": "events",
+            "value": "rain",
+            "independent_scenes": 7,
+            "samples": 800,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.0213260954618454,
+            "band_ece": 0.03706880584359169,
+            "quality_coverage": 0.96,
+            "usable_coverage": 0.9575
+          },
+          {
+            "category": "events",
+            "value": "overcast",
+            "independent_scenes": 8,
+            "samples": 832,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.05612251310734652,
+            "band_ece": 0.15248304001691465,
+            "quality_coverage": 0.9038461538461539,
+            "usable_coverage": 0.890625
+          },
+          {
+            "category": "events",
+            "value": "haze",
+            "independent_scenes": 8,
+            "samples": 1312,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.035223254640075585,
+            "band_ece": 0.08048220075348893,
+            "quality_coverage": 0.8384146341463414,
+            "usable_coverage": 0.8871951219512195
+          },
+          {
+            "category": "events",
+            "value": "cold_snap",
+            "independent_scenes": 8,
+            "samples": 1888,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.07615614835157106,
+            "band_ece": 0.0771186620340351,
+            "quality_coverage": 0.840042372881356,
+            "usable_coverage": 0.84375
+          },
+          {
+            "category": "events",
+            "value": "storm",
+            "independent_scenes": 2,
+            "samples": 64,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.34022718016058207,
+            "band_ece": 0.7075359581504017,
+            "quality_coverage": 0.640625,
+            "usable_coverage": 0.0
+          },
+          {
+            "category": "events",
+            "value": "rocket_launch",
+            "independent_scenes": 2,
+            "samples": 64,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.5700369952246547,
+            "band_ece": 0.18477742627146654,
+            "quality_coverage": 0.390625,
+            "usable_coverage": 0.5
+          },
+          {
+            "category": "events",
+            "value": "earthquake",
+            "independent_scenes": 8,
+            "samples": 4992,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.05414724537098291,
+            "band_ece": 0.041825235292960235,
+            "quality_coverage": 0.8571714743589743,
+            "usable_coverage": 0.9098557692307693
+          },
+          {
+            "category": "altitude",
+            "value": "30-50",
+            "independent_scenes": 8,
+            "samples": 7285,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.04713254342074253,
+            "band_ece": 0.04853213883465949,
+            "quality_coverage": 0.8490048043925875,
+            "usable_coverage": 0.9011667810569663
+          },
+          {
+            "category": "altitude",
+            "value": "50-70",
+            "independent_scenes": 8,
+            "samples": 6468,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.020211947008842993,
+            "band_ece": 0.04322031161753055,
+            "quality_coverage": 0.8642547928262214,
+            "usable_coverage": 0.9304267161410018
+          },
+          {
+            "category": "altitude",
+            "value": "70-90",
+            "independent_scenes": 8,
+            "samples": 2631,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.017539798254122396,
+            "band_ece": 0.03821517622748943,
+            "quality_coverage": 0.8342835423793235,
+            "usable_coverage": 0.9217027746104143
+          }
+        ],
+        "minimum_scene_evidence": 8,
+        "sufficiently_supported_groups_pass": false,
+        "limited_evidence_groups": 7,
+        "failed_groups": 15,
+        "limitation": "Empirical subgroup checks; eight scenes is an evidence flag, not a coverage guarantee."
+      },
+      "site_test": {
+        "rows": [
+          {
+            "category": "card",
+            "value": "a",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.0571768501963561,
+            "band_ece": 0.0396618139493512,
+            "quality_coverage": 0.879150390625,
+            "usable_coverage": 0.862060546875
+          },
+          {
+            "category": "card",
+            "value": "b",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.02030288794230728,
+            "band_ece": 0.04364900333166592,
+            "quality_coverage": 0.92138671875,
+            "usable_coverage": 0.939208984375
+          },
+          {
+            "category": "card",
+            "value": "c",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.0679351968519768,
+            "band_ece": 0.04879264013106878,
+            "quality_coverage": 0.962158203125,
+            "usable_coverage": 0.954833984375
+          },
+          {
+            "category": "card",
+            "value": "d",
+            "independent_scenes": 2,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.030779533417444327,
+            "band_ece": 0.054291997743348454,
+            "quality_coverage": 0.837890625,
+            "usable_coverage": 0.9111328125
+          },
+          {
+            "category": "lead_seconds",
+            "value": "0",
+            "independent_scenes": 8,
+            "samples": 4160,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.024518311932199416,
+            "band_ece": 0.035673373412842366,
+            "quality_coverage": 0.9076923076923077,
+            "usable_coverage": 0.9225961538461539
+          },
+          {
+            "category": "lead_seconds",
+            "value": "900",
+            "independent_scenes": 8,
+            "samples": 4256,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.0266056741461774,
+            "band_ece": 0.025966534349031015,
+            "quality_coverage": 0.9015507518796992,
+            "usable_coverage": 0.9074248120300752
+          },
+          {
+            "category": "lead_seconds",
+            "value": "1800",
+            "independent_scenes": 8,
+            "samples": 4096,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.02198424598100246,
+            "band_ece": 0.049283465785265435,
+            "quality_coverage": 0.908203125,
+            "usable_coverage": 0.935791015625
+          },
+          {
+            "category": "lead_seconds",
+            "value": "3600",
+            "independent_scenes": 8,
+            "samples": 3872,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.04417898143787892,
+            "band_ece": 0.06261376389744881,
+            "quality_coverage": 0.8819731404958677,
+            "usable_coverage": 0.9008264462809917
+          },
+          {
+            "category": "requested_seconds",
+            "value": "60",
+            "independent_scenes": 8,
+            "samples": 2496,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.05745744157301931,
+            "band_ece": 0.08241105520536599,
+            "quality_coverage": 0.8425480769230769,
+            "usable_coverage": 0.8717948717948718
+          },
+          {
+            "category": "requested_seconds",
+            "value": "300",
+            "independent_scenes": 8,
+            "samples": 2784,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.040036327516039215,
+            "band_ece": 0.03984706181411939,
+            "quality_coverage": 0.8979885057471264,
+            "usable_coverage": 0.9382183908045977
+          },
+          {
+            "category": "requested_seconds",
+            "value": "600",
+            "independent_scenes": 8,
+            "samples": 2496,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.06828366619540761,
+            "band_ece": 0.09192391588854103,
+            "quality_coverage": 0.8934294871794872,
+            "usable_coverage": 0.9158653846153846
+          },
+          {
+            "category": "requested_seconds",
+            "value": "900",
+            "independent_scenes": 8,
+            "samples": 2752,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.02829048166939512,
+            "band_ece": 0.07064015108030723,
+            "quality_coverage": 0.9109738372093024,
+            "usable_coverage": 0.9149709302325582
+          },
+          {
+            "category": "requested_seconds",
+            "value": "1800",
+            "independent_scenes": 8,
+            "samples": 3136,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.01625186404241819,
+            "band_ece": 0.031944955418798694,
+            "quality_coverage": 0.9394132653061225,
+            "usable_coverage": 0.9327168367346939
+          },
+          {
+            "category": "requested_seconds",
+            "value": "3600",
+            "independent_scenes": 8,
+            "samples": 2720,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.050764579139649865,
+            "band_ece": 0.06169501241734799,
+            "quality_coverage": 0.9051470588235294,
+            "usable_coverage": 0.9205882352941176
+          },
+          {
+            "category": "events",
+            "value": "rain",
+            "independent_scenes": 7,
+            "samples": 384,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.2951048919931054,
+            "band_ece": 0.3361019182484597,
+            "quality_coverage": 0.6380208333333334,
+            "usable_coverage": 0.5572916666666666
+          },
+          {
+            "category": "events",
+            "value": "overcast",
+            "independent_scenes": 8,
+            "samples": 640,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.10309962203609757,
+            "band_ece": 0.17561062539462,
+            "quality_coverage": 0.69375,
+            "usable_coverage": 0.7515625
+          },
+          {
+            "category": "events",
+            "value": "haze",
+            "independent_scenes": 8,
+            "samples": 1504,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.06905939100691653,
+            "band_ece": 0.10815009500018935,
+            "quality_coverage": 0.8523936170212766,
+            "usable_coverage": 0.8537234042553191
+          },
+          {
+            "category": "events",
+            "value": "cold_snap",
+            "independent_scenes": 8,
+            "samples": 1568,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.036905020139208634,
+            "band_ece": 0.06526066383289895,
+            "quality_coverage": 0.9451530612244898,
+            "usable_coverage": 0.9119897959183674
+          },
+          {
+            "category": "events",
+            "value": "rocket_launch",
+            "independent_scenes": 1,
+            "samples": 32,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": false,
+              "usable_range": false
+            },
+            "status": "insufficient_scene_evidence",
+            "blocked_ece": 0.8746546506881714,
+            "band_ece": 0.9941627313382924,
+            "quality_coverage": 0.1875,
+            "usable_coverage": 0.1875
+          },
+          {
+            "category": "events",
+            "value": "earthquake",
+            "independent_scenes": 8,
+            "samples": 3808,
+            "checks": {
+              "probability_calibration": false,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.03400791026240981,
+            "band_ece": 0.06394676068218569,
+            "quality_coverage": 0.9146533613445378,
+            "usable_coverage": 0.9254201680672269
+          },
+          {
+            "category": "altitude",
+            "value": "30-50",
+            "independent_scenes": 8,
+            "samples": 11219,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": true
+            },
+            "status": "meets_targets",
+            "blocked_ece": 0.028780676896017026,
+            "band_ece": 0.030466960955748905,
+            "quality_coverage": 0.8961583028790445,
+            "usable_coverage": 0.8999019520456368
+          },
+          {
+            "category": "altitude",
+            "value": "50-70",
+            "independent_scenes": 8,
+            "samples": 3905,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": false
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.0130687161564598,
+            "band_ece": 0.033953024781811066,
+            "quality_coverage": 0.9049935979513444,
+            "usable_coverage": 0.953393085787452
+          },
+          {
+            "category": "altitude",
+            "value": "70-90",
+            "independent_scenes": 8,
+            "samples": 1260,
+            "checks": {
+              "probability_calibration": true,
+              "quality_range": true,
+              "usable_range": false
+            },
+            "status": "fails_targets",
+            "blocked_ece": 0.01526442345616127,
+            "band_ece": 0.049494660119452145,
+            "quality_coverage": 0.9206349206349206,
+            "usable_coverage": 0.953968253968254
+          }
+        ],
+        "minimum_scene_evidence": 8,
+        "sufficiently_supported_groups_pass": false,
+        "limited_evidence_groups": 6,
+        "failed_groups": 11,
+        "limitation": "Empirical subgroup checks; eight scenes is an evidence flag, not a coverage guarantee."
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+results/
+artifacts/
+.npm-cache/
+.env
+*.zip
+
+.runtime/
+__pycache__/

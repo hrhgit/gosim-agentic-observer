@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // The platform now lives on the official GOSIM domain; the personal address only forwards.
+      if (window.location.hostname === 'bh3gei.github.io') {
+        const rest = window.location.pathname.replace(/^\/agent-observer\/?/, '')
+        window.location.replace('https://create.gosim.org/survey26/platform/' + rest + window.location.search + window.location.hash)
+      }
+      // Each release replaces every file, but a browser may keep this page for ten minutes and then ask
+      // for script and style files that no longer exist — a blank page the app can never recover from,
+      // because it never starts. If one of the site's own files fails to load, fetch a fresh copy of the
+      // page once. The app clears the marker only after it has actually started (main.ts), so a genuinely
+      // broken release gets exactly one retry and never a reload loop.
+      window.addEventListener('error', function (event) {
+        var el = event.target
+        var url = el && (el.src || el.href)
+        if (!url || !/\/assets\/[^/]+\.(js|css)(\?|$)/.test(url)) return
+        try {
+          if (window.sessionStorage.getItem('sac-asset-retry')) return
+          window.sessionStorage.setItem('sac-asset-retry', '1')
+        } catch (e) { return }
+        var next = new URL(window.location.href)
+        next.searchParams.set('_v', String(Date.now()))
+        window.location.replace(next.toString())
+      }, true)
+    </script>
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
+    <link rel="shortcut icon" href="%BASE_URL%favicon.ico" />
+    <meta name="theme-color" content="#05070d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能体巡天黑客松 · GOSIM</title>
+    <meta name="description" content="GOSIM 智能体巡天黑客松：为天文台写一个观测智能体——它看得到公开的天空状态，却看不到真实天气，每 15 分钟决定下一步拍哪片天。" />
+    <!--
+      Fonts are self-hosted (src/assets/styles/fonts.css, files under public/fonts/) instead of
+      loaded from Google. fonts.googleapis.com / fonts.gstatic.com are frequently slow or blocked
+      outright on the mainland China network most participants are on — self-hosting removes those
+      requests entirely rather than just making them non-blocking.
+    -->
+    <script>
+      try {
+        const redirect = window.sessionStorage.getItem('gosim-pages-redirect')
+        const eventBase = '%BASE_URL%'
+        if (redirect) {
+          const target = new URL(redirect, window.location.origin)
+          if (target.origin === window.location.origin && target.pathname.startsWith(eventBase)) {
+            window.sessionStorage.removeItem('gosim-pages-redirect')
+            window.history.replaceState(null, '', target.pathname + target.search + target.hash)
+          }
+        }
+      } catch (_) {}
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

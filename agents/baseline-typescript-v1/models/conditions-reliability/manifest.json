@@ -1,0 +1,25 @@
+{
+  "version": "conditions-reliability-v2",
+  "selected": "gru64/fresh_hybrid_12/endpoint_raw",
+  "endpoint_mode": "raw frozen mixture",
+  "network_initializations": 1,
+  "trunk_training_runs": 0,
+  "online_updates": 0,
+  "final_test_passed": false,
+  "quality_definition": "Q_env; efficiency1; no cap at1",
+  "hashes": {
+    "reliability.json": "48a99570e1a396a200a3f7fa2fccc65be483a0b057add9302990cf02438c8d1c",
+    "report.json": "22aa7cb309195bd2f10eef7e61a4501ac9e9692a8ea9fbc0d2e617d71d90f2fd",
+    "frozen.json": "5fc7036c8da25727eb180c76b88b1612d3ba581c74bdc90b8d04a53f2e467163",
+    "support.json": "00bcd48b329d482560c5c4e18ccf6e06c60e88ebf807d89f4f59ce78d508a170",
+    "endpoint_head/head.pt": "6054575babca329aebc87aa380aeef6bd618fcd4337f0b154daec495bba6b936",
+    "endpoint_head/normalizer.npz": "89a0eee0bddf365e698b8bd4850eef54c6a7c893bd543fa911e72270b060c83e",
+    "endpoint_head/history.json": "3091c154b12b05c600f2e28f84495846a2e6d38542eafd46a3711cbdad46f139",
+    "endpoint_head/complete.json": "130fd38bfe4dfe231fd951a5e7e78fff2d87803bcc0a5bbec10c82fe20428854",
+    "foundation/normalizer.npz": "f79da2def107ac2794269e86c4c09a293e7b97c6cae9a08a8cf2584199204f9b",
+    "foundation/weights.pt": "f44eb03605a137d4298045a731ba09dffff37133347efa929407195edebfa295",
+    "foundation/metadata.json": "064d97fa43aaac065b55172e35d9b3f3dfdc496df6e2ce1623c057a6be3e12f1",
+    "models/normalizer.npz": "6e788acc93ed5223faa7af7e3f20975f53229a855b0f7c7a043a04c3a19a1c03",
+    "models/gru.pt": "2d3a7bc243c7dd03e179e6c415bb3e0f249990dbd14cf5cff8e46fedc554f704"
+  }
+}

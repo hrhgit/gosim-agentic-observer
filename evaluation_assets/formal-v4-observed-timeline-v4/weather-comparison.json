@@ -1,0 +1,42 @@
+{
+  "a": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.2334301423062792,
+    "median_relative_quality_error_nonzero": 0.24627962061892925,
+    "within_10_percent_nonzero_fraction": 0.2157676348547718,
+    "zero_quality_agreement_fraction": 0.94140625,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false
+  },
+  "b": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.21005406374278068,
+    "median_relative_quality_error_nonzero": 0.1701706271022738,
+    "within_10_percent_nonzero_fraction": 0.3004115226337449,
+    "zero_quality_agreement_fraction": 0.94921875,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false
+  },
+  "c": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.2897942302462458,
+    "median_relative_quality_error_nonzero": 0.2384954720305533,
+    "within_10_percent_nonzero_fraction": 0.19672131147540983,
+    "zero_quality_agreement_fraction": 0.953125,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false
+  },
+  "d": {
+    "sample_targets": 256,
+    "selection": "equally spaced valid observation rows; not independent events or sky coverage",
+    "mean_absolute_quality_error": 0.254198140143514,
+    "median_relative_quality_error_nonzero": 0.20730346236370595,
+    "within_10_percent_nonzero_fraction": 0.244,
+    "zero_quality_agreement_fraction": 0.9765625,
+    "comparison_boundary": "recorded hits/exposure times and program multiplier; does not validate hit geometry, program choice, requests, or final score",
+    "fitted_on_sample": false
+  }
+}

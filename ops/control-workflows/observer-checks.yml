@@ -1,0 +1,36 @@
+name: Trusted runtime tests
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - run: pip install pytest
+      - name: Verify the published file inventory
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          inventory=json.loads(pathlib.Path('control-inventory.json').read_text())
+          files=set(subprocess.check_output(['git','ls-files'],text=True).splitlines())
+          assert files==set(inventory)|{'README.md','.gitignore','control-inventory.json'}
+          for name,digest in inventory.items():
+              assert hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest()==digest,name
+          PY
+      - run: python -m pytest tests -q
+      - name: Verify Linux workspace permissions inside the restricted container
+        run: |
+          docker pull python:3.12-slim
+          export OBSERVER_TEST_PYTHON_IMAGE="$(docker image inspect python:3.12-slim --format '{{index .RepoDigests 0}}')"
+          python -m pytest tests/test_project_runtime.py -q
+      - run: python -m project_platform.job_runner --help

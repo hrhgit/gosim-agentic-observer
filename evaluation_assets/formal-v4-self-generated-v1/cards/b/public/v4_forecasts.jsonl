@@ -1,0 +1,27 @@
+{"record_type": "forecast", "issued_at_utc": "2027-06-01T17:15:00Z", "coverage_start_utc": "2027-06-01T17:15:00Z", "coverage_end_utc": "2027-06-08T17:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-06-08T17:15:00Z", "coverage_start_utc": "2027-06-08T17:15:00Z", "coverage_end_utc": "2027-06-15T17:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-06-15T17:15:00Z", "coverage_start_utc": "2027-06-15T17:15:00Z", "coverage_end_utc": "2027-06-22T17:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-06-22T17:15:00Z", "coverage_start_utc": "2027-06-22T17:15:00Z", "coverage_end_utc": "2027-06-29T17:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-06-29T17:30:00Z", "coverage_start_utc": "2027-06-29T17:30:00Z", "coverage_end_utc": "2027-07-06T17:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-07-06T17:30:00Z", "coverage_start_utc": "2027-07-06T17:30:00Z", "coverage_end_utc": "2027-07-13T17:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-07-13T17:30:00Z", "coverage_start_utc": "2027-07-13T17:30:00Z", "coverage_end_utc": "2027-07-20T17:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-07-20T17:30:00Z", "coverage_start_utc": "2027-07-20T17:30:00Z", "coverage_end_utc": "2027-07-27T17:30:00Z", "notices": [{"event_kind": "haze", "direction": "N", "nights": ["2027-07-21", "2027-07-22", "2027-07-23"]}, {"event_kind": "rocket_launch", "direction": "SE", "nights": ["2027-07-23"]}, {"event_kind": "overcast", "direction": "SW", "nights": ["2027-07-24"]}]}
+{"record_type": "forecast", "issued_at_utc": "2027-07-27T17:30:00Z", "coverage_start_utc": "2027-07-27T17:30:00Z", "coverage_end_utc": "2027-08-03T17:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-08-03T17:45:00Z", "coverage_start_utc": "2027-08-03T17:45:00Z", "coverage_end_utc": "2027-08-10T17:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-08-10T17:45:00Z", "coverage_start_utc": "2027-08-10T17:45:00Z", "coverage_end_utc": "2027-08-17T17:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-08-17T17:45:00Z", "coverage_start_utc": "2027-08-17T17:45:00Z", "coverage_end_utc": "2027-08-24T17:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-08-24T18:00:00Z", "coverage_start_utc": "2027-08-24T18:00:00Z", "coverage_end_utc": "2027-08-31T18:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-08-31T18:00:00Z", "coverage_start_utc": "2027-08-31T18:00:00Z", "coverage_end_utc": "2027-09-07T18:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-09-07T18:00:00Z", "coverage_start_utc": "2027-09-07T18:00:00Z", "coverage_end_utc": "2027-09-14T18:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-09-14T18:00:00Z", "coverage_start_utc": "2027-09-14T18:00:00Z", "coverage_end_utc": "2027-09-21T18:00:00Z", "notices": [{"event_kind": "overcast", "direction": "NE", "nights": ["2027-09-15", "2027-09-16"]}, {"event_kind": "rocket_launch", "direction": "E", "nights": ["2027-09-15"]}, {"event_kind": "haze", "direction": "NW", "nights": ["2027-09-19", "2027-09-20"]}]}
+{"record_type": "forecast", "issued_at_utc": "2027-09-21T18:15:00Z", "coverage_start_utc": "2027-09-21T18:15:00Z", "coverage_end_utc": "2027-09-28T18:15:00Z", "notices": [{"event_kind": "haze", "direction": "NW", "nights": ["2027-09-21"]}]}
+{"record_type": "forecast", "issued_at_utc": "2027-09-28T18:15:00Z", "coverage_start_utc": "2027-09-28T18:15:00Z", "coverage_end_utc": "2027-10-05T18:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-10-05T18:30:00Z", "coverage_start_utc": "2027-10-05T18:30:00Z", "coverage_end_utc": "2027-10-12T18:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-10-12T18:30:00Z", "coverage_start_utc": "2027-10-12T18:30:00Z", "coverage_end_utc": "2027-10-19T18:30:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-10-19T18:45:00Z", "coverage_start_utc": "2027-10-19T18:45:00Z", "coverage_end_utc": "2027-10-26T18:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-10-26T18:45:00Z", "coverage_start_utc": "2027-10-26T18:45:00Z", "coverage_end_utc": "2027-11-02T18:45:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-11-02T19:00:00Z", "coverage_start_utc": "2027-11-02T19:00:00Z", "coverage_end_utc": "2027-11-09T19:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-11-09T19:00:00Z", "coverage_start_utc": "2027-11-09T19:00:00Z", "coverage_end_utc": "2027-11-16T19:00:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-11-16T19:15:00Z", "coverage_start_utc": "2027-11-16T19:15:00Z", "coverage_end_utc": "2027-11-23T19:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-11-23T19:15:00Z", "coverage_start_utc": "2027-11-23T19:15:00Z", "coverage_end_utc": "2027-11-30T19:15:00Z", "notices": []}
+{"record_type": "forecast", "issued_at_utc": "2027-11-30T19:30:00Z", "coverage_start_utc": "2027-11-30T19:30:00Z", "coverage_end_utc": "2027-12-07T19:30:00Z", "notices": []}

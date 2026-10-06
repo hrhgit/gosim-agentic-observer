@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{{ t('subs.detail_title', id=sub.id) }} · {{ t('meta.title') }}{% endblock %}
+{% block content %}
+<section class="section tight"><div class="wrap" {% if sub.status in ('queued', 'running') %}data-poll-status="/api/submissions/{{ sub.id }}"{% endif %}>
+  <span class="kicker">{{ t('subs.title') }}</span><h1 class="section-title sm mt-3">{{ t('subs.detail_title', id=sub.id) }} {% if sub.title %}<span class="text3">· {{ sub.title }}</span>{% endif %}</h1>
+  <div class="mt-4">{% include "dashboard/_nav.html" %}</div>
+  <div class="dash-grid">
+    <div>
+      <div class="panel"><div class="hd"><h2><span class="pill {{ sub.status }}">{{ t('status.' + sub.status) }}</span> {{ pick(sub.phase.name_en, sub.phase.name_zh) }} · {{ t('kind.' + sub.kind) }}</h2><span class="m xs">{{ sub.created_at.strftime('%Y-%m-%d %H:%M') }} UTC</span></div>
+        {% if sub.status in ('queued','running') %}<p class="text2">{{ t('subs.waiting') }}</p>{% endif %}
+        {% if sub.error %}<div class="errors"><b>{{ t('subs.error') }}:</b> {{ sub.error }}</div>{% endif %}
+        {% if sub.score is not none %}
+        <div class="flex" style="gap:2.5rem;align-items:flex-end"><div><div class="label">{{ t('subs.score') }}</div><div class="score-big accent">{{ '%.2f' % sub.score }}</div></div>
+          <dl class="kv"><dt>{{ t('subs.science') }}</dt><dd class="m">{{ '%.2f' % sub.science_score }}</dd><dt>{{ t('subs.completion') }}</dt><dd class="m">{{ '%.1f%%' % (sub.completion * 100) }}</dd><dt>{{ t('subs.uniformity') }}</dt><dd class="m">{{ '%.3f' % sub.uniformity }}</dd></dl></div>
+        {% endif %}
+        <dl class="kv mt-4"><dt>{{ t('subs.file') }}</dt><dd class="m small">{{ sub.original_filename }}</dd><dt>{{ t('subs.sha') }}</dt><dd class="m xs" style="word-break:break-all">{{ sub.file_sha256 }}</dd><dt>{{ t('subs.by') }}</dt><dd>{{ sub.user.name }}</dd>{% if sub.notes %}<dt>{{ t('submit.notes') }}</dt><dd style="white-space:pre-line">{{ sub.notes }}</dd>{% endif %}</dl>
+        {% if sub.status == 'queued' %}<form method="post" action="/submissions/{{ sub.id }}/cancel" class="mt-3"><input type="hidden" name="csrf_token" value="{{ csrf_token }}"><button class="btn sm danger" type="submit">{{ t('subs.cancel') }}</button></form>{% endif %}
+      </div>
+      {% for ev in evals %}
+      {% set rep = reports.get(ev.id) %}
+      <div class="panel mt-4"><div class="hd"><h2><span class="pill {{ ev.status }}">{{ t('status.' + ev.status) }}</span> {{ t('subs.scenario') }}: <span class="m">{{ ev.scenario.slug }}</span> · {{ ev.scenario.name }}</h2><span class="m xs">{% if ev.runtime_seconds %}{{ t('subs.runtime') }} {{ '%.1f' % ev.runtime_seconds }}s{% endif %}</span></div>
+        {% if ev.error %}<div class="errors">{{ ev.error }}</div>{% endif %}
+        {% if ev.status == 'scored' %}
+        <div class="flex" style="gap:2rem"><div><div class="label">{{ t('subs.score') }}</div><div class="m" style="font-size:1.6rem">{{ '%.2f' % ev.score }}</div></div><div><div class="label">{{ t('subs.science') }}</div><div class="m" style="font-size:1.6rem">{{ '%.2f' % ev.science_score }}</div></div><div><div class="label">{{ t('subs.penalty') }}</div><div class="m" style="font-size:1.6rem">−{{ '%.2f' % (ev.summary.waste_penalty or 0) }}</div></div><div><div class="label">{{ t('subs.tiles_done') }}</div><div class="m" style="font-size:1.6rem">{{ ev.summary.completed_tiles }} / {{ ev.summary.total_tiles }}</div></div><div><div class="label">{{ t('subs.invalid_count') }}</div><div class="m" style="font-size:1.6rem">{{ ev.summary.invalid_actions }}</div></div></div>
+        <dl class="kv mt-3"><dt>{{ t('subs.waste') }}</dt><dd class="m small">{{ '%.0f' % ev.summary.total_waste_seconds }}s · {{ t('subs.idle') }} {{ '%.0f' % (ev.summary.waste_breakdown_seconds.idle or 0) }}s · {{ t('subs.invalid') }} {{ '%.0f' % (ev.summary.waste_breakdown_seconds.invalid_actions or 0) }}s · {{ t('subs.unproductive') }} {{ '%.0f' % (ev.summary.waste_breakdown_seconds.unproductive_exposure or 0) }}s</dd>{% if ev.summary.steps %}<dt>{{ t('subs.steps') }}</dt><dd class="m small">{{ ev.summary.steps }} · {{ '%.1f' % ev.summary.agent_wall_seconds }}s</dd>{% endif %}</dl>
+        {% if rep %}
+        {% set total = rep.actions | map(attribute='elapsed_seconds') | sum %}
+        <h3 class="label mt-4">{{ t('subs.actions_title') }}</h3>
+        <div class="timeline mt-2">{% for a in rep.actions %}<i class="{{ 'bad' if not a.valid else ('wait' if a.action == 'wait' else ('unp' if a.unproductive_seconds and a.unproductive_seconds > 0 else 'obs')) }}" style="flex:{{ a.elapsed_seconds or 1 }}" title="#{{ a.decision_id }} {{ a.action }} {{ a.tile_id }} {{ a.message }} {{ '%.1f' % a.science_score }}"></i>{% endfor %}</div>
+        <div class="legend"><span><i style="background:var(--accent)"></i>observe</span><span><i style="background:#333"></i>wait</span><span><i style="background:#5a4a1f"></i>{{ t('subs.unproductive') }}</span><span><i style="background:#7a2a2a"></i>{{ t('subs.invalid') }}</span></div>
+        <h3 class="label mt-4">{{ t('subs.region_title') }}</h3>
+        <div class="regions mt-2">{% for r, v in rep.region_completion.items() %}<div>R{{ r }}<div class="bar"><i style="width:{{ (v * 100) | round(1) }}%"></i></div>{{ (v * 100) | round(0) | int }}%</div>{% endfor %}</div>
+        <details class="mt-4"><summary>{{ t('subs.show_all') }} ({{ rep.actions | length }})</summary>
+          <div class="table-wrap"><table class="table small"><thead><tr><th>#</th><th>slot</th><th>action</th><th>tile</th><th>program</th><th>msg</th><th class="r">s</th><th class="r">score</th></tr></thead><tbody>{% for a in rep.actions %}<tr><td class="m">{{ a.decision_id }}</td><td class="m">{{ a.slot_id }}</td><td>{{ a.action }}</td><td class="m">{{ a.tile_id }}</td><td class="m">{{ a.program or '' }}</td><td class="{{ 'accent-l' if a.valid else 'text3' }}">{{ a.message }}</td><td class="r m">{{ a.elapsed_seconds }}</td><td class="r m">{{ '%.1f' % a.science_score }}</td></tr>{% endfor %}</tbody></table></div></details>
+        {% endif %}
+        {% endif %}
+        {% if ev.summary and ev.summary.warnings %}<p class="mt-3 small"><b>{{ t('subs.warnings') }}:</b> {{ ev.summary.warnings | join('; ') }}</p>{% endif %}
+        {% if ev.summary and ev.summary.stderr_tail %}<details class="mt-3"><summary class="small">{{ t('subs.stderr') }}</summary><pre class="code mt-2">{{ ev.summary.stderr_tail }}</pre></details>{% endif %}
+        <p class="actions-inline mt-3">{% if ev.report_path %}<a class="btn sm" href="/submissions/{{ sub.id }}/eval/{{ ev.id }}/report.json">{{ t('subs.report') }} ↓</a>{% endif %}{% if ev.decisions_path %}<a class="btn sm" href="/submissions/{{ sub.id }}/eval/{{ ev.id }}/decisions.csv">{{ t('subs.decisions') }} ↓</a>{% endif %}{% if ev.log_path %}<a class="btn sm" href="/submissions/{{ sub.id }}/eval/{{ ev.id }}/agent.log">{{ t('subs.log') }} ↓</a>{% endif %}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div><div class="panel"><div class="hd"><h2>{{ t('leaderboard.title') }}</h2></div><p class="text2 small">{{ t('leaderboard.tie') }}</p><p class="mt-3"><a class="btn sm" href="/leaderboard/{{ sub.phase.slug }}">{{ t('leaderboard.full') }} →</a></p></div></div>
+  </div>
+</div></section>
+{% endblock %}

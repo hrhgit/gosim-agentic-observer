@@ -1,0 +1,37 @@
+{
+  "fiber_config": "v4_fiber_config.json",
+  "limits": {
+    "global_wallclock_seconds": 900
+  },
+  "minimum_altitude_deg": 30.0,
+  "name": "formal-b1-v5-reconstructed-probe-calibrated",
+  "products": {
+    "bulletins_jsonl": "../public/v4_bulletins.jsonl",
+    "earthquake_effects_csv": "../truth/v4_earthquake_effects.csv",
+    "events_csv": "../truth/v4_events.csv",
+    "footprint_csv": "../public/footprint.csv",
+    "forecasts_jsonl": "../public/v4_forecasts.jsonl",
+    "night_calendar_csv": "../public/v4_night_calendar.csv",
+    "observation_requests_jsonl": "../truth/v4_observation_requests.jsonl",
+    "slots_csv": "../truth/v4_slots.csv",
+    "targets_csv": "../public/targets.csv",
+    "weather_truth_csv": "../truth/v4_weather_truth.csv"
+  },
+  "schema_version": "v4-scenario-v1",
+  "score_config": "v4_score_config.json",
+  "site": {
+    "latitude_deg": -33.9249,
+    "longitude_deg": 18.4241,
+    "name": "Cape Town, South Africa (virtual)",
+    "sun_altitude_limit_deg": -18.0,
+    "utc_offset_hours": 2.0
+  },
+  "stress": {
+    "enabled": false
+  },
+  "task_card": {
+    "card_id": "B1-RECONSTRUCTED-ASSUMED",
+    "phase": "local-observed-timeline",
+    "scenario_slug": "formal-b1-v5-reconstructed-probe-calibrated"
+  }
+}

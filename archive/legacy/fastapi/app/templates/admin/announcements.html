@@ -1,0 +1,14 @@
+{% extends "admin/_layout.html" %}
+{% set heading = 'Announcements' %}
+{% block admin %}
+{% macro ann_form(a) %}
+<form method="post" action="/admin/announcements/save" class="panel mt-4"><input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% if a %}<input type="hidden" name="id" value="{{ a.id }}">{% endif %}
+  <div class="grid-form"><label class="field"><span>title_en</span><input type="text" name="title_en" value="{{ a.title_en if a else '' }}" required></label><label class="field"><span>title_zh</span><input type="text" name="title_zh" value="{{ a.title_zh if a else '' }}"></label>
+    <label class="field"><span>body_en</span><textarea name="body_en">{{ a.body_en if a else '' }}</textarea></label><label class="field"><span>body_zh</span><textarea name="body_zh">{{ a.body_zh if a else '' }}</textarea></label>
+    <label class="field"><span>level</span><select name="level">{% for l in ['info','warning','success'] %}<option value="{{ l }}" {% if a and a.level == l %}selected{% endif %}>{{ l }}</option>{% endfor %}</select></label></div>
+  <label class="check"><input type="checkbox" name="is_pinned" {% if a and a.is_pinned %}checked{% endif %}> pinned (shown in the top banner)</label><label class="check"><input type="checkbox" name="is_published" {% if not a or a.is_published %}checked{% endif %}> published</label>
+  <div class="actions-inline"><button class="btn primary sm" name="action" value="save" type="submit">Save</button>{% if a %}<button class="btn sm danger" name="action" value="delete" type="submit">Delete</button><span class="m xs text3">{{ a.created_at }}</span>{% endif %}</div></form>
+{% endmacro %}
+<h2 class="label accent">New</h2>{{ ann_form(None) }}
+{% for a in rows %}<h2 class="label accent mt-6">#{{ a.id }}</h2>{{ ann_form(a) }}{% endfor %}
+{% endblock %}

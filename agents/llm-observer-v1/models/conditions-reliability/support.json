@@ -1,0 +1,366 @@
+{
+  "bulk": {
+    "samples": 30623,
+    "quality_mae": 0.16851022839546204,
+    "quality_pinball": 0.04697539224741418,
+    "quality_interval_score": 1.1893242597579956,
+    "quality_coverage": 0.9078796982660092,
+    "quality_width": 0.782742977142334,
+    "usable_mae": 0.0888359323143959,
+    "usable_pinball": 0.019112558432433112,
+    "usable_interval_score": 0.5810916423797607,
+    "usable_coverage": 0.9736799137902884,
+    "usable_width": 0.2735767662525177,
+    "blocked_brier": 0.043055616319179535,
+    "blocked_log_loss": 0.1664324849843979,
+    "band_brier": 0.18863179728260607,
+    "band_log_loss": 0.36541837453842163,
+    "blocked_ece": 0.010696028478725122,
+    "band_ece": 0.032508767875950896,
+    "blocked_frequency": 0.0640694871544838,
+    "band_counts": [
+      24455,
+      4426,
+      1742
+    ]
+  },
+  "night": {
+    "never": {
+      "samples": 506,
+      "quality_mae": 0.28704819083213806,
+      "quality_pinball": 0.06716479793318568,
+      "quality_interval_score": 1.50577974319458,
+      "quality_coverage": 0.7885375494071146,
+      "quality_width": 1.0849977731704712,
+      "usable_mae": 0.09679615497589111,
+      "usable_pinball": 0.016799530669373775,
+      "usable_interval_score": 0.3379431664943695,
+      "usable_coverage": 0.9980237154150198,
+      "usable_width": 0.3177777826786041,
+      "blocked_brier": 0.052370425313711166,
+      "blocked_log_loss": 0.16629861295223236,
+      "band_brier": 0.09633396271890242,
+      "band_log_loss": 0.20374414324760437,
+      "blocked_ece": 0.06200712570449403,
+      "band_ece": 0.07252938544797334,
+      "blocked_frequency": 0.03162055462598801,
+      "band_counts": [
+        487,
+        19,
+        0
+      ],
+      "scenes": 16
+    },
+    "partial": {
+      "samples": 11542,
+      "quality_mae": 0.16720730066299438,
+      "quality_pinball": 0.0460021382004109,
+      "quality_interval_score": 1.15603768825531,
+      "quality_coverage": 0.8972448449142263,
+      "quality_width": 0.7738779783248901,
+      "usable_mae": 0.10632751137018204,
+      "usable_pinball": 0.02298262063782611,
+      "usable_interval_score": 0.7163262963294983,
+      "usable_coverage": 0.9716686882689308,
+      "usable_width": 0.36238887906074524,
+      "blocked_brier": 0.05030900239944458,
+      "blocked_log_loss": 0.19575974345207214,
+      "band_brier": 0.15993054314205968,
+      "band_log_loss": 0.330003023147583,
+      "blocked_ece": 0.015795382054103368,
+      "band_ece": 0.02516513104802131,
+      "blocked_frequency": 0.0731242448091507,
+      "band_counts": [
+        9515,
+        1343,
+        684
+      ],
+      "scenes": 16
+    },
+    "stale": {
+      "samples": 7608,
+      "quality_mae": 0.20655277371406555,
+      "quality_pinball": 0.059073279764738446,
+      "quality_interval_score": 1.5028131008148193,
+      "quality_coverage": 0.8884069400630915,
+      "quality_width": 0.8711906671524048,
+      "usable_mae": 0.1033048927783966,
+      "usable_pinball": 0.02522897672686201,
+      "usable_interval_score": 0.8529072999954224,
+      "usable_coverage": 0.9628023133543638,
+      "usable_width": 0.3217439651489258,
+      "blocked_brier": 0.053624335676431656,
+      "blocked_log_loss": 0.22610794007778168,
+      "band_brier": 0.2714791011317322,
+      "band_log_loss": 0.5083033442497253,
+      "blocked_ece": 0.016265525135919685,
+      "band_ece": 0.026576293403229888,
+      "blocked_frequency": 0.07820715010166168,
+      "band_counts": [
+        5521,
+        1601,
+        486
+      ],
+      "scenes": 16
+    }
+  },
+  "endpoint": {
+    "bulk": {
+      "metrics": {
+        "endpoint_brier": 0.1224848638928594,
+        "endpoint_log_loss": 0.2658904194831848,
+        "endpoint_ece": {
+          "zero": 0.007583538253586922,
+          "interior": 0.007489431120876905,
+          "one": 0.014789503386333395
+        },
+        "true_counts": [
+          1645,
+          878,
+          28100
+        ],
+        "mean_predicted_mass": [
+          0.06130104884505272,
+          0.03357414901256561,
+          0.9051235318183899
+        ]
+      },
+      "subgroups": {
+        "eight": {
+          "endpoint_brier": 0.12274389187309726,
+          "endpoint_log_loss": 0.26908984780311584,
+          "endpoint_ece": {
+            "zero": 0.007636456417725206,
+            "interior": 0.010270690856576413,
+            "one": 0.016323372708948285
+          },
+          "true_counts": [
+            1006,
+            569,
+            17163
+          ],
+          "mean_predicted_mass": [
+            0.059259261935949326,
+            0.03265538066625595,
+            0.908086895942688
+          ]
+        },
+        "never": {
+          "endpoint_brier": 0.11640304127547808,
+          "endpoint_log_loss": 0.22664006054401398,
+          "endpoint_ece": {
+            "zero": 0.05582864456644407,
+            "interior": 0.028194595025226536,
+            "one": 0.07965302723551924
+          },
+          "true_counts": [
+            11,
+            7,
+            488
+          ],
+          "mean_predicted_mass": [
+            0.0754634216427803,
+            0.039762794971466064,
+            0.8847736120223999
+          ]
+        },
+        "partial": {
+          "endpoint_brier": 0.12296783551346821,
+          "endpoint_log_loss": 0.2647542953491211,
+          "endpoint_ece": {
+            "zero": 0.008885790124951677,
+            "interior": 0.006323961187580984,
+            "one": 0.012922690268715932
+          },
+          "true_counts": [
+            551,
+            276,
+            9164
+          ],
+          "mean_predicted_mass": [
+            0.061748214066028595,
+            0.03394879028201103,
+            0.9043043851852417
+          ]
+        },
+        "stale": {
+          "endpoint_brier": 0.11772864378421033,
+          "endpoint_log_loss": 0.24518507719039917,
+          "endpoint_ece": {
+            "zero": 0.0270993954982469,
+            "interior": 0.022292000448239983,
+            "one": 0.05101001599229206
+          },
+          "true_counts": [
+            77,
+            26,
+            1285
+          ],
+          "mean_predicted_mass": [
+            0.08049047738313675,
+            0.04102398455142975,
+            0.8784855008125305
+          ]
+        }
+      },
+      "constant": {
+        "endpoint_brier": 0.15437365077930779,
+        "endpoint_log_loss": 0.3381701675643902,
+        "endpoint_ece": {
+          "zero": 0.00569824979785228,
+          "interior": 0.0017572018594224567,
+          "one": 0.007455451657274903
+        },
+        "true_counts": [
+          1645,
+          878,
+          28100
+        ],
+        "mean_predicted_mass": [
+          0.05941604361299416,
+          0.03042846202333944,
+          0.9101554943635033
+        ]
+      },
+      "difference_vs_constant": {
+        "estimate": -0.0318887868864484,
+        "ci95": [
+          -0.04439113147307394,
+          -0.02065468156479746
+        ],
+        "scenes": 16,
+        "unit": "whole independent scene"
+      },
+      "beta_shape_warning": "Sparse interior; empirical assessment only."
+    },
+    "night": {
+      "metrics": {
+        "endpoint_brier": 0.14141302625530122,
+        "endpoint_log_loss": 0.3139265775680542,
+        "endpoint_ece": {
+          "zero": 0.007064798658264146,
+          "interior": 0.007555060100764048,
+          "one": 0.024598917926141987
+        },
+        "true_counts": [
+          1264,
+          575,
+          17817
+        ],
+        "mean_predicted_mass": [
+          0.0691777765750885,
+          0.036808304488658905,
+          0.8940130472183228
+        ]
+      },
+      "subgroups": {
+        "never": {
+          "endpoint_brier": 0.11640304127547808,
+          "endpoint_log_loss": 0.22664006054401398,
+          "endpoint_ece": {
+            "zero": 0.05582864456644407,
+            "interior": 0.028194595025226536,
+            "one": 0.07965302723551924
+          },
+          "true_counts": [
+            11,
+            7,
+            488
+          ],
+          "mean_predicted_mass": [
+            0.0754634216427803,
+            0.039762794971466064,
+            0.8847736120223999
+          ]
+        },
+        "partial": {
+          "endpoint_brier": 0.13950835572125583,
+          "endpoint_log_loss": 0.30462777614593506,
+          "endpoint_ece": {
+            "zero": 0.010957893618374282,
+            "interior": 0.00730234879133421,
+            "one": 0.024879219015959207
+          },
+          "true_counts": [
+            733,
+            342,
+            10467
+          ],
+          "mean_predicted_mass": [
+            0.07446490973234177,
+            0.03680691495537758,
+            0.8887297511100769
+          ]
+        },
+        "stale": {
+          "endpoint_brier": 0.14596596522792768,
+          "endpoint_log_loss": 0.33383896946907043,
+          "endpoint_ece": {
+            "zero": 0.011556020227861204,
+            "interior": 0.006908134878030365,
+            "one": 0.022890072327683003
+          },
+          "true_counts": [
+            520,
+            226,
+            6862
+          ],
+          "mean_predicted_mass": [
+            0.060737986117601395,
+            0.036613743752241135,
+            0.9026479125022888
+          ]
+        }
+      },
+      "constant": {
+        "endpoint_brier": 0.17341318554356427,
+        "endpoint_log_loss": 0.3690435136179379,
+        "endpoint_ece": {
+          "zero": 0.004890020693105748,
+          "interior": 0.001175307770197271,
+          "one": 0.003714712922908592
+        },
+        "true_counts": [
+          1264,
+          575,
+          17817
+        ],
+        "mean_predicted_mass": [
+          0.05941604361296017,
+          0.03042846202334053,
+          0.9101554943639526
+        ]
+      },
+      "difference_vs_constant": {
+        "estimate": -0.032000159288263066,
+        "ci95": [
+          -0.044303878072340507,
+          -0.02038339530631114
+        ],
+        "scenes": 16,
+        "unit": "whole independent scene"
+      },
+      "beta_shape_warning": "Sparse interior; empirical assessment only."
+    }
+  },
+  "limits": [
+    "First-ever band probabilities are not reliable enough for decisive interpretation.",
+    "U ranges contain discrete atoms and may cover >95%; do not call exact90% calibrated.",
+    "Rare complete closure and interior U are not accurately identified for every exposure.",
+    "No per-candidate confidence guarantee; no automatic ranking, truncation, or exclusion.",
+    "New sites, formal hidden data, Linux runtime and a complete agent score not evaluated this round.",
+    "First-ever Q range coverage is only 78.9%; do not treat that group as validated.",
+    "First-ever severe-block probability error is 6.2%; aggregate reliability does not transfer to this group."
+  ],
+  "checks": {
+    "passed": false,
+    "checks": {
+      "bulk": false,
+      "next_night": true,
+      "never": false,
+      "partial": true,
+      "stale": true
+    },
+    "worst_gap": 1.6798367208171738
+  }
+}

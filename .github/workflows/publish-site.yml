@@ -1,0 +1,94 @@
+name: Publish event site
+
+on:
+  pull_request:
+  workflow_dispatch:
+  # Publish every push to main (organizer decision 2026-10-02: no waiting for Tests).
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: event-site-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            web/package-lock.json
+            legacy-event/package-lock.json
+      - name: Install dependencies
+        run: |
+          npm ci --prefix web
+          npm ci --prefix legacy-event
+      - name: Build and package
+        run: node scripts/release-site.mjs
+        env:
+          # Public client settings are repository variables so fork PR builds work too.
+          # Fork pull requests do NOT receive repository variables, so fall back to
+          # placeholders there; on main the real variables are required as before.
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL || (github.event_name == 'pull_request' && 'https://placeholder.supabase.co') || '' }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.VITE_SUPABASE_ANON_KEY || (github.event_name == 'pull_request' && 'sb_publishable_placeholder') || '' }}
+      - uses: actions/upload-artifact@v6
+        with:
+          name: event-site
+          path: release/
+          retention-days: 14
+  publish:
+    # A push to main or a manual dispatch from main publishes.
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v7
+        with:
+          name: event-site
+          path: release
+      - name: Publish complete release atomically
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          REVISION: ${{ github.event.workflow_run.head_sha || github.sha }}
+          RUN_ID: ${{ github.run_id }}
+          ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          set -euo pipefail
+          # Publish only the current main head. When main has moved on, the newer
+          # commit's own green Tests run publishes it, and an older build must not
+          # become "latest" over it. Tagging a stale commit also fails with HTTP 403
+          # whenever .github/workflows differs from main, because the token can
+          # never hold the `workflows` permission that such a ref would need.
+          stale() {
+            head="$(gh api "repos/${GH_REPO}/commits/main" --jq .sha)"
+            [ "$head" != "$REVISION" ]
+          }
+          if stale; then
+            echo "::notice::main is now at ${head}; skipping stale revision ${REVISION}."
+            exit 0
+          fi
+          tag="site-${REVISION}-${RUN_ID}-${ATTEMPT}"
+          if ! gh release create "$tag" release/site.tar.gz release/site.tar.gz.sha256 \
+            --draft --target "$REVISION" --title "Website ${REVISION:0:12}" \
+            --notes "Successful website build. The shared create.gosim.org publisher collects this release automatically."; then
+            # main may have advanced between the check and the create.
+            if stale; then
+              echo "::notice::main moved to ${head} while publishing; skipping stale revision ${REVISION}."
+              exit 0
+            fi
+            exit 1
+          fi
+          gh release edit "$tag" --draft=false --latest

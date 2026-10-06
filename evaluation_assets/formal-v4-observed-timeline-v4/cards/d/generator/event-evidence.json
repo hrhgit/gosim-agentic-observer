@@ -1,0 +1,1872 @@
+[
+  {
+    "event_id": "RC0001",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-01-29T11:30:00Z",
+      "last_public_slot_utc": "2027-01-31T07:30:00Z",
+      "published_slots": 25
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0002",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-02-08T10:15:00Z",
+      "last_public_slot_utc": "2027-02-09T10:45:00Z",
+      "published_slots": 25
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0003",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SE",
+      "first_public_slot_utc": "2027-02-10T07:15:00Z",
+      "last_public_slot_utc": "2027-02-10T10:30:00Z",
+      "published_slots": 14
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0004",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "E",
+      "first_public_slot_utc": "2027-02-11T07:30:00Z",
+      "last_public_slot_utc": "2027-02-12T08:15:00Z",
+      "published_slots": 28
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0005",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-02-17T09:00:00Z",
+      "last_public_slot_utc": "2027-02-22T11:00:00Z",
+      "published_slots": 138
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0006",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "N",
+      "first_public_slot_utc": "2027-02-22T11:15:00Z",
+      "last_public_slot_utc": "2027-02-22T12:00:00Z",
+      "published_slots": 4
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0007",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SE",
+      "first_public_slot_utc": "2027-02-24T10:15:00Z",
+      "last_public_slot_utc": "2027-02-25T08:45:00Z",
+      "published_slots": 22
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0008",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-03-02T10:45:00Z",
+      "last_public_slot_utc": "2027-03-03T06:15:00Z",
+      "published_slots": 12
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0009",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "SE",
+      "first_public_slot_utc": "2027-03-08T12:30:00Z",
+      "last_public_slot_utc": "2027-03-11T06:30:00Z",
+      "published_slots": 69
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0010",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "E",
+      "first_public_slot_utc": "2027-03-13T09:00:00Z",
+      "last_public_slot_utc": "2027-03-13T11:00:00Z",
+      "published_slots": 9
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0011",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-03-18T09:15:00Z",
+      "last_public_slot_utc": "2027-03-24T06:45:00Z",
+      "published_slots": 190
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0012",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-03-20T12:45:00Z",
+      "last_public_slot_utc": "2027-03-21T06:15:00Z",
+      "published_slots": 8
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0013",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SW",
+      "first_public_slot_utc": "2027-03-23T10:45:00Z",
+      "last_public_slot_utc": "2027-03-24T09:15:00Z",
+      "published_slots": 29
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0014",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "SW",
+      "first_public_slot_utc": "2027-03-24T08:30:00Z",
+      "last_public_slot_utc": "2027-03-24T09:30:00Z",
+      "published_slots": 5
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0015",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "E",
+      "first_public_slot_utc": "2027-04-02T11:30:00Z",
+      "last_public_slot_utc": "2027-04-04T07:15:00Z",
+      "published_slots": 56
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0016",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "W",
+      "first_public_slot_utc": "2027-04-03T13:00:00Z",
+      "last_public_slot_utc": "2027-04-04T11:45:00Z",
+      "published_slots": 32
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0017",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-04-06T09:30:00Z",
+      "last_public_slot_utc": "2027-04-07T04:45:00Z",
+      "published_slots": 19
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0018",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-04-13T05:15:00Z",
+      "last_public_slot_utc": "2027-04-16T10:45:00Z",
+      "published_slots": 137
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0019",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "S",
+      "first_public_slot_utc": "2027-04-13T07:30:00Z",
+      "last_public_slot_utc": "2027-04-13T12:00:00Z",
+      "published_slots": 19
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0020",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "SW",
+      "first_public_slot_utc": "2027-04-14T08:00:00Z",
+      "last_public_slot_utc": "2027-04-14T08:15:00Z",
+      "published_slots": 2
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0021",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "E",
+      "first_public_slot_utc": "2027-04-21T10:45:00Z",
+      "last_public_slot_utc": "2027-04-22T07:00:00Z",
+      "published_slots": 26
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0022",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "storm",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-04-21T12:30:00Z",
+      "last_public_slot_utc": "2027-04-22T04:45:00Z",
+      "published_slots": 10
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0023",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "NW",
+      "first_public_slot_utc": "2027-04-21T13:45:00Z",
+      "last_public_slot_utc": "2027-04-22T11:45:00Z",
+      "published_slots": 33
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0024",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-04-24T13:30:00Z",
+      "last_public_slot_utc": "2027-04-25T09:45:00Z",
+      "published_slots": 26
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0025",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-05-02T05:45:00Z",
+      "last_public_slot_utc": "2027-05-02T12:45:00Z",
+      "published_slots": 29
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0026",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "E",
+      "first_public_slot_utc": "2027-05-04T04:30:00Z",
+      "last_public_slot_utc": "2027-05-04T05:00:00Z",
+      "published_slots": 3
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0027",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-05-07T05:45:00Z",
+      "last_public_slot_utc": "2027-05-09T05:30:00Z",
+      "published_slots": 84
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0028",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-05-09T07:00:00Z",
+      "last_public_slot_utc": "2027-05-09T09:30:00Z",
+      "published_slots": 11
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0029",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "E",
+      "first_public_slot_utc": "2027-05-09T09:15:00Z",
+      "last_public_slot_utc": "2027-05-11T09:00:00Z",
+      "published_slots": 86
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0030",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "N",
+      "first_public_slot_utc": "2027-05-10T03:30:00Z",
+      "last_public_slot_utc": "2027-05-10T11:15:00Z",
+      "published_slots": 32
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0031",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "earthquake",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-05-12T06:30:00Z",
+      "last_public_slot_utc": "2027-05-25T14:15:00Z",
+      "published_slots": 599
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": 5.159773085349212,
+      "earthquake_decay_nights": 4.0
+    }
+  },
+  {
+    "event_id": "RC0032",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-05-20T04:15:00Z",
+      "last_public_slot_utc": "2027-05-20T09:45:00Z",
+      "published_slots": 23
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0033",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-05-21T04:00:00Z",
+      "last_public_slot_utc": "2027-05-21T13:00:00Z",
+      "published_slots": 37
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0034",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "N",
+      "first_public_slot_utc": "2027-05-22T13:00:00Z",
+      "last_public_slot_utc": "2027-05-24T14:15:00Z",
+      "published_slots": 94
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0035",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SW",
+      "first_public_slot_utc": "2027-05-26T08:30:00Z",
+      "last_public_slot_utc": "2027-05-26T13:30:00Z",
+      "published_slots": 21
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0036",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-05-27T12:00:00Z",
+      "last_public_slot_utc": "2027-06-01T03:15:00Z",
+      "published_slots": 191
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0037",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-05-28T08:00:00Z",
+      "last_public_slot_utc": "2027-05-28T08:30:00Z",
+      "published_slots": 3
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0038",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-06-04T10:30:00Z",
+      "last_public_slot_utc": "2027-06-05T03:30:00Z",
+      "published_slots": 18
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0039",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "E",
+      "first_public_slot_utc": "2027-06-04T11:15:00Z",
+      "last_public_slot_utc": "2027-06-05T07:45:00Z",
+      "published_slots": 32
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0040",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "NW",
+      "first_public_slot_utc": "2027-06-09T07:30:00Z",
+      "last_public_slot_utc": "2027-06-09T13:30:00Z",
+      "published_slots": 25
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0041",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SW",
+      "first_public_slot_utc": "2027-06-13T07:45:00Z",
+      "last_public_slot_utc": "2027-06-13T11:15:00Z",
+      "published_slots": 15
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0042",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-06-13T14:15:00Z",
+      "last_public_slot_utc": "2027-06-17T10:30:00Z",
+      "published_slots": 170
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0043",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-06-16T13:30:00Z",
+      "last_public_slot_utc": "2027-06-17T06:45:00Z",
+      "published_slots": 20
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0044",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "W",
+      "first_public_slot_utc": "2027-06-17T09:45:00Z",
+      "last_public_slot_utc": "2027-06-17T10:30:00Z",
+      "published_slots": 4
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0045",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "S",
+      "first_public_slot_utc": "2027-06-21T08:15:00Z",
+      "last_public_slot_utc": "2027-06-21T12:15:00Z",
+      "published_slots": 17
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0046",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "storm",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-06-25T09:45:00Z",
+      "last_public_slot_utc": "2027-06-25T11:00:00Z",
+      "published_slots": 6
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0047",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-06-26T04:30:00Z",
+      "last_public_slot_utc": "2027-06-27T14:30:00Z",
+      "published_slots": 87
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0048",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "W",
+      "first_public_slot_utc": "2027-06-30T12:15:00Z",
+      "last_public_slot_utc": "2027-07-01T07:30:00Z",
+      "published_slots": 28
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0049",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-06-30T14:15:00Z",
+      "last_public_slot_utc": "2027-07-01T04:45:00Z",
+      "published_slots": 9
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0050",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "NW",
+      "first_public_slot_utc": "2027-07-05T07:45:00Z",
+      "last_public_slot_utc": "2027-07-05T08:30:00Z",
+      "published_slots": 4
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0051",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-06T06:15:00Z",
+      "last_public_slot_utc": "2027-07-09T08:00:00Z",
+      "published_slots": 143
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0052",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-09T05:45:00Z",
+      "last_public_slot_utc": "2027-07-09T11:00:00Z",
+      "published_slots": 22
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0053",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "N",
+      "first_public_slot_utc": "2027-07-09T11:45:00Z",
+      "last_public_slot_utc": "2027-07-10T10:15:00Z",
+      "published_slots": 40
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0054",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-15T12:45:00Z",
+      "last_public_slot_utc": "2027-07-16T10:30:00Z",
+      "published_slots": 37
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0055",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SE",
+      "first_public_slot_utc": "2027-07-16T04:15:00Z",
+      "last_public_slot_utc": "2027-07-16T11:45:00Z",
+      "published_slots": 31
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0056",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "E",
+      "first_public_slot_utc": "2027-07-23T08:30:00Z",
+      "last_public_slot_utc": "2027-07-23T08:45:00Z",
+      "published_slots": 2
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0057",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-24T09:15:00Z",
+      "last_public_slot_utc": "2027-07-27T07:30:00Z",
+      "published_slots": 123
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0058",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-24T14:00:00Z",
+      "last_public_slot_utc": "2027-07-25T06:45:00Z",
+      "published_slots": 15
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0059",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-27T10:00:00Z",
+      "last_public_slot_utc": "2027-07-29T05:45:00Z",
+      "published_slots": 70
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0060",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-07-30T07:30:00Z",
+      "last_public_slot_utc": "2027-07-31T06:00:00Z",
+      "published_slots": 38
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0061",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "SW",
+      "first_public_slot_utc": "2027-08-02T12:45:00Z",
+      "last_public_slot_utc": "2027-08-03T09:15:00Z",
+      "published_slots": 30
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0062",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "earthquake",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-08-08T04:15:00Z",
+      "last_public_slot_utc": "2027-08-26T13:45:00Z",
+      "published_slots": 768
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": 6.585738049409736,
+      "earthquake_decay_nights": 4.16247257894094
+    }
+  },
+  {
+    "event_id": "RC0063",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "NW",
+      "first_public_slot_utc": "2027-08-10T10:15:00Z",
+      "last_public_slot_utc": "2027-08-11T06:45:00Z",
+      "published_slots": 28
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0064",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-08-11T04:00:00Z",
+      "last_public_slot_utc": "2027-08-11T08:45:00Z",
+      "published_slots": 20
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0065",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "E",
+      "first_public_slot_utc": "2027-08-11T13:45:00Z",
+      "last_public_slot_utc": "2027-08-11T14:00:00Z",
+      "published_slots": 2
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0066",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-08-13T06:15:00Z",
+      "last_public_slot_utc": "2027-08-17T09:15:00Z",
+      "published_slots": 177
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0067",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-08-14T05:15:00Z",
+      "last_public_slot_utc": "2027-08-14T11:30:00Z",
+      "published_slots": 26
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0068",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-08-20T08:45:00Z",
+      "last_public_slot_utc": "2027-08-20T12:00:00Z",
+      "published_slots": 14
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0069",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "N",
+      "first_public_slot_utc": "2027-08-28T06:45:00Z",
+      "last_public_slot_utc": "2027-08-28T12:15:00Z",
+      "published_slots": 23
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0070",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-08-29T04:45:00Z",
+      "last_public_slot_utc": "2027-08-29T11:15:00Z",
+      "published_slots": 27
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0071",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "storm",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-08-29T10:00:00Z",
+      "last_public_slot_utc": "2027-08-29T11:45:00Z",
+      "published_slots": 8
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0072",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-08-31T08:15:00Z",
+      "last_public_slot_utc": "2027-09-02T05:15:00Z",
+      "published_slots": 65
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0073",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "SE",
+      "first_public_slot_utc": "2027-09-07T06:45:00Z",
+      "last_public_slot_utc": "2027-09-07T07:30:00Z",
+      "published_slots": 4
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0074",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-09-08T09:30:00Z",
+      "last_public_slot_utc": "2027-09-12T08:45:00Z",
+      "published_slots": 142
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0075",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "W",
+      "first_public_slot_utc": "2027-09-09T06:00:00Z",
+      "last_public_slot_utc": "2027-09-09T08:15:00Z",
+      "published_slots": 10
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0076",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-09-14T09:15:00Z",
+      "last_public_slot_utc": "2027-09-15T04:45:00Z",
+      "published_slots": 18
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0077",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "S",
+      "first_public_slot_utc": "2027-09-19T12:00:00Z",
+      "last_public_slot_utc": "2027-09-20T08:15:00Z",
+      "published_slots": 20
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0078",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-09-22T12:00:00Z",
+      "last_public_slot_utc": "2027-09-24T11:15:00Z",
+      "published_slots": 64
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0079",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "E",
+      "first_public_slot_utc": "2027-09-28T05:30:00Z",
+      "last_public_slot_utc": "2027-09-28T11:30:00Z",
+      "published_slots": 25
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0080",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-09-30T08:00:00Z",
+      "last_public_slot_utc": "2027-09-30T08:15:00Z",
+      "published_slots": 2
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0081",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-10-01T07:30:00Z",
+      "last_public_slot_utc": "2027-10-03T09:00:00Z",
+      "published_slots": 69
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0082",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-10-02T06:15:00Z",
+      "last_public_slot_utc": "2027-10-02T12:00:00Z",
+      "published_slots": 24
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0083",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-10-11T06:30:00Z",
+      "last_public_slot_utc": "2027-10-12T09:00:00Z",
+      "published_slots": 39
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0084",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "NW",
+      "first_public_slot_utc": "2027-10-12T08:45:00Z",
+      "last_public_slot_utc": "2027-10-13T08:00:00Z",
+      "published_slots": 26
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0085",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-10-19T07:30:00Z",
+      "last_public_slot_utc": "2027-10-19T11:30:00Z",
+      "published_slots": 17
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0086",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "E",
+      "first_public_slot_utc": "2027-10-27T10:15:00Z",
+      "last_public_slot_utc": "2027-10-28T10:00:00Z",
+      "published_slots": 24
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0087",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rocket_launch",
+      "direction": "NE",
+      "first_public_slot_utc": "2027-11-02T06:30:00Z",
+      "last_public_slot_utc": "2027-11-02T07:00:00Z",
+      "published_slots": 3
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0088",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "cold_snap",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-11-02T08:15:00Z",
+      "last_public_slot_utc": "2027-11-06T07:15:00Z",
+      "published_slots": 85
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0089",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "NW",
+      "first_public_slot_utc": "2027-11-14T07:45:00Z",
+      "last_public_slot_utc": "2027-11-15T09:00:00Z",
+      "published_slots": 26
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0090",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "haze",
+      "direction": "SE",
+      "first_public_slot_utc": "2027-11-15T09:00:00Z",
+      "last_public_slot_utc": "2027-11-19T10:15:00Z",
+      "published_slots": 78
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0091",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "rain",
+      "direction": "ALL",
+      "first_public_slot_utc": "2027-11-19T09:45:00Z",
+      "last_public_slot_utc": "2027-11-21T07:30:00Z",
+      "published_slots": 28
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": null,
+      "sector_max_alt_deg": null,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0092",
+    "origin": "public-episode-derived hidden-condition hypothesis",
+    "observed_episode": {
+      "event_kind": "overcast",
+      "direction": "E",
+      "first_public_slot_utc": "2027-12-03T10:00:00Z",
+      "last_public_slot_utc": "2027-12-04T08:15:00Z",
+      "published_slots": 8
+    },
+    "assumed": {
+      "boundaries": "first slot start and last slot end; hidden boundaries may differ",
+      "one_event_per_episode": true,
+      "severity": 0.75,
+      "sector_width_deg": 60,
+      "sector_max_alt_deg": 60.0,
+      "earthquake_magnitude": null,
+      "earthquake_decay_nights": null
+    }
+  },
+  {
+    "event_id": "RC0093",
+    "origin": "successful-repair lower-bound hypothesis",
+    "repair_observed_utc": "2027-04-23T07:08:00Z",
+    "assumed": {
+      "onset": "start of repair night, bounded by prior false reports",
+      "instrument_efficiency_multiplier": 0.55,
+      "count": "successful repairs only; undetected faults unknown"
+    }
+  },
+  {
+    "event_id": "RC0094",
+    "origin": "successful-repair lower-bound hypothesis",
+    "repair_observed_utc": "2027-06-26T14:41:42Z",
+    "assumed": {
+      "onset": "start of repair night, bounded by prior false reports",
+      "instrument_efficiency_multiplier": 0.55,
+      "count": "successful repairs only; undetected faults unknown"
+    }
+  },
+  {
+    "event_id": "RC0095",
+    "origin": "successful-repair lower-bound hypothesis",
+    "repair_observed_utc": "2028-01-01T10:25:30Z",
+    "assumed": {
+      "onset": "start of repair night, bounded by prior false reports",
+      "instrument_efficiency_multiplier": 0.55,
+      "count": "successful repairs only; undetected faults unknown"
+    }
+  }
+]

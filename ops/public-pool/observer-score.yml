@@ -1,0 +1,52 @@
+name: Observer score
+
+# Public runner pool (ops/public-runner-pool.md). Everything on this page is
+# public: the only input is an opaque job id, the claim is bound to this run's
+# id, all private data arrives and leaves sealed, and the log shows one status
+# line. Never add inputs, artifacts, caches, job summaries or verbose output.
+# The independent rescore of a finished run: no participant code runs here.
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: Opaque job identifier
+        type: string
+        required: true
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: observer-score-${{ inputs.job_id }}
+  cancel-in-progress: false
+
+jobs:
+  score:
+    if: ${{ github.ref == format('refs/tags/observer-runtime-{0}', github.sha) && github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Run the trusted score entrypoint
+        env:
+          OBSERVER_JOB_URL: ${{ vars.OBSERVER_JOB_URL }}
+          OBSERVER_JOB_ID: ${{ inputs.job_id }}
+          OBSERVER_POOL: public
+        run: |
+          set +x
+          if python -m pip install --quiet --disable-pip-version-check --no-deps --only-binary=:all: \
+              --require-hashes -r public-pool-requirements.txt > /dev/null 2>&1 \
+            && python -m project_platform.job_runner score > /dev/null 2>&1; then
+            echo "Observer job completed."
+          else
+            echo "Observer job failed."
+            exit 1
+          fi

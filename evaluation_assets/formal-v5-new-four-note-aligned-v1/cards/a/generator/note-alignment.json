@@ -1,0 +1,117 @@
+{
+ "card": "a",
+ "faults": [
+  {
+   "onset": "2026-10-28T07:15:00Z",
+   "end": "2026-11-12T06:45:00Z",
+   "level": 0.5,
+   "level_stated": true,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1005",
+    "V4RQ1006",
+    "V4RQ1007",
+    "V4RQ1008"
+   ],
+   "formal_run_correct_report": "2026-11-01T02:18:12Z"
+  },
+  {
+   "onset": "2026-11-12T06:45:00Z",
+   "end": "2026-11-22T07:00:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1011",
+    "V4RQ1012",
+    "V4RQ1013",
+    "V4RQ1014"
+   ],
+   "formal_run_correct_report": "2026-11-13T02:05:24Z"
+  },
+  {
+   "onset": "2026-11-22T07:00:00Z",
+   "end": "2026-12-08T04:00:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1016",
+    "V4RQ1017"
+   ],
+   "formal_run_correct_report": "2026-11-23T04:00:36Z"
+  },
+  {
+   "onset": "2026-12-08T04:00:00Z",
+   "end": "2026-12-16T05:30:00Z",
+   "level": 0.55,
+   "level_stated": false,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1021",
+    "V4RQ1022",
+    "V4RQ1023"
+   ],
+   "formal_run_correct_report": "2026-12-10T04:01:54Z"
+  },
+  {
+   "onset": "2026-12-16T05:30:00Z",
+   "end": "2027-01-09T05:45:00Z",
+   "level": 0.4,
+   "level_stated": true,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1024",
+    "V4RQ1025",
+    "V4RQ1026"
+   ],
+   "formal_run_correct_report": "2026-12-16T08:13:33Z"
+  },
+  {
+   "onset": "2027-01-09T05:45:00Z",
+   "end": "2027-02-01T08:45:00Z",
+   "level": 0.3,
+   "level_stated": true,
+   "announced_in_advance": true,
+   "notes": [
+    "V4RQ1032",
+    "V4RQ1034",
+    "V4RQ1035"
+   ],
+   "formal_run_correct_report": "2027-01-09T06:57:30Z"
+  }
+ ],
+ "faults_in_source_set": 6,
+ "wind_sectors_closed": 2,
+ "stops": [
+  {
+   "start": "2026-10-21T03:45:00Z",
+   "end": "2026-10-21T05:45:00Z",
+   "note": "V4RQ1004",
+   "kind": "maintenance",
+   "formal_run_exposures": 17,
+   "formal_run_all_zero_share": 1.0,
+   "applied": true
+  },
+  {
+   "start": "2026-12-02T04:00:00Z",
+   "end": "2026-12-02T07:00:00Z",
+   "note": "V4RQ1020",
+   "kind": "maintenance",
+   "formal_run_exposures": 12,
+   "formal_run_all_zero_share": 0.9166666666666666,
+   "applied": true
+  },
+  {
+   "start": "2027-01-16T03:15:00Z",
+   "end": "2027-01-16T05:15:00Z",
+   "note": "V4RQ1037",
+   "kind": "maintenance",
+   "formal_run_exposures": 7,
+   "formal_run_all_zero_share": 0.8571428571428571,
+   "applied": true
+  }
+ ],
+ "slots_closed_for_stops": 28,
+ "slots_with_changed_efficiency": 1859
+}

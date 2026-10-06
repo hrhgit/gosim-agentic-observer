@@ -1,0 +1,69 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  challenge-and-worker:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pytest pgserver "psycopg[binary]" cryptography==50.0.2
+      - run: pytest challenge/tests tests/test_challenge_runner.py tests/test_starter_kit.py tests/test_starter_kit_v4.py tests/test_worker_preflight.py tests/test_worker_poll_backoff.py -q
+      - name: Fetch PostgREST
+        run: |
+          curl -sSL -o postgrest.tar.xz https://github.com/PostgREST/postgrest/releases/download/v16.2/postgrest-v16.2-linux-static-x86-64.tar.xz
+          tar xJf postgrest.tar.xz && chmod +x postgrest
+      - run: SAC_POSTGREST_BIN=$PWD/postgrest pytest tests/supabase -q
+      - name: v4 participant task cards and rules
+        run: pytest tests/test_v4_participant_docs.py -q
+      - name: v4 practice cards (builder, bundles, pages)
+        run: pytest tests/test_v4_practice_cards.py -q
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.9.7
+      - name: Project contracts, database permissions and quotas
+        run: pytest tests/test_project_platform.py tests/test_project_database.py tests/test_project_jobs.py tests/test_project_repository.py tests/test_project_model_adapter.py tests/test_project_job_worker.py tests/test_project_portal.py tests/test_project_local.py tests/test_project_orchestration.py tests/test_project_preparation.py tests/test_observer_deploy.py tests/test_observer_rollout.py tests/test_project_runtime.py tests/test_project_board.py tests/test_observer_competition.py tests/test_scenario_instances.py tests/test_scenario_instance_database.py tests/test_team_invitations.py tests/test_current_competition.py tests/test_formal_source_privacy.py tests/test_acceptance_config.py tests/test_personal_models.py tests/test_compact_finished_runs.py tests/test_project_eval_ux.py tests/test_hidden_final.py tests/test_hidden_final_zero.py tests/test_runner_placement.py tests/test_fallback_watcher.py tests/test_card_board.py tests/test_configure_v4_phases.py tests/test_sealed_scenario_names.py tests/test_v4_engine.py tests/test_v4_public_test_preview.py tests/test_public_runner_pool.py tests/test_public_runner_pool_db.py tests/test_egress_routes_db.py -q
+      - name: Pull explicit project test runtimes
+        run: |
+          docker pull python:3.12-slim
+          docker pull rust:1.98-bookworm
+      - name: Complete Python and Rust projects, real Edge API, trusted scoring, restricted egress and rescore
+        run: |
+          export OBSERVER_TEST_PYTHON_IMAGE="$(docker image inspect python:3.12-slim --format '{{index .RepoDigests 0}}')"
+          export OBSERVER_TEST_RUST_IMAGE="$(docker image inspect rust:1.98-bookworm --format '{{index .RepoDigests 0}}')"
+          export SAC_POSTGREST_BIN="$PWD/postgrest"
+          export OBSERVER_DENO_BIN="$(command -v deno)"
+          pytest tests/test_project_docker.py tests/test_project_http.py tests/test_scenario_instance_http.py tests/test_evaluation_hardening.py tests/test_egress_route.py -q
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --prefix web
+      - name: Website unit tests (quest, team directory, solo team, schedule, static route pages)
+        run: npm test --prefix web
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Participant portal browser journeys
+        run: |
+          export SAC_NODE_BIN="$(dirname "$(command -v node)")"
+          export SAC_POSTGREST_BIN="$PWD/postgrest"
+          export OBSERVER_DENO_BIN="$(command -v deno)"
+          pytest tests/test_project_portal_browser.py tests/test_team_entry_browser.py tests/test_current_competition_browser.py tests/test_ux_quick_wins_browser.py tests/test_card_board_browser.py tests/test_task_cards_browser.py tests/test_announcement_popup_browser.py -q
+  edge-functions:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - run: deno check leaderboard/index.ts
+        working-directory: supabase/functions
+      - run: deno task check:observer
+        working-directory: supabase/functions
+      - run: deno task test:observer
+        working-directory: supabase/functions
