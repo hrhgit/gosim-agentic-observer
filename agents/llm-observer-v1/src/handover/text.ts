@@ -15,7 +15,7 @@ export function stripEmoticons(text: string): string {
   return out.replace(/[ヽﾉ┐┌╮╭]/g, "");
 }
 
-/** Text the model and the fallback parser both read: one line per speaker entry, ASCII digits and punctuation. */
+/** The text the model is given: one line per speaker entry, ASCII digits and punctuation. */
 export function cleanText(raw: string): string {
   const stripped = stripEmoticons(raw.replace(ZERO_WIDTH, "")).normalize("NFKC");
   return stripped

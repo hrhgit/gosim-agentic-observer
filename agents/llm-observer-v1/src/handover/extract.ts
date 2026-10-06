@@ -2,7 +2,7 @@
  * One handover note -> facts. The model reads the note (prompt.ts); this module supplies its context,
  * checks every field of the answer and does the arithmetic the model should not be trusted with:
  * calendar dates, local time to UTC, "that night" semantics, compass ranges.
- * `fallbackFacts` is the keyword reading used when no model answer is available.
+ * Nothing here interprets a note without the model: there is no keyword reading.
  */
 import { COMPASS } from "../core/conditions";
 import { FactStore, FaultFact, FaultKind, NoteFacts, TerrainFact, WindowFact } from "../facts/store";
@@ -137,7 +137,7 @@ const list = (value: unknown): Json[] => (Array.isArray(value) ? value.filter((v
 
 /** Validate a model answer and convert it; anything that does not check out is dropped, never guessed. */
 export function factsFromAnswer(answer: Json, src: string, issued: number, cal: SiteCalendar): NoteFacts {
-  const note: NoteFacts = { src, issued, windows: [], terrain: [], faults: [], nights: [], requests: [], codebook: [], origin: "model" };
+  const note: NoteFacts = { src, issued, windows: [], terrain: [], faults: [], nights: [], requests: [], codebook: [], };
   for (const item of list(answer.codebook)) {
     const phrase = String(item.phrase ?? "").trim(),
       means = String(item.means ?? "").trim();
@@ -241,56 +241,14 @@ export function factsFromAnswer(answer: Json, src: string, issued: number, cal: 
   return note;
 }
 
-// Only words that ask for action. "Not the sky's doing" also ends every announcement of a job still to come
-// ("the engineers will work on the guide camera at 3:15, efficiency will fall, not the weather"), which is no ticket.
-const FAULT_CUE = /提单|叫(?:一下)?工程组|工程组(?:叫)?上来|打那个电话|報修|报修/;
-const FAULT_NEGATED = /(?:不用|不必|别|別|先不|无需|無需|不要|暂不|用不着|没必要)[^，。；,;]{0,6}(?:提单|叫(?:一下)?工程组|打那个电话|報修|报修)/;
-const DIRECTIONS: [RegExp, string][] = [
-  [/东北|東北|北東|北东/, "NE"], [/东南|東南|南東|南东/, "SE"], [/西南|南西/, "SW"], [/西北|北西/, "NW"],
-  [/东|東/, "E"], [/南/, "S"], [/西/, "W"], [/北/, "N"],
-];
-
-/** Code-word definitions written as 「phrase」＝meaning, kept verbatim so later notes can be read with them. */
+/**
+ * Code-word definitions written as 「phrase」＝meaning, copied verbatim so the model is shown them again with
+ * every later note. This copies text; what a code word implies is still the model's reading.
+ */
 export function codebookLines(raw: string): string[] {
   const out: string[] = [];
   for (const match of cleanText(raw).matchAll(/「([^」]{2,30})」\s*=\s*([^;。「」]{2,60})/g)) out.push(`「${match[1]}」= ${match[2].trim()}`);
   return out;
-}
-
-/**
- * Keyword reading for when the model cannot be asked: ridge heights and explicit "file a ticket" fault
- * lines only. It cannot follow corrections between speakers beyond "the last number wins", reads no
- * weather windows and no code words.
- */
-export function fallbackFacts(raw: string, src: string, issued: number): NoteFacts {
-  const note: NoteFacts = { src, issued, windows: [], terrain: [], faults: [], nights: [], requests: [], codebook: codebookLines(raw), origin: "fallback" };
-  const ridges = new Map<number, number>();
-  for (const line of cleanText(raw).split("\n")) {
-    if (!/天顶距|天頂距|°\s*[FC]|气温|気温|云|雲|霾|雨/.test(line)) {
-      const mountain = /山|稜線|山脊|挡|ridge/.test(line);
-      let from = 0;
-      // Every "NN 度" of the line belongs to the direction named last before it.
-      for (const height of line.matchAll(/(\d{2})\s*(?:度|°)/g)) {
-        const value = Number(height[1]),
-          head = line.slice(from, height.index);
-        from = height.index + height[0].length;
-        let found: string | null = null,
-          at = -1;
-        for (const [pattern, name] of DIRECTIONS) {
-          const hit = new RegExp(pattern.source, "g");
-          for (const m of head.matchAll(hit)) if (m.index > at) [at, found] = [m.index, name];
-          if (found !== null && at >= 0 && name.length === 2) break;
-        }
-        // A bare "southwest is 37 degrees" counts once that mountain has been talked about (a correction).
-        if (found !== null && value >= 25 && value <= 60 && (mountain || ridges.has(COMPASS[found]))) ridges.set(COMPASS[found], value);
-      }
-    }
-    if (FAULT_CUE.test(line) && !FAULT_NEGATED.test(line))
-      note.faults.push({ onset: null, kind: "instrument", level: null, action: "report", issued, src, state: "open", keyword: true });
-  }
-  for (const [centre, ridge] of ridges) note.terrain.push({ azLo: (centre - 22.5 + 360) % 360, azSpan: 45, single: true, ridge, okAbove: null, issued, src });
-  if (note.faults.length > 1) note.faults.length = 1;
-  return note;
 }
 
 export { FactStore };

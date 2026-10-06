@@ -43,7 +43,7 @@ async function main(): Promise<void> {
   const lines: string[] = [];
   for (const note of reader.store.notes.values()) {
     const row = {
-      id: note.src, issued_local: local(note.issued), origin: note.origin,
+      id: note.src, issued_local: local(note.issued),
       terrain: note.terrain.map((t) => `${t.azLo}+${t.azSpan} ridge=${t.ridge} ok>=${t.okAbove}`),
       windows: note.windows.map((w) => `${local(w.t0)}..${local(w.t1)} ${w.all ? "ALL" : `${w.azLo}+${w.azSpan}`} ${w.kind}/${w.effect}/${w.conf}`),
       nights: note.nights.map(([n, q]) => `${local(nights[n][0])} ${q}`),

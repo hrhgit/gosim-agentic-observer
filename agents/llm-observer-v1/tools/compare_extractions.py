@@ -15,7 +15,7 @@ import sys
 
 def load(path: str) -> dict[str, dict]:
     with open(path, encoding="utf-8") as handle:
-        return {row["id"]: row for row in map(json.loads, handle) if row.get("origin") == "model"}
+        return {row["id"]: row for row in map(json.loads, handle)}
 
 
 def items(row: dict) -> dict[str, set[str]]:

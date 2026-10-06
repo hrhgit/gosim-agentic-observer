@@ -1,13 +1,13 @@
 /**
  * Reads handover notes during a run: every note is sent to the model in the background, the answer is
- * validated and added to the fact store. The keyword reading is applied at once, so the planner never
- * waits for the model to know what the note's plainest lines say; the model's reading replaces it when
- * it arrives. Without a model (no key, or OBSERVER_MODEL_DISABLED=1) only the keyword reading is used.
+ * validated and added to the fact store. A note is read by the model or not at all: without a model
+ * (no key, OBSERVER_MODEL_DISABLED=1) or when a call fails, nothing is taken from it and the agent
+ * goes on by its ordinary rules.
  */
 import { FactStore, NoteFacts } from "../facts/store";
 import { Json, LLM } from "../llm/client";
 import { SimClock } from "../sim/clock";
-import { factsFromAnswer, fallbackFacts, noteContext, SiteCalendar } from "./extract";
+import { codebookLines, factsFromAnswer, noteContext, SiteCalendar } from "./extract";
 import { buildUserPrompt, EXTRACT_SYSTEM } from "./prompt";
 import { annotate } from "./text";
 
@@ -46,7 +46,7 @@ export class HandoverReader {
     readonly llm: LLM = new LLM(log),
     readonly callTimeout = Number(process.env.LLM_CALL_TIMEOUT || 75),
   ) {
-    this.enabled = this.llm.available && process.env.OBSERVER_MODEL_DISABLED !== "1" && process.env.LLM_HANDOVER !== "off";
+    this.enabled = this.llm.available && process.env.OBSERVER_MODEL_DISABLED !== "1";
   }
 
   /** A request's reason text is a note when somebody wrote more than the stock phrase. */
@@ -63,8 +63,8 @@ export class HandoverReader {
     if (this.seen.has(src)) return;
     this.seen.add(src);
     this.notes++;
-    this.store.apply(fallbackFacts(reason, src, issued));
     if (!this.enabled) return;
+    this.store.learnCodebook(codebookLines(reason));
     const context = noteContext(issued, this.cal, this.terrainDirections, this.store.codebook.slice(0, 40)),
       { text, decoded } = annotate(reason),
       user = buildUserPrompt(context, text),

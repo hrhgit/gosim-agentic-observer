@@ -269,7 +269,6 @@ def main() -> int:
     records = []
     for card in args.cards:
         notes = [json.loads(line) for line in Path(args.extractions.format(card=card)).read_text(encoding="utf-8").splitlines() if line.strip()]
-        notes = [note for note in notes if note["origin"] == "model"]
         records.append(build_card(card, source / "cards" / card, out / "cards" / card, notes, args.captured, args.v1))
     (out / "README.md").write_text(README.format(
         source=args.source,

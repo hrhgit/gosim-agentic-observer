@@ -2,7 +2,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const { annotate, cleanText, decodeMorse, decodeCaesar, decodeSolfa } = require("../dist/handover/text.js");
-const { factsFromAnswer, fallbackFacts, resolveArea, codebookLines } = require("../dist/handover/extract.js");
+const { factsFromAnswer, resolveArea, codebookLines } = require("../dist/handover/extract.js");
 const { FactStore, arcDistance } = require("../dist/facts/store.js");
 
 const utc = (text) => Date.parse(text) / 1000;
@@ -106,46 +106,25 @@ test("a fault note about an onset before the last correct report is settled", ()
   assert.equal(store.openFaults().length, 1);
 });
 
-test("keyword reading: ridge heights, ticket lines and code words", () => {
-  const raw = "【祥子】从今天起交接本用暗号，记好：「暖气又坏了」＝那段时间全天下雨、关顶；「咖啡机没水」＝薄云，照拍。\n【灯】西南那边……大概挡到45度吧。\n【立希】灯记岔了。西南是 37度，对星对出来的。\n【立希】昨晚3:10左右起吞吐量掉到原来的5成左右。不是天的事，提单。\n【灯】……10/9（周五）晚上，降到 0°C 左右……冷。";
-  const note = fallbackFacts(raw, "N1", issued);
-  assert.deepEqual(note.terrain.map((t) => [t.azLo + 22.5, t.ridge]), [[225, 37]]);
-  assert.equal(note.faults.length, 1);
+test("code-word definitions are copied verbatim for later notes", () => {
+  const raw = "【祥子】从今天起交接本用暗号，记好：「暖气又坏了」＝那段时间全天下雨、关顶；「咖啡机没水」＝薄云，照拍。\n【灯】西南那边……大概挡到45度吧。";
   assert.deepEqual(codebookLines(raw), ["「暖气又坏了」= 那段时间全天下雨、关顶", "「咖啡机没水」= 薄云,照拍"]);
+  const store = new FactStore();
+  store.learnCodebook(codebookLines(raw));
+  store.learnCodebook(codebookLines(raw));
+  assert.equal(store.codebook.length, 2);
+  // The model's own wording of the code words is used only while nothing has been copied.
+  store.apply(factsFromAnswer({ codebook: ["暖气=下雨"] }, "N1", issued, cal));
+  assert.equal(store.codebook.length, 2);
 });
 
-test("keyword reading: an announced job is not a ticket, a request for the engineers is", () => {
-  const tickets = (raw) => fallbackFacts(raw, "N1", issued).faults.length;
-  // Announcements of work still to come end with "not the sky's doing" too.
-  assert.equal(tickets("【祥子】工程组通知了：9/2（周四）2:30 前后动导星相机，整机效率从那时起会下降，不是天的问题。"), 0);
-  assert.equal(tickets("【祥子】通知一下，11/12（周四）2:45 前后工程组会去动导星相机，之后效率下降属正常，不是天的缘故。"), 0);
-  assert.equal(tickets("【灯】大概２３点５０分……楼晃了一下。后来计数往下走……是晃了的关系吧。"), 0);
-  assert.equal(tickets("【祥子】这次不用提单，是晃动。"), 0);
-  // Explicit requests, in simplified and traditional characters, with a stop announced in the same line.
-  assert.equal(tickets("【立希】前一半說得通。02:40 前後另外又单独跳了一下，往下，换导星沒用——這个晃动解释不了。叫工程组。"), 1);
-  assert.equal(tickets("【祥子】以此为准：晃动的部分会一晚比一晚好，不必处理；后面那次突降请按流程提单。"), 1);
-  assert.equal(tickets("【祥子】接班前先说两句。刚才凌晨四点整那会儿开始吞吐量明显下降，到现在没恢复。请把工程组叫上来。"), 1);
-  assert.equal(tickets("【祥子】昨晚大概 0点半 起吞吐量明显下降且未恢复，该打那个电话了。9/21（周二）那晚 22:45–01:15 要换导星相机，会停机。"), 1);
-});
-
-test("an explicit ticket line survives a model reading that left it out; a rejected ticket closes its repeats", () => {
+test("a report that comes back wrong closes every ticket claim made by then; a job announced for later stays open", () => {
   const at = utc("2026-12-08T05:10:00Z");
   const store = new FactStore();
-  store.apply(fallbackFacts("【立希】0点出头又单独往下掉一截，这一下不是晃动。叫工程组。", "N1", at));
-  assert.equal(store.openFaults().length, 1);
-  // The model's reading of the same note has the earthquake only.
-  store.apply(factsFromAnswer({ faults: [{ d: null, t: null, kind: "earthquake", action: "none" }] }, "N1", at, cal));
-  assert.deepEqual(store.openFaults().map((f) => [f.kind, f.action, f.keyword]), [["instrument", "report", true]]);
-  // When the model has the ticket itself, the keyword copy is dropped.
-  store.apply(fallbackFacts("【立希】不是天的事，提单。", "N2", at));
-  store.apply(factsFromAnswer({ faults: [{ d: "12/08", t: "00:05", kind: "instrument", action: "report" }] }, "N2", at, cal));
-  assert.equal(store.faults.filter((f) => f.src === "N2").length, 1);
-  assert.equal(store.faults.find((f) => f.src === "N2").keyword, undefined);
-  // A job announced for later in the same note does not inherit what was done about the ticket.
-  store.apply(fallbackFacts("【立希】不是天的事，提单。", "N3", at));
-  store.reportResult(at + 60, false, store.faults.find((f) => f.src === "N3"));
-  assert.equal(store.openFaults().length, 0, "the repeats of a rejected ticket are closed with it");
-  store.apply(factsFromAnswer({ faults: [{ d: "12/08", t: "00:05", kind: "instrument", action: "report" }, { d: "12/16", t: "01:30", kind: "scheduled", action: "verify" }] }, "N3", at, cal));
+  store.apply(factsFromAnswer({ faults: [{ d: "12/08", t: "00:05", kind: "instrument", action: "report" }] }, "N1", at, cal));
+  store.apply(factsFromAnswer({ faults: [{ d: null, t: null, kind: "instrument", action: "report" }, { d: "12/16", t: "01:30", kind: "scheduled", action: "verify" }] }, "N2", at, cal));
+  assert.equal(store.openFaults().length, 3);
+  store.reportResult(at + 60, false, store.faults.find((f) => f.src === "N1"));
   assert.deepEqual(store.openFaults().map((f) => f.kind), ["scheduled"]);
 });
 
@@ -153,7 +132,7 @@ test("which whole-sky statements count as a stop", () => {
   const at = utc("2027-01-29T03:00:00Z");
   const window = (kind, conf, t0, t1) => ({ t0, t1, all: true, azLo: 0, azSpan: 360, kind, effect: "closed", conf, issued: at, src: kind });
   const store = new FactStore();
-  store.apply({ src: "N1", issued: at, terrain: [], faults: [], nights: [], requests: [], codebook: [], origin: "model", windows: [
+  store.apply({ src: "N1", issued: at, terrain: [], faults: [], nights: [], requests: [], codebook: [], windows: [
     window("rain", "firm", at + 3600, at + 5 * 3600), // "rain tonight, dome closed": the bulletin decides, not the note
     window("thick_cloud", "firm", at + 3600, at + 5 * 3600),
     window("other", "low", at + 6 * 3600, at + 9 * 3600), // "we are stopped tonight", from the unreliable writer

@@ -166,6 +166,13 @@ export class Agent {
     this.t_floor = sv.t_min;
     this.reader = new HandoverReader({ utcOffsetHours: Number(payload.site?.utc_offset_hours ?? 0), nights: sv.nights }, (text) => log(text));
     this.reader.sim = this.sim;
+    // Without a model nothing is read from the notes, and then nothing else departs from the baseline either:
+    // the zero-reward requests that carry the notes go through the planner as before, and idle stretches are
+    // slept slot by slot. (Checked on the local cards: the score is then the baseline's to the last digit.)
+    if (!this.read_notes || !this.reader.enabled) {
+      this.knobs.zero_reward_skip = 0;
+      this.knobs.idle_wait = 0;
+    }
     if (this.sim !== null) log("SIM_WALL: virtual real-time clock in use", this.sim.summary());
     log(`handover reader: model ${this.reader.enabled ? "on" : "off"} (${this.reader.llm.providers.map((p) => `${p.name}:${p.model}`).join(" > ") || "no provider"}; thinking ${this.reader.llm.thinking})`);
     const cat = sv.cat;
@@ -808,8 +815,7 @@ export class Agent {
         // With the free reports used up a wrong report costs points. A ticket the model read out of the note
         // (who says so, since when, that it is not the sky) is still acted on: such notes have matched a real
         // fault every time they could be checked, and waiting for the agent's own readings has cost days when
-        // an earthquake hid them. A bare keyword match then has to wait for those readings.
-        if (sky.free_left < 1 && !dropped && fault.keyword) continue;
+        // an earthquake hid them.
         return fault;
       }
       if (fault.action !== "verify") continue;
@@ -841,9 +847,8 @@ export class Agent {
    * Why a report from the agent's own detector should be withheld now, or null.
    * After an earthquake the readings stay low for about a week and recover night by night with nothing broken.
    * The detector cannot tell that from a fault; a note that names the shaking and says to leave it alone can.
-   * A fault a note names is reported through _note_fault whatever this says (an explicit ticket line is kept
-   * even when the model's reading left it out), and a fresh step down in the agent's own readings (an
-   * earthquake only gets better) lifts the hold.
+   * A fault a note names is reported through _note_fault whatever this says, and a fresh step down in the
+   * agent's own readings (an earthquake only gets better) lifts the hold.
    */
   _quake_explains(t: number): string | null {
     const store = this.reader.store,

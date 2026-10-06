@@ -44,8 +44,6 @@ export interface FaultFact {
   issued: number;
   src: string;
   state: "open" | "reported" | "rejected" | "done";
-  /** True when only the keyword reading found it (an explicit "file a ticket" line), not the model. */
-  keyword?: boolean;
 }
 
 export interface NoteFacts {
@@ -58,8 +56,6 @@ export interface NoteFacts {
   nights: [number, "good" | "poor"][];
   requests: { arrive: number; deadline: number }[];
   codebook: string[];
-  /** "model" or "fallback" (keyword rules, used when no model answer arrived). */
-  origin: "model" | "fallback";
 }
 
 /** Angular distance from an azimuth to an arc; 0 inside the arc. */
@@ -79,39 +75,24 @@ export class FactStore {
   notes = new Map<string, NoteFacts>();
   revision = 0;
 
-  /** Add or replace everything one note said. A model reading replaces the keyword fallback of the same note. */
+  /** Add what the model read in one note. */
   apply(note: NoteFacts): void {
-    const previous = this.notes.get(note.src);
-    if (previous !== undefined) {
-      if (previous.origin === "model" && note.origin === "fallback") return;
-      this.windows = this.windows.filter((w) => w.src !== note.src);
-      // A fault already acted on keeps its state.
-      const acted = this.faults.filter((f) => f.src === note.src && f.state !== "open");
-      this.faults = this.faults.filter((f) => f.src !== note.src);
-      for (const fault of note.faults) {
-        const same = acted.find((old) => old.kind === fault.kind && Math.abs((old.onset ?? old.issued) - (fault.onset ?? fault.issued)) < 3 * 3600);
-        if (same !== undefined) fault.state = same.state;
-        // The keyword reading only knows "a ticket is asked for now"; a job announced for later is another matter.
-        else if (acted.length && fault.action !== "none" && (fault.onset ?? fault.issued) <= note.issued) fault.state = acted[0].state;
-      }
-      // A line that plainly asks for a ticket is not dropped because the model's reading left it out.
-      const ticket = previous.origin === "fallback" && note.origin === "model" ? previous.faults.find((f) => f.keyword) : undefined;
-      if (ticket !== undefined && !note.faults.some((f) => f.action === "report" || (f.action === "verify" && (f.onset ?? f.issued) <= note.issued)))
-        note.faults.push(ticket);
-    }
     this.notes.set(note.src, note);
     this.windows.push(...note.windows);
     this.windows.sort((a, b) => a.t0 - b.t0);
-    if (previous !== undefined) this.terrain = this.terrain.filter((item) => item.src !== note.src);
     this.terrain.push(...note.terrain);
     this.faults.push(...note.faults);
     for (const [night, quality] of note.nights) this.nights.set(night, quality);
     this.requests.push(...note.requests);
-    // Code words are kept as the note wrote them (the keyword reading finds the 「…」= … lines); the model's
-    // paraphrase is used only when a note defined code words in some other form.
-    if (note.origin === "fallback" || this.codebook.length === 0)
-      for (const line of note.codebook) if (!this.codebook.includes(line)) this.codebook.push(line);
+    // Code words are kept as the notes wrote them (learnCodebook); the model's paraphrase is used only when
+    // a note defined code words in some form that was not copied.
+    if (this.codebook.length === 0) this.learnCodebook(note.codebook);
     this.revision++;
+  }
+
+  /** Remember code-word definitions so that later notes are read with them. */
+  learnCodebook(lines: string[]): void {
+    for (const line of lines) if (!this.codebook.includes(line)) this.codebook.push(line);
   }
 
   /**

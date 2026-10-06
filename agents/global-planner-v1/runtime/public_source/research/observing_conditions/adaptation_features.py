@@ -58,5 +58,3 @@ def public_features(now,start,end,requested,coordinates,initialize,timeline,stat
     x=np.concatenate([np.broadcast_to(context,(len(coordinates),len(context))),candidate,base,hold,states],axis=1).astype(np.float32)
     h=history_array(history,now)
     return x,h,base,hold,eligible
-
-

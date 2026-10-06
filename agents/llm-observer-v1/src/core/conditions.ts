@@ -408,8 +408,8 @@ export class Sky {
    * runs (tools/check_notes_against_formal_runs.py): within 30 degrees of the notice's compass direction every
    * fibre scored zero, at every altitude up to the zenith. Farther out it depends on the event: where the note's
    * own stretch reached beyond those 30 degrees three fibres in four still scored zero (and the urgent request
-   * of card B1, 43-60 degrees from the notice's direction but inside the stretch the notes named, could not be
-   * observed at all); outside the stretch one in three did up to 45 degrees, none beyond.
+   * of card B1, whose targets lay up to 47 degrees from the notice's direction but inside the stretch the notes
+   * named, could not be observed at all); outside the stretch one in three did up to 45 degrees, none beyond.
    */
   closed_probability(alt: number, az: number, centre: number, sector: NoteSector | null): number {
     const d = Math.abs(mod(az - centre + 180, 360) - 180),
